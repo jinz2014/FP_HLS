@@ -1,0 +1,23 @@
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX8.ngc MUX8.ngd  
+map -intstyle ise -p xc5vlx330-ff1760-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX8_map.ncd MUX8.ngd MUX8.pcf 
+par -w -intstyle ise -ol high -mt off MUX8_map.ncd MUX8.ncd MUX8.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX8.twx MUX8.ncd -o MUX8.twr MUX8.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6vcx75t-ff484-2 MUX8.ngc MUX8.ngd  
+map -intstyle ise -p xc6vcx75t-ff484-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o MUX8_map.ncd MUX8.ngd MUX8.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6vlx550t-ff1760-2 MUX8.ngc MUX8.ngd  
+map -intstyle ise -p xc6vlx550t-ff1760-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o MUX8_map.ncd MUX8.ngd MUX8.pcf 
+par -w -intstyle ise -ol high -mt off MUX8_map.ncd MUX8.ncd MUX8.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX8.twx MUX8.ncd -o MUX8.twr MUX8.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6vlx550t-ff1760-2 MUX8.ngc MUX8.ngd  
+map -intstyle ise -p xc6vlx550t-ff1760-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt 2 -ir off -pr off -lc off -power off -o MUX8_map.ncd MUX8.ngd MUX8.pcf 
+par -w -intstyle ise -ol high -mt 4 MUX8_map.ncd MUX8.ncd MUX8.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX8.twx MUX8.ncd -o MUX8.twr MUX8.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen4/vlib/MUX_syn/MUX8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx100-fgg484-3 MUX8.ngc MUX8.ngd  
+map -intstyle ise -p xc6slx100-fgg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt 2 -ir off -pr off -lc off -power off -o MUX8_map.ncd MUX8.ngd MUX8.pcf 
+par -w -intstyle ise -ol high -mt off MUX8_map.ncd MUX8.ncd MUX8.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml MUX8.twx MUX8.ncd -o MUX8.twr MUX8.pcf 

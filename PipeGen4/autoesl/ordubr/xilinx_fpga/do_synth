@@ -1,0 +1,75 @@
+#!/bin/sh
+
+expr="ordubr";
+run_logic_synthesis_only=0 ;
+while getopts ":s i" options; do
+    case $options in
+        i ) run_logic_synthesis_only=0;;
+        s ) run_logic_synthesis_only=1;;
+        ? ) echo $usage
+        exit 1;;
+    esac
+done
+
+################################
+# set up the verilog filelists: 
+################################
+
+rm -f xst.prj
+
+#pico_macrocell_filelist=`ls ../../macrocells/*.v`
+#pico_rtl_filelist=`ls ../../rtl/*.v | grep -v _assertions.v`
+#for i in $pico_macrocell_filelist; do echo verilog work $i >> xst.prj; done
+#for i in $pico_rtl_filelist; do echo verilog work $i >> xst.prj; done
+
+echo verilog work ../../../../../Modelsim/$expr/ASAP1_"$expr"/ASAP1_"$expr"_HDL.v >> xst.prj;
+echo verilog work ../../../../../vlib/Register.v >> xst.prj;
+echo verilog work ../../../../../vlib/MUX.v >> xst.prj;
+echo verilog work ../../../../../vlib/ShiftRegister.v >> xst.prj;
+echo verilog work ../../../../../vlib/ShiftCtlRegister.v >> xst.prj;
+echo verilog work ../../../../../vlib/float.v >> xst.prj;
+
+################################
+# add vhdl filelists: 
+################################
+echo vhdl work /share/jinz/SCC/examples/smbl/coregen/vhdl/xilinx_fadd.vhd >> xst.prj;
+echo vhdl work /share/jinz/SCC/examples/smbl/coregen/vhdl/xilinx_fmul.vhd >> xst.prj;
+echo vhdl work /share/jinz/SCC/examples/smbl/coregen/vhdl/xilinx_fdiv.vhd >> xst.prj;
+
+
+export date_of_run=`date +%Y.%m.%d_%H.%M.%S`
+
+mkdir run_$date_of_run   
+rm -f run
+ln -s run_$date_of_run run
+
+mkdir run/synthesis
+cd run/synthesis
+mkdir ./projnav.tmp
+
+if [ $run_logic_synthesis_only -eq 1 ]; then
+    touch .LOGIC_SYNTHESIS_ONLY
+fi
+
+xst -ifn ../../settings.xst -ofn "$expr".syr
+if [[ $? != 0 ]]; then exit 1; fi
+
+cd -
+
+if [ $run_logic_synthesis_only -ne 1 ]; then
+
+    mkdir run/implementation
+    cd run/implementation
+    ngdbuild -uc ../../constraints.ucf -sd /share/jinz/SCC/examples/smbl/coregen/vhdl/ -dd _ngo -nt timestamp -p xc5vlx330-ff1760-2 ../synthesis/"$expr".ngc "$expr".ngd
+    if [[ $? != 0 ]]; then exit 1; fi
+    map -u  -p xc5vlx330-ff1760-2 -cm speed -ol high -pr b -detail -o "$expr"_map.ncd "$expr".ngd "$expr".pcf
+    if [[ $? != 0 ]]; then exit 1; fi
+    par -ol high -nopad "$expr"_map.ncd "$expr".ncd "$expr".pcf
+    if [[ $? != 0 ]]; then exit 1; fi
+    trce -v 20 -u 64 -o "$expr".twr "$expr".ncd "$expr".pcf
+    if [[ $? != 0 ]]; then exit 1; fi
+    cd -
+
+fi
+exit 0
+

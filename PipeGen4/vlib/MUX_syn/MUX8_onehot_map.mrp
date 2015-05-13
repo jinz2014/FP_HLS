@@ -1,0 +1,475 @@
+Release 13.2 Map O.61xd (lin64)
+Xilinx Mapping Report File for Design 'MUX8_onehot'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx100-fgg484-3 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt 2 -ir off -pr
+off -lc off -power off -o MUX8_onehot_map.ncd MUX8_onehot.ngd MUX8_onehot.pcf 
+Target Device  : xc6slx100
+Target Package : fgg484
+Target Speed   : -3
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Wed Oct 10 21:44:54 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    0
+Slice Logic Utilization:
+  Number of Slice Registers:                     0 out of 126,576    0%
+  Number of Slice LUTs:                        113 out of  63,288    1%
+    Number used as logic:                      113 out of  63,288    1%
+      Number using O6 output only:              97
+      Number using O5 output only:               0
+      Number using O5 and O6:                   16
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of  15,616    0%
+
+Slice Logic Distribution:
+  Number of occupied Slices:                    69 out of  15,822    1%
+  Number of LUT Flip Flop pairs used:          113
+    Number with an unused Flip Flop:           113 out of     113  100%
+    Number with an unused LUT:                   0 out of     113    0%
+    Number of fully used LUT-FF pairs:           0 out of     113    0%
+    Number of slice register sites lost
+      to control set restrictions:               0 out of 126,576    0%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                       295 out of     326   90%
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         0 out of     268    0%
+  Number of RAMB8BWERs:                          0 out of     536    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       0 out of      16    0%
+  Number of DCM/DCM_CLKGENs:                     0 out of      12    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     506    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     506    0%
+  Number of OLOGIC2/OSERDES2s:                   0 out of     506    0%
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     384    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of     180    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       4    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       6    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                1.76
+
+Peak Memory Usage:  751 MB
+Total REAL time to MAP completion:  23 secs 
+Total CPU time to MAP completion (all processors):   22 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Security:42 - Your license support version '2012.10' for ISE expires in
+20 days after which you will not qualify for Xilinx software updates or new
+releases.
+
+Section 3 - Informational
+-------------------------
+INFO:Map:284 - Map is running with the multi-threading option on. Map currently
+   supports the use of up to 2 processors. Based on the the user options and
+   machine load, Map will use 2 processors during this run.
+INFO:Security:56 - Part 'xc6slx100' is not a WebPack part.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+
+Section 5 - Removed Logic
+-------------------------
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| I1<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I1<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I2<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I3<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I4<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I5<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I6<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I7<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<0>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<1>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<2>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<3>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<4>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<5>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<6>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<7>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<8>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<9>                              | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<10>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<11>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<12>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<13>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<14>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<15>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<16>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<17>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<18>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<19>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<20>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<21>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<22>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<23>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<24>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<25>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<26>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<27>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<28>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<29>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<30>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| I8<31>                             | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| Z<0>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<1>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<2>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<3>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<4>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<5>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<6>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<7>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<8>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<9>                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<10>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<11>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<12>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<13>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<14>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<15>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<16>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<17>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<18>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<19>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<20>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<21>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<22>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<23>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<24>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<25>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<26>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<27>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<28>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<29>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<30>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| Z<31>                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| s1                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| s2                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| s3                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| s4                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| s5                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| s6                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| s7                                 | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

@@ -1,0 +1,12 @@
+# Output products list for <floating_point_v5_0>
+_xmsgs/pn_parser.xmsgs
+floating_point_v5_0.asy
+floating_point_v5_0.gise
+floating_point_v5_0.ngc
+floating_point_v5_0.vhd
+floating_point_v5_0.vho
+floating_point_v5_0.xco
+floating_point_v5_0.xise
+floating_point_v5_0_flist.txt
+floating_point_v5_0_readme.txt
+floating_point_v5_0_xmdf.tcl

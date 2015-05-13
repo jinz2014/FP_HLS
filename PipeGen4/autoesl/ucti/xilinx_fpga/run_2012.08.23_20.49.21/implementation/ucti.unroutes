@@ -1,0 +1,86 @@
+Release 13.2 - par O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Thu Aug 23 20:54:33 2012
+
+All signals are completely routed.
+
+WARNING:ParHelpers:362 - There are 36 sourceless signals in this design. This design will not pass the DRC check run by
+   Bitgen.
+
+   clk
+   go_in
+   p1_in<0>
+   p1_in<10>
+   p1_in<11>
+   p1_in<12>
+   p1_in<13>
+   p1_in<14>
+   p1_in<15>
+   p1_in<16>
+   p1_in<17>
+   p1_in<18>
+   p1_in<19>
+   p1_in<1>
+   p1_in<20>
+   p1_in<21>
+   p1_in<22>
+   p1_in<23>
+   p1_in<24>
+   p1_in<25>
+   p1_in<26>
+   p1_in<27>
+   p1_in<28>
+   p1_in<29>
+   p1_in<2>
+   p1_in<30>
+   p1_in<31>
+   p1_in<3>
+   p1_in<4>
+   p1_in<5>
+   p1_in<6>
+   p1_in<7>
+   p1_in<8>
+   p1_in<9>
+   rst
+   stall_in
+WARNING:ParHelpers:361 - There are 35 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   fadd1/xilinx_fadd_i/rdy
+   fmul1/xilinx_fmul_i/rdy
+   ucti_fdiv1_out<0>
+   ucti_fdiv1_out<10>
+   ucti_fdiv1_out<11>
+   ucti_fdiv1_out<12>
+   ucti_fdiv1_out<13>
+   ucti_fdiv1_out<14>
+   ucti_fdiv1_out<15>
+   ucti_fdiv1_out<16>
+   ucti_fdiv1_out<17>
+   ucti_fdiv1_out<18>
+   ucti_fdiv1_out<19>
+   ucti_fdiv1_out<1>
+   ucti_fdiv1_out<20>
+   ucti_fdiv1_out<21>
+   ucti_fdiv1_out<22>
+   ucti_fdiv1_out<23>
+   ucti_fdiv1_out<24>
+   ucti_fdiv1_out<25>
+   ucti_fdiv1_out<26>
+   ucti_fdiv1_out<27>
+   ucti_fdiv1_out<28>
+   ucti_fdiv1_out<29>
+   ucti_fdiv1_out<2>
+   ucti_fdiv1_out<30>
+   ucti_fdiv1_out<31>
+   ucti_fdiv1_out<3>
+   ucti_fdiv1_out<4>
+   ucti_fdiv1_out<5>
+   ucti_fdiv1_out<6>
+   ucti_fdiv1_out<7>
+   ucti_fdiv1_out<8>
+   ucti_fdiv1_out<9>
+   ucti_fdiv1_out_rdy<0>
+
+

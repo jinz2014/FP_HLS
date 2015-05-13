@@ -1,0 +1,78 @@
+The number of time slots are 67
+Node   0 <- slot b:   0 e:   1 type   3 resource   0
+Node   1 <- slot b:   0 e:   1 type   3 resource   0
+Node   2 <- slot b:   1 e:   2 type   3 resource   0
+Node   3 <- slot b:   1 e:   2 type   3 resource   0
+Node   4 <- slot b:   2 e:   3 type   3 resource   0
+Node   5 <- slot b:   2 e:  13 type   0 resource   1
+Node  10 <- slot b:   2 e:  13 type   0 resource   2
+Node   6 <- slot b:   3 e:  14 type   0 resource   3
+Node   8 <- slot b:   3 e:  14 type   0 resource   1
+Node  11 <- slot b:  14 e:  40 type   2 resource   1
+Node   7 <- slot b:  15 e:  26 type   0 resource   2
+Node   9 <- slot b:  27 e:  33 type   1 resource   1
+Node  12 <- slot b:  41 e:  67 type   2 resource   2
+
+C:/Xilinx/12.1/ISE_DS/ISE/SIM_LIB/xilinxcorelib
+
+
+1. Add port nodes in DFG   (.txt)
+2. Set all port nodes' latency to 0  (ScheduleHelper.c)
+3. DOS(10)/UNIX(9)  newline      (GenerateFloatTestBench.c)  = dos2unix
+4. port pairs (array portA and portB) become array ports (GenerateTestData.c) 
+5. remove PQ queue 
+6. Integer operation  -1 = -1     
+   floating operation -1 = bf800000 (FloatingPointConvert)
+7. Put all the benchmark functions in benchmark.c
+
+
+8. port assignment with StimSequenceTable 
+
+1) Initialize all the port nodes' resource number from 1 to maxPortNodeNu
+2) StimSequenceTable records all the port nodes' IDs in their scheduled sequences
+3) 
+int GetInputPortNu(int port) {
+  for (i = 0; i < OP_NU; i++) maxPortPair += MAX_PORTS[i];
+  for (i = 0; i < maxPortPair; i++) {
+    if (port == StimSequenceTable[i]) 
+      break;
+  }
+  return (i % PORT_NU + 1);
+}
+
+9.  maxPortPair -> maxPortNu
+10. Mux Inputs may come from RegisterFile data output,
+    not just shared registers such as r1_out.
+
+                 for (j = 0; j < DFG[k]->opDestNu; j++) {
+                   dest = DFG[k]->opDest[j];
+                   if (dest > 0) {
+                     if (DFG[dest]->opSrc[port_nu] == k && 
+                         DFG[dest]->opResourceNu == (fu_nu + 1) && 
+                         DFG[dest]->op == op_type) {
+
+                       fprintf(vfp, "  .I%d(RF%d_rdata%d),\n", i + 1, 
+                           Map[k], GetRegFilePortNu(k, dest));
+                     }
+                   }
+                 } // for
+
+
+11. thoughts on the number of Register file read ports (GenerateFloatHDL.c)
+
+12. ALAP may schedule the nodes later than necessary. 
+
+13 opSymTable is rigid (fadd, fmul, fdiv, fsub)
+    change benchmark.config in Schedule.c
+    change benchmark.txt in ScheduleHelper.c
+    change OP in Schedule.h
+    change OpSymTable in GenerateFloatHDL.c (+,/)
+
+
+
+
+
+
+
+
+ 

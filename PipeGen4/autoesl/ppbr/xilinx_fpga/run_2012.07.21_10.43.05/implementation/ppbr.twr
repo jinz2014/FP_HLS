@@ -1,0 +1,2537 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/share/reconfig/xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 20 -u 64 -o
+ppbr.twr ppbr.ncd ppbr.pcf
+
+Design file:              ppbr.ncd
+Physical constraint file: ppbr.pcf
+Device,package,speed:     xc5vlx330,ff1760,-2 (PRODUCTION 1.73 2011-06-20, STEPPING level 0)
+Report level:             verbose report, limited to 20 items per constraint
+                          unconstrained path report, limited to 64 items
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 6.66666667 ns HIGH 50%;
+
+ 18634948 paths analyzed, 6396 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.563ns.
+--------------------------------------------------------------------------------
+Slack:                  0.103ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.528ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.528ns (3.410ns logic, 3.118ns route)
+                                                       (52.2% logic, 47.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.119ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000668 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.512ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+    SLICE_X22Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000094d
+    SLICE_X22Y65.CLK     Tcinck                0.044   fdiv1/xilinx_fdiv_i/blk00000003/sig0000061f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000667
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    -------------------------------------------------  ---------------------------
+    Total                                      6.512ns (3.394ns logic, 3.118ns route)
+                                                       (52.1% logic, 47.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.130ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.501ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.501ns (3.384ns logic, 3.117ns route)
+                                                       (52.1% logic, 47.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.146ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000668 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.485ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+    SLICE_X22Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000094d
+    SLICE_X22Y65.CLK     Tcinck                0.044   fdiv1/xilinx_fdiv_i/blk00000003/sig0000061f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000667
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    -------------------------------------------------  ---------------------------
+    Total                                      6.485ns (3.368ns logic, 3.117ns route)
+                                                       (51.9% logic, 48.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.156ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.475ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.098   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b
+    -------------------------------------------------  ---------------------------
+    Total                                      6.475ns (3.357ns logic, 3.118ns route)
+                                                       (51.8% logic, 48.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.160ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.471ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.A5      net (fanout=26)       0.962   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000084d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.471ns (3.417ns logic, 3.054ns route)
+                                                       (52.8% logic, 47.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.164ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066a (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.467ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066a
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.090   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066a
+    -------------------------------------------------  ---------------------------
+    Total                                      6.467ns (3.349ns logic, 3.118ns route)
+                                                       (51.8% logic, 48.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.176ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000668 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.455ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.A5      net (fanout=26)       0.962   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000084d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+    SLICE_X22Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000094d
+    SLICE_X22Y65.CLK     Tcinck                0.044   fdiv1/xilinx_fdiv_i/blk00000003/sig0000061f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000667
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    -------------------------------------------------  ---------------------------
+    Total                                      6.455ns (3.401ns logic, 3.054ns route)
+                                                       (52.7% logic, 47.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.181ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in0_r/register_5 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.450ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in0_r/register_5 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y73.AQ      Tcko                  0.375   fdiv1_in0_r/register<4>
+                                                       fdiv1_in0_r/register_5
+    SLICE_X22Y67.BX      net (fanout=3)        1.063   fdiv1_in0_r/register<5>
+    SLICE_X22Y67.COUT    Tbxcy                 0.287   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.450ns (3.259ns logic, 3.191ns route)
+                                                       (50.5% logic, 49.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.183ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.448ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.098   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b
+    -------------------------------------------------  ---------------------------
+    Total                                      6.448ns (3.331ns logic, 3.117ns route)
+                                                       (51.7% logic, 48.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.187ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.444ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.A5      net (fanout=26)       0.962   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000084d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.444ns (3.391ns logic, 3.053ns route)
+                                                       (52.6% logic, 47.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.191ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066a (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.440ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066a
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.090   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066a
+    -------------------------------------------------  ---------------------------
+    Total                                      6.440ns (3.323ns logic, 3.117ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.194ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066d (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.437ns (Levels of Logic = 18)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066d
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066d
+    -------------------------------------------------  ---------------------------
+    Total                                      6.437ns (3.319ns logic, 3.118ns route)
+                                                       (51.6% logic, 48.4% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.196ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fadd1/xilinx_fadd_i/blk00000003/blk00000039 (DSP)
+  Destination:          fadd1/xilinx_fadd_i/blk00000003/blk00000023 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.435ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fadd1/xilinx_fadd_i/blk00000003/blk00000039 to fadd1/xilinx_fadd_i/blk00000003/blk00000023
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y35.P23      Tdspcko_POP           2.111   fadd1/xilinx_fadd_i/blk00000003/blk00000039
+                                                       fadd1/xilinx_fadd_i/blk00000003/blk00000039
+    SLICE_X10Y92.A2      net (fanout=6)        2.826   fadd1/xilinx_fadd_i/blk00000003/sig00000155
+    SLICE_X10Y92.COUT    Topcya                0.438   fadd1/xilinx_fadd_i/blk00000003/sig0000006a
+                                                       fadd1/xilinx_fadd_i/blk00000003/blk00000129
+                                                       fadd1/xilinx_fadd_i/blk00000003/blk0000000f
+    SLICE_X21Y93.C6      net (fanout=9)        1.030   fadd1/xilinx_fadd_i/blk00000003/sig0000006a
+    SLICE_X21Y93.CLK     Tas                   0.030   fadd1/xilinx_fadd_i/blk00000003/sig000000a8
+                                                       fadd1/xilinx_fadd_i/blk00000003/blk00000142
+                                                       fadd1/xilinx_fadd_i/blk00000003/blk00000023
+    -------------------------------------------------  ---------------------------
+    Total                                      6.435ns (2.579ns logic, 3.856ns route)
+                                                       (40.1% logic, 59.9% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.197ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in0_r/register_5 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000668 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.434ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in0_r/register_5 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y73.AQ      Tcko                  0.375   fdiv1_in0_r/register<4>
+                                                       fdiv1_in0_r/register_5
+    SLICE_X22Y67.BX      net (fanout=3)        1.063   fdiv1_in0_r/register<5>
+    SLICE_X22Y67.COUT    Tbxcy                 0.287   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+    SLICE_X22Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000094d
+    SLICE_X22Y65.CLK     Tcinck                0.044   fdiv1/xilinx_fdiv_i/blk00000003/sig0000061f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000667
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    -------------------------------------------------  ---------------------------
+    Total                                      6.434ns (3.243ns logic, 3.191ns route)
+                                                       (50.4% logic, 49.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.203ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000668 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.428ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.A5      net (fanout=26)       0.962   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000084d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+    SLICE_X22Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000094d
+    SLICE_X22Y65.CLK     Tcinck                0.044   fdiv1/xilinx_fdiv_i/blk00000003/sig0000061f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000667
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000668
+    -------------------------------------------------  ---------------------------
+    Total                                      6.428ns (3.375ns logic, 3.053ns route)
+                                                       (52.5% logic, 47.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.208ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in0_r/register_5 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.423ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in0_r/register_5 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y73.AQ      Tcko                  0.375   fdiv1_in0_r/register<4>
+                                                       fdiv1_in0_r/register_5
+    SLICE_X22Y67.BX      net (fanout=3)        1.063   fdiv1_in0_r/register<5>
+    SLICE_X22Y67.COUT    Tbxcy                 0.287   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.D6      net (fanout=27)       1.092   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyd                0.336   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000805
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.423ns (3.233ns logic, 3.190ns route)
+                                                       (50.3% logic, 49.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.210ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066c (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.421ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066c
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.044   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066c
+    -------------------------------------------------  ---------------------------
+    Total                                      6.421ns (3.303ns logic, 3.118ns route)
+                                                       (51.4% logic, 48.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.213ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in1_r/register_4 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.418ns (Levels of Logic = 19)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in1_r/register_4 to fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y73.CQ      Tcko                  0.375   fdiv1_in1_r/register<4>
+                                                       fdiv1_in1_r/register_4
+    SLICE_X22Y67.A6      net (fanout=5)        0.990   fdiv1_in1_r/register<4>
+    SLICE_X22Y67.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000007ec
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.A5      net (fanout=26)       0.962   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000084d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.098   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000066b
+    -------------------------------------------------  ---------------------------
+    Total                                      6.418ns (3.364ns logic, 3.054ns route)
+                                                       (52.4% logic, 47.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.219ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1_in0_r/register_0 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000669 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      6.412ns (Levels of Logic = 20)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1_in0_r/register_0 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y73.AQ      Tcko                  0.375   fdiv1_in0_r/register<3>
+                                                       fdiv1_in0_r/register_0
+    SLICE_X22Y66.A5      net (fanout=3)        0.783   fdiv1_in0_r/register<0>
+    SLICE_X22Y66.COUT    Topcya                0.438   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000084e
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000406
+    SLICE_X22Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d1
+    SLICE_X22Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000040e
+    SLICE_X22Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006d9
+    SLICE_X22Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000416
+    SLICE_X22Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e1
+    SLICE_X22Y69.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000041e
+    SLICE_X22Y70.CIN     net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig000006e9
+    SLICE_X22Y70.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000426
+    SLICE_X22Y71.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f1
+    SLICE_X22Y71.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000042e
+    SLICE_X22Y72.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006f8
+    SLICE_X22Y72.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig00000120
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000430
+    SLICE_X23Y63.B6      net (fanout=26)       1.026   fdiv1/xilinx_fdiv_i/blk00000003/sig0000011f
+    SLICE_X23Y63.COUT    Topcyb                0.431   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000836
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003d5
+    SLICE_X23Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000676
+    SLICE_X23Y64.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000108
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003dd
+    SLICE_X23Y65.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000686
+    SLICE_X23Y65.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000010a
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003e5
+    SLICE_X23Y66.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000696
+    SLICE_X23Y66.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ed
+    SLICE_X23Y67.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006a6
+    SLICE_X23Y67.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003f5
+    SLICE_X23Y68.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006b6
+    SLICE_X23Y68.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003fd
+    SLICE_X23Y69.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c6
+    SLICE_X23Y69.AMUX    Tcina                 0.235   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000003ff
+    SLICE_X22Y59.C6      net (fanout=27)       1.093   fdiv1/xilinx_fdiv_i/blk00000003/sig000006c9
+    SLICE_X22Y59.COUT    Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig0000062b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000081d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000063d
+    SLICE_X22Y60.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000911
+    SLICE_X22Y60.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000637
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000645
+    SLICE_X22Y61.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig0000091d
+    SLICE_X22Y61.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000643
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000064d
+    SLICE_X22Y62.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000929
+    SLICE_X22Y62.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000064f
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000655
+    SLICE_X22Y63.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000935
+    SLICE_X22Y63.COUT    Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig0000065b
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk0000065d
+    SLICE_X22Y64.CIN     net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000941
+    SLICE_X22Y64.CLK     Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000951
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000665
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000669
+    -------------------------------------------------  ---------------------------
+    Total                                      6.412ns (3.501ns logic, 2.911ns route)
+                                                       (54.6% logic, 45.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 6.66666667 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk00000047/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk00000047/CLK
+  Location pin: DSP48_X0Y31.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk000000a4/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk000000a4/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000001bc/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000001bc/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[6].shift_i/state<1>/CLK
+  Logical resource: r11/SR[6].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y80.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[6].shift_i/state<1>/CLK
+  Logical resource: r11/SR[6].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y80.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[5].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[5].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[0].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[0].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[1].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[1].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[3].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[3].shift_i/state<1>/CLK
+  Logical resource: r11/SR[3].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y81.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[2].shift_i/state<1>/CLK
+  Logical resource: r11/SR[2].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y82.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[2].shift_i/state<1>/CLK
+  Logical resource: r11/SR[2].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y82.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[9].shift_i/state<1>/CLK
+  Logical resource: r11/SR[10].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y83.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 6.666ns
+  High pulse: 3.333ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: r11/SR[9].shift_i/state<1>/CLK
+  Logical resource: r11/SR[10].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y83.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 5.266ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 6.666ns
+  Low pulse: 3.333ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: r11/SR[9].shift_i/state<1>/CLK
+  Logical resource: r11/SR[8].shift_i/Mshreg_state_1/CLK
+  Location pin: SLICE_X0Y83.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Unconstrained path analysis 
+
+ 33 paths analyzed, 33 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   0.396ns.
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_31 (FF)
+  Destination:          ppbr_fdiv1_out<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_31 to ppbr_fdiv1_out<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y94.DQ      Tcko                  0.396   ppbr_fdiv1_out<31>
+                                                       ppbr_fdiv1_out_31
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_30 (FF)
+  Destination:          ppbr_fdiv1_out<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_30 to ppbr_fdiv1_out<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y94.CQ      Tcko                  0.396   ppbr_fdiv1_out<31>
+                                                       ppbr_fdiv1_out_30
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_29 (FF)
+  Destination:          ppbr_fdiv1_out<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_29 to ppbr_fdiv1_out<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y94.BQ      Tcko                  0.396   ppbr_fdiv1_out<31>
+                                                       ppbr_fdiv1_out_29
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_28 (FF)
+  Destination:          ppbr_fdiv1_out<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_28 to ppbr_fdiv1_out<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y94.AQ      Tcko                  0.396   ppbr_fdiv1_out<31>
+                                                       ppbr_fdiv1_out_28
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_23 (FF)
+  Destination:          ppbr_fdiv1_out<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_23 to ppbr_fdiv1_out<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y85.DQ      Tcko                  0.396   ppbr_fdiv1_out<23>
+                                                       ppbr_fdiv1_out_23
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_22 (FF)
+  Destination:          ppbr_fdiv1_out<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_22 to ppbr_fdiv1_out<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y85.CQ      Tcko                  0.396   ppbr_fdiv1_out<23>
+                                                       ppbr_fdiv1_out_22
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_21 (FF)
+  Destination:          ppbr_fdiv1_out<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_21 to ppbr_fdiv1_out<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y85.BQ      Tcko                  0.396   ppbr_fdiv1_out<23>
+                                                       ppbr_fdiv1_out_21
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_20 (FF)
+  Destination:          ppbr_fdiv1_out<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_20 to ppbr_fdiv1_out<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y85.AQ      Tcko                  0.396   ppbr_fdiv1_out<23>
+                                                       ppbr_fdiv1_out_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_11 (FF)
+  Destination:          ppbr_fdiv1_out<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_11 to ppbr_fdiv1_out<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y71.DQ      Tcko                  0.396   ppbr_fdiv1_out<11>
+                                                       ppbr_fdiv1_out_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_10 (FF)
+  Destination:          ppbr_fdiv1_out<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_10 to ppbr_fdiv1_out<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y71.CQ      Tcko                  0.396   ppbr_fdiv1_out<11>
+                                                       ppbr_fdiv1_out_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_9 (FF)
+  Destination:          ppbr_fdiv1_out<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_9 to ppbr_fdiv1_out<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y71.BQ      Tcko                  0.396   ppbr_fdiv1_out<11>
+                                                       ppbr_fdiv1_out_9
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_8 (FF)
+  Destination:          ppbr_fdiv1_out<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_8 to ppbr_fdiv1_out<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y71.AQ      Tcko                  0.396   ppbr_fdiv1_out<11>
+                                                       ppbr_fdiv1_out_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_7 (FF)
+  Destination:          ppbr_fdiv1_out<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_7 to ppbr_fdiv1_out<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y57.DQ      Tcko                  0.396   ppbr_fdiv1_out<7>
+                                                       ppbr_fdiv1_out_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_6 (FF)
+  Destination:          ppbr_fdiv1_out<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_6 to ppbr_fdiv1_out<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y57.CQ      Tcko                  0.396   ppbr_fdiv1_out<7>
+                                                       ppbr_fdiv1_out_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_5 (FF)
+  Destination:          ppbr_fdiv1_out<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_5 to ppbr_fdiv1_out<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y57.BQ      Tcko                  0.396   ppbr_fdiv1_out<7>
+                                                       ppbr_fdiv1_out_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_fdiv1_out_4 (FF)
+  Destination:          ppbr_fdiv1_out<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_4 to ppbr_fdiv1_out<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X12Y57.AQ      Tcko                  0.396   ppbr_fdiv1_out<7>
+                                                       ppbr_fdiv1_out_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_0 (FF)
+  Destination:          ppbr_fdiv1_out<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_0 to ppbr_fdiv1_out<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y52.AQ      Tcko                  0.375   ppbr_fdiv1_out<3>
+                                                       ppbr_fdiv1_out_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_18 (FF)
+  Destination:          ppbr_fdiv1_out<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_18 to ppbr_fdiv1_out<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y81.CQ      Tcko                  0.375   ppbr_fdiv1_out<19>
+                                                       ppbr_fdiv1_out_18
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_17 (FF)
+  Destination:          ppbr_fdiv1_out<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_17 to ppbr_fdiv1_out<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y81.BQ      Tcko                  0.375   ppbr_fdiv1_out<19>
+                                                       ppbr_fdiv1_out_17
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_16 (FF)
+  Destination:          ppbr_fdiv1_out<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_16 to ppbr_fdiv1_out<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y81.AQ      Tcko                  0.375   ppbr_fdiv1_out<19>
+                                                       ppbr_fdiv1_out_16
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_15 (FF)
+  Destination:          ppbr_fdiv1_out<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_15 to ppbr_fdiv1_out<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y79.DQ      Tcko                  0.375   ppbr_fdiv1_out<15>
+                                                       ppbr_fdiv1_out_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_14 (FF)
+  Destination:          ppbr_fdiv1_out<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_14 to ppbr_fdiv1_out<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y79.CQ      Tcko                  0.375   ppbr_fdiv1_out<15>
+                                                       ppbr_fdiv1_out_14
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_13 (FF)
+  Destination:          ppbr_fdiv1_out<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_13 to ppbr_fdiv1_out<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y79.BQ      Tcko                  0.375   ppbr_fdiv1_out<15>
+                                                       ppbr_fdiv1_out_13
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_rdy_0 (FF)
+  Destination:          ppbr_fdiv1_out_rdy<0>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_rdy_0 to ppbr_fdiv1_out_rdy<0>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y15.AQ      Tcko                  0.375   ppbr_fdiv1_out_rdy<0>
+                                                       ppbr_fdiv1_out_rdy_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_27 (FF)
+  Destination:          ppbr_fdiv1_out<27>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_27 to ppbr_fdiv1_out<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y95.DQ      Tcko                  0.375   ppbr_fdiv1_out<27>
+                                                       ppbr_fdiv1_out_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_26 (FF)
+  Destination:          ppbr_fdiv1_out<27>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_26 to ppbr_fdiv1_out<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y95.CQ      Tcko                  0.375   ppbr_fdiv1_out<27>
+                                                       ppbr_fdiv1_out_26
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_25 (FF)
+  Destination:          ppbr_fdiv1_out<27>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_25 to ppbr_fdiv1_out<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y95.BQ      Tcko                  0.375   ppbr_fdiv1_out<27>
+                                                       ppbr_fdiv1_out_25
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_24 (FF)
+  Destination:          ppbr_fdiv1_out<27>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_24 to ppbr_fdiv1_out<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y95.AQ      Tcko                  0.375   ppbr_fdiv1_out<27>
+                                                       ppbr_fdiv1_out_24
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_3 (FF)
+  Destination:          ppbr_fdiv1_out<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_3 to ppbr_fdiv1_out<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y52.DQ      Tcko                  0.375   ppbr_fdiv1_out<3>
+                                                       ppbr_fdiv1_out_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_2 (FF)
+  Destination:          ppbr_fdiv1_out<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_2 to ppbr_fdiv1_out<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y52.CQ      Tcko                  0.375   ppbr_fdiv1_out<3>
+                                                       ppbr_fdiv1_out_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_1 (FF)
+  Destination:          ppbr_fdiv1_out<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_1 to ppbr_fdiv1_out<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y52.BQ      Tcko                  0.375   ppbr_fdiv1_out<3>
+                                                       ppbr_fdiv1_out_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_12 (FF)
+  Destination:          ppbr_fdiv1_out<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_12 to ppbr_fdiv1_out<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y79.AQ      Tcko                  0.375   ppbr_fdiv1_out<15>
+                                                       ppbr_fdiv1_out_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               ppbr_fdiv1_out_19 (FF)
+  Destination:          ppbr_fdiv1_out<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_fdiv1_out_19 to ppbr_fdiv1_out<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y81.DQ      Tcko                  0.375   ppbr_fdiv1_out<19>
+                                                       ppbr_fdiv1_out_19
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 18634981 paths, 0 nets, and 9352 connections
+
+Design statistics:
+   Minimum period:   6.563ns{1}   (Maximum frequency: 152.369MHz)
+   Maximum combinational path delay:   0.396ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sat Jul 21 10:47:11 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 786 MB
+
+
+

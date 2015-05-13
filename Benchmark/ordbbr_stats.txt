@@ -1,0 +1,224 @@
+Port number: 1
+ASAP: minII = 14 resource number = 6: 2 2 1 1 delay = 94
+Number of Registers : 19
+Number of Mux inputs: 91
+
+
+ALAP: minII = 14 resource number = 11: 2 6 2 1 delay = 97
+Number of Registers : 21
+Number of Mux inputs: 113
+
+
+List: minII = 14 resource number = 6: 2 2 1 1 delay = 94
+Number of Registers : 19
+Number of Mux inputs: 91
+
+
+Port number: 2
+ASAP: minII = 7 resource number = 10: 3 4 2 1 delay = 92
+Number of Registers : 22
+Number of Mux inputs: 112
+
+
+ALAP: minII = 7 resource number = 12: 3 6 2 1 delay = 93
+Number of Registers : 22
+Number of Mux inputs: 112
+
+
+List: minII = 7 resource number = 10: 3 4 2 1 delay = 92
+Number of Registers : 22
+Number of Mux inputs: 109
+
+
+Port number: 3
+ASAP: minII = 5 resource number = 14: 5 5 3 1 delay = 91
+Number of Registers : 28
+Number of Mux inputs: 102
+
+
+ALAP: minII = 5 resource number = 29: 10 12 6 1 delay = 92
+Number of Registers : 43
+Number of Mux inputs: 28
+
+
+List: minII = 5 resource number = 14: 5 5 3 1 delay = 91
+Number of Registers : 28
+Number of Mux inputs: 100
+
+
+Port number: 4
+ASAP: minII = 4 resource number = 16: 5 6 4 1 delay = 91
+Number of Registers : 27
+Number of Mux inputs: 94
+
+
+ALAP: minII = 4 resource number = 15: 5 6 3 1 delay = 91
+Number of Registers : 25
+Number of Mux inputs: 99
+
+
+List: minII = 4 resource number = 16: 5 6 4 1 delay = 91
+Number of Registers : 27
+Number of Mux inputs: 93
+
+
+Port number: 5
+ASAP: minII = 3 resource number = 16: 5 7 3 1 delay = 90
+Number of Registers : 28
+Number of Mux inputs: 103
+
+
+ALAP: minII = 3 resource number = 17: 5 7 4 1 delay = 91
+Number of Registers : 26
+Number of Mux inputs: 92
+
+
+List: minII = 3 resource number = 16: 5 7 3 1 delay = 90
+Number of Registers : 28
+Number of Mux inputs: 103
+
+
+Port number: 6
+ASAP: minII = 3 resource number = 16: 5 7 3 1 delay = 90
+Number of Registers : 29
+Number of Mux inputs: 98
+
+
+ALAP: minII = 3 resource number = 17: 5 7 4 1 delay = 91
+Number of Registers : 26
+Number of Mux inputs: 92
+
+
+List: minII = 3 resource number = 16: 5 7 3 1 delay = 90
+Number of Registers : 29
+Number of Mux inputs: 99
+
+
+Port number: 7
+ASAP: minII = 2 resource number = 22: 6 10 5 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 80
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 91
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 22: 6 10 5 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 80
+
+
+Port number: 8
+ASAP: minII = 2 resource number = 25: 7 11 6 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 64
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 25: 7 11 6 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 64
+
+
+Port number: 9
+ASAP: minII = 2 resource number = 24: 7 11 5 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 68
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 24: 7 11 5 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 68
+
+
+Port number: 10
+ASAP: minII = 2 resource number = 25: 7 12 5 1 delay = 90
+Number of Registers : 33
+Number of Mux inputs: 66
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 25: 7 12 5 1 delay = 90
+Number of Registers : 33
+Number of Mux inputs: 66
+
+
+Port number: 11
+ASAP: minII = 2 resource number = 26: 7 13 5 1 delay = 90
+Number of Registers : 34
+Number of Mux inputs: 60
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 26: 7 13 5 1 delay = 90
+Number of Registers : 34
+Number of Mux inputs: 60
+
+
+Port number: 12
+ASAP: minII = 2 resource number = 26: 7 13 5 1 delay = 90
+Number of Registers : 34
+Number of Mux inputs: 58
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 26: 7 13 5 1 delay = 90
+Number of Registers : 34
+Number of Mux inputs: 58
+
+
+Port number: 13
+ASAP: minII = 2 resource number = 26: 7 14 4 1 delay = 90
+Number of Registers : 34
+Number of Mux inputs: 58
+
+
+ALAP: minII = 2 resource number = 23: 8 10 4 1 delay = 90
+Number of Registers : 32
+Number of Mux inputs: 76
+
+
+List: minII = 2 resource number = 26: 7 14 4 1 delay = 90
+Number of Registers : 34
+Number of Mux inputs: 58
+
+
+Port number: 14
+ASAP: minII = 1 resource number = 34: 10 16 7 1 delay = 90
+Number of Registers : 48
+Number of Mux inputs: 0
+
+
+ALAP: minII = 1 resource number = 34: 10 16 7 1 delay = 90
+Number of Registers : 48
+Number of Mux inputs: 0
+
+
+List: minII = 1 resource number = 34: 10 16 7 1 delay = 90
+Number of Registers : 48
+Number of Mux inputs: 0
+
+

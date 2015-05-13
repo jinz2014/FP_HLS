@@ -1,0 +1,50 @@
+
+The files in this directory are useful when performing RTL synthesis 
+using Xilinx's XST synthesis tool. The scripts also 
+implement the design upto place and route using Xilinx mapping, 
+placement and routing tools. The following files are included by 
+default in this directory:
+   README                  (this text file)
+   do_synth                (executable Bash script)
+   settings.xst            (XST compile script)
+   xst.prj                 (XST project script)
+   constraints.xcf         (XST constraints file)
+   constraints.ucf         (User Constraints File(UCF) )
+
+
+--------
+do_synth
+--------
+
+This is a wrapper script which allows PICO-produced RTL to be easily synthesized
+using Xilinx XST synthesis tool. do_synth also invokes the Xilinx mapper (map),
+place & route (par) and trace (trce) tools to implement the design. 
+The 'run/synthesis/' sub-directory holds the results of the RTL synthesis run and the 
+'run/implementation/' sub-directory holds the results of the implementation run.
+
+-------------
+settings.xst
+xst.prj
+-------------
+
+These are the XST synthesis script and project file, and can be used as-is, or used as
+an example to develop your own scripts.  In all cases, examine the scripts to
+ensure the settings are appropriate for your requirement.
+
+---------------
+constraints.xcf
+---------------
+
+This is the XST constraints file, and can be used as-is, or used as
+an example to develop your own constraints file. The timing
+constraints specified in PICO are propagated to this constraints file.
+
+---------------
+constraints.ucf
+---------------
+
+This is the User Constraints File, used to specify timing constraints
+to map/par. This can be used as-is, or used as an example to develop 
+your own constraints file. The timing constraints specified in PICO 
+are propagated to this constraints file.
+

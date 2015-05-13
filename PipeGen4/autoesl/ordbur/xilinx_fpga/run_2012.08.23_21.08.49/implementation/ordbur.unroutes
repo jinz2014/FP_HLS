@@ -1,0 +1,86 @@
+Release 13.2 - par O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Thu Aug 23 21:13:50 2012
+
+All signals are completely routed.
+
+WARNING:ParHelpers:362 - There are 36 sourceless signals in this design. This design will not pass the DRC check run by
+   Bitgen.
+
+   clk
+   go_in
+   p1_in<0>
+   p1_in<10>
+   p1_in<11>
+   p1_in<12>
+   p1_in<13>
+   p1_in<14>
+   p1_in<15>
+   p1_in<16>
+   p1_in<17>
+   p1_in<18>
+   p1_in<19>
+   p1_in<1>
+   p1_in<20>
+   p1_in<21>
+   p1_in<22>
+   p1_in<23>
+   p1_in<24>
+   p1_in<25>
+   p1_in<26>
+   p1_in<27>
+   p1_in<28>
+   p1_in<29>
+   p1_in<2>
+   p1_in<30>
+   p1_in<31>
+   p1_in<3>
+   p1_in<4>
+   p1_in<5>
+   p1_in<6>
+   p1_in<7>
+   p1_in<8>
+   p1_in<9>
+   rst
+   stall_in
+WARNING:ParHelpers:361 - There are 35 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   fadd1/xilinx_fadd_i/rdy
+   fmul1/xilinx_fmul_i/rdy
+   ordbur_fdiv1_out<0>
+   ordbur_fdiv1_out<10>
+   ordbur_fdiv1_out<11>
+   ordbur_fdiv1_out<12>
+   ordbur_fdiv1_out<13>
+   ordbur_fdiv1_out<14>
+   ordbur_fdiv1_out<15>
+   ordbur_fdiv1_out<16>
+   ordbur_fdiv1_out<17>
+   ordbur_fdiv1_out<18>
+   ordbur_fdiv1_out<19>
+   ordbur_fdiv1_out<1>
+   ordbur_fdiv1_out<20>
+   ordbur_fdiv1_out<21>
+   ordbur_fdiv1_out<22>
+   ordbur_fdiv1_out<23>
+   ordbur_fdiv1_out<24>
+   ordbur_fdiv1_out<25>
+   ordbur_fdiv1_out<26>
+   ordbur_fdiv1_out<27>
+   ordbur_fdiv1_out<28>
+   ordbur_fdiv1_out<29>
+   ordbur_fdiv1_out<2>
+   ordbur_fdiv1_out<30>
+   ordbur_fdiv1_out<31>
+   ordbur_fdiv1_out<3>
+   ordbur_fdiv1_out<4>
+   ordbur_fdiv1_out<5>
+   ordbur_fdiv1_out<6>
+   ordbur_fdiv1_out<7>
+   ordbur_fdiv1_out<8>
+   ordbur_fdiv1_out<9>
+   ordbur_fdiv1_out_rdy<0>
+
+

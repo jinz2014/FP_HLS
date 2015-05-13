@@ -1,0 +1,188 @@
+Release 13.2 par O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+tachyon.cse.sc.edu::  Fri Sep 07 17:28:54 2012
+
+par -ol high -nopad ucti_map.ncd ucti.ncd ucti.pcf 
+
+
+Constraints file: ucti.pcf.
+Loading device for application Rf_Device from file '5vlx330.nph' in environment /share/reconfig/xilinx/13.2/ISE_DS/ISE/.
+   "ucti" is an NCD, version 3.2, device xc5vlx330, package ff1760, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.73 2011-06-20".
+
+
+
+Device Utilization Summary:
+
+   Number of DSP48Es                         5 out of 192     2%
+   Number of Slices                        844 out of 51840   1%
+   Number of Slice Registers              2501 out of 207360  1%
+      Number used as Flip Flops           2501
+      Number used as Latches                 0
+      Number used as LatchThrus              0
+
+   Number of Slice LUTS                   1483 out of 207360  1%
+   Number of Slice LUT-Flip Flop pairs    2651 out of 207360  1%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 22 secs 
+Finished initial Timing Analysis.  REAL time: 22 secs 
+
+WARNING:Par:289 - The signal clk has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal rst has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal go_in has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal stall_in has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fdiv1_out_r<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ucti_out0_rdy_r has no load.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<31> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<30> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<29> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<28> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<27> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<26> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<25> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<24> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<23> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<22> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<21> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<20> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<19> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<18> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<17> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<16> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<15> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<14> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<13> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<12> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<11> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<10> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<9> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<8> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<7> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<6> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<5> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<4> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<3> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<2> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<1> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<0> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fmul1/xilinx_fmul_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd1/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 8792 unrouted;      REAL time: 29 secs 
+
+Phase  2  : 7395 unrouted;      REAL time: 30 secs 
+
+Phase  3  : 1551 unrouted;      REAL time: 35 secs 
+
+Phase  4  : 1552 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+
+Updating file: ucti.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 54 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 55 secs 
+Total REAL time to Router completion: 55 secs 
+Total CPU time to Router completion: 56 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 2.857143 ns | SETUP       |     0.196ns|     2.661ns|       0|           0
+   HIGH 50%                                 | HOLD        |     0.273ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 35 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+WARNING:Par:284 - There are 36 sourceless signals in this design. This design will not pass the DRC check run by Bitgen.
+
+Total REAL time to PAR completion: 56 secs 
+Total CPU time to PAR completion: 56 secs 
+
+Peak Memory Usage:  854 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 75
+Number of info messages: 0
+
+Writing design to file ucti.ncd
+
+
+
+PAR done!

@@ -1,0 +1,132 @@
+  // V 
+  DFG[0]->op = nop;
+  DFG[0]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[0]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[0]->opSrc[0] = P1;
+  DFG[0]->opDest[0] = 5;
+  DFG[0]->opDestNu = 1;
+  DFG[0]->RegFileTable = NULL;
+  DFG[0]->opConst = 0;
+
+  // S 
+  DFG[1]->op = nop;
+  DFG[1]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[1]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[1]->opSrc[0] = P2;
+  DFG[1]->opDest[0] = 5;
+  DFG[1]->opDest[1] = 6;
+  DFG[1]->opDestNu = 2;
+  DFG[1]->RegFileTable = NULL;
+  DFG[1]->opConst = 0;
+
+  // Km
+  DFG[2]->op = nop;
+  DFG[2]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[2]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[2]->opSrc[0] = P3;
+  DFG[2]->opDest[0] = 6;
+  DFG[2]->opDest[1] = 8;
+  DFG[2]->opDestNu = 2;
+  DFG[2]->RegFileTable = NULL;
+  DFG[2]->opConst = 0;
+
+  // I
+  DFG[3]->op = nop;
+  DFG[3]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[3]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[3]->opSrc[0] = P4;
+  DFG[3]->opDest[0] = 7;
+  DFG[3]->opDestNu = 1;
+  DFG[3]->RegFileTable = NULL;
+  DFG[3]->opConst = 0;
+
+  // Ki
+  DFG[4]->op = nop;
+  DFG[4]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[4]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[4]->opSrc[0] = P5;
+  DFG[4]->opDest[0] = 7;
+  DFG[4]->opDestNu = 1;
+  DFG[4]->RegFileTable = NULL;
+  DFG[4]->opConst = 0;
+
+  DFG[5]->op = mul;
+  DFG[5]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[5]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[5]->opSrc[0] = 0;
+  DFG[5]->opSrc[1] = 1;
+  DFG[5]->opDest[0] = 8;
+  DFG[5]->opDestNu = 1;
+  DFG[5]->RegFileTable = NULL;
+  DFG[5]->opConst = 0;
+
+  // 
+  DFG[6]->op = div_;
+  DFG[6]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[6]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[6]->opSrc[0] = 1; // S
+  DFG[6]->opSrc[1] = 2; // Km
+  DFG[6]->opDest[0] = 10;
+  DFG[6]->opDestNu = 1;
+  DFG[6]->RegFileTable = NULL;
+  DFG[6]->opConst = 0;
+
+  DFG[7]->op = div_;
+  DFG[7]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[7]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[7]->opSrc[0] = 3; // I
+  DFG[7]->opSrc[1] = 4; // Ki
+  DFG[7]->opDest[0] = 9;
+  DFG[7]->opDestNu = 1;
+  DFG[7]->RegFileTable = NULL;
+  DFG[7]->opConst = 0;
+
+  DFG[8]->op = div_;
+  DFG[8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[8]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[8]->opSrc[0] = 5; // 
+  DFG[8]->opSrc[1] = 2; // Km
+  DFG[8]->opDest[0] = 12;
+  DFG[8]->opDestNu = 1;
+  DFG[8]->RegFileTable = NULL;
+  DFG[8]->opConst = 0;
+
+  DFG[9]->op = add;
+  DFG[9]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[9]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[9]->opSrc[0] = 7; 
+  DFG[9]->opSrc[1] = 7; 
+  DFG[9]->opDest[0] = 10;
+  DFG[9]->opDestNu = 1;
+  DFG[9]->RegFileTable = NULL;
+  DFG[9]->opConst = 1;
+
+  DFG[10]->op = mul;
+  DFG[10]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[10]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[10]->opSrc[0] = 6;
+  DFG[10]->opSrc[1] = 9; 
+  DFG[10]->opDest[0] = 11;
+  DFG[10]->opDestNu = 1;
+  DFG[10]->RegFileTable = NULL;
+  DFG[10]->opConst = 0;
+
+  DFG[11]->op = add;
+  DFG[11]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[11]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[11]->opSrc[0] = 10; 
+  DFG[11]->opSrc[1] = 10;
+  DFG[11]->opDest[0] = 12;
+  DFG[11]->opDestNu = 1;
+  DFG[11]->RegFileTable = NULL;
+  DFG[11]->opConst = 1;
+
+  DFG[12]->op = div_;
+  DFG[12]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[12]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[12]->opSrc[0] = 8; 
+  DFG[12]->opSrc[1] = 11;
+  DFG[12]->opDest[0] = SINK;
+  DFG[12]->opDestNu = 1;
+  DFG[12]->RegFileTable = NULL;
+  DFG[12]->opConst = 0;

@@ -1,0 +1,54 @@
+initial begin
+  wait (fir16_i.TimeState == 'd1);
+  repeat (8) begin
+    #3
+    $fdisplay(FD_dbg, "%t fir16_i.fadd1_in0 = %h(%f)  fir16_i.fadd1_in1 = %h(%f)", 
+       $time, fir16_i.fadd1_in0, $bitstoshortreal(fir16_i.fadd1_in0), fir16_i.fadd1_in1,
+       $bitstoshortreal(fir16_i.fadd1_in1));
+    repeat (6) @(posedge clk);
+  end
+end
+
+initial begin
+  wait (fir16_i.TimeState == 'd2);
+  repeat (8) begin
+    #3
+    $fdisplay(FD_dbg, "%t fir16_i.fadd2_in0 = %h(%f)  fir16_i.fadd2_in1 = %h(%f)", 
+       $time, fir16_i.fadd2_in0, $bitstoshortreal(fir16_i.fadd2_in0), fir16_i.fadd2_in1,
+       $bitstoshortreal(fir16_i.fadd2_in1));
+    repeat (6) @(posedge clk);
+  end
+end
+
+initial begin
+  wait (fir16_i.TimeState == 'd21);
+  repeat (8) begin
+    #3
+     $fdisplay(FD_dbg, "%t fir16_i.fadd1_in0' = %h(%f)  fir16_i.fadd1_in1' = %h(%f)",
+       $time, fir16_i.fadd1_in0, $bitstoshortreal(fir16_i.fadd1_in0), fir16_i.fadd1_in1,
+       $bitstoshortreal(fir16_i.fadd1_in1));
+    repeat (6) @(posedge clk) ;
+  end
+end
+
+initial begin
+  wait (fir16_i.TimeState == 'd33);
+  repeat (8) begin
+    #3
+     $fdisplay(FD_dbg, "%t fir16_i.fadd2_in0' = %h(%f)  fir16_i.fadd2_in1' = %h(%f)",
+       $time, fir16_i.fadd2_in0, $bitstoshortreal(fir16_i.fadd2_in0), fir16_i.fadd2_in1,
+       $bitstoshortreal(fir16_i.fadd2_in1));
+    repeat (6) @(posedge clk) ;
+  end
+end
+
+initial begin
+  wait (fir16_i.TimeState == 'd14);
+  repeat (8) begin
+    #3
+     $fdisplay(FD_dbg, "%t fir16_i.fmul1_in0 = %h(%f)  fir16_i.fmul1_in1 = %h(%f)",
+       $time, fir16_i.fmul1_in0, $bitstoshortreal(fir16_i.fmul1_in0), fir16_i.fmul1_in1,
+       $bitstoshortreal(fir16_i.fmul1_in1));
+    repeat (6) @(posedge clk) ;
+  end
+end

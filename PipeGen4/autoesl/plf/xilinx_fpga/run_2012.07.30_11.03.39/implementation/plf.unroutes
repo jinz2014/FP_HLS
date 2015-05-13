@@ -1,0 +1,121 @@
+Release 13.2 - par O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Mon Jul 30 11:06:41 2012
+
+All signals are completely routed.
+
+WARNING:ParHelpers:362 - There are 68 sourceless signals in this design. This design will not pass the DRC check run by
+   Bitgen.
+
+   clk
+   go_in
+   p1_in<0>
+   p1_in<10>
+   p1_in<11>
+   p1_in<12>
+   p1_in<13>
+   p1_in<14>
+   p1_in<15>
+   p1_in<16>
+   p1_in<17>
+   p1_in<18>
+   p1_in<19>
+   p1_in<1>
+   p1_in<20>
+   p1_in<21>
+   p1_in<22>
+   p1_in<23>
+   p1_in<24>
+   p1_in<25>
+   p1_in<26>
+   p1_in<27>
+   p1_in<28>
+   p1_in<29>
+   p1_in<2>
+   p1_in<30>
+   p1_in<31>
+   p1_in<3>
+   p1_in<4>
+   p1_in<5>
+   p1_in<6>
+   p1_in<7>
+   p1_in<8>
+   p1_in<9>
+   p2_in<0>
+   p2_in<10>
+   p2_in<11>
+   p2_in<12>
+   p2_in<13>
+   p2_in<14>
+   p2_in<15>
+   p2_in<16>
+   p2_in<17>
+   p2_in<18>
+   p2_in<19>
+   p2_in<1>
+   p2_in<20>
+   p2_in<21>
+   p2_in<22>
+   p2_in<23>
+   p2_in<24>
+   p2_in<25>
+   p2_in<26>
+   p2_in<27>
+   p2_in<28>
+   p2_in<29>
+   p2_in<2>
+   p2_in<30>
+   p2_in<31>
+   p2_in<3>
+   p2_in<4>
+   p2_in<5>
+   p2_in<6>
+   p2_in<7>
+   p2_in<8>
+   p2_in<9>
+   rst
+   stall_in
+WARNING:ParHelpers:361 - There are 38 loadless signals in this design. This design will cause Bitgen to issue DRC
+   warnings.
+
+   fadd1/xilinx_fadd_i/rdy
+   fadd2/xilinx_fadd_i/rdy
+   fmul1/xilinx_fmul_i/rdy
+   fmul2/xilinx_fmul_i/rdy
+   fmul3/xilinx_fmul_i/rdy
+   plf_fmul3_out<0>
+   plf_fmul3_out<10>
+   plf_fmul3_out<11>
+   plf_fmul3_out<12>
+   plf_fmul3_out<13>
+   plf_fmul3_out<14>
+   plf_fmul3_out<15>
+   plf_fmul3_out<16>
+   plf_fmul3_out<17>
+   plf_fmul3_out<18>
+   plf_fmul3_out<19>
+   plf_fmul3_out<1>
+   plf_fmul3_out<20>
+   plf_fmul3_out<21>
+   plf_fmul3_out<22>
+   plf_fmul3_out<23>
+   plf_fmul3_out<24>
+   plf_fmul3_out<25>
+   plf_fmul3_out<26>
+   plf_fmul3_out<27>
+   plf_fmul3_out<28>
+   plf_fmul3_out<29>
+   plf_fmul3_out<2>
+   plf_fmul3_out<30>
+   plf_fmul3_out<31>
+   plf_fmul3_out<3>
+   plf_fmul3_out<4>
+   plf_fmul3_out<5>
+   plf_fmul3_out<6>
+   plf_fmul3_out<7>
+   plf_fmul3_out<8>
+   plf_fmul3_out<9>
+   plf_fmul3_out_rdy<0>
+
+

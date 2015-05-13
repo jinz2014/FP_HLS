@@ -1,0 +1,120 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/share/reconfig/xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise
+-v 3 -s 2 -n 3 -fastpaths -xml MUX4_hot.twx MUX4_hot.ncd -o MUX4_hot.twr
+MUX4_hot.pcf
+
+Design file:              MUX4_hot.ncd
+Physical constraint file: MUX4_hot.pcf
+Device,package,speed:     xc5vlx330,ff1760,-2 (PRODUCTION 1.73 2011-06-20, STEPPING level 0)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+I1<0>          |Z<0>           |    6.163|
+I2<0>          |Z<0>           |    6.108|
+I3<0>          |Z<0>           |    5.759|
+I4<0>          |Z<0>           |    5.997|
+I4<1>          |Z<1>           |    6.045|
+I4<2>          |Z<2>           |    5.953|
+I4<3>          |Z<3>           |    5.122|
+I4<4>          |Z<4>           |    5.450|
+I4<5>          |Z<5>           |    5.317|
+I4<6>          |Z<6>           |    5.325|
+I4<7>          |Z<7>           |    6.211|
+I4<8>          |Z<8>           |    5.698|
+I4<9>          |Z<9>           |    5.857|
+I4<10>         |Z<10>          |    5.664|
+I4<11>         |Z<11>          |    5.347|
+I4<12>         |Z<12>          |    5.864|
+I4<13>         |Z<13>          |    5.265|
+I4<14>         |Z<14>          |    5.366|
+I4<15>         |Z<15>          |    5.610|
+I4<16>         |Z<16>          |    5.310|
+I4<17>         |Z<17>          |    5.676|
+I4<18>         |Z<18>          |    5.295|
+I4<19>         |Z<19>          |    5.878|
+I4<20>         |Z<20>          |    5.292|
+I4<21>         |Z<21>          |    5.928|
+I4<22>         |Z<22>          |    5.654|
+I4<23>         |Z<23>          |    5.722|
+I4<24>         |Z<24>          |    5.590|
+I4<25>         |Z<25>          |    5.755|
+I4<26>         |Z<26>          |    5.591|
+I4<27>         |Z<27>          |    5.412|
+I4<28>         |Z<28>          |    6.040|
+I4<29>         |Z<29>          |    5.749|
+I4<30>         |Z<30>          |    5.431|
+I4<31>         |Z<31>          |    5.754|
+a              |Z<0>           |    6.042|
+b              |Z<0>           |    5.921|
+c              |Z<0>           |    6.852|
+c              |Z<1>           |    6.285|
+c              |Z<2>           |    6.542|
+c              |Z<3>           |    5.497|
+c              |Z<4>           |    5.754|
+c              |Z<5>           |    5.290|
+c              |Z<6>           |    5.788|
+c              |Z<7>           |    6.381|
+c              |Z<8>           |    6.452|
+c              |Z<9>           |    6.721|
+c              |Z<10>          |    6.457|
+c              |Z<11>          |    6.617|
+c              |Z<12>          |    6.449|
+c              |Z<13>          |    6.463|
+c              |Z<14>          |    6.483|
+c              |Z<15>          |    6.410|
+c              |Z<16>          |    5.988|
+c              |Z<17>          |    6.089|
+c              |Z<18>          |    5.870|
+c              |Z<19>          |    5.828|
+c              |Z<20>          |    6.113|
+c              |Z<21>          |    5.823|
+c              |Z<22>          |    6.323|
+c              |Z<23>          |    6.387|
+c              |Z<24>          |    6.228|
+c              |Z<25>          |    6.230|
+c              |Z<26>          |    6.327|
+c              |Z<27>          |    6.096|
+c              |Z<28>          |    6.476|
+c              |Z<29>          |    6.217|
+c              |Z<30>          |    6.607|
+c              |Z<31>          |    5.942|
+---------------+---------------+---------+
+
+
+Analysis completed Tue Aug 21 23:17:39 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 745 MB
+
+
+

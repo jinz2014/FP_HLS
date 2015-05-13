@@ -1,0 +1,33 @@
+const char *CircuitName = "dct";
+const char *filename = "dct_stats.txt";
+
+// Total operation nodes
+int NODE_NU = 608; 
+
+// Initial number of port pairs
+int PORT_NU = 1;
+
+// adder, multiplier and divider rate
+int RATE[] = {1, 1,1};
+
+// add, mul, div
+int LATENCY[] = {3, 2, 15};
+//int LATENCY[] = {11, 6, 29};
+
+// Initial functional unit usage 
+int FU[] = {272, 80, 192};
+
+// Max number of input ports
+int MAX_PORT_NU = 64;
+
+// Port restriction
+int PORTS_CONSTRAINT[] = {
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0, 
+  1, 0, 1, 0, 1, 0, 1, 0
+};

@@ -1,0 +1,252 @@
+The number of time slots are 67
+Node   0 <- slot b:   0 e:   1 type   3 resource   0
+Node   1 <- slot b:   0 e:   1 type   3 resource   0
+Node   2 <- slot b:   1 e:   2 type   3 resource   0
+Node   3 <- slot b:   1 e:   2 type   3 resource   0
+Node   4 <- slot b:   2 e:   3 type   3 resource   0
+Node   5 <- slot b:   2 e:  13 type   0 resource   1
+Node  10 <- slot b:   2 e:  13 type   0 resource   2
+Node   6 <- slot b:   3 e:  14 type   0 resource   3
+Node   8 <- slot b:   3 e:  14 type   0 resource   1
+Node  11 <- slot b:  14 e:  40 type   2 resource   1
+Node   7 <- slot b:  15 e:  26 type   0 resource   2
+Node   9 <- slot b:  27 e:  33 type   1 resource   1
+Node  12 <- slot b:  41 e:  67 type   2 resource   2
+
+C:/Xilinx/12.1/ISE_DS/ISE/SIM_LIB/xilinxcorelib
+
+
+1. Add port nodes in DFG   (.txt)
+2. Set all port nodes' latency to 0  (ScheduleHelper.c)
+3. DOS(10)/UNIX(9)  newline      (GenerateFloatTestBench.c)  = dos2unix
+4. port pairs (array portA and portB) become array ports (GenerateTestData.c) 
+5. remove PQ queue 
+6. Integer operation  -1 = -1     
+   floating operation -1 = bf800000 (FloatingPointConvert)
+7. Put all the benchmark functions in benchmark.c
+
+
+8. port assignment with StimSequenceTable 
+
+1) Initialize all the port nodes' resource number from 1 to maxPortNodeNu
+2) StimSequenceTable records all the port nodes' IDs in their scheduled sequences
+3) 
+int GetInputPortNu(int port) {
+  for (i = 0; i < OP_NU; i++) maxPortPair += MAX_PORTS[i];
+  for (i = 0; i < maxPortPair; i++) {
+    if (port == StimSequenceTable[i]) 
+      break;
+  }
+  return (i % PORT_NU + 1);
+}
+
+9.  maxPortPair -> maxPortNu
+10. Mux Inputs may come from RegisterFile data output,
+    not just shared registers such as r1_out.
+
+                 for (j = 0; j < DFG[k]->opDestNu; j++) {
+                   dest = DFG[k]->opDest[j];
+                   if (dest > 0) {
+                     if (DFG[dest]->opSrc[port_nu] == k && 
+                         DFG[dest]->opResourceNu == (fu_nu + 1) && 
+                         DFG[dest]->op == op_type) {
+
+                       fprintf(vfp, "  .I%d(RF%d_rdata%d),\n", i + 1, 
+                           Map[k], GetRegFilePortNu(k, dest));
+                     }
+                   }
+                 } // for
+
+
+11. thoughts on the number of Register file read ports (GenerateFloatHDL.c)
+
+12. ALAP may schedule the nodes later than necessary. 
+
+13 opSymTable is rigid (fadd, fmul, fdiv, fsub)
+    change benchmark.config in Schedule.c
+    change benchmark.txt in ScheduleHelper.c
+    change OP in Schedule.h
+    change OpSymTable in GenerateFloatHDL.c (+,/)
+
+14  Remove StimSequenceTable, the table is the same as PortPriority
+15  Add a function to check the correctness of tree coverage
+16  Use RC_Schedule.c for Japanese author's port priorities
+
+17  In Leftedge register allocation, (5/2/2011)
+//////////////////////////////////////////////////////
+  while (p2 != NULL) {
+
+    if (p2->varID == varID) {
+
+      if (p2->endTime < endTime) {
+
+        // Multiple destinations of a node have the same start time
+        assert(p2->startTime == startTime); 
+
+        // Delete the node and reinsert it as the endTime has been Increased
+        // for the same varID (5/2/2011) e.g. UUCI  Var2 (1,2) --> (1,7)
+        head = VarListDelete(head, varID);
+        break;
+      }
+      else return head; // Don't insert the same node with smaller or equal endTime
+    }
+    else {
+      p2 = p2->next;
+    }
+  }
+//////////////////////////////////////////////////////
+
+18 
+// Options for register stall 
+//  1 a stall input port   
+//  2. wen = 0 when stall = 1
+
+19 
+Add comments to the modifications in the codes
+
+20
+constant value is not -1
+
+21 
+Use cluster divisions described in the paper "Two algorithms for datapath
+allocation"
+
+22 Be careful of using fscanf in Linux/DOS.  
+Linux:     fprintf(vfp, "  $fseek(FD_sw, (%d * %d + %d) * 9, 0);\n", cnt, maxPortNu, node1);
+Dos      fprintf(vfp, "  $fseek(FD_sw, (%d * %d + %d) * 10, 0);\n", cnt, maxPortNu, node1);
+
+23  
+//---------------------------------------------------------
+// The number of k-combs from a given set of n elems:
+// Comb(n, k) = n! / k! * (n-k)!
+// P(n, k)    = n! / (n-k)!
+// only the first k positions have objects placed in them
+//---------------------------------------------------------
+
+
+24 Add a new benchmark circuit
+1. Generate a benchmark.config
+2. Generate a benchmark.txt
+3. modify Include/Benchmarks.config
+4. modify Include/Benchmarks.dfg
+5. modify Benchmark/Benchmark.c
+6. modify Backend/GenerateTestData.c
+
+To change add op to sub op in a benchmark
+ modify Benchmark/Benchmark.c
+ modify Benchmark/Benchmark.txt  
+ modify Benchmark/Benchmarks.config  (LATENCY, FU and RATE arrays)
+
+25 Consider a FU with its two input ports registered, what are the modifications to the tool?
+
+1. ASAP/ALAP Scheduling
+
+Suppose a control step is represented as a "slot". Function InsertScheduleRAT checks if an opertion (i.e. addition)
+can be assigned at step "slot + 1" instead of "slot".
+
+The step at which an operation is scheduled is slot + 1 for operation nodes and slot for port nodes.
+
+In ASAP codes:
+resourceNu = InsertScheduleRAT(type, slot + 1);
+DFG[id]->opScheduledSlot = isPortNode ? slot : slot + 1;
+
+In ALAP codes:
+resourceNu = InsertScheduleRAT(type, slot + 1);
+DFG[id]->opScheduledSlot = isPortNode ? slot : slot + 1;
+DFG[i]->opScheduledSlot += maxDelay + 1;  // register insertion
+DFG[i]->opResultDoneSlot += maxDelay + 1;
+
+
+2. Lifetime of each variable
+
+It is assumed that each FU has its own two input registers(e.g. fmul1_in0_r, fmul1_in1_r), which are separate from the
+registers allocated by regsiter allocation approach.
+ 
+The start time of a variable is the time when an operation is done with its results.
+The end time of a variable is the time when an operation accepts input data.
+For all the operations (except port), the end time is actually the scheduled slot - 1.Since
+each FU has its input ports registered, the decremented end time is when result is written
+into a shared register. 
+
+----- shared reg
+   \ 
+  ----  FU input reg   
+     \
+      +   (7 vs 6)
+       \
+       --- shared reg
+         \
+        ---- FU input reg
+           \
+            +  (12 vs 10)
+
+For the above example, without FU input reg the first addition is scheduled at slot 6 and the second addtion at slot 10. 
+With FU inputs registered, the first addition is at slot 7 and the second at slot 12 (not 11). 
+
+But the shared reg for the second addition is still loaded at slot 11, which is the scheduled slot - 1. 
+
+Thus, after setup of VarTable, each variabl's end time is already updated to reflect the shared register write enable time.
+
+3. Mux select signals and shared register write enables
+MUXP select: The select time is the operation's scheduled time - 1.
+
+MUXR select: no change (because MUXR select time is the same as an operation's result done time)
+
+Shared register write enable: no change (because variables are read from VarTable)
+
+4. Descrptions of FU's input register signals
+reg name: fmul1_in0_r, fmul1_in1_r, 
+reg input/output signals: fmul1_in0_rin, fmul1_in0_rout, 
+reg input/output signals: fmul1_in1_rin, fmul1_in1_rout, 
+
+reg connection:
+fmul1_in0_rout is connected to fmul1_in0
+fmul1_in0_rin is connected to shared register output or chained mux output or RF_dataout or constants
+
+26 Add stat.sh
+Extract Frequency from xilinx synthesis report(.syr), logic resources from map report(.mrp)
+
+27 Add run.sh  
+run.sh sim uuci: generate and/or simulation benchmark uuci  
+run.sh xilinx uuci: also compile benchmark uuci in Xilinx ISE
+
+28 schedule jobs 
+echo "./run.sh xilinx uuci" | at now
+echo "./run.sh xilinx ordbur" | at now + 15 minutes
+echo "./run.sh xilinx ordbbr" | at now + 30 minutes
+echo "./run.sh xilinx ppbr" | at now + 45 minutes
+
+29 pipelined FU cost in iterative scheduling
+
+  // cost is Virtex5 LX330 logic resources usage
+  switch (OP_NU) {
+    case 1 : 
+      opFuCost[add] = 516; 
+      break;
+    case 2 : 
+      opFuCost[add] = 516;
+      opFuCost[mul] = 264;
+      break;
+    case 3 : 
+      opFuCost[add] = 516;
+      opFuCost[mul] = 264;
+      opFuCost[div_] = 731;
+      break;
+    case 4 : 
+      opFuCost[add] = 516;
+      opFuCost[mul] = 264;
+      opFuCost[div_] = 731;
+      opFuCost[sub] = 516;
+
+30 Taken FU input register into account in the iterative schuedling ?
+
+=================================
+Handle circuit stall
+================================
+
+31. the input registers are not enabled if stall is asserted
+32. Add ~stall to all register write enable signal 
+    (e.g. state[n] & ~stall;  mul1_in0_wen & ~stall)
+33. The output register of floating-point divider and max are enabled 
+    by (rdy_out && pipeEn), not just rdy_out.
+

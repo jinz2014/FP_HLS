@@ -1,0 +1,1498 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/share/reconfig/xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 20 -u 64 -o
+ppbr.twr ppbr.ncd ppbr.pcf
+
+Design file:              ppbr.ncd
+Physical constraint file: ppbr.pcf
+Device,package,speed:     xc5vlx330,ff1760,-2 (PRODUCTION 1.73 2011-06-20, STEPPING level 0)
+Report level:             verbose report, limited to 20 items per constraint
+                          unconstrained path report, limited to 64 items
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 2.857143 ns HIGH 50%;
+
+ 43143 paths analyzed, 12044 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   2.832ns.
+--------------------------------------------------------------------------------
+Slack:                  0.025ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               fdiv1/xilinx_fdiv_i/blk00000003/blk00000277 (FF)
+  Destination:          fdiv1/xilinx_fdiv_i/blk00000003/blk00000a0d (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.797ns (Levels of Logic = 7)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: fdiv1/xilinx_fdiv_i/blk00000003/blk00000277 to fdiv1/xilinx_fdiv_i/blk00000003/blk00000a0d
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X105Y143.AQ    Tcko                  0.375   fdiv1/xilinx_fdiv_i/blk00000003/sig000002f1
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000277
+    SLICE_X69Y149.C5     net (fanout=1)        1.445   fdiv1/xilinx_fdiv_i/blk00000003/sig000002f1
+    SLICE_X69Y149.COUT   Topcyc                0.362   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cc4
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000d3d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000009dc
+    SLICE_X69Y150.CIN    net (fanout=1)        0.009   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cbf
+    SLICE_X69Y150.COUT   Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cc8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000009d4
+    SLICE_X69Y151.CIN    net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cb3
+    SLICE_X69Y151.COUT   Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000ccc
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000009cc
+    SLICE_X69Y152.CIN    net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000ca7
+    SLICE_X69Y152.COUT   Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cf4
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000a01
+    SLICE_X69Y153.CIN    net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cef
+    SLICE_X69Y153.COUT   Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cf8
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000009f9
+    SLICE_X69Y154.CIN    net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000ce3
+    SLICE_X69Y154.COUT   Tbyp                  0.091   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cfc
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000009f1
+    SLICE_X69Y155.CIN    net (fanout=1)        0.000   fdiv1/xilinx_fdiv_i/blk00000003/sig00000cd7
+    SLICE_X69Y155.CLK    Tcinck                0.151   fdiv1/xilinx_fdiv_i/blk00000003/sig00000c9d
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk000009e9
+                                                       fdiv1/xilinx_fdiv_i/blk00000003/blk00000a0d
+    -------------------------------------------------  ---------------------------
+    Total                                      2.797ns (1.343ns logic, 1.454ns route)
+                                                       (48.0% logic, 52.0% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.046ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_19 (FF)
+  Destination:          r8/SR[15].shift_i/Mshreg_state_2 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.776ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_19 to r8/SR[15].shift_i/Mshreg_state_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y168.DQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<19>
+                                                       FSM/SR[0].shiftCtl_i/state_19
+    SLICE_X57Y171.A6     net (fanout=40)       0.994   FSM/SR[0].shiftCtl_i/state<19>
+    SLICE_X57Y171.A      Tilo                  0.086   fmul1/xilinx_fmul_i/blk00000003/sig00000145
+                                                       r8_wen1
+    SLICE_X64Y167.CE     net (fanout=15)       1.053   r8_wen
+    SLICE_X64Y167.CLK    Tceck                 0.268   r8/SR[15].shift_i/state<2>
+                                                       r8/SR[15].shift_i/Mshreg_state_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.776ns (0.729ns logic, 2.047ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.046ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_19 (FF)
+  Destination:          r8/SR[8].shift_i/Mshreg_state_2 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.776ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_19 to r8/SR[8].shift_i/Mshreg_state_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y168.DQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<19>
+                                                       FSM/SR[0].shiftCtl_i/state_19
+    SLICE_X57Y171.A6     net (fanout=40)       0.994   FSM/SR[0].shiftCtl_i/state<19>
+    SLICE_X57Y171.A      Tilo                  0.086   fmul1/xilinx_fmul_i/blk00000003/sig00000145
+                                                       r8_wen1
+    SLICE_X64Y167.CE     net (fanout=15)       1.053   r8_wen
+    SLICE_X64Y167.CLK    Tceck                 0.268   r8/SR[15].shift_i/state<2>
+                                                       r8/SR[8].shift_i/Mshreg_state_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.776ns (0.729ns logic, 2.047ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.047ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_64 (FF)
+  Destination:          r14/SR[8].shift_i/Mshreg_state_1 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.775ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_64 to r14/SR[8].shift_i/Mshreg_state_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y155.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<65>
+                                                       FSM/SR[0].shiftCtl_i/state_64
+    SLICE_X44Y152.A5     net (fanout=5)        0.522   FSM/SR[0].shiftCtl_i/state<64>
+    SLICE_X44Y152.A      Tilo                  0.086   r14_wen
+                                                       r14_wen1
+    SLICE_X44Y171.CE     net (fanout=11)       1.524   r14_wen
+    SLICE_X44Y171.CLK    Tceck                 0.268   r14/SR[9].shift_i/state<1>
+                                                       r14/SR[8].shift_i/Mshreg_state_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.775ns (0.729ns logic, 2.046ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.047ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_64 (FF)
+  Destination:          r14/SR[9].shift_i/Mshreg_state_1 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.775ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_64 to r14/SR[9].shift_i/Mshreg_state_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y155.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<65>
+                                                       FSM/SR[0].shiftCtl_i/state_64
+    SLICE_X44Y152.A5     net (fanout=5)        0.522   FSM/SR[0].shiftCtl_i/state<64>
+    SLICE_X44Y152.A      Tilo                  0.086   r14_wen
+                                                       r14_wen1
+    SLICE_X44Y171.CE     net (fanout=11)       1.524   r14_wen
+    SLICE_X44Y171.CLK    Tceck                 0.268   r14/SR[9].shift_i/state<1>
+                                                       r14/SR[9].shift_i/Mshreg_state_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.775ns (0.729ns logic, 2.046ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.047ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_64 (FF)
+  Destination:          r14/SR[10].shift_i/Mshreg_state_1 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.775ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_64 to r14/SR[10].shift_i/Mshreg_state_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y155.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<65>
+                                                       FSM/SR[0].shiftCtl_i/state_64
+    SLICE_X44Y152.A5     net (fanout=5)        0.522   FSM/SR[0].shiftCtl_i/state<64>
+    SLICE_X44Y152.A      Tilo                  0.086   r14_wen
+                                                       r14_wen1
+    SLICE_X44Y171.CE     net (fanout=11)       1.524   r14_wen
+    SLICE_X44Y171.CLK    Tceck                 0.268   r14/SR[9].shift_i/state<1>
+                                                       r14/SR[10].shift_i/Mshreg_state_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.775ns (0.729ns logic, 2.046ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.047ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_64 (FF)
+  Destination:          r14/SR[23].shift_i/Mshreg_state_1 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.775ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_64 to r14/SR[23].shift_i/Mshreg_state_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X50Y155.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<65>
+                                                       FSM/SR[0].shiftCtl_i/state_64
+    SLICE_X44Y152.A5     net (fanout=5)        0.522   FSM/SR[0].shiftCtl_i/state<64>
+    SLICE_X44Y152.A      Tilo                  0.086   r14_wen
+                                                       r14_wen1
+    SLICE_X44Y171.CE     net (fanout=11)       1.524   r14_wen
+    SLICE_X44Y171.CLK    Tceck                 0.268   r14/SR[9].shift_i/state<1>
+                                                       r14/SR[23].shift_i/Mshreg_state_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.775ns (0.729ns logic, 2.046ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.051ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_27 (FF)
+  Destination:          r10/SR[10].shift_i/Mshreg_state_2 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.771ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_27 to r10/SR[10].shift_i/Mshreg_state_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y174.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<32>
+                                                       FSM/SR[0].shiftCtl_i/state_27
+    SLICE_X48Y179.A6     net (fanout=5)        0.455   FSM/SR[0].shiftCtl_i/state<27>
+    SLICE_X48Y179.A      Tilo                  0.086   r10_wen
+                                                       r10_wen1
+    SLICE_X40Y173.CE     net (fanout=14)       1.587   r10_wen
+    SLICE_X40Y173.CLK    Tceck                 0.268   r10/SR[10].shift_i/state<2>
+                                                       r10/SR[10].shift_i/Mshreg_state_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.771ns (0.729ns logic, 2.042ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.053ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_19 (FF)
+  Destination:          r8/SR[14].shift_i/Mshreg_state_2 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.769ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_19 to r8/SR[14].shift_i/Mshreg_state_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y168.DQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<19>
+                                                       FSM/SR[0].shiftCtl_i/state_19
+    SLICE_X57Y171.A6     net (fanout=40)       0.994   FSM/SR[0].shiftCtl_i/state<19>
+    SLICE_X57Y171.A      Tilo                  0.086   fmul1/xilinx_fmul_i/blk00000003/sig00000145
+                                                       r8_wen1
+    SLICE_X68Y168.CE     net (fanout=15)       1.046   r8_wen
+    SLICE_X68Y168.CLK    Tceck                 0.268   r8/SR[14].shift_i/state<2>
+                                                       r8/SR[14].shift_i/Mshreg_state_2
+    -------------------------------------------------  ---------------------------
+    Total                                      2.769ns (0.729ns logic, 2.040ns route)
+                                                       (26.3% logic, 73.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.057ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_53 (FF)
+  Destination:          fmul1_in1_r/register_5 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.765ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_53 to fmul1_in1_r/register_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y167.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<48>
+                                                       FSM/SR[0].shiftCtl_i/state_53
+    SLICE_X56Y166.A4     net (fanout=68)       1.187   FSM/SR[0].shiftCtl_i/state<53>
+    SLICE_X56Y166.A      Tilo                  0.086   FSM/SR[0].shiftCtl_i/state<7>
+                                                       mux13/Z<5>1
+    SLICE_X56Y163.D2     net (fanout=1)        1.110   mux13/Z<5>1
+    SLICE_X56Y163.CLK    Tas                   0.007   fmul1_in1_r/register<5>
+                                                       mux13/Z<5>32
+                                                       fmul1_in1_r/register_5
+    -------------------------------------------------  ---------------------------
+    Total                                      2.765ns (0.468ns logic, 2.297ns route)
+                                                       (16.9% logic, 83.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.059ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r6_ctl/wen (FF)
+  Destination:          r6/SR[24].shift_i/Mshreg_state_3 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.763ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r6_ctl/wen to r6/SR[24].shift_i/Mshreg_state_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y152.AQ     Tcko                  0.375   r6_ctl/wen
+                                                       r6_ctl/wen
+    SLICE_X55Y157.A5     net (fanout=1)        0.774   r6_ctl/wen
+    SLICE_X55Y157.A      Tilo                  0.086   fdiv1/result_tmp<11>
+                                                       r6_wen1
+    SLICE_X52Y165.CE     net (fanout=39)       1.260   r6_wen
+    SLICE_X52Y165.CLK    Tceck                 0.268   r6/SR[10].shift_i/state<0>
+                                                       r6/SR[24].shift_i/Mshreg_state_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.763ns (0.729ns logic, 2.034ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.059ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r6_ctl/wen (FF)
+  Destination:          r6/SR[27].shift_i/Mshreg_state_3 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.763ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r6_ctl/wen to r6/SR[27].shift_i/Mshreg_state_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y152.AQ     Tcko                  0.375   r6_ctl/wen
+                                                       r6_ctl/wen
+    SLICE_X55Y157.A5     net (fanout=1)        0.774   r6_ctl/wen
+    SLICE_X55Y157.A      Tilo                  0.086   fdiv1/result_tmp<11>
+                                                       r6_wen1
+    SLICE_X52Y165.CE     net (fanout=39)       1.260   r6_wen
+    SLICE_X52Y165.CLK    Tceck                 0.268   r6/SR[10].shift_i/state<0>
+                                                       r6/SR[27].shift_i/Mshreg_state_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.763ns (0.729ns logic, 2.034ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.059ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r6_ctl/wen (FF)
+  Destination:          r6/SR[26].shift_i/Mshreg_state_3 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.763ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r6_ctl/wen to r6/SR[26].shift_i/Mshreg_state_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y152.AQ     Tcko                  0.375   r6_ctl/wen
+                                                       r6_ctl/wen
+    SLICE_X55Y157.A5     net (fanout=1)        0.774   r6_ctl/wen
+    SLICE_X55Y157.A      Tilo                  0.086   fdiv1/result_tmp<11>
+                                                       r6_wen1
+    SLICE_X52Y165.CE     net (fanout=39)       1.260   r6_wen
+    SLICE_X52Y165.CLK    Tceck                 0.268   r6/SR[10].shift_i/state<0>
+                                                       r6/SR[26].shift_i/Mshreg_state_3
+    -------------------------------------------------  ---------------------------
+    Total                                      2.763ns (0.729ns logic, 2.034ns route)
+                                                       (26.4% logic, 73.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.063ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_57 (FF)
+  Destination:          fmul1_in1_r/register_12 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.759ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_57 to fmul1_in1_r/register_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X46Y169.DQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<57>
+                                                       FSM/SR[0].shiftCtl_i/state_57
+    SLICE_X54Y169.C3     net (fanout=67)       1.193   FSM/SR[0].shiftCtl_i/state<57>
+    SLICE_X54Y169.C      Tilo                  0.086   r13/register<3>
+                                                       mux13/Z<12>1
+    SLICE_X57Y163.B2     net (fanout=1)        1.076   mux13/Z<12>1
+    SLICE_X57Y163.CLK    Tas                   0.029   fmul1_in1_r/register<13>
+                                                       mux13/Z<12>32
+                                                       fmul1_in1_r/register_12
+    -------------------------------------------------  ---------------------------
+    Total                                      2.759ns (0.490ns logic, 2.269ns route)
+                                                       (17.8% logic, 82.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.064ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_12 (FF)
+  Destination:          fdiv1_in0_r/register_27 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.758ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_12 to fdiv1_in0_r/register_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y166.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<15>
+                                                       FSM/SR[0].shiftCtl_i/state_12
+    SLICE_X47Y161.A5     net (fanout=41)       1.470   FSM/SR[0].shiftCtl_i/state<12>
+    SLICE_X47Y161.A      Tilo                  0.086   fdiv1_in0_r/register<10>
+                                                       mux16/Z<0>21
+    SLICE_X44Y166.A5     net (fanout=32)       0.821   N104
+    SLICE_X44Y166.CLK    Tas                   0.006   fdiv1_in0_r/register<30>
+                                                       mux16/Z<27>60
+                                                       fdiv1_in0_r/register_27
+    -------------------------------------------------  ---------------------------
+    Total                                      2.758ns (0.467ns logic, 2.291ns route)
+                                                       (16.9% logic, 83.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.065ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_6 (FF)
+  Destination:          fmul1_in1_r/register_7 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.757ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_6 to fmul1_in1_r/register_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y166.CQ     Tcko                  0.396   FSM/SR[0].shiftCtl_i/state<7>
+                                                       FSM/SR[0].shiftCtl_i/state_6
+    SLICE_X55Y168.A4     net (fanout=69)       0.925   FSM/SR[0].shiftCtl_i/state<6>
+    SLICE_X55Y168.A      Tilo                  0.086   r2/SR[31].shift_i/state<1>
+                                                       mux13/Z<0>41
+    SLICE_X55Y163.D2     net (fanout=32)       1.321   N118
+    SLICE_X55Y163.CLK    Tas                   0.029   fmul1_in1_r/register<7>
+                                                       mux13/Z<7>32
+                                                       fmul1_in1_r/register_7
+    -------------------------------------------------  ---------------------------
+    Total                                      2.757ns (0.511ns logic, 2.246ns route)
+                                                       (18.5% logic, 81.5% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.072ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r2_ctl/wen (FF)
+  Destination:          r2/SR[23].shift_i/state_1 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.750ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r2_ctl/wen to r2/SR[23].shift_i/state_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y147.AQ     Tcko                  0.375   r2_ctl/wen
+                                                       r2_ctl/wen
+    SLICE_X57Y158.D5     net (fanout=1)        0.925   r2_ctl/wen
+    SLICE_X57Y158.D      Tilo                  0.086   r2/SR[1].shift_i/state<1>
+                                                       r2_wen1
+    SLICE_X63Y165.CE     net (fanout=25)       1.170   r2_wen
+    SLICE_X63Y165.CLK    Tceck                 0.194   r2/SR[22].shift_i/state<1>
+                                                       r2/SR[23].shift_i/state_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.750ns (0.655ns logic, 2.095ns route)
+                                                       (23.8% logic, 76.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.072ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r2_ctl/wen (FF)
+  Destination:          r2/SR[23].shift_i/state_0 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.750ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r2_ctl/wen to r2/SR[23].shift_i/state_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y147.AQ     Tcko                  0.375   r2_ctl/wen
+                                                       r2_ctl/wen
+    SLICE_X57Y158.D5     net (fanout=1)        0.925   r2_ctl/wen
+    SLICE_X57Y158.D      Tilo                  0.086   r2/SR[1].shift_i/state<1>
+                                                       r2_wen1
+    SLICE_X63Y165.CE     net (fanout=25)       1.170   r2_wen
+    SLICE_X63Y165.CLK    Tceck                 0.194   r2/SR[22].shift_i/state<1>
+                                                       r2/SR[23].shift_i/state_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.750ns (0.655ns logic, 2.095ns route)
+                                                       (23.8% logic, 76.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.072ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r2_ctl/wen (FF)
+  Destination:          r2/SR[22].shift_i/state_1 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.750ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r2_ctl/wen to r2/SR[22].shift_i/state_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y147.AQ     Tcko                  0.375   r2_ctl/wen
+                                                       r2_ctl/wen
+    SLICE_X57Y158.D5     net (fanout=1)        0.925   r2_ctl/wen
+    SLICE_X57Y158.D      Tilo                  0.086   r2/SR[1].shift_i/state<1>
+                                                       r2_wen1
+    SLICE_X63Y165.CE     net (fanout=25)       1.170   r2_wen
+    SLICE_X63Y165.CLK    Tceck                 0.194   r2/SR[22].shift_i/state<1>
+                                                       r2/SR[22].shift_i/state_1
+    -------------------------------------------------  ---------------------------
+    Total                                      2.750ns (0.655ns logic, 2.095ns route)
+                                                       (23.8% logic, 76.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  0.072ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r2_ctl/wen (FF)
+  Destination:          r2/SR[22].shift_i/state_0 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      2.750ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r2_ctl/wen to r2/SR[22].shift_i/state_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X49Y147.AQ     Tcko                  0.375   r2_ctl/wen
+                                                       r2_ctl/wen
+    SLICE_X57Y158.D5     net (fanout=1)        0.925   r2_ctl/wen
+    SLICE_X57Y158.D      Tilo                  0.086   r2/SR[1].shift_i/state<1>
+                                                       r2_wen1
+    SLICE_X63Y165.CE     net (fanout=25)       1.170   r2_wen
+    SLICE_X63Y165.CLK    Tceck                 0.194   r2/SR[22].shift_i/state<1>
+                                                       r2/SR[22].shift_i/state_0
+    -------------------------------------------------  ---------------------------
+    Total                                      2.750ns (0.655ns logic, 2.095ns route)
+                                                       (23.8% logic, 76.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 2.857143 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.707ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007a/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007a/CLK
+  Location pin: DSP48_X0Y65.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 0.707ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007b/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007b/CLK
+  Location pin: DSP48_X0Y66.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 0.707ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X0Y70.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 0.857ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk00000041/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk00000041/CLK
+  Location pin: DSP48_X0Y67.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 0.857ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X0Y71.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk000000ec/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk000000ec/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk0000029a/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/rdy/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk0000029a/CLK
+  Location pin: SLICE_X0Y0.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a2/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a2/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a4/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a4/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a6/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a6/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a0/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002e3/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a0/CLK
+  Location pin: SLICE_X8Y183.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002cf/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a8/CLK
+  Location pin: SLICE_X8Y186.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 2.857ns
+  High pulse: 1.428ns
+  High pulse limit: 0.700ns (Twph)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002cf/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002a8/CLK
+  Location pin: SLICE_X8Y186.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 1.457ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 2.857ns
+  Low pulse: 1.428ns
+  Low pulse limit: 0.700ns (Twpl)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/sig000002cf/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk000002aa/CLK
+  Location pin: SLICE_X8Y186.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Unconstrained path analysis 
+
+ 33 paths analyzed, 33 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   0.396ns.
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               ppbr_out0_rdy_r (FF)
+  Destination:          ppbr_out0_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: ppbr_out0_rdy_r to ppbr_out0_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y162.CQ     Tcko                  0.396   ppbr_out0_rdy_r
+                                                       ppbr_out0_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fdiv1_out_r_26 (FF)
+  Destination:          fdiv1_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_26 to fdiv1_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y172.CQ     Tcko                  0.396   fdiv1_out_r<27>
+                                                       fdiv1_out_r_26
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fdiv1_out_r_25 (FF)
+  Destination:          fdiv1_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_25 to fdiv1_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y172.BQ     Tcko                  0.396   fdiv1_out_r<27>
+                                                       fdiv1_out_r_25
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fdiv1_out_r_24 (FF)
+  Destination:          fdiv1_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_24 to fdiv1_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y172.AQ     Tcko                  0.396   fdiv1_out_r<27>
+                                                       fdiv1_out_r_24
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fdiv1_out_r_27 (FF)
+  Destination:          fdiv1_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_27 to fdiv1_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y172.DQ     Tcko                  0.396   fdiv1_out_r<27>
+                                                       fdiv1_out_r_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_31 (FF)
+  Destination:          fdiv1_out_r<31>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_31 to fdiv1_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y174.DQ     Tcko                  0.375   fdiv1_out_r<31>
+                                                       fdiv1_out_r_31
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_22 (FF)
+  Destination:          fdiv1_out_r<23>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_22 to fdiv1_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y167.CQ     Tcko                  0.375   fdiv1_out_r<23>
+                                                       fdiv1_out_r_22
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_29 (FF)
+  Destination:          fdiv1_out_r<31>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_29 to fdiv1_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y174.BQ     Tcko                  0.375   fdiv1_out_r<31>
+                                                       fdiv1_out_r_29
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_15 (FF)
+  Destination:          fdiv1_out_r<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_15 to fdiv1_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y154.DQ     Tcko                  0.375   fdiv1_out_r<15>
+                                                       fdiv1_out_r_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_23 (FF)
+  Destination:          fdiv1_out_r<23>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_23 to fdiv1_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y167.DQ     Tcko                  0.375   fdiv1_out_r<23>
+                                                       fdiv1_out_r_23
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_19 (FF)
+  Destination:          fdiv1_out_r<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_19 to fdiv1_out_r<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y160.DQ     Tcko                  0.375   fdiv1_out_r<19>
+                                                       fdiv1_out_r_19
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_17 (FF)
+  Destination:          fdiv1_out_r<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_17 to fdiv1_out_r<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y160.BQ     Tcko                  0.375   fdiv1_out_r<19>
+                                                       fdiv1_out_r_17
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_7 (FF)
+  Destination:          fdiv1_out_r<7>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_7 to fdiv1_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y154.DQ     Tcko                  0.375   fdiv1_out_r<7>
+                                                       fdiv1_out_r_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_5 (FF)
+  Destination:          fdiv1_out_r<7>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_5 to fdiv1_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y154.BQ     Tcko                  0.375   fdiv1_out_r<7>
+                                                       fdiv1_out_r_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_13 (FF)
+  Destination:          fdiv1_out_r<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_13 to fdiv1_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y154.BQ     Tcko                  0.375   fdiv1_out_r<15>
+                                                       fdiv1_out_r_13
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_21 (FF)
+  Destination:          fdiv1_out_r<23>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_21 to fdiv1_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y167.BQ     Tcko                  0.375   fdiv1_out_r<23>
+                                                       fdiv1_out_r_21
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_14 (FF)
+  Destination:          fdiv1_out_r<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_14 to fdiv1_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y154.CQ     Tcko                  0.375   fdiv1_out_r<15>
+                                                       fdiv1_out_r_14
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_20 (FF)
+  Destination:          fdiv1_out_r<23>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_20 to fdiv1_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y167.AQ     Tcko                  0.375   fdiv1_out_r<23>
+                                                       fdiv1_out_r_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_12 (FF)
+  Destination:          fdiv1_out_r<15>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_12 to fdiv1_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X53Y154.AQ     Tcko                  0.375   fdiv1_out_r<15>
+                                                       fdiv1_out_r_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_3 (FF)
+  Destination:          fdiv1_out_r<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_3 to fdiv1_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y159.DQ     Tcko                  0.375   fdiv1_out_r<3>
+                                                       fdiv1_out_r_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_18 (FF)
+  Destination:          fdiv1_out_r<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_18 to fdiv1_out_r<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y160.CQ     Tcko                  0.375   fdiv1_out_r<19>
+                                                       fdiv1_out_r_18
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_2 (FF)
+  Destination:          fdiv1_out_r<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_2 to fdiv1_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y159.CQ     Tcko                  0.375   fdiv1_out_r<3>
+                                                       fdiv1_out_r_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_16 (FF)
+  Destination:          fdiv1_out_r<19>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_16 to fdiv1_out_r<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y160.AQ     Tcko                  0.375   fdiv1_out_r<19>
+                                                       fdiv1_out_r_16
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_1 (FF)
+  Destination:          fdiv1_out_r<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_1 to fdiv1_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y159.BQ     Tcko                  0.375   fdiv1_out_r<3>
+                                                       fdiv1_out_r_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_6 (FF)
+  Destination:          fdiv1_out_r<7>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_6 to fdiv1_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y154.CQ     Tcko                  0.375   fdiv1_out_r<7>
+                                                       fdiv1_out_r_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_0 (FF)
+  Destination:          fdiv1_out_r<3>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_0 to fdiv1_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X63Y159.AQ     Tcko                  0.375   fdiv1_out_r<3>
+                                                       fdiv1_out_r_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_4 (FF)
+  Destination:          fdiv1_out_r<7>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_4 to fdiv1_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y154.AQ     Tcko                  0.375   fdiv1_out_r<7>
+                                                       fdiv1_out_r_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_11 (FF)
+  Destination:          fdiv1_out_r<11>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_11 to fdiv1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y149.DQ     Tcko                  0.375   fdiv1_out_r<11>
+                                                       fdiv1_out_r_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_30 (FF)
+  Destination:          fdiv1_out_r<31>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_30 to fdiv1_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y174.CQ     Tcko                  0.375   fdiv1_out_r<31>
+                                                       fdiv1_out_r_30
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_10 (FF)
+  Destination:          fdiv1_out_r<11>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_10 to fdiv1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y149.CQ     Tcko                  0.375   fdiv1_out_r<11>
+                                                       fdiv1_out_r_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_28 (FF)
+  Destination:          fdiv1_out_r<31>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_28 to fdiv1_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X45Y174.AQ     Tcko                  0.375   fdiv1_out_r<31>
+                                                       fdiv1_out_r_28
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_9 (FF)
+  Destination:          fdiv1_out_r<11>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_9 to fdiv1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y149.BQ     Tcko                  0.375   fdiv1_out_r<11>
+                                                       fdiv1_out_r_9
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.375ns (data path)
+  Source:               fdiv1_out_r_8 (FF)
+  Destination:          fdiv1_out_r<11>
+  Data Path Delay:      0.375ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fdiv1_out_r_8 to fdiv1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y149.AQ     Tcko                  0.375   fdiv1_out_r<11>
+                                                       fdiv1_out_r_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.375ns (0.375ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 43176 paths, 0 nets, and 9694 connections
+
+Design statistics:
+   Minimum period:   2.832ns{1}   (Maximum frequency: 353.107MHz)
+   Maximum combinational path delay:   0.396ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Fri Sep  7 17:34:19 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 789 MB
+
+
+

@@ -1,0 +1,37 @@
+Release 13.2 ngdbuild O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+Command Line:
+/share/reconfig/xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
+ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX4_hot.ngc MUX4_hot.ngd
+
+Reading NGO file
+"/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.ngc"
+...
+Gathering constraint information from source properties...
+Done.
+
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 322728 kilobytes
+
+Writing NGD file "MUX4_hot.ngd" ...
+Total REAL time to NGDBUILD completion:  3 sec
+Total CPU time to NGDBUILD completion:   3 sec
+
+Writing NGDBUILD log file "MUX4_hot.bld"...

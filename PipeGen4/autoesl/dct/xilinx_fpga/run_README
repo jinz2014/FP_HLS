@@ -1,0 +1,133 @@
+0. no retiming , no register insertion in RTL (90MHz)
+Number of DSP48Es                        22 out of 192    11%
+30    Number of Slices                       7021 out of 51840  13%
+31    Number of Slice Registers              7487 out of 207360  3%
+32       Number used as Flip Flops           7487
+33       Number used as Latches                 0
+34       Number used as LatchThrus              0
+35 
+36    Number of Slice LUTS                  20255 out of 207360  9%
+37    Number of Slice LUT-Flip Flop pairs   21483 out of 207360 10%
+
+
+
+1. enable retiming , no register insertion in RTL
+
+run_2012.10.23_09.19.30
+
+Number of DSP48Es                        22 out of 192    11%
+30    Number of Slices                       7276 out of 51840  14%
+31    Number of Slice Registers             15309 out of 207360  7%
+32       Number used as Flip Flops          15309
+33       Number used as Latches                 0
+34       Number used as LatchThrus              0
+35 
+36    Number of Slice LUTS                  21886 out of 207360 10%
+37    Number of Slice LUT-Flip Flop pairs   23885 out of 207360 11%
+
+timing not met at 150MHz:
+
+Slack:                  -1.642ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_160 (FF)
+  Destination:          fsub1_in1_r/register_8_BRB5 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      8.273ns (Levels of Logic = 4)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_160 to fsub1_in1_r/register_8_BRB5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X86Y109.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<163>
+                                                       FSM/SR[0].shiftCtl_i/state_160
+    SLICE_X61Y58.B1      net (fanout=712)      5.790   FSM/SR[0].shiftCtl_i/state<160>
+    SLICE_X61Y58.B       Tilo                  0.086   N55940
+                                                       mux441/Z<8>1331_SW0_SW0
+    SLICE_X61Y58.A5      net (fanout=1)        0.188   N55940
+    SLICE_X61Y58.A       Tilo                  0.086   N55940
+                                                       mux441/Z<8>1331_SW0
+    SLICE_X60Y58.CX      net (fanout=2)        0.406   N22859
+    SLICE_X60Y58.CMUX    Taxc                  0.292   N22860
+                                                       mux441/Z<8>1247_SW0
+    SLICE_X61Y64.C1      net (fanout=2)        1.020   N25067
+    SLICE_X61Y64.CLK     Tas                   0.030   fsub1_in1_r/register_8_BRB6
+                                                       mux441/Z<8>1161_SW0
+                                                       fsub1_in1_r/register_8_BRB5
+    -------------------------------------------------  ---------------------------
+    Total                                      8.273ns (0.869ns logic, 7.404ns route)
+                                                       (10.5% logic, 89.5% route)
+
+
+1. no retiming , register insertion in RTL (150MHZ)
+
+run_2012.10.23_15.16.55
+Summary:
+ 
+  Number of DSP48Es                      22 out of 192    11%
+  Number of Slices                       6526 out of 51840  12%
+  Number of Slice Registers              10381 out of 207360  5%
+  Number used as Flip Flops              10381
+  Number used as Latches                 0
+  Number used as LatchThrus              0
+  
+  Number of Slice LUTS                  18811 out of 207360  9%
+  Number of Slice LUT-Flip Flop pairs   21086 out of 207360 10%
+
+
+
+run_2012.10.23_20.32.14
+2. retiming , register insertion in RTL (148MHZ)
+
+
+27 Device Utilization Summary:
+ 
+  Number of DSP48Es                      22 out of 192    11%
+  Number of Slices                     6457 out of 51840  12%
+  Number of Slice Registers            10561 out of 207360  5%
+  Number used as Flip Flops            10561
+  Number used as Latches                 0
+  Number used as LatchThrus              0
+  
+ Number of Slice LUTS                  18289 out of 207360  8%
+ Number of Slice LUT-Flip Flop pairs   20629 out of 207360  9%
+
+
+AUTOESL dct
+
+retiming
+
+Device Utilization Summary:
+
+Number of DSP48Es                        22 out of 192    11%
+Number of Slices                       6301 out of 51840  12%
+Number of Slice Registers             17243 out of 207360  8%
+Number used as Flip Flops            17243
+Number used as Latches                 0
+Number used as LatchThrus              0
+
+Number of Slice LUTS                  15562 out of 207360  7%
+Number of Slice LUT-Flip Flop pairs   22089 out of 207360 10%
+Minimum period is   7.646ns.
+
+
+no retiming
+Device Utilization Summary:
+
+Number of DSP48Es                   22 out of 192    11%
+Number of Slices                    5784 out of 51840  11%
+Number of Slice Registers           12489 out of 207360  6%
+Number used as Flip Flops           12489
+Number used as Latches              0
+Number used as LatchThrus           0 
+Number of Slice LUTS                14709 out of 207360  7%
+Number of Slice LUT-Flip Flop pairs 19561 out of 207360  9%
+Minimum period is 7.692ns.

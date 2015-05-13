@@ -1,0 +1,1111 @@
+Release 13.2 - xst O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+--> 
+Parameter TMPDIR set to ./projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to .
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+
+Reading constraint file ../../constraints.xcf.
+XCF parsing done.
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "../../xst.prj"
+Input Format                       : mixed
+Synthesis Constraint File          : ../../constraints.xcf
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "ordbbr"
+Output Format                      : NGC
+Target Device                      : xc5vlx330-ff1760-2
+
+---- Source Options
+Top Module Name                    : ordbbr
+Use DSP Block                      : auto
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : NO
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : No
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : false
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : OPTIMIZE
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+DSP48 Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../../../../Modelsim/ordbbr/ASAP1_ordbbr/ASAP1_ordbbr_HDL.v" in library work
+Compiling verilog file "../../../../../vlib/Register.v" in library work
+Module <ordbbr> compiled
+Module <Register> compiled
+Module <RegisterV> compiled
+Compiling verilog file "../../../../../vlib/RegWriteCtl.v" in library work
+Module <RegisterC> compiled
+Compiling verilog file "../../../../../vlib/MUX.v" in library work
+Module <RegWriteCtl> compiled
+Module <MUX2> compiled
+Module <MUX3> compiled
+Module <MUX4> compiled
+Module <MUX4_hot> compiled
+Module <MUX5> compiled
+Module <MUX6> compiled
+Module <MUX7> compiled
+Module <MUX8> compiled
+Module <MUX9> compiled
+Module <MUX10> compiled
+Compiling verilog file "../../../../../vlib/ShiftRegister.v" in library work
+Module <MUX11> compiled
+Module <ShiftRegister> compiled
+Module <shift> compiled
+Module <ShiftRegCtl> compiled
+Compiling verilog file "../../../../../vlib/ShiftCtlRegister.v" in library work
+Module <ShiftRegCtl0> compiled
+Module <ShiftCtlRegister> compiled
+Compiling verilog file "../../../../../vlib/float.v" in library work
+Module <shiftCtl> compiled
+Module <fadd> compiled
+Module <fsub> compiled
+Module <fmul> compiled
+Module <fdiv> compiled
+No errors in compilation
+Analysis of file <"../../xst.prj"> succeeded.
+ 
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl/xilinx_fdiv.vhd" in Library work.
+Entity <xilinx_fdiv> compiled.
+Entity <xilinx_fdiv> (Architecture <xilinx_fdiv_a>) compiled.
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl/xilinx_fmul.vhd" in Library work.
+Entity <xilinx_fmul> compiled.
+Entity <xilinx_fmul> (Architecture <xilinx_fmul_a>) compiled.
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl/xilinx_fadd.vhd" in Library work.
+Entity <xilinx_fadd> compiled.
+Entity <xilinx_fadd> (Architecture <xilinx_fadd_a>) compiled.
+
+Reading constraint file ../../constraints.xcf.
+XCF parsing done.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <ordbbr> in library <work> with parameters.
+	Delay = "00000000000000000000000010011001"
+	TEST_NU = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <fadd> in library <work>.
+
+Analyzing hierarchy for module <fmul> in library <work>.
+
+Analyzing hierarchy for module <fdiv> in library <work>.
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000101"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <MUX3> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <MUX2> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <RegWriteCtl> in library <work> with parameters.
+	DII = "00000000000000000000000000001110"
+	DataWidth = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <ShiftCtlRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000000001"
+	Depth = "00000000000000000000000010011001"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000101"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <shiftCtl> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000010011001"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <ordbbr>.
+	Delay = 32'sb00000000000000000000000010011001
+	TEST_NU = 32'sb00000000000000000000000000010000
+Module <ordbbr> is correct for synthesis.
+ 
+Analyzing module <fadd> in library <work>.
+Module <fadd> is correct for synthesis.
+ 
+Analyzing module <fmul> in library <work>.
+Module <fmul> is correct for synthesis.
+ 
+Analyzing module <fdiv> in library <work>.
+Module <fdiv> is correct for synthesis.
+ 
+Analyzing module <Register> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <Register> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.1> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000100
+Module <ShiftRegister.1> is correct for synthesis.
+ 
+Analyzing module <shift.1> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000100
+Module <shift.1> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.2> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000101
+Module <ShiftRegister.2> is correct for synthesis.
+ 
+Analyzing module <shift.2> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000101
+Module <shift.2> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.3> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000011
+Module <ShiftRegister.3> is correct for synthesis.
+ 
+Analyzing module <shift.3> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000011
+Module <shift.3> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.4> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000010
+Module <ShiftRegister.4> is correct for synthesis.
+ 
+Analyzing module <shift.4> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000010
+Module <shift.4> is correct for synthesis.
+ 
+Analyzing module <MUX3> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+"../../../../../vlib/MUX.v" line 68: Found Parallel Case directive in module <MUX3>.
+Module <MUX3> is correct for synthesis.
+ 
+Analyzing module <MUX2> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <MUX2> is correct for synthesis.
+ 
+Analyzing module <RegWriteCtl> in library <work>.
+	DII = 32'sb00000000000000000000000000001110
+	DataWidth = 32'sb00000000000000000000000000000100
+Module <RegWriteCtl> is correct for synthesis.
+ 
+Analyzing module <ShiftCtlRegister> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000000001
+	Depth = 32'sb00000000000000000000000010011001
+Module <ShiftCtlRegister> is correct for synthesis.
+ 
+Analyzing module <shiftCtl> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000010011001
+Module <shiftCtl> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Register>.
+    Related source file is "../../../../../vlib/Register.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <register>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <Register> synthesized.
+
+
+Synthesizing Unit <MUX3>.
+    Related source file is "../../../../../vlib/MUX.v".
+Unit <MUX3> synthesized.
+
+
+Synthesizing Unit <MUX2>.
+    Related source file is "../../../../../vlib/MUX.v".
+Unit <MUX2> synthesized.
+
+
+Synthesizing Unit <RegWriteCtl>.
+    Related source file is "../../../../../vlib/RegWriteCtl.v".
+    Found 1-bit register for signal <wen>.
+    Found 4-bit up counter for signal <cnt>.
+    Found 1-bit register for signal <cnt_en>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <RegWriteCtl> synthesized.
+
+
+Synthesizing Unit <shift_1>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 4-bit register for signal <state>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <shift_1> synthesized.
+
+
+Synthesizing Unit <shift_2>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 5-bit register for signal <state>.
+    Summary:
+	inferred   5 D-type flip-flop(s).
+Unit <shift_2> synthesized.
+
+
+Synthesizing Unit <shift_3>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 3-bit register for signal <state>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <shift_3> synthesized.
+
+
+Synthesizing Unit <shift_4>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 2-bit register for signal <state>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <shift_4> synthesized.
+
+
+Synthesizing Unit <shiftCtl>.
+    Related source file is "../../../../../vlib/ShiftCtlRegister.v".
+    Found 153-bit register for signal <state>.
+    Summary:
+	inferred 153 D-type flip-flop(s).
+Unit <shiftCtl> synthesized.
+
+
+Synthesizing Unit <fadd>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fadd> synthesized.
+
+
+Synthesizing Unit <fmul>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fmul> synthesized.
+
+
+Synthesizing Unit <fdiv>.
+    Related source file is "../../../../../vlib/float.v".
+    Found 32-bit register for signal <result>.
+    Found 1-bit register for signal <done>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+Unit <fdiv> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_1>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister_1> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_2>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister_2> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_3>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister_3> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_4>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister_4> synthesized.
+
+
+Synthesizing Unit <ShiftCtlRegister>.
+    Related source file is "../../../../../vlib/ShiftCtlRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftCtlRegister> synthesized.
+
+
+Synthesizing Unit <ordbbr>.
+    Related source file is "../../../../../Modelsim/ordbbr/ASAP1_ordbbr/ASAP1_ordbbr_HDL.v".
+WARNING:Xst:646 - Signal <state_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <state_in> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<151:123>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<120:110>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<108>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<106:101>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<99:97>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<95:92>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<90:85>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<82:80>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<78:77>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<73:69>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<67:65>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<60>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<58>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<53>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<51>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<49>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<45>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<43>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<41>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<34:28>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<26:23>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<20:19>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr8_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr7_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr6_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr5_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r9_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r8_wout<63:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r7_wout<95:32>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r6_wout<127:32>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r5_wout<95:32>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r4_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r3_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r2_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r20_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r19_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r18_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r17_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r16_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r15_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r14_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r13_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r12_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r11_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r10_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fmul1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fdiv1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fdiv1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dio> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <fdiv1_out_r>.
+    Found 1-bit register for signal <ordbbr_out0_rdy_r>.
+    Found 32-bit register for signal <p1_in_r>.
+    Found 1-bit register for signal <run>.
+    Found 4-bit up counter for signal <state_cnt>.
+    Found 1-bit register for signal <state_ctl_din>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  67 D-type flip-flop(s).
+Unit <ordbbr> synthesized.
+
+WARNING:Xst:524 - All outputs of the instance <r20> of the block <Register> are unconnected in block <ordbbr>.
+   This instance will be removed from the design along with all underlying logic
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 12
+ 4-bit up counter                                      : 12
+# Registers                                            : 396
+ 1-bit register                                        : 26
+ 153-bit register                                      : 1
+ 2-bit register                                        : 64
+ 3-bit register                                        : 96
+ 32-bit register                                       : 17
+ 4-bit register                                        : 128
+ 5-bit register                                        : 64
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 12
+ 4-bit up counter                                      : 12
+# Registers                                            : 1971
+ Flip-Flops                                            : 1971
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <ordbbr> ...
+
+Optimizing unit <Register> ...
+
+Optimizing unit <RegWriteCtl> ...
+
+Optimizing unit <shiftCtl> ...
+
+Optimizing unit <fdiv> ...
+
+Optimizing unit <ShiftRegister_1> ...
+
+Optimizing unit <ShiftRegister_3> ...
+
+Optimizing unit <ShiftRegister_4> ...
+WARNING:Xst:2677 - Node <fdiv1/done> of sequential type is unconnected in block <ordbbr>.
+
+Mapping all equations...
+Annotating constraints using XCF file '../../constraints.xcf'
+XCF parsing done.
+WARNING:Xst:2173 - Found black boxes on which forward tracing can not be performed on edge 'clk':
+ fadd1/xilinx_fadd_i fmul1/xilinx_fmul_i fdiv1/xilinx_fdiv_i
+WARNING:Xst:2174 - These might be cores which have not been read
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block ordbbr, actual ratio is 1.
+
+Final Macro Processing ...
+
+Processing Unit <ordbbr> :
+	Found 5-bit shift register for signal <r10/SR[0].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[1].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[2].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[3].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[4].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[5].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[6].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[7].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[8].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[9].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[10].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[11].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[12].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[13].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[14].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[15].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[16].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[17].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[18].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[19].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[20].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[21].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[22].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[23].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[24].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[25].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[26].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[27].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[28].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[29].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[30].shift_i/state_4>.
+	Found 5-bit shift register for signal <r10/SR[31].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[0].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[1].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[2].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[3].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[4].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[5].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[6].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[7].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[8].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[9].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[10].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[11].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[12].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[13].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[14].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[15].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[16].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[17].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[18].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[19].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[20].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[21].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[22].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[23].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[24].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[25].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[26].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[27].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[28].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[29].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[30].shift_i/state_4>.
+	Found 4-bit shift register for signal <r6/SR[31].shift_i/state_4>.
+	Found 30-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_152>.
+	Found 12-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_121>.
+	Found 7-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_107>.
+	Found 4-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_100>.
+	Found 5-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_96>.
+	Found 7-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_91>.
+	Found 4-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_83>.
+	Found 6-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_74>.
+	Found 4-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_68>.
+	Found 4-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_46>.
+	Found 8-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_35>.
+	Found 5-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_27>.
+	Found 4-bit shift register for signal <r17/SR[0].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[1].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[2].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[3].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[4].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[5].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[6].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[7].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[8].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[9].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[10].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[11].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[12].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[13].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[14].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[15].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[16].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[17].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[18].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[19].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[20].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[21].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[22].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[23].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[24].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[25].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[26].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[27].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[28].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[29].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[30].shift_i/state_3>.
+	Found 4-bit shift register for signal <r17/SR[31].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[0].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[1].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[2].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[3].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[4].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[5].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[6].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[7].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[8].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[9].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[10].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[11].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[12].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[13].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[14].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[15].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[16].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[17].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[18].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[19].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[20].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[21].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[22].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[23].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[24].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[25].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[26].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[27].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[28].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[29].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[30].shift_i/state_3>.
+	Found 4-bit shift register for signal <r13/SR[31].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[0].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[1].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[2].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[3].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[4].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[5].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[6].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[7].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[8].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[9].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[10].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[11].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[12].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[13].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[14].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[15].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[16].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[17].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[18].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[19].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[20].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[21].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[22].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[23].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[24].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[25].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[26].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[27].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[28].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[29].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[30].shift_i/state_3>.
+	Found 3-bit shift register for signal <r7/SR[31].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[0].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[1].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[2].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[3].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[4].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[5].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[6].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[7].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[8].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[9].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[10].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[11].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[12].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[13].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[14].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[15].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[16].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[17].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[18].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[19].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[20].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[21].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[22].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[23].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[24].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[25].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[26].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[27].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[28].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[29].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[30].shift_i/state_3>.
+	Found 3-bit shift register for signal <r5/SR[31].shift_i/state_3>.
+	Found 3-bit shift register for signal <r11/SR[0].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[1].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[2].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[3].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[4].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[5].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[6].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[7].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[8].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[9].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[10].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[11].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[12].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[13].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[14].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[15].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[16].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[17].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[18].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[19].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[20].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[21].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[22].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[23].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[24].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[25].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[26].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[27].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[28].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[29].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[30].shift_i/state_2>.
+	Found 3-bit shift register for signal <r11/SR[31].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[0].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[1].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[2].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[3].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[4].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[5].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[6].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[7].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[8].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[9].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[10].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[11].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[12].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[13].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[14].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[15].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[16].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[17].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[18].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[19].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[20].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[21].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[22].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[23].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[24].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[25].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[26].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[27].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[28].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[29].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[30].shift_i/state_2>.
+	Found 3-bit shift register for signal <r9/SR[31].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[0].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[1].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[2].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[3].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[4].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[5].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[6].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[7].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[8].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[9].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[10].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[11].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[12].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[13].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[14].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[15].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[16].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[17].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[18].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[19].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[20].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[21].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[22].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[23].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[24].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[25].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[26].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[27].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[28].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[29].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[30].shift_i/state_2>.
+	Found 3-bit shift register for signal <r8/SR[31].shift_i/state_2>.
+	Found 2-bit shift register for signal <r19/SR[0].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[1].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[2].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[3].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[4].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[5].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[6].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[7].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[8].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[9].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[10].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[11].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[12].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[13].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[14].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[15].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[16].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[17].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[18].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[19].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[20].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[21].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[22].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[23].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[24].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[25].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[26].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[27].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[28].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[29].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[30].shift_i/state_1>.
+	Found 2-bit shift register for signal <r19/SR[31].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[0].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[1].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[2].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[3].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[4].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[5].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[6].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[7].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[8].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[9].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[10].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[11].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[12].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[13].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[14].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[15].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[16].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[17].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[18].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[19].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[20].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[21].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[22].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[23].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[24].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[25].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[26].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[27].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[28].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[29].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[30].shift_i/state_1>.
+	Found 2-bit shift register for signal <r16/SR[31].shift_i/state_1>.
+Unit <ordbbr> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 770
+ Flip-Flops                                            : 770
+# Shift Registers                                      : 364
+ 12-bit shift register                                 : 1
+ 2-bit shift register                                  : 64
+ 3-bit shift register                                  : 160
+ 30-bit shift register                                 : 1
+ 4-bit shift register                                  : 100
+ 5-bit shift register                                  : 34
+ 6-bit shift register                                  : 1
+ 7-bit shift register                                  : 2
+ 8-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ordbbr.ngr
+Top Level Output File Name         : ordbbr
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 69
+
+Cell Usage :
+# BELS                             : 859
+#      GND                         : 1
+#      INV                         : 13
+#      LUT2                        : 74
+#      LUT3                        : 67
+#      LUT4                        : 107
+#      LUT5                        : 86
+#      LUT6                        : 510
+#      VCC                         : 1
+# FlipFlops/Latches                : 1175
+#      FD                          : 32
+#      FDCE                        : 1
+#      FDE                         : 972
+#      FDR                         : 1
+#      FDRE                        : 168
+#      FDSE                        : 1
+# Shift Registers                  : 364
+#      SRLC16E                     : 363
+#      SRLC32E                     : 1
+# Others                           : 4
+#      TIMESPEC                    : 1
+#      xilinx_fadd                 : 1
+#      xilinx_fdiv                 : 1
+#      xilinx_fmul                 : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx330ff1760-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1175  out of  207360     0%  
+ Number of Slice LUTs:                 1221  out of  207360     0%  
+    Number used as Logic:               857  out of  207360     0%  
+    Number used as Memory:              364  out of  54720     0%  
+       Number used as SRL:              364
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1428
+   Number with an unused Flip Flop:     253  out of   1428    17%  
+   Number with an unused LUT:           207  out of   1428    14%  
+   Number of fully used LUT-FF pairs:   968  out of   1428    67%  
+   Number of unique control sets:        61
+
+IO Utilization: 
+ Number of IOs:                          69
+ Number of bonded IOBs:                   0  out of   1200     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | NONE(p1_in_r_0)        | 1539  |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | NONE                   | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.588ns (Maximum Frequency: 386.347MHz)
+   Minimum input arrival time before clock: 1.580ns
+   Maximum output required time after clock: 0.396ns
+   Maximum combinational path delay: 0.636ns
+
+=========================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 2.857 nS HIGH 1.429 nS
+  Clock period: 2.588ns (frequency: 386.347MHz)
+  Total number of paths / destination ports: 9220 / 2434
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  0.269ns
+  Source:               r19_ctl/cnt_0 (FF)
+  Destination:          r19_ctl/cnt_0 (FF)
+  Data Path Delay:      2.588ns (Levels of Logic = 2)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+
+  Data Path: r19_ctl/cnt_0 (FF) to r19_ctl/cnt_0 (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             5   0.396   0.837  r19_ctl/cnt_0 (r19_ctl/cnt_0)
+     LUT5:I0->O            2   0.086   0.416  r19_ctl/cnt_or000011 (r19_ctl/wen_mux0000)
+     LUT4:I3->O            4   0.086   0.299  r19_ctl/cnt_or00002 (r19_ctl/cnt_or0000)
+     FDRE:R                    0.468          r19_ctl/cnt_0
+    ----------------------------------------
+    Total                      2.588ns (1.036ns logic, 1.552ns route)
+                                       (40.0% logic, 60.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 31.00 secs
+Total CPU time to Xst completion: 30.39 secs
+ 
+--> 
+
+
+Total memory usage is 500204 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   67 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

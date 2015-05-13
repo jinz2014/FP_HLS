@@ -1,0 +1,2653 @@
+--------------------------------------------------------------------------------
+Release 13.2 Trace  (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+/share/reconfig/xilinx/13.2/ISE_DS/ISE/bin/lin64/unwrapped/trce -v 20 -u 64 -o
+dct.twr dct.ncd dct.pcf
+
+Design file:              dct.ncd
+Physical constraint file: dct.pcf
+Device,package,speed:     xc5vlx330,ff1760,-2 (PRODUCTION 1.73 2011-06-20, STEPPING level 0)
+Report level:             verbose report, limited to 20 items per constraint
+                          unconstrained path report, limited to 64 items
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more 
+   information, see the TSI report.  Please consult the Xilinx Command Line 
+   Tools User Guide for information on generating a TSI report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 6.66666667 ns HIGH 50%;
+
+ 120120 paths analyzed, 29551 endpoints analyzed, 2153 failing endpoints
+ 2153 timing errors detected. (2153 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  11.016ns.
+--------------------------------------------------------------------------------
+Slack:                  -4.350ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r103/register_22 (FF)
+  Destination:          fadd5_in1_r/register_22 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      10.981ns (Levels of Logic = 10)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r103/register_22 to fadd5_in1_r/register_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X66Y130.CQ     Tcko                  0.375   r103/register<23>
+                                                       r103/register_22
+    SLICE_X76Y140.C6     net (fanout=14)       5.894   r103/register<22>
+    SLICE_X76Y140.C      Tilo                  0.086   mux356/Z<23>31
+                                                       mux316/Z<22>22
+    SLICE_X88Y144.B2     net (fanout=1)        1.241   mux316/Z<22>22
+    SLICE_X88Y144.B      Tilo                  0.086   N24086
+                                                       mux316/Z<22>469
+    SLICE_X93Y147.A1     net (fanout=1)        0.890   mux316/Z<22>469
+    SLICE_X93Y147.A      Tilo                  0.086   mux319/Z<2>22
+                                                       mux316/Z<22>555
+    SLICE_X93Y147.B6     net (fanout=1)        0.117   mux316/Z<22>555
+    SLICE_X93Y147.B      Tilo                  0.086   mux319/Z<2>22
+                                                       mux316/Z<22>639
+    SLICE_X92Y147.A6     net (fanout=1)        0.254   mux316/Z<22>639
+    SLICE_X92Y147.A      Tilo                  0.086   mux240/Z<22>1047
+                                                       mux316/Z<22>725
+    SLICE_X92Y147.B6     net (fanout=1)        0.135   mux316/Z<22>725
+    SLICE_X92Y147.B      Tilo                  0.086   mux240/Z<22>1047
+                                                       mux316/Z<22>809
+    SLICE_X87Y155.A5     net (fanout=1)        0.656   mux316/Z<22>809
+    SLICE_X87Y155.A      Tilo                  0.086   mux603/Z<7>1071
+                                                       mux316/Z<22>895
+    SLICE_X87Y155.B6     net (fanout=1)        0.117   mux316/Z<22>895
+    SLICE_X87Y155.B      Tilo                  0.086   mux603/Z<7>1071
+                                                       mux316/Z<22>979
+    SLICE_X89Y153.A6     net (fanout=1)        0.382   mux316/Z<22>979
+    SLICE_X89Y153.A      Tilo                  0.086   fadd5_in1_r/register<23>
+                                                       mux316/Z<22>1065
+    SLICE_X89Y153.B6     net (fanout=1)        0.117   mux316/Z<22>1065
+    SLICE_X89Y153.CLK    Tas                   0.029   fadd5_in1_r/register<23>
+                                                       mux316/Z<22>1149
+                                                       fadd5_in1_r/register_22
+    -------------------------------------------------  ---------------------------
+    Total                                     10.981ns (1.178ns logic, 9.803ns route)
+                                                       (10.7% logic, 89.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.908ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_41 (FF)
+  Destination:          fadd2_in1_r/register_21 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      10.539ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_41 to fadd2_in1_r/register_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y138.BQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<43>
+                                                       FSM/SR[0].shiftCtl_i/state_41
+    SLICE_X43Y138.B6     net (fanout=77)       0.900   FSM/SR[0].shiftCtl_i/state<41>
+    SLICE_X43Y138.B      Tilo                  0.086   N24902
+                                                       s3261
+    SLICE_X79Y142.A1     net (fanout=32)       4.790   s326
+    SLICE_X79Y142.A      Tilo                  0.086   mux240/Z<22>367
+                                                       mux356/Z<21>249
+    SLICE_X80Y149.C6     net (fanout=1)        0.947   mux356/Z<21>249
+    SLICE_X80Y149.C      Tilo                  0.086   fsub3/xilinx_fsub_i/blk00000003/sig000002b0
+                                                       mux356/Z<21>333
+    SLICE_X80Y149.D5     net (fanout=1)        0.210   mux356/Z<21>333
+    SLICE_X80Y149.D      Tilo                  0.086   fsub3/xilinx_fsub_i/blk00000003/sig000002b0
+                                                       mux356/Z<21>419
+    SLICE_X89Y152.C6     net (fanout=1)        0.434   mux356/Z<21>419
+    SLICE_X89Y152.C      Tilo                  0.086   mux356/Z<21>589
+                                                       mux356/Z<21>503
+    SLICE_X89Y152.D5     net (fanout=1)        0.188   mux356/Z<21>503
+    SLICE_X89Y152.D      Tilo                  0.086   mux356/Z<21>589
+                                                       mux356/Z<21>589
+    SLICE_X88Y158.C6     net (fanout=1)        0.583   mux356/Z<21>589
+    SLICE_X88Y158.C      Tilo                  0.086   mux356/Z<21>759
+                                                       mux356/Z<21>673
+    SLICE_X88Y158.D5     net (fanout=1)        0.210   mux356/Z<21>673
+    SLICE_X88Y158.D      Tilo                  0.086   mux356/Z<21>759
+                                                       mux356/Z<21>759
+    SLICE_X87Y159.B6     net (fanout=1)        0.254   mux356/Z<21>759
+    SLICE_X87Y159.B      Tilo                  0.086   mux603/Z<7>21
+                                                       mux356/Z<21>843
+    SLICE_X87Y159.A5     net (fanout=1)        0.188   mux356/Z<21>843
+    SLICE_X87Y159.A      Tilo                  0.086   mux603/Z<7>21
+                                                       mux356/Z<21>995
+    SLICE_X87Y160.D6     net (fanout=1)        0.365   mux356/Z<21>995
+    SLICE_X87Y160.D      Tilo                  0.086   fadd2_in1_r/register<21>
+                                                       mux356/Z<21>1081
+    SLICE_X87Y160.C6     net (fanout=1)        0.119   mux356/Z<21>1081
+    SLICE_X87Y160.CLK    Tas                   0.030   fadd2_in1_r/register<21>
+                                                       mux356/Z<21>1217
+                                                       fadd2_in1_r/register_21
+    -------------------------------------------------  ---------------------------
+    Total                                     10.539ns (1.351ns logic, 9.188ns route)
+                                                       (12.8% logic, 87.2% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.789ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_71 (FF)
+  Destination:          fadd2_in0_r/register_22 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      10.420ns (Levels of Logic = 13)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_71 to fadd2_in0_r/register_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y137.DQ     Tcko                  0.396   FSM/SR[0].shiftCtl_i/state<71>
+                                                       FSM/SR[0].shiftCtl_i/state_71
+    SLICE_X49Y141.A2     net (fanout=443)      3.835   FSM/SR[0].shiftCtl_i/state<71>
+    SLICE_X49Y141.AMUX   Tilo                  0.322   mux123/Z<16>251
+                                                       mux202/Z<22>137_SW1_G
+                                                       mux202/Z<22>137_SW1
+    SLICE_X50Y140.C1     net (fanout=1)        1.006   N26074
+    SLICE_X50Y140.C      Tilo                  0.086   mux202/Z<22>303
+                                                       mux202/Z<22>219
+    SLICE_X50Y140.D5     net (fanout=1)        0.209   mux202/Z<22>219
+    SLICE_X50Y140.D      Tilo                  0.086   mux202/Z<22>303
+                                                       mux202/Z<22>303
+    SLICE_X46Y148.B6     net (fanout=1)        0.759   mux202/Z<22>303
+    SLICE_X46Y148.B      Tilo                  0.086   mux82/Z<0>364
+                                                       mux202/Z<22>389
+    SLICE_X46Y148.A5     net (fanout=1)        0.204   mux202/Z<22>389
+    SLICE_X46Y148.A      Tilo                  0.086   mux82/Z<0>364
+                                                       mux202/Z<22>473
+    SLICE_X35Y158.C6     net (fanout=1)        0.795   mux202/Z<22>473
+    SLICE_X35Y158.C      Tilo                  0.086   mux202/Z<22>643
+                                                       mux202/Z<22>559
+    SLICE_X35Y158.D5     net (fanout=1)        0.188   mux202/Z<22>559
+    SLICE_X35Y158.D      Tilo                  0.086   mux202/Z<22>643
+                                                       mux202/Z<22>643
+    SLICE_X34Y158.C6     net (fanout=1)        0.513   mux202/Z<22>643
+    SLICE_X34Y158.C      Tilo                  0.086   mux202/Z<22>813
+                                                       mux202/Z<22>729
+    SLICE_X34Y158.D5     net (fanout=1)        0.209   mux202/Z<22>729
+    SLICE_X34Y158.D      Tilo                  0.086   mux202/Z<22>813
+                                                       mux202/Z<22>813
+    SLICE_X31Y164.A6     net (fanout=1)        0.420   mux202/Z<22>813
+    SLICE_X31Y164.A      Tilo                  0.086   r79/register<15>
+                                                       mux202/Z<22>899
+    SLICE_X31Y164.B6     net (fanout=1)        0.117   mux202/Z<22>899
+    SLICE_X31Y164.B      Tilo                  0.086   r79/register<15>
+                                                       mux202/Z<22>983
+    SLICE_X26Y164.B6     net (fanout=1)        0.269   mux202/Z<22>983
+    SLICE_X26Y164.B      Tilo                  0.086   fadd2_in0_r/register<23>
+                                                       mux202/Z<22>1069
+    SLICE_X26Y164.A5     net (fanout=1)        0.204   mux202/Z<22>1069
+    SLICE_X26Y164.CLK    Tas                   0.028   fadd2_in0_r/register<23>
+                                                       mux202/Z<22>1289
+                                                       fadd2_in0_r/register_22
+    -------------------------------------------------  ---------------------------
+    Total                                     10.420ns (1.692ns logic, 8.728ns route)
+                                                       (16.2% logic, 83.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.786ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_71 (FF)
+  Destination:          fadd2_in0_r/register_22 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      10.417ns (Levels of Logic = 13)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_71 to fadd2_in0_r/register_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y137.DQ     Tcko                  0.396   FSM/SR[0].shiftCtl_i/state<71>
+                                                       FSM/SR[0].shiftCtl_i/state_71
+    SLICE_X49Y141.B2     net (fanout=443)      3.832   FSM/SR[0].shiftCtl_i/state<71>
+    SLICE_X49Y141.AMUX   Topba                 0.322   mux123/Z<16>251
+                                                       mux202/Z<22>137_SW1_F
+                                                       mux202/Z<22>137_SW1
+    SLICE_X50Y140.C1     net (fanout=1)        1.006   N26074
+    SLICE_X50Y140.C      Tilo                  0.086   mux202/Z<22>303
+                                                       mux202/Z<22>219
+    SLICE_X50Y140.D5     net (fanout=1)        0.209   mux202/Z<22>219
+    SLICE_X50Y140.D      Tilo                  0.086   mux202/Z<22>303
+                                                       mux202/Z<22>303
+    SLICE_X46Y148.B6     net (fanout=1)        0.759   mux202/Z<22>303
+    SLICE_X46Y148.B      Tilo                  0.086   mux82/Z<0>364
+                                                       mux202/Z<22>389
+    SLICE_X46Y148.A5     net (fanout=1)        0.204   mux202/Z<22>389
+    SLICE_X46Y148.A      Tilo                  0.086   mux82/Z<0>364
+                                                       mux202/Z<22>473
+    SLICE_X35Y158.C6     net (fanout=1)        0.795   mux202/Z<22>473
+    SLICE_X35Y158.C      Tilo                  0.086   mux202/Z<22>643
+                                                       mux202/Z<22>559
+    SLICE_X35Y158.D5     net (fanout=1)        0.188   mux202/Z<22>559
+    SLICE_X35Y158.D      Tilo                  0.086   mux202/Z<22>643
+                                                       mux202/Z<22>643
+    SLICE_X34Y158.C6     net (fanout=1)        0.513   mux202/Z<22>643
+    SLICE_X34Y158.C      Tilo                  0.086   mux202/Z<22>813
+                                                       mux202/Z<22>729
+    SLICE_X34Y158.D5     net (fanout=1)        0.209   mux202/Z<22>729
+    SLICE_X34Y158.D      Tilo                  0.086   mux202/Z<22>813
+                                                       mux202/Z<22>813
+    SLICE_X31Y164.A6     net (fanout=1)        0.420   mux202/Z<22>813
+    SLICE_X31Y164.A      Tilo                  0.086   r79/register<15>
+                                                       mux202/Z<22>899
+    SLICE_X31Y164.B6     net (fanout=1)        0.117   mux202/Z<22>899
+    SLICE_X31Y164.B      Tilo                  0.086   r79/register<15>
+                                                       mux202/Z<22>983
+    SLICE_X26Y164.B6     net (fanout=1)        0.269   mux202/Z<22>983
+    SLICE_X26Y164.B      Tilo                  0.086   fadd2_in0_r/register<23>
+                                                       mux202/Z<22>1069
+    SLICE_X26Y164.A5     net (fanout=1)        0.204   mux202/Z<22>1069
+    SLICE_X26Y164.CLK    Tas                   0.028   fadd2_in0_r/register<23>
+                                                       mux202/Z<22>1289
+                                                       fadd2_in0_r/register_22
+    -------------------------------------------------  ---------------------------
+    Total                                     10.417ns (1.692ns logic, 8.725ns route)
+                                                       (16.2% logic, 83.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.538ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_209 (FF)
+  Destination:          fadd2_in1_r/register_21 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      10.169ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_209 to fadd2_in1_r/register_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y141.BQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<211>
+                                                       FSM/SR[0].shiftCtl_i/state_209
+    SLICE_X43Y138.B5     net (fanout=326)      0.530   FSM/SR[0].shiftCtl_i/state<209>
+    SLICE_X43Y138.B      Tilo                  0.086   N24902
+                                                       s3261
+    SLICE_X79Y142.A1     net (fanout=32)       4.790   s326
+    SLICE_X79Y142.A      Tilo                  0.086   mux240/Z<22>367
+                                                       mux356/Z<21>249
+    SLICE_X80Y149.C6     net (fanout=1)        0.947   mux356/Z<21>249
+    SLICE_X80Y149.C      Tilo                  0.086   fsub3/xilinx_fsub_i/blk00000003/sig000002b0
+                                                       mux356/Z<21>333
+    SLICE_X80Y149.D5     net (fanout=1)        0.210   mux356/Z<21>333
+    SLICE_X80Y149.D      Tilo                  0.086   fsub3/xilinx_fsub_i/blk00000003/sig000002b0
+                                                       mux356/Z<21>419
+    SLICE_X89Y152.C6     net (fanout=1)        0.434   mux356/Z<21>419
+    SLICE_X89Y152.C      Tilo                  0.086   mux356/Z<21>589
+                                                       mux356/Z<21>503
+    SLICE_X89Y152.D5     net (fanout=1)        0.188   mux356/Z<21>503
+    SLICE_X89Y152.D      Tilo                  0.086   mux356/Z<21>589
+                                                       mux356/Z<21>589
+    SLICE_X88Y158.C6     net (fanout=1)        0.583   mux356/Z<21>589
+    SLICE_X88Y158.C      Tilo                  0.086   mux356/Z<21>759
+                                                       mux356/Z<21>673
+    SLICE_X88Y158.D5     net (fanout=1)        0.210   mux356/Z<21>673
+    SLICE_X88Y158.D      Tilo                  0.086   mux356/Z<21>759
+                                                       mux356/Z<21>759
+    SLICE_X87Y159.B6     net (fanout=1)        0.254   mux356/Z<21>759
+    SLICE_X87Y159.B      Tilo                  0.086   mux603/Z<7>21
+                                                       mux356/Z<21>843
+    SLICE_X87Y159.A5     net (fanout=1)        0.188   mux356/Z<21>843
+    SLICE_X87Y159.A      Tilo                  0.086   mux603/Z<7>21
+                                                       mux356/Z<21>995
+    SLICE_X87Y160.D6     net (fanout=1)        0.365   mux356/Z<21>995
+    SLICE_X87Y160.D      Tilo                  0.086   fadd2_in1_r/register<21>
+                                                       mux356/Z<21>1081
+    SLICE_X87Y160.C6     net (fanout=1)        0.119   mux356/Z<21>1081
+    SLICE_X87Y160.CLK    Tas                   0.030   fadd2_in1_r/register<21>
+                                                       mux356/Z<21>1217
+                                                       fadd2_in1_r/register_21
+    -------------------------------------------------  ---------------------------
+    Total                                     10.169ns (1.351ns logic, 8.818ns route)
+                                                       (13.3% logic, 86.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.245ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_72 (FF)
+  Destination:          fadd1_in1_r/register_26 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.876ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_72 to fadd1_in1_r/register_26
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y139.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<75>
+                                                       FSM/SR[0].shiftCtl_i/state_72
+    SLICE_X65Y145.D5     net (fanout=300)      4.393   FSM/SR[0].shiftCtl_i/state<72>
+    SLICE_X65Y145.D      Tilo                  0.086   dct_out26_rdy_r
+                                                       mux603/Z<26>305_SW1
+    SLICE_X67Y146.A3     net (fanout=1)        0.746   N24270
+    SLICE_X67Y146.A      Tilo                  0.086   mux603/Z<20>221
+                                                       mux603/Z<26>391
+    SLICE_X70Y153.A6     net (fanout=1)        0.735   mux603/Z<26>391
+    SLICE_X70Y153.A      Tilo                  0.086   mux82/Z<22>364
+                                                       mux603/Z<26>475
+    SLICE_X70Y153.B6     net (fanout=1)        0.134   mux603/Z<26>475
+    SLICE_X70Y153.B      Tilo                  0.086   mux82/Z<22>364
+                                                       mux603/Z<26>561
+    SLICE_X79Y161.C6     net (fanout=1)        0.594   mux603/Z<26>561
+    SLICE_X79Y161.C      Tilo                  0.086   mux603/Z<26>731
+                                                       mux603/Z<26>645
+    SLICE_X79Y161.D5     net (fanout=1)        0.188   mux603/Z<26>645
+    SLICE_X79Y161.D      Tilo                  0.086   mux603/Z<26>731
+                                                       mux603/Z<26>731
+    SLICE_X82Y171.A6     net (fanout=1)        0.586   mux603/Z<26>731
+    SLICE_X82Y171.A      Tilo                  0.086   mux603/Z<26>901
+                                                       mux603/Z<26>815
+    SLICE_X82Y171.B6     net (fanout=1)        0.134   mux603/Z<26>815
+    SLICE_X82Y171.B      Tilo                  0.086   mux603/Z<26>901
+                                                       mux603/Z<26>901
+    SLICE_X89Y172.C6     net (fanout=1)        0.393   mux603/Z<26>901
+    SLICE_X89Y172.C      Tilo                  0.086   mux603/Z<26>1071
+                                                       mux603/Z<26>985
+    SLICE_X89Y172.D5     net (fanout=1)        0.188   mux603/Z<26>985
+    SLICE_X89Y172.D      Tilo                  0.086   mux603/Z<26>1071
+                                                       mux603/Z<26>1071
+    SLICE_X89Y173.B6     net (fanout=1)        0.248   mux603/Z<26>1071
+    SLICE_X89Y173.B      Tilo                  0.086   fadd1_in1_r/register<27>
+                                                       mux603/Z<26>1155
+    SLICE_X89Y173.A5     net (fanout=1)        0.188   mux603/Z<26>1155
+    SLICE_X89Y173.CLK    Tas                   0.028   fadd1_in1_r/register<27>
+                                                       mux603/Z<26>1291
+                                                       fadd1_in1_r/register_26
+    -------------------------------------------------  ---------------------------
+    Total                                      9.876ns (1.349ns logic, 8.527ns route)
+                                                       (13.7% logic, 86.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.207ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_86 (FF)
+  Destination:          fsub2_in0_r/register_23 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.838ns (Levels of Logic = 13)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_86 to fsub2_in0_r/register_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y139.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<87>
+                                                       FSM/SR[0].shiftCtl_i/state_86
+    SLICE_X62Y138.D6     net (fanout=332)      4.447   FSM/SR[0].shiftCtl_i/state<86>
+    SLICE_X62Y138.D      Tilo                  0.086   FSM/SR[0].shiftCtl_i/state<35>
+                                                       mux564/Z<23>289
+    SLICE_X56Y152.A6     net (fanout=1)        0.791   mux564/Z<23>289
+    SLICE_X56Y152.A      Tilo                  0.086   mux483/Z<4>794
+                                                       mux564/Z<23>373
+    SLICE_X56Y152.B6     net (fanout=1)        0.135   mux564/Z<23>373
+    SLICE_X56Y152.B      Tilo                  0.086   mux483/Z<4>794
+                                                       mux564/Z<23>459
+    SLICE_X56Y157.C6     net (fanout=1)        0.442   mux564/Z<23>459
+    SLICE_X56Y157.C      Tilo                  0.086   mux564/Z<23>629
+                                                       mux564/Z<23>543
+    SLICE_X56Y157.D5     net (fanout=1)        0.210   mux564/Z<23>543
+    SLICE_X56Y157.D      Tilo                  0.086   mux564/Z<23>629
+                                                       mux564/Z<23>629
+    SLICE_X54Y161.B6     net (fanout=1)        0.451   mux564/Z<23>629
+    SLICE_X54Y161.B      Tilo                  0.086   mux564/Z<21>629
+                                                       mux564/Z<23>713
+    SLICE_X54Y161.A5     net (fanout=1)        0.204   mux564/Z<23>713
+    SLICE_X54Y161.A      Tilo                  0.086   mux564/Z<21>629
+                                                       mux564/Z<23>799
+    SLICE_X54Y166.A6     net (fanout=1)        0.468   mux564/Z<23>799
+    SLICE_X54Y166.A      Tilo                  0.086   mux82/Z<9>874
+                                                       mux564/Z<23>883
+    SLICE_X54Y166.B6     net (fanout=1)        0.135   mux564/Z<23>883
+    SLICE_X54Y166.B      Tilo                  0.086   mux82/Z<9>874
+                                                       mux564/Z<23>969
+    SLICE_X52Y169.A6     net (fanout=1)        0.524   mux564/Z<23>969
+    SLICE_X52Y169.A      Tilo                  0.086   mux564/Z<31>12
+                                                       mux564/Z<23>1053
+    SLICE_X52Y169.B6     net (fanout=1)        0.135   mux564/Z<23>1053
+    SLICE_X52Y169.B      Tilo                  0.086   mux564/Z<31>12
+                                                       mux564/Z<23>1139
+    SLICE_X52Y171.C6     net (fanout=1)        0.272   mux564/Z<23>1139
+    SLICE_X52Y171.C      Tilo                  0.086   fsub2_in0_r/register<23>
+                                                       mux564/Z<23>1309
+    SLICE_X52Y171.D5     net (fanout=1)        0.210   mux564/Z<23>1309
+    SLICE_X52Y171.CLK    Tas                   0.007   fsub2_in0_r/register<23>
+                                                       mux564/Z<23>1393
+                                                       fsub2_in0_r/register_23
+    -------------------------------------------------  ---------------------------
+    Total                                      9.838ns (1.414ns logic, 8.424ns route)
+                                                       (14.4% logic, 85.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.098ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r105/register_9 (FF)
+  Destination:          fadd5_in1_r/register_9 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.729ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r105/register_9 to fadd5_in1_r/register_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X62Y131.BQ     Tcko                  0.396   r105/register<10>
+                                                       r105/register_9
+    SLICE_X73Y129.C5     net (fanout=12)       1.950   r105/register<9>
+    SLICE_X73Y129.C      Tilo                  0.086   mux81/Z<30>42
+                                                       mux316/Z<9>32
+    SLICE_X64Y134.A3     net (fanout=1)        1.652   mux316/Z<9>32
+    SLICE_X64Y134.A      Tilo                  0.086   mux316/Z<9>299
+                                                       mux316/Z<9>133
+    SLICE_X64Y134.C6     net (fanout=1)        0.308   mux316/Z<9>133
+    SLICE_X64Y134.C      Tilo                  0.086   mux316/Z<9>299
+                                                       mux316/Z<9>215
+    SLICE_X64Y134.D4     net (fanout=1)        0.639   mux316/Z<9>215
+    SLICE_X64Y134.D      Tilo                  0.086   mux316/Z<9>299
+                                                       mux316/Z<9>299
+    SLICE_X81Y131.A2     net (fanout=1)        0.988   mux316/Z<9>299
+    SLICE_X81Y131.A      Tilo                  0.086   mux240/Z<8>367
+                                                       mux316/Z<9>385
+    SLICE_X81Y131.B6     net (fanout=1)        0.117   mux316/Z<9>385
+    SLICE_X81Y131.B      Tilo                  0.086   mux240/Z<8>367
+                                                       mux316/Z<9>469
+    SLICE_X94Y136.C6     net (fanout=1)        0.613   mux316/Z<9>469
+    SLICE_X94Y136.C      Tilo                  0.086   mux316/Z<9>639
+                                                       mux316/Z<9>555
+    SLICE_X94Y136.D5     net (fanout=1)        0.209   mux316/Z<9>555
+    SLICE_X94Y136.D      Tilo                  0.086   mux316/Z<9>639
+                                                       mux316/Z<9>639
+    SLICE_X94Y138.A6     net (fanout=1)        0.253   mux316/Z<9>639
+    SLICE_X94Y138.A      Tilo                  0.086   mux123/Z<6>32
+                                                       mux316/Z<9>725
+    SLICE_X94Y138.B6     net (fanout=1)        0.134   mux316/Z<9>725
+    SLICE_X94Y138.B      Tilo                  0.086   mux123/Z<6>32
+                                                       mux316/Z<9>809
+    SLICE_X95Y137.A6     net (fanout=1)        0.249   mux316/Z<9>809
+    SLICE_X95Y137.A      Tilo                  0.086   mux240/Z<6>537
+                                                       mux316/Z<9>895
+    SLICE_X95Y137.B6     net (fanout=1)        0.117   mux316/Z<9>895
+    SLICE_X95Y137.B      Tilo                  0.086   mux240/Z<6>537
+                                                       mux316/Z<9>979
+    SLICE_X90Y136.C6     net (fanout=1)        0.748   mux316/Z<9>979
+    SLICE_X90Y136.C      Tilo                  0.086   fadd5_in1_r/register<9>
+                                                       mux316/Z<9>1065
+    SLICE_X90Y136.D5     net (fanout=1)        0.209   mux316/Z<9>1065
+    SLICE_X90Y136.CLK    Tas                   0.029   fadd5_in1_r/register<9>
+                                                       mux316/Z<9>1149
+                                                       fadd5_in1_r/register_9
+    -------------------------------------------------  ---------------------------
+    Total                                      9.729ns (1.543ns logic, 8.186ns route)
+                                                       (15.9% logic, 84.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -3.055ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r28/register_3 (FF)
+  Destination:          fadd5_in0_r/register_3 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.686ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r28/register_3 to fadd5_in0_r/register_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X42Y131.DQ     Tcko                  0.375   r28/register<3>
+                                                       r28/register_3
+    SLICE_X53Y143.B1     net (fanout=13)       3.754   r28/register<3>
+    SLICE_X53Y143.B      Tilo                  0.086   mux483/Z<13>63
+                                                       mux240/Z<3>122
+    SLICE_X53Y143.A5     net (fanout=1)        0.188   mux240/Z<3>122
+    SLICE_X53Y143.A      Tilo                  0.086   mux483/Z<13>63
+                                                       mux240/Z<3>197
+    SLICE_X47Y153.C6     net (fanout=1)        0.832   mux240/Z<3>197
+    SLICE_X47Y153.C      Tilo                  0.086   mux240/Z<3>367
+                                                       mux240/Z<3>283
+    SLICE_X47Y153.D5     net (fanout=1)        0.188   mux240/Z<3>283
+    SLICE_X47Y153.D      Tilo                  0.086   mux240/Z<3>367
+                                                       mux240/Z<3>367
+    SLICE_X39Y162.B6     net (fanout=1)        0.588   mux240/Z<3>367
+    SLICE_X39Y162.B      Tilo                  0.086   r89/register<3>
+                                                       mux240/Z<3>453
+    SLICE_X39Y162.C5     net (fanout=1)        0.314   mux240/Z<3>453
+    SLICE_X39Y162.C      Tilo                  0.086   r89/register<3>
+                                                       mux240/Z<3>537
+    SLICE_X36Y166.A6     net (fanout=1)        0.385   mux240/Z<3>537
+    SLICE_X36Y166.A      Tilo                  0.086   fadd2/xilinx_fadd_i/blk00000003/sig0000007b
+                                                       mux240/Z<3>623
+    SLICE_X36Y166.B6     net (fanout=1)        0.135   mux240/Z<3>623
+    SLICE_X36Y166.B      Tilo                  0.086   fadd2/xilinx_fadd_i/blk00000003/sig0000007b
+                                                       mux240/Z<3>707
+    SLICE_X33Y174.C6     net (fanout=1)        0.591   mux240/Z<3>707
+    SLICE_X33Y174.C      Tilo                  0.086   mux240/Z<3>877
+                                                       mux240/Z<3>793
+    SLICE_X33Y174.D5     net (fanout=1)        0.188   mux240/Z<3>793
+    SLICE_X33Y174.D      Tilo                  0.086   mux240/Z<3>877
+                                                       mux240/Z<3>877
+    SLICE_X31Y176.B6     net (fanout=1)        0.239   mux240/Z<3>877
+    SLICE_X31Y176.B      Tilo                  0.086   mux240/Z<3>1047
+                                                       mux240/Z<3>963
+    SLICE_X31Y176.C3     net (fanout=1)        0.358   mux240/Z<3>963
+    SLICE_X31Y176.C      Tilo                  0.086   mux240/Z<3>1047
+                                                       mux240/Z<3>1047
+    SLICE_X30Y176.C5     net (fanout=1)        0.195   mux240/Z<3>1047
+    SLICE_X30Y176.C      Tilo                  0.086   fadd5_in0_r/register<3>
+                                                       mux240/Z<3>1133
+    SLICE_X30Y176.D5     net (fanout=1)        0.209   mux240/Z<3>1133
+    SLICE_X30Y176.CLK    Tas                   0.029   fadd5_in0_r/register<3>
+                                                       mux240/Z<3>1217
+                                                       fadd5_in0_r/register_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.686ns (1.522ns logic, 8.164ns route)
+                                                       (15.7% logic, 84.3% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.869ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_72 (FF)
+  Destination:          fadd1_in1_r/register_30 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.500ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_72 to fadd1_in1_r/register_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y139.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<75>
+                                                       FSM/SR[0].shiftCtl_i/state_72
+    SLICE_X61Y145.D3     net (fanout=300)      4.077   FSM/SR[0].shiftCtl_i/state<72>
+    SLICE_X61Y145.D      Tilo                  0.086   N24254
+                                                       mux603/Z<30>305_SW0
+    SLICE_X63Y149.A6     net (fanout=1)        0.514   N24254
+    SLICE_X63Y149.A      Tilo                  0.086   mux123/Z<10>761
+                                                       mux603/Z<30>391
+    SLICE_X65Y163.A6     net (fanout=1)        1.021   mux603/Z<30>391
+    SLICE_X65Y163.A      Tilo                  0.086   mux82/Z<27>534
+                                                       mux603/Z<30>475
+    SLICE_X65Y163.B6     net (fanout=1)        0.117   mux603/Z<30>475
+    SLICE_X65Y163.B      Tilo                  0.086   mux82/Z<27>534
+                                                       mux603/Z<30>561
+    SLICE_X68Y164.C6     net (fanout=1)        0.401   mux603/Z<30>561
+    SLICE_X68Y164.C      Tilo                  0.086   mux603/Z<30>731
+                                                       mux603/Z<30>645
+    SLICE_X68Y164.D3     net (fanout=1)        0.512   mux603/Z<30>645
+    SLICE_X68Y164.D      Tilo                  0.086   mux603/Z<30>731
+                                                       mux603/Z<30>731
+    SLICE_X71Y170.C6     net (fanout=1)        0.420   mux603/Z<30>731
+    SLICE_X71Y170.C      Tilo                  0.086   mux603/Z<30>901
+                                                       mux603/Z<30>815
+    SLICE_X71Y170.D5     net (fanout=1)        0.188   mux603/Z<30>815
+    SLICE_X71Y170.D      Tilo                  0.086   mux603/Z<30>901
+                                                       mux603/Z<30>901
+    SLICE_X70Y170.C6     net (fanout=1)        0.259   mux603/Z<30>901
+    SLICE_X70Y170.C      Tilo                  0.086   mux603/Z<30>1071
+                                                       mux603/Z<30>985
+    SLICE_X70Y170.D5     net (fanout=1)        0.209   mux603/Z<30>985
+    SLICE_X70Y170.D      Tilo                  0.086   mux603/Z<30>1071
+                                                       mux603/Z<30>1071
+    SLICE_X71Y172.B6     net (fanout=1)        0.245   mux603/Z<30>1071
+    SLICE_X71Y172.B      Tilo                  0.086   fadd1_in1_r/register<31>
+                                                       mux603/Z<30>1155
+    SLICE_X71Y172.A5     net (fanout=1)        0.188   mux603/Z<30>1155
+    SLICE_X71Y172.CLK    Tas                   0.028   fadd1_in1_r/register<31>
+                                                       mux603/Z<30>1291
+                                                       fadd1_in1_r/register_30
+    -------------------------------------------------  ---------------------------
+    Total                                      9.500ns (1.349ns logic, 8.151ns route)
+                                                       (14.2% logic, 85.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.859ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_42 (FF)
+  Destination:          fsub2_in1_r/register_20 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.490ns (Levels of Logic = 15)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_42 to fsub2_in1_r/register_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y138.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<43>
+                                                       FSM/SR[0].shiftCtl_i/state_42
+    SLICE_X63Y139.B3     net (fanout=262)      1.706   FSM/SR[0].shiftCtl_i/state<42>
+    SLICE_X63Y139.B      Tilo                  0.086   fsub3_out<30>
+                                                       mux649/Z<20>41
+    SLICE_X63Y139.A5     net (fanout=1)        0.188   mux649/Z<20>41
+    SLICE_X63Y139.A      Tilo                  0.086   fsub3_out<30>
+                                                       mux649/Z<20>143_SW0
+    SLICE_X65Y136.C4     net (fanout=1)        0.919   N25983
+    SLICE_X65Y136.C      Tilo                  0.086   mux649/Z<20>78
+                                                       mux649/Z<20>224
+    SLICE_X63Y147.B6     net (fanout=1)        1.175   mux649/Z<20>224
+    SLICE_X63Y147.B      Tilo                  0.086   mux483/Z<27>37
+                                                       mux649/Z<20>308
+    SLICE_X63Y147.A5     net (fanout=1)        0.188   mux649/Z<20>308
+    SLICE_X63Y147.A      Tilo                  0.086   mux483/Z<27>37
+                                                       mux649/Z<20>394
+    SLICE_X57Y160.A6     net (fanout=1)        1.132   mux649/Z<20>394
+    SLICE_X57Y160.A      Tilo                  0.086   mux564/Z<27>713
+                                                       mux649/Z<20>478
+    SLICE_X57Y160.B6     net (fanout=1)        0.117   mux649/Z<20>478
+    SLICE_X57Y160.B      Tilo                  0.086   mux564/Z<27>713
+                                                       mux649/Z<20>564
+    SLICE_X58Y163.A6     net (fanout=1)        0.650   mux649/Z<20>564
+    SLICE_X58Y163.A      Tilo                  0.086   mux202/Z<25>24
+                                                       mux649/Z<20>648
+    SLICE_X58Y163.B6     net (fanout=1)        0.135   mux649/Z<20>648
+    SLICE_X58Y163.B      Tilo                  0.086   mux202/Z<25>24
+                                                       mux649/Z<20>734
+    SLICE_X58Y164.C6     net (fanout=1)        0.368   mux649/Z<20>734
+    SLICE_X58Y164.C      Tilo                  0.086   mux649/Z<20>904
+                                                       mux649/Z<20>818
+    SLICE_X58Y164.D5     net (fanout=1)        0.210   mux649/Z<20>818
+    SLICE_X58Y164.D      Tilo                  0.086   mux649/Z<20>904
+                                                       mux649/Z<20>904
+    SLICE_X56Y168.A6     net (fanout=1)        0.451   mux649/Z<20>904
+    SLICE_X56Y168.A      Tilo                  0.086   fsub2_out<31>
+                                                       mux649/Z<20>988
+    SLICE_X56Y168.B6     net (fanout=1)        0.135   mux649/Z<20>988
+    SLICE_X56Y168.B      Tilo                  0.086   fsub2_out<31>
+                                                       mux649/Z<20>1074
+    SLICE_X55Y167.A6     net (fanout=1)        0.391   mux649/Z<20>1074
+    SLICE_X55Y167.A      Tilo                  0.086   fsub2_in1_r/register<21>
+                                                       mux649/Z<20>1310
+    SLICE_X55Y167.B6     net (fanout=1)        0.117   mux649/Z<20>1310
+    SLICE_X55Y167.CLK    Tas                   0.029   fsub2_in1_r/register<21>
+                                                       mux649/Z<20>1532
+                                                       fsub2_in1_r/register_20
+    -------------------------------------------------  ---------------------------
+    Total                                      9.490ns (1.608ns logic, 7.882ns route)
+                                                       (16.9% logic, 83.1% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.848ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_86 (FF)
+  Destination:          fadd4_in0_r/register_9 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.479ns (Levels of Logic = 11)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_86 to fadd4_in0_r/register_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y139.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<87>
+                                                       FSM/SR[0].shiftCtl_i/state_86
+    SLICE_X77Y144.B3     net (fanout=332)      3.672   FSM/SR[0].shiftCtl_i/state<86>
+    SLICE_X77Y144.B      Tilo                  0.086   r69/register<27>
+                                                       mux123/Z<9>27
+    SLICE_X67Y144.C1     net (fanout=1)        1.035   mux123/Z<9>27
+    SLICE_X67Y144.C      Tilo                  0.086   r42/register<31>
+                                                       mux123/Z<9>505
+    SLICE_X67Y144.D5     net (fanout=1)        0.188   mux123/Z<9>505
+    SLICE_X67Y144.D      Tilo                  0.086   r42/register<31>
+                                                       mux123/Z<9>591
+    SLICE_X74Y147.C6     net (fanout=1)        0.437   mux123/Z<9>591
+    SLICE_X74Y147.C      Tilo                  0.086   mux123/Z<9>761
+                                                       mux123/Z<9>675
+    SLICE_X74Y147.D5     net (fanout=1)        0.209   mux123/Z<9>675
+    SLICE_X74Y147.D      Tilo                  0.086   mux123/Z<9>761
+                                                       mux123/Z<9>761
+    SLICE_X75Y148.C6     net (fanout=1)        0.241   mux123/Z<9>761
+    SLICE_X75Y148.C      Tilo                  0.086   mux123/Z<9>931
+                                                       mux123/Z<9>845
+    SLICE_X75Y148.D1     net (fanout=1)        0.850   mux123/Z<9>845
+    SLICE_X75Y148.D      Tilo                  0.086   mux123/Z<9>931
+                                                       mux123/Z<9>931
+    SLICE_X75Y150.B3     net (fanout=1)        0.751   mux123/Z<9>931
+    SLICE_X75Y150.B      Tilo                  0.086   mux82/Z<28>58
+                                                       mux123/Z<9>1015
+    SLICE_X75Y150.C3     net (fanout=1)        0.358   mux123/Z<9>1015
+    SLICE_X75Y150.C      Tilo                  0.086   mux82/Z<28>58
+                                                       mux123/Z<9>1101
+    SLICE_X78Y150.C6     net (fanout=1)        0.265   mux123/Z<9>1101
+    SLICE_X78Y150.C      Tilo                  0.086   fadd4_in0_r/register<9>
+                                                       mux123/Z<9>1271
+    SLICE_X78Y150.D5     net (fanout=1)        0.209   mux123/Z<9>1271
+    SLICE_X78Y150.CLK    Tas                   0.029   fadd4_in0_r/register<9>
+                                                       mux123/Z<9>1355
+                                                       fadd4_in0_r/register_9
+    -------------------------------------------------  ---------------------------
+    Total                                      9.479ns (1.264ns logic, 8.215ns route)
+                                                       (13.3% logic, 86.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.792ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r14/register_6 (FF)
+  Destination:          fadd1_in0_r/register_6 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.423ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r14/register_6 to fadd1_in0_r/register_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X62Y128.CQ     Tcko                  0.396   r14/register<7>
+                                                       r14/register_6
+    SLICE_X61Y136.D3     net (fanout=15)       2.509   r14/register<6>
+    SLICE_X61Y136.D      Tilo                  0.086   FSM/SR[0].shiftCtl_i/state<11>
+                                                       mux522/Z<6>123
+    SLICE_X61Y136.C6     net (fanout=1)        0.119   mux522/Z<6>123
+    SLICE_X61Y136.C      Tilo                  0.086   FSM/SR[0].shiftCtl_i/state<11>
+                                                       mux522/Z<6>197
+    SLICE_X74Y143.A1     net (fanout=1)        1.599   mux522/Z<6>197
+    SLICE_X74Y143.A      Tilo                  0.086   mux316/Z<20>67
+                                                       mux522/Z<6>283
+    SLICE_X74Y143.B6     net (fanout=1)        0.134   mux522/Z<6>283
+    SLICE_X74Y143.B      Tilo                  0.086   mux316/Z<20>67
+                                                       mux522/Z<6>367
+    SLICE_X94Y145.C6     net (fanout=1)        0.631   mux522/Z<6>367
+    SLICE_X94Y145.C      Tilo                  0.086   mux522/Z<6>537
+                                                       mux522/Z<6>453
+    SLICE_X94Y145.D5     net (fanout=1)        0.209   mux522/Z<6>453
+    SLICE_X94Y145.D      Tilo                  0.086   mux522/Z<6>537
+                                                       mux522/Z<6>537
+    SLICE_X103Y148.C6    net (fanout=1)        0.431   mux522/Z<6>537
+    SLICE_X103Y148.C     Tilo                  0.086   mux522/Z<6>707
+                                                       mux522/Z<6>623
+    SLICE_X103Y148.D5    net (fanout=1)        0.188   mux522/Z<6>623
+    SLICE_X103Y148.D     Tilo                  0.086   mux522/Z<6>707
+                                                       mux522/Z<6>707
+    SLICE_X107Y148.B6    net (fanout=1)        0.617   mux522/Z<6>707
+    SLICE_X107Y148.B     Tilo                  0.086   mux522/Z<6>877
+                                                       mux522/Z<6>793
+    SLICE_X107Y148.C3    net (fanout=1)        0.358   mux522/Z<6>793
+    SLICE_X107Y148.C     Tilo                  0.086   mux522/Z<6>877
+                                                       mux522/Z<6>877
+    SLICE_X107Y149.C6    net (fanout=1)        0.255   mux522/Z<6>877
+    SLICE_X107Y149.C     Tilo                  0.086   mux522/Z<6>1047
+                                                       mux522/Z<6>963
+    SLICE_X107Y149.D5    net (fanout=1)        0.188   mux522/Z<6>963
+    SLICE_X107Y149.D     Tilo                  0.086   mux522/Z<6>1047
+                                                       mux522/Z<6>1047
+    SLICE_X106Y149.A6    net (fanout=1)        0.508   mux522/Z<6>1047
+    SLICE_X106Y149.A     Tilo                  0.086   fadd1_in0_r/register<7>
+                                                       mux522/Z<6>1199
+    SLICE_X106Y149.B6    net (fanout=1)        0.134   mux522/Z<6>1199
+    SLICE_X106Y149.CLK   Tas                   0.029   fadd1_in0_r/register<7>
+                                                       mux522/Z<6>1285
+                                                       fadd1_in0_r/register_6
+    -------------------------------------------------  ---------------------------
+    Total                                      9.423ns (1.543ns logic, 7.880ns route)
+                                                       (16.4% logic, 83.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.778ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_72 (FF)
+  Destination:          fadd1_in1_r/register_28 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.409ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_72 to fadd1_in1_r/register_28
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X57Y139.AQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<75>
+                                                       FSM/SR[0].shiftCtl_i/state_72
+    SLICE_X62Y146.B3     net (fanout=300)      4.226   FSM/SR[0].shiftCtl_i/state<72>
+    SLICE_X62Y146.B      Tilo                  0.086   mux564/Z<26>459
+                                                       mux603/Z<28>305_SW0
+    SLICE_X65Y151.C4     net (fanout=1)        0.873   N24263
+    SLICE_X65Y151.C      Tilo                  0.086   mux603/Z<28>221
+                                                       mux603/Z<28>391
+    SLICE_X67Y159.C6     net (fanout=1)        0.548   mux603/Z<28>391
+    SLICE_X67Y159.C      Tilo                  0.086   mux603/Z<28>561
+                                                       mux603/Z<28>475
+    SLICE_X67Y159.D5     net (fanout=1)        0.188   mux603/Z<28>475
+    SLICE_X67Y159.D      Tilo                  0.086   mux603/Z<28>561
+                                                       mux603/Z<28>561
+    SLICE_X70Y169.C6     net (fanout=1)        0.597   mux603/Z<28>561
+    SLICE_X70Y169.C      Tilo                  0.086   mux603/Z<28>731
+                                                       mux603/Z<28>645
+    SLICE_X70Y169.D5     net (fanout=1)        0.209   mux603/Z<28>645
+    SLICE_X70Y169.D      Tilo                  0.086   mux603/Z<28>731
+                                                       mux603/Z<28>731
+    SLICE_X71Y171.C6     net (fanout=1)        0.265   mux603/Z<28>731
+    SLICE_X71Y171.C      Tilo                  0.086   mux603/Z<28>901
+                                                       mux603/Z<28>815
+    SLICE_X71Y171.D5     net (fanout=1)        0.188   mux603/Z<28>815
+    SLICE_X71Y171.D      Tilo                  0.086   mux603/Z<28>901
+                                                       mux603/Z<28>901
+    SLICE_X75Y176.A6     net (fanout=1)        0.406   mux603/Z<28>901
+    SLICE_X75Y176.A      Tilo                  0.086   N24023
+                                                       mux603/Z<28>985
+    SLICE_X75Y176.B6     net (fanout=1)        0.117   mux603/Z<28>985
+    SLICE_X75Y176.B      Tilo                  0.086   N24023
+                                                       mux603/Z<28>1071
+    SLICE_X71Y176.B6     net (fanout=1)        0.255   mux603/Z<28>1071
+    SLICE_X71Y176.B      Tilo                  0.086   fadd1_in1_r/register<29>
+                                                       mux603/Z<28>1155
+    SLICE_X71Y176.A5     net (fanout=1)        0.188   mux603/Z<28>1155
+    SLICE_X71Y176.CLK    Tas                   0.028   fadd1_in1_r/register<29>
+                                                       mux603/Z<28>1291
+                                                       fadd1_in1_r/register_28
+    -------------------------------------------------  ---------------------------
+    Total                                      9.409ns (1.349ns logic, 8.060ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.778ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r83/register_24 (FF)
+  Destination:          fadd2_in1_r/register_24 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.409ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r83/register_24 to fadd2_in1_r/register_24
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X71Y133.AQ     Tcko                  0.375   r83/register<27>
+                                                       r83/register_24
+    SLICE_X89Y135.A6     net (fanout=9)        2.528   r83/register<24>
+    SLICE_X89Y135.A      Tilo                  0.086   fsub3/xilinx_fsub_i/blk00000003/sig000002b4
+                                                       mux356/Z<24>43
+    SLICE_X87Y136.A5     net (fanout=1)        0.315   mux356/Z<24>43
+    SLICE_X87Y136.A      Tilo                  0.086   mux316/Z<30>14
+                                                       mux356/Z<24>92
+    SLICE_X63Y150.B5     net (fanout=1)        1.797   mux356/Z<24>92
+    SLICE_X63Y150.B      Tilo                  0.086   mux82/Z<25>121
+                                                       mux356/Z<24>165
+    SLICE_X63Y150.A5     net (fanout=1)        0.188   mux356/Z<24>165
+    SLICE_X63Y150.A      Tilo                  0.086   mux82/Z<25>121
+                                                       mux356/Z<24>249
+    SLICE_X60Y156.A6     net (fanout=1)        0.428   mux356/Z<24>249
+    SLICE_X60Y156.A      Tilo                  0.086   mux82/Z<28>364
+                                                       mux356/Z<24>333
+    SLICE_X60Y156.B6     net (fanout=1)        0.135   mux356/Z<24>333
+    SLICE_X60Y156.B      Tilo                  0.086   mux82/Z<28>364
+                                                       mux356/Z<24>419
+    SLICE_X60Y163.C6     net (fanout=1)        0.563   mux356/Z<24>419
+    SLICE_X60Y163.C      Tilo                  0.086   mux356/Z<24>589
+                                                       mux356/Z<24>503
+    SLICE_X60Y163.D5     net (fanout=1)        0.210   mux356/Z<24>503
+    SLICE_X60Y163.D      Tilo                  0.086   mux356/Z<24>589
+                                                       mux356/Z<24>589
+    SLICE_X60Y169.C6     net (fanout=1)        0.437   mux356/Z<24>589
+    SLICE_X60Y169.C      Tilo                  0.086   mux356/Z<24>759
+                                                       mux356/Z<24>673
+    SLICE_X60Y169.D5     net (fanout=1)        0.210   mux356/Z<24>673
+    SLICE_X60Y169.D      Tilo                  0.086   mux356/Z<24>759
+                                                       mux356/Z<24>759
+    SLICE_X60Y176.B6     net (fanout=1)        0.428   mux356/Z<24>759
+    SLICE_X60Y176.B      Tilo                  0.086   fadd4_out<22>
+                                                       mux356/Z<24>843
+    SLICE_X60Y176.A5     net (fanout=1)        0.204   mux356/Z<24>843
+    SLICE_X60Y176.A      Tilo                  0.086   fadd4_out<22>
+                                                       mux356/Z<24>995
+    SLICE_X61Y176.B6     net (fanout=1)        0.257   mux356/Z<24>995
+    SLICE_X61Y176.B      Tilo                  0.086   fadd2_in1_r/register<25>
+                                                       mux356/Z<24>1081
+    SLICE_X61Y176.A5     net (fanout=1)        0.188   mux356/Z<24>1081
+    SLICE_X61Y176.CLK    Tas                   0.028   fadd2_in1_r/register<25>
+                                                       mux356/Z<24>1217
+                                                       fadd2_in1_r/register_24
+    -------------------------------------------------  ---------------------------
+    Total                                      9.409ns (1.521ns logic, 7.888ns route)
+                                                       (16.2% logic, 83.8% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.774ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_90 (FF)
+  Destination:          fadd2_in0_r/register_20 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.405ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_90 to fadd2_in0_r/register_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X61Y137.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<91>
+                                                       FSM/SR[0].shiftCtl_i/state_90
+    SLICE_X83Y135.D4     net (fanout=298)      1.582   FSM/SR[0].shiftCtl_i/state<90>
+    SLICE_X83Y135.D      Tilo                  0.086   mux202/Z<20>31
+                                                       mux202/Z<20>31
+    SLICE_X40Y132.B4     net (fanout=1)        3.367   mux202/Z<20>31
+    SLICE_X40Y132.B      Tilo                  0.086   mux319/Z<12>544
+                                                       mux202/Z<20>303
+    SLICE_X37Y132.B6     net (fanout=1)        0.252   mux202/Z<20>303
+    SLICE_X37Y132.B      Tilo                  0.086   mux441/Z<13>145
+                                                       mux202/Z<20>389
+    SLICE_X37Y132.A5     net (fanout=1)        0.188   mux202/Z<20>389
+    SLICE_X37Y132.A      Tilo                  0.086   mux441/Z<13>145
+                                                       mux202/Z<20>473
+    SLICE_X28Y127.A6     net (fanout=1)        0.554   mux202/Z<20>473
+    SLICE_X28Y127.A      Tilo                  0.086   mux441/Z<18>651
+                                                       mux202/Z<20>559
+    SLICE_X28Y127.B6     net (fanout=1)        0.135   mux202/Z<20>559
+    SLICE_X28Y127.B      Tilo                  0.086   mux441/Z<18>651
+                                                       mux202/Z<20>643
+    SLICE_X24Y127.A6     net (fanout=1)        0.807   mux202/Z<20>643
+    SLICE_X24Y127.A      Tilo                  0.086   mux202/Z<20>813
+                                                       mux202/Z<20>729
+    SLICE_X24Y127.B6     net (fanout=1)        0.135   mux202/Z<20>729
+    SLICE_X24Y127.B      Tilo                  0.086   mux202/Z<20>813
+                                                       mux202/Z<20>813
+    SLICE_X18Y126.C6     net (fanout=1)        0.394   mux202/Z<20>813
+    SLICE_X18Y126.C      Tilo                  0.086   mux202/Z<20>983
+                                                       mux202/Z<20>899
+    SLICE_X18Y126.D5     net (fanout=1)        0.209   mux202/Z<20>899
+    SLICE_X18Y126.D      Tilo                  0.086   mux202/Z<20>983
+                                                       mux202/Z<20>983
+    SLICE_X19Y126.B6     net (fanout=1)        0.245   mux202/Z<20>983
+    SLICE_X19Y126.B      Tilo                  0.086   fadd2_in0_r/register<21>
+                                                       mux202/Z<20>1069
+    SLICE_X19Y126.A5     net (fanout=1)        0.188   mux202/Z<20>1069
+    SLICE_X19Y126.CLK    Tas                   0.028   fadd2_in0_r/register<21>
+                                                       mux202/Z<20>1289
+                                                       fadd2_in0_r/register_20
+    -------------------------------------------------  ---------------------------
+    Total                                      9.405ns (1.349ns logic, 8.056ns route)
+                                                       (14.3% logic, 85.7% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.756ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_7 (FF)
+  Destination:          fadd3_in1_r/register_22 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.387ns (Levels of Logic = 15)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_7 to fadd3_in1_r/register_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X60Y134.DQ     Tcko                  0.396   FSM/SR[0].shiftCtl_i/state<7>
+                                                       FSM/SR[0].shiftCtl_i/state_7
+    SLICE_X66Y136.D1     net (fanout=194)      1.412   FSM/SR[0].shiftCtl_i/state<7>
+    SLICE_X66Y136.D      Tilo                  0.086   mux483/Z<22>63
+                                                       mux483/Z<22>63
+    SLICE_X66Y136.C6     net (fanout=1)        0.133   mux483/Z<22>63
+    SLICE_X66Y136.C      Tilo                  0.086   mux483/Z<22>63
+                                                       mux483/Z<22>126
+    SLICE_X58Y146.A6     net (fanout=1)        1.206   mux483/Z<22>126
+    SLICE_X58Y146.A      Tilo                  0.086   mux483/Z<7>624
+                                                       mux483/Z<22>284
+    SLICE_X62Y154.A6     net (fanout=1)        0.747   mux483/Z<22>284
+    SLICE_X62Y154.A      Tilo                  0.086   mux483/Z<26>454
+                                                       mux483/Z<22>368
+    SLICE_X62Y154.B3     net (fanout=1)        0.626   mux483/Z<22>368
+    SLICE_X62Y154.B      Tilo                  0.086   mux483/Z<26>454
+                                                       mux483/Z<22>454
+    SLICE_X64Y154.C6     net (fanout=1)        0.508   mux483/Z<22>454
+    SLICE_X64Y154.C      Tilo                  0.086   r103/register<31>
+                                                       mux483/Z<22>538
+    SLICE_X64Y154.D5     net (fanout=1)        0.210   mux483/Z<22>538
+    SLICE_X64Y154.D      Tilo                  0.086   r103/register<31>
+                                                       mux483/Z<22>624
+    SLICE_X64Y158.C6     net (fanout=1)        0.706   mux483/Z<22>624
+    SLICE_X64Y158.C      Tilo                  0.086   mux483/Z<22>794
+                                                       mux483/Z<22>708
+    SLICE_X64Y158.D5     net (fanout=1)        0.210   mux483/Z<22>708
+    SLICE_X64Y158.D      Tilo                  0.086   mux483/Z<22>794
+                                                       mux483/Z<22>794
+    SLICE_X64Y165.A6     net (fanout=1)        0.416   mux483/Z<22>794
+    SLICE_X64Y165.A      Tilo                  0.086   mux82/Z<30>534
+                                                       mux483/Z<22>878
+    SLICE_X64Y165.B6     net (fanout=1)        0.135   mux483/Z<22>878
+    SLICE_X64Y165.B      Tilo                  0.086   mux82/Z<30>534
+                                                       mux483/Z<22>964
+    SLICE_X66Y165.C6     net (fanout=1)        0.380   mux483/Z<22>964
+    SLICE_X66Y165.C      Tilo                  0.086   mux483/Z<22>1134
+                                                       mux483/Z<22>1048
+    SLICE_X66Y165.D4     net (fanout=1)        0.712   mux483/Z<22>1048
+    SLICE_X66Y165.D      Tilo                  0.086   mux483/Z<22>1134
+                                                       mux483/Z<22>1134
+    SLICE_X67Y167.A6     net (fanout=1)        0.240   mux483/Z<22>1134
+    SLICE_X67Y167.A      Tilo                  0.086   fadd3_in1_r/register<23>
+                                                       mux483/Z<22>1304
+    SLICE_X67Y167.B6     net (fanout=1)        0.117   mux483/Z<22>1304
+    SLICE_X67Y167.CLK    Tas                   0.029   fadd3_in1_r/register<23>
+                                                       mux483/Z<22>1388
+                                                       fadd3_in1_r/register_22
+    -------------------------------------------------  ---------------------------
+    Total                                      9.387ns (1.629ns logic, 7.758ns route)
+                                                       (17.4% logic, 82.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.755ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_94 (FF)
+  Destination:          fsub3_in0_r/register_23 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.386ns (Levels of Logic = 9)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_94 to fsub3_in0_r/register_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X61Y141.CQ     Tcko                  0.375   FSM/SR[0].shiftCtl_i/state<95>
+                                                       FSM/SR[0].shiftCtl_i/state_94
+    SLICE_X28Y133.B6     net (fanout=38)       1.336   FSM/SR[0].shiftCtl_i/state<94>
+    SLICE_X28Y133.B      Tilo                  0.086   r42_wen
+                                                       s1581
+    SLICE_X85Y137.D3     net (fanout=32)       4.315   s158
+    SLICE_X85Y137.D      Tilo                  0.086   mux203/Z<23>629
+                                                       mux203/Z<23>629
+    SLICE_X85Y137.C6     net (fanout=1)        0.119   mux203/Z<23>629
+    SLICE_X85Y137.C      Tilo                  0.086   mux203/Z<23>629
+                                                       mux203/Z<23>713
+    SLICE_X76Y136.D6     net (fanout=1)        0.561   mux203/Z<23>713
+    SLICE_X76Y136.D      Tilo                  0.086   mux203/Z<23>799
+                                                       mux203/Z<23>799
+    SLICE_X76Y136.C3     net (fanout=1)        0.771   mux203/Z<23>799
+    SLICE_X76Y136.C      Tilo                  0.086   mux203/Z<23>799
+                                                       mux203/Z<23>883
+    SLICE_X86Y138.C6     net (fanout=1)        0.445   mux203/Z<23>883
+    SLICE_X86Y138.C      Tilo                  0.086   mux203/Z<23>1053
+                                                       mux203/Z<23>969
+    SLICE_X86Y138.D5     net (fanout=1)        0.209   mux203/Z<23>969
+    SLICE_X86Y138.D      Tilo                  0.086   mux203/Z<23>1053
+                                                       mux203/Z<23>1053
+    SLICE_X80Y135.D6     net (fanout=1)        0.428   mux203/Z<23>1053
+    SLICE_X80Y135.D      Tilo                  0.086   fsub3_in0_r/register<23>
+                                                       mux203/Z<23>1139
+    SLICE_X80Y135.C6     net (fanout=1)        0.133   mux203/Z<23>1139
+    SLICE_X80Y135.CLK    Tas                   0.006   fsub3_in0_r/register<23>
+                                                       mux203/Z<23>1359
+                                                       fsub3_in0_r/register_23
+    -------------------------------------------------  ---------------------------
+    Total                                      9.386ns (1.069ns logic, 8.317ns route)
+                                                       (11.4% logic, 88.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.750ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               FSM/SR[0].shiftCtl_i/state_60 (FF)
+  Destination:          fsub2_in1_r/register_22 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.381ns (Levels of Logic = 15)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: FSM/SR[0].shiftCtl_i/state_60 to fsub2_in1_r/register_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X60Y139.AQ     Tcko                  0.396   FSM/SR[0].shiftCtl_i/state<63>
+                                                       FSM/SR[0].shiftCtl_i/state_60
+    SLICE_X61Y137.B4     net (fanout=166)      0.643   FSM/SR[0].shiftCtl_i/state<60>
+    SLICE_X61Y137.B      Tilo                  0.086   FSM/SR[0].shiftCtl_i/state<91>
+                                                       s6041
+    SLICE_X77Y136.D2     net (fanout=32)       1.916   s604
+    SLICE_X77Y136.D      Tilo                  0.086   mux649/Z<22>78
+                                                       mux649/Z<22>78
+    SLICE_X77Y136.C3     net (fanout=1)        0.605   mux649/Z<22>78
+    SLICE_X77Y136.C      Tilo                  0.086   mux649/Z<22>78
+                                                       mux649/Z<22>224
+    SLICE_X69Y145.B6     net (fanout=1)        0.720   mux649/Z<22>224
+    SLICE_X69Y145.B      Tilo                  0.086   r82/register<23>
+                                                       mux649/Z<22>308
+    SLICE_X69Y145.A2     net (fanout=1)        0.773   mux649/Z<22>308
+    SLICE_X69Y145.A      Tilo                  0.086   r82/register<23>
+                                                       mux649/Z<22>394
+    SLICE_X63Y153.A6     net (fanout=1)        0.673   mux649/Z<22>394
+    SLICE_X63Y153.A      Tilo                  0.086   mux564/Z<25>459
+                                                       mux649/Z<22>478
+    SLICE_X63Y153.B6     net (fanout=1)        0.117   mux649/Z<22>478
+    SLICE_X63Y153.B      Tilo                  0.086   mux564/Z<25>459
+                                                       mux649/Z<22>564
+    SLICE_X62Y153.A6     net (fanout=1)        0.364   mux649/Z<22>564
+    SLICE_X62Y153.A      Tilo                  0.086   mux564/Z<31>289
+                                                       mux649/Z<22>648
+    SLICE_X62Y153.B6     net (fanout=1)        0.135   mux649/Z<22>648
+    SLICE_X62Y153.B      Tilo                  0.086   mux564/Z<31>289
+                                                       mux649/Z<22>734
+    SLICE_X63Y161.C6     net (fanout=1)        0.539   mux649/Z<22>734
+    SLICE_X63Y161.C      Tilo                  0.086   mux649/Z<22>904
+                                                       mux649/Z<22>818
+    SLICE_X63Y161.D5     net (fanout=1)        0.188   mux649/Z<22>818
+    SLICE_X63Y161.D      Tilo                  0.086   mux649/Z<22>904
+                                                       mux649/Z<22>904
+    SLICE_X63Y168.A6     net (fanout=1)        0.403   mux649/Z<22>904
+    SLICE_X63Y168.A      Tilo                  0.086   fadd2_out<26>
+                                                       mux649/Z<22>988
+    SLICE_X63Y168.B6     net (fanout=1)        0.117   mux649/Z<22>988
+    SLICE_X63Y168.B      Tilo                  0.086   fadd2_out<26>
+                                                       mux649/Z<22>1074
+    SLICE_X63Y169.A5     net (fanout=1)        0.442   mux649/Z<22>1074
+    SLICE_X63Y169.A      Tilo                  0.086   fsub2_in1_r/register<23>
+                                                       mux649/Z<22>1310
+    SLICE_X63Y169.B6     net (fanout=1)        0.117   mux649/Z<22>1310
+    SLICE_X63Y169.CLK    Tas                   0.029   fsub2_in1_r/register<23>
+                                                       mux649/Z<22>1532
+                                                       fsub2_in1_r/register_22
+    -------------------------------------------------  ---------------------------
+    Total                                      9.381ns (1.629ns logic, 7.752ns route)
+                                                       (17.4% logic, 82.6% route)
+
+--------------------------------------------------------------------------------
+Slack:                  -2.749ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               r111/register_20 (FF)
+  Destination:          fadd5_in0_r/register_20 (FF)
+  Requirement:          6.666ns
+  Data Path Delay:      9.380ns (Levels of Logic = 12)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.666ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path: r111/register_20 to fadd5_in0_r/register_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y143.AQ     Tcko                  0.396   r111/register<23>
+                                                       r111/register_20
+    SLICE_X80Y143.D2     net (fanout=10)       3.700   r111/register<20>
+    SLICE_X80Y143.D      Tilo                  0.086   r78/SR[26].shift_i/state<1>
+                                                       mux240/Z<20>27
+    SLICE_X68Y143.B2     net (fanout=1)        0.968   mux240/Z<20>27
+    SLICE_X68Y143.B      Tilo                  0.086   mux123/Z<11>761
+                                                       mux240/Z<20>367
+    SLICE_X78Y145.C4     net (fanout=1)        1.006   mux240/Z<20>367
+    SLICE_X78Y145.C      Tilo                  0.086   r91/register<27>
+                                                       mux240/Z<20>453
+    SLICE_X78Y145.D5     net (fanout=1)        0.209   mux240/Z<20>453
+    SLICE_X78Y145.D      Tilo                  0.086   r91/register<27>
+                                                       mux240/Z<20>537
+    SLICE_X83Y147.C6     net (fanout=1)        0.390   mux240/Z<20>537
+    SLICE_X83Y147.C      Tilo                  0.086   mux240/Z<20>707
+                                                       mux240/Z<20>623
+    SLICE_X83Y147.D5     net (fanout=1)        0.188   mux240/Z<20>623
+    SLICE_X83Y147.D      Tilo                  0.086   mux240/Z<20>707
+                                                       mux240/Z<20>707
+    SLICE_X89Y148.C6     net (fanout=1)        0.395   mux240/Z<20>707
+    SLICE_X89Y148.C      Tilo                  0.086   mux240/Z<20>877
+                                                       mux240/Z<20>793
+    SLICE_X89Y148.D5     net (fanout=1)        0.188   mux240/Z<20>793
+    SLICE_X89Y148.D      Tilo                  0.086   mux240/Z<20>877
+                                                       mux240/Z<20>877
+    SLICE_X92Y148.C6     net (fanout=1)        0.397   mux240/Z<20>877
+    SLICE_X92Y148.C      Tilo                  0.086   mux240/Z<20>1047
+                                                       mux240/Z<20>963
+    SLICE_X92Y148.D5     net (fanout=1)        0.210   mux240/Z<20>963
+    SLICE_X92Y148.D      Tilo                  0.086   mux240/Z<20>1047
+                                                       mux240/Z<20>1047
+    SLICE_X93Y150.A6     net (fanout=1)        0.241   mux240/Z<20>1047
+    SLICE_X93Y150.A      Tilo                  0.086   fadd5_in0_r/register<21>
+                                                       mux240/Z<20>1133
+    SLICE_X93Y150.B6     net (fanout=1)        0.117   mux240/Z<20>1133
+    SLICE_X93Y150.CLK    Tas                   0.029   fadd5_in0_r/register<21>
+                                                       mux240/Z<20>1217
+                                                       fadd5_in0_r/register_20
+    -------------------------------------------------  ---------------------------
+    Total                                      9.380ns (1.371ns logic, 8.009ns route)
+                                                       (14.6% logic, 85.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 6.66666667 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007a/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007a/CLK
+  Location pin: DSP48_X0Y47.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul2/xilinx_fmul_i/blk00000003/blk0000007a/CLK
+  Logical resource: fmul2/xilinx_fmul_i/blk00000003/blk0000007a/CLK
+  Location pin: DSP48_X0Y60.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007b/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk0000007b/CLK
+  Location pin: DSP48_X0Y48.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_P_PAT)
+  Physical resource: fmul2/xilinx_fmul_i/blk00000003/blk0000007b/CLK
+  Logical resource: fmul2/xilinx_fmul_i/blk00000003/blk0000007b/CLK
+  Location pin: DSP48_X0Y61.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X1Y80.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fadd2/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Logical resource: fadd2/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X0Y73.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fadd3/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Logical resource: fadd3/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X0Y84.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fadd4/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Logical resource: fadd4/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X1Y78.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fadd5/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Logical resource: fadd5/xilinx_fadd_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X1Y79.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fsub1/xilinx_fsub_i/blk00000003/blk00000105/CLK
+  Logical resource: fsub1/xilinx_fsub_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X1Y44.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fsub2/xilinx_fsub_i/blk00000003/blk00000105/CLK
+  Logical resource: fsub2/xilinx_fsub_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X0Y80.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.516ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.150ns (465.116MHz) (Tdspper_OPP_PAT)
+  Physical resource: fsub3/xilinx_fsub_i/blk00000003/blk00000105/CLK
+  Logical resource: fsub3/xilinx_fsub_i/blk00000003/blk00000105/CLK
+  Location pin: DSP48_X1Y45.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fmul2/xilinx_fmul_i/blk00000003/blk00000041/CLK
+  Logical resource: fmul2/xilinx_fmul_i/blk00000003/blk00000041/CLK
+  Location pin: DSP48_X0Y62.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fmul1/xilinx_fmul_i/blk00000003/blk00000041/CLK
+  Logical resource: fmul1/xilinx_fmul_i/blk00000003/blk00000041/CLK
+  Location pin: DSP48_X0Y49.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fadd1/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Logical resource: fadd1/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X1Y72.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fadd2/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Logical resource: fadd2/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X1Y71.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fadd3/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Logical resource: fadd3/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X1Y75.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fadd4/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Logical resource: fadd4/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X0Y75.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fadd5/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Logical resource: fadd5/xilinx_fadd_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X0Y74.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 4.666ns (period - min period limit)
+  Period: 6.666ns
+  Min period limit: 2.000ns (500.000MHz) (Tdspper_P)
+  Physical resource: fsub1/xilinx_fsub_i/blk00000003/blk0000009c/CLK
+  Logical resource: fsub1/xilinx_fsub_i/blk00000003/blk0000009c/CLK
+  Location pin: DSP48_X1Y57.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Unconstrained path analysis 
+
+ 284 paths analyzed, 284 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors)
+ Maximum delay is   0.396ns.
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_18 (FF)
+  Destination:          fadd2_out_r<19>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_18 to fadd2_out_r<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y168.CQ     Tcko                  0.396   fadd2_out_r<19>
+                                                       fadd2_out_r_18
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_22 (FF)
+  Destination:          fadd3_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_22 to fadd3_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X96Y170.CQ     Tcko                  0.396   fadd3_out_r<23>
+                                                       fadd3_out_r_22
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_21 (FF)
+  Destination:          fadd3_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_21 to fadd3_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X96Y170.BQ     Tcko                  0.396   fadd3_out_r<23>
+                                                       fadd3_out_r_21
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_20 (FF)
+  Destination:          fadd3_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_20 to fadd3_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X96Y170.AQ     Tcko                  0.396   fadd3_out_r<23>
+                                                       fadd3_out_r_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_27 (FF)
+  Destination:          fadd2_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_27 to fadd2_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X92Y177.DQ     Tcko                  0.396   fadd2_out_r<27>
+                                                       fadd2_out_r_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_26 (FF)
+  Destination:          fadd2_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_26 to fadd2_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X92Y177.CQ     Tcko                  0.396   fadd2_out_r<27>
+                                                       fadd2_out_r_26
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_25 (FF)
+  Destination:          fadd2_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_25 to fadd2_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X92Y177.BQ     Tcko                  0.396   fadd2_out_r<27>
+                                                       fadd2_out_r_25
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_24 (FF)
+  Destination:          fadd2_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_24 to fadd2_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X92Y177.AQ     Tcko                  0.396   fadd2_out_r<27>
+                                                       fadd2_out_r_24
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               dct_out13_rdy_r (FF)
+  Destination:          dct_out13_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: dct_out13_rdy_r to dct_out13_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X92Y129.DQ     Tcko                  0.396   dct_out13_rdy_r
+                                                       dct_out13_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_31 (FF)
+  Destination:          fadd3_out_r<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_31 to fadd3_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X76Y171.DQ     Tcko                  0.396   fadd3_out_r<31>
+                                                       fadd3_out_r_31
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_30 (FF)
+  Destination:          fadd3_out_r<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_30 to fadd3_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X76Y171.CQ     Tcko                  0.396   fadd3_out_r<31>
+                                                       fadd3_out_r_30
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fsub3_out_r_12 (FF)
+  Destination:          fsub3_out_r<15>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fsub3_out_r_12 to fsub3_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y107.AQ      Tcko                  0.396   fsub3_out_r<15>
+                                                       fsub3_out_r_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_28 (FF)
+  Destination:          fadd3_out_r<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_28 to fadd3_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X76Y171.AQ     Tcko                  0.396   fadd3_out_r<31>
+                                                       fadd3_out_r_28
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_7 (FF)
+  Destination:          fadd4_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_7 to fadd4_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y173.DQ     Tcko                  0.396   fadd4_out_r<7>
+                                                       fadd4_out_r_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_6 (FF)
+  Destination:          fadd4_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_6 to fadd4_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y173.CQ     Tcko                  0.396   fadd4_out_r<7>
+                                                       fadd4_out_r_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_5 (FF)
+  Destination:          fadd4_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_5 to fadd4_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y173.BQ     Tcko                  0.396   fadd4_out_r<7>
+                                                       fadd4_out_r_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_4 (FF)
+  Destination:          fadd4_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_4 to fadd4_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y173.AQ     Tcko                  0.396   fadd4_out_r<7>
+                                                       fadd4_out_r_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fsub3_out_r_7 (FF)
+  Destination:          fsub3_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fsub3_out_r_7 to fsub3_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y101.DQ     Tcko                  0.396   fsub3_out_r<7>
+                                                       fsub3_out_r_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fsub3_out_r_6 (FF)
+  Destination:          fsub3_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fsub3_out_r_6 to fsub3_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y101.CQ     Tcko                  0.396   fsub3_out_r<7>
+                                                       fsub3_out_r_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fsub3_out_r_5 (FF)
+  Destination:          fsub3_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fsub3_out_r_5 to fsub3_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y101.BQ     Tcko                  0.396   fsub3_out_r<7>
+                                                       fsub3_out_r_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fsub3_out_r_4 (FF)
+  Destination:          fsub3_out_r<7>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fsub3_out_r_4 to fsub3_out_r<7>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X64Y101.AQ     Tcko                  0.396   fsub3_out_r<7>
+                                                       fsub3_out_r_4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               dct_out8_rdy_r (FF)
+  Destination:          dct_out8_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: dct_out8_rdy_r to dct_out8_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X56Y143.AQ     Tcko                  0.396   dct_out8_rdy_r
+                                                       dct_out8_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               dct_out11_rdy_r (FF)
+  Destination:          dct_out11_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: dct_out11_rdy_r to dct_out11_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X54Y95.AQ      Tcko                  0.396   dct_out11_rdy_r
+                                                       dct_out11_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd1_out_r_11 (FF)
+  Destination:          fadd1_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd1_out_r_11 to fadd1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y177.DQ     Tcko                  0.396   fadd1_out_r<11>
+                                                       fadd1_out_r_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd1_out_r_10 (FF)
+  Destination:          fadd1_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd1_out_r_10 to fadd1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y177.CQ     Tcko                  0.396   fadd1_out_r<11>
+                                                       fadd1_out_r_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd1_out_r_9 (FF)
+  Destination:          fadd1_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd1_out_r_9 to fadd1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y177.BQ     Tcko                  0.396   fadd1_out_r<11>
+                                                       fadd1_out_r_9
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd1_out_r_8 (FF)
+  Destination:          fadd1_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd1_out_r_8 to fadd1_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y177.AQ     Tcko                  0.396   fadd1_out_r<11>
+                                                       fadd1_out_r_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd5_out_r_11 (FF)
+  Destination:          fadd5_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd5_out_r_11 to fadd5_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y175.DQ     Tcko                  0.396   fadd5_out_r<11>
+                                                       fadd5_out_r_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd5_out_r_10 (FF)
+  Destination:          fadd5_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd5_out_r_10 to fadd5_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y175.CQ     Tcko                  0.396   fadd5_out_r<11>
+                                                       fadd5_out_r_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd5_out_r_9 (FF)
+  Destination:          fadd5_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd5_out_r_9 to fadd5_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y175.BQ     Tcko                  0.396   fadd5_out_r<11>
+                                                       fadd5_out_r_9
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd5_out_r_8 (FF)
+  Destination:          fadd5_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd5_out_r_8 to fadd5_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y175.AQ     Tcko                  0.396   fadd5_out_r<11>
+                                                       fadd5_out_r_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_23 (FF)
+  Destination:          fadd3_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_23 to fadd3_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X96Y170.DQ     Tcko                  0.396   fadd3_out_r<23>
+                                                       fadd3_out_r_23
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_15 (FF)
+  Destination:          fadd3_out_r<15>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_15 to fadd3_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y173.DQ     Tcko                  0.396   fadd3_out_r<15>
+                                                       fadd3_out_r_15
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_14 (FF)
+  Destination:          fadd3_out_r<15>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_14 to fadd3_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y173.CQ     Tcko                  0.396   fadd3_out_r<15>
+                                                       fadd3_out_r_14
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_13 (FF)
+  Destination:          fadd3_out_r<15>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_13 to fadd3_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y173.BQ     Tcko                  0.396   fadd3_out_r<15>
+                                                       fadd3_out_r_13
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_12 (FF)
+  Destination:          fadd3_out_r<15>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_12 to fadd3_out_r<15>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y173.AQ     Tcko                  0.396   fadd3_out_r<15>
+                                                       fadd3_out_r_12
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_11 (FF)
+  Destination:          fadd3_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_11 to fadd3_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y169.DQ     Tcko                  0.396   fadd3_out_r<11>
+                                                       fadd3_out_r_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_10 (FF)
+  Destination:          fadd3_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_10 to fadd3_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y169.CQ     Tcko                  0.396   fadd3_out_r<11>
+                                                       fadd3_out_r_10
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_9 (FF)
+  Destination:          fadd3_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_9 to fadd3_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y169.BQ     Tcko                  0.396   fadd3_out_r<11>
+                                                       fadd3_out_r_9
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_8 (FF)
+  Destination:          fadd3_out_r<11>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_8 to fadd3_out_r<11>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y169.AQ     Tcko                  0.396   fadd3_out_r<11>
+                                                       fadd3_out_r_8
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               dct_out27_rdy_r (FF)
+  Destination:          dct_out27_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: dct_out27_rdy_r to dct_out27_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X36Y121.AQ     Tcko                  0.396   dct_out27_rdy_r
+                                                       dct_out27_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_3 (FF)
+  Destination:          fadd4_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_3 to fadd4_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y169.DQ     Tcko                  0.396   fadd4_out_r<3>
+                                                       fadd4_out_r_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_29 (FF)
+  Destination:          fadd3_out_r<31>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_29 to fadd3_out_r<31>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X76Y171.BQ     Tcko                  0.396   fadd3_out_r<31>
+                                                       fadd3_out_r_29
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_1 (FF)
+  Destination:          fadd4_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_1 to fadd4_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y169.BQ     Tcko                  0.396   fadd4_out_r<3>
+                                                       fadd4_out_r_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_0 (FF)
+  Destination:          fadd4_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_0 to fadd4_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y169.AQ     Tcko                  0.396   fadd4_out_r<3>
+                                                       fadd4_out_r_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               dct_out25_rdy_r (FF)
+  Destination:          dct_out25_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: dct_out25_rdy_r to dct_out25_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X32Y115.DQ     Tcko                  0.396   dct_out25_rdy_r
+                                                       dct_out25_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_27 (FF)
+  Destination:          fadd4_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_27 to fadd4_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y185.DQ     Tcko                  0.396   fadd4_out_r<27>
+                                                       fadd4_out_r_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_26 (FF)
+  Destination:          fadd4_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_26 to fadd4_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y185.CQ     Tcko                  0.396   fadd4_out_r<27>
+                                                       fadd4_out_r_26
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_25 (FF)
+  Destination:          fadd4_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_25 to fadd4_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y185.BQ     Tcko                  0.396   fadd4_out_r<27>
+                                                       fadd4_out_r_25
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_24 (FF)
+  Destination:          fadd4_out_r<27>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_24 to fadd4_out_r<27>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y185.AQ     Tcko                  0.396   fadd4_out_r<27>
+                                                       fadd4_out_r_24
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_3 (FF)
+  Destination:          fadd2_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_3 to fadd2_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y163.DQ     Tcko                  0.396   fadd2_out_r<3>
+                                                       fadd2_out_r_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_2 (FF)
+  Destination:          fadd2_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_2 to fadd2_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y163.CQ     Tcko                  0.396   fadd2_out_r<3>
+                                                       fadd2_out_r_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_1 (FF)
+  Destination:          fadd2_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_1 to fadd2_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y163.BQ     Tcko                  0.396   fadd2_out_r<3>
+                                                       fadd2_out_r_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_0 (FF)
+  Destination:          fadd2_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_0 to fadd2_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y163.AQ     Tcko                  0.396   fadd2_out_r<3>
+                                                       fadd2_out_r_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_3 (FF)
+  Destination:          fadd3_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_3 to fadd3_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y161.DQ     Tcko                  0.396   fadd3_out_r<3>
+                                                       fadd3_out_r_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_2 (FF)
+  Destination:          fadd3_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_2 to fadd3_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y161.CQ     Tcko                  0.396   fadd3_out_r<3>
+                                                       fadd3_out_r_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_1 (FF)
+  Destination:          fadd3_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_1 to fadd3_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y161.BQ     Tcko                  0.396   fadd3_out_r<3>
+                                                       fadd3_out_r_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd3_out_r_0 (FF)
+  Destination:          fadd3_out_r<3>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd3_out_r_0 to fadd3_out_r<3>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y161.AQ     Tcko                  0.396   fadd3_out_r<3>
+                                                       fadd3_out_r_0
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_23 (FF)
+  Destination:          fadd4_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_23 to fadd4_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y182.DQ     Tcko                  0.396   fadd4_out_r<23>
+                                                       fadd4_out_r_23
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_22 (FF)
+  Destination:          fadd4_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_22 to fadd4_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y182.CQ     Tcko                  0.396   fadd4_out_r<23>
+                                                       fadd4_out_r_22
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_21 (FF)
+  Destination:          fadd4_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_21 to fadd4_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y182.BQ     Tcko                  0.396   fadd4_out_r<23>
+                                                       fadd4_out_r_21
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd4_out_r_20 (FF)
+  Destination:          fadd4_out_r<23>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd4_out_r_20 to fadd4_out_r<23>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y182.AQ     Tcko                  0.396   fadd4_out_r<23>
+                                                       fadd4_out_r_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               fadd2_out_r_19 (FF)
+  Destination:          fadd2_out_r<19>
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: fadd2_out_r_19 to fadd2_out_r<19>
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y168.DQ     Tcko                  0.396   fadd2_out_r<19>
+                                                       fadd2_out_r_19
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+Delay:                  0.396ns (data path)
+  Source:               dct_out2_rdy_r (FF)
+  Destination:          dct_out2_rdy_r
+  Data Path Delay:      0.396ns (Levels of Logic = 0)
+  Source Clock:         clk rising at 0.000ns
+
+  Maximum Data Path: dct_out2_rdy_r to dct_out2_rdy_r
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X44Y104.AQ     Tcko                  0.396   dct_out2_rdy_r
+                                                       dct_out2_rdy_r
+    -------------------------------------------------  ---------------------------
+    Total                                      0.396ns (0.396ns logic, 0.000ns route)
+                                                       (100.0% logic, 0.0% route)
+
+--------------------------------------------------------------------------------
+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+No constraints were found to generate data for the Data Sheet Report section.
+Use the Advanced Analysis (-a) option or generate global constraints for each
+clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
+
+Timing summary:
+---------------
+
+Timing errors: 2153  Score: 2516010  (Setup/Max: 2516010, Hold: 0)
+
+Constraints cover 120404 paths, 0 nets, and 100201 connections
+
+Design statistics:
+   Minimum period:  11.016ns{1}   (Maximum frequency:  90.777MHz)
+   Maximum combinational path delay:   0.396ns
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Oct 24 11:32:23 2012 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 1027 MB
+
+
+

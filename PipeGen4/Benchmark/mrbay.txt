@@ -1,0 +1,1255 @@
+/***********************************************************
+ *
+ * Only one output which will be connected to the accumulator
+ * Visio design name: MrBayes_multi-outputs
+ *
+ * Inputs: 
+ * LA, LC, LG, LT
+ * RA, RC, RG, RT
+ * PL_AA, PL_AC, PL_AG, PL_AT, .... (16)
+ * PR_AA, PR_AC, PR_AG, PR_AT, .... (16)
+ * IIA, IIC, IIG, IIT
+ * Norm
+ * LnScaler
+ * numSites
+ *
+ * Outputs:
+ * clP0, clP1, clP2, clP3
+ * scP
+ * lnScaler
+ *
+ * Due to time limitation, the last nodes have absolute indices
+ ***********************************************************/
+
+//===========================================================
+// Remove all opConstVal, opConst, opVal, opVal_d, 
+// opMuxVal, opMuxVal_d and RegFileTable if not necessary
+//===========================================================
+int s,
+    II_POFST,
+    NORM_POFST,
+    INSCALER_POFST,
+    NUMSITES_POFST,
+    L_POFST,
+    POFST,
+    TIP_POFST,
+    L1_OFST,
+    L2_OFST,
+    L3_OFST,
+    MAX_OFST,
+    DIV_OFST,
+    NORM_OFST,
+    SD1_OFST ,
+
+    SD0_OFST, // Test only
+    MULD1_OFST,
+
+    ADDD1_OFST,
+    ADDD2_OFST,
+    ADDD3_OFST,
+    ADDD4_OFST,
+
+    DLOG_COF_OFST,
+    DLOG_POW_OFST,
+    SLOG_COF_OFST,
+    SLOG_POW_OFST,
+
+    INSCALER_OFST,
+    DS1_OFST      ,
+    SD2_OFST      ,
+    SD3_OFST      ,
+    NUMSITES_OFST ,
+    MULD2_OFST    ;
+
+int run;
+
+//===========================================================
+// At the first run, only collect values for the above vars;
+// at the second run, create DFG using the vars
+//===========================================================
+
+for (run = 0; run < 2; run++) {
+
+// LA, LC, LG, LT, RA, RC, RG, RT
+  L_POFST = 0;
+
+  for (i = L_POFST; i < L_POFST+8; i++) {
+    DFG[i]->op = nop;
+    DFG[i]->opPrecision = sfp;
+    DFG[i]->opSrcNu = 1;
+    DFG[i]->opSrc = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opDest = (int *) malloc(sizeof(int) * 4);
+    DFG[i]->opSrc[0] = -i-1;
+    DFG[i]->opDest[0] = (i- L_POFST) + POFST + 0;
+    DFG[i]->opDest[1] = (i- L_POFST) + POFST + 8;
+    DFG[i]->opDest[2] = (i- L_POFST) + POFST + 16;
+    DFG[i]->opDest[3] = (i- L_POFST) + POFST + 24;
+    DFG[i]->opDestNu = 4;
+  }
+
+    INSCALER_POFST = i;
+    myprintf("INSCALER_POFST = %d\n", INSCALER_POFST);
+
+    DFG[i]->op = nop;
+    DFG[i]->opPrecision = sfp;
+    DFG[i]->opSrcNu = 1;
+    DFG[i]->opSrc = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opSrc[0] = -i-1;
+    DFG[i]->opDest[0] = INSCALER_OFST;
+    DFG[i]->opDestNu = 1;
+
+    NUMSITES_POFST = ++i;
+    myprintf("NUMSITES_POFST = %d\n", NUMSITES_POFST);
+
+    DFG[i]->op = nop;
+    DFG[i]->opPrecision = sfp;
+    DFG[i]->opSrcNu = 1;
+    DFG[i]->opSrc = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opSrc[0] = -i-1;
+    DFG[i]->opDest[0] = MULD2_OFST;
+    DFG[i]->opDestNu = 1;
+
+//--------------------------------------------------------
+//  Reach MAX_PORT_NU
+//--------------------------------------------------------
+
+// opConstVal for Norm, IIa, PL used in GetCPortName function
+
+    NORM_POFST = ++i;
+    myprintf("NORM_POFST = %d\n", NORM_POFST);
+
+    DFG[i]->op = nopc;
+    DFG[i]->opPrecision = sfp;
+    DFG[i]->opSrcNu = 1;
+    DFG[i]->opSrc = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opDest = (int *) malloc(sizeof(int) * 4);
+    DFG[i]->opSrc[0] = -i-1;
+    DFG[i]->opDest[0] = NORM_OFST+0;
+    DFG[i]->opDest[1] = NORM_OFST+1;
+    DFG[i]->opDest[2] = NORM_OFST+2;
+    DFG[i]->opDest[3] = NORM_OFST+3;
+    DFG[i]->opDestNu = 4;
+    DFG[i]->opConstVal = 1.0;
+
+  
+// IIA, IIC, IIG, IIT
+
+  II_POFST = ++i;
+
+  for (i = II_POFST; i < II_POFST+4; i++) {
+    DFG[i]->op = nopc;
+    DFG[i]->opPrecision = sfp; // dfp
+    DFG[i]->opSrcNu = 1;
+    DFG[i]->opSrc = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opSrc[0] = -i-1;
+    DFG[i]->opDest[0] = MULD1_OFST+(i-II_POFST);
+    DFG[i]->opDestNu = 1;
+    DFG[i]->opConstVal = DFG[NORM_POFST]->opConstVal + 1 + (i-II_POFST);
+  }
+
+// PL_AA, PL_AC, PL_AG, PL_AT, PR_AA, PR_AC, PR_AG, PR_AT,
+// ..., 
+// ..., 
+// PL_TA, PL_TC, PL_TG, PL_TT, PR_TA, PR_TC, PR_TG, PR_TT
+  TIP_POFST = i;
+
+  for (i = TIP_POFST; i < TIP_POFST + 32; i++) {
+    DFG[i]->op = nopc;
+    DFG[i]->opPrecision = sfp;
+    DFG[i]->opSrcNu = 1;
+    DFG[i]->opSrc = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+    DFG[i]->opSrc[0] = -i-1; // after II and Norm
+    DFG[i]->opDest[0] = POFST + i - TIP_POFST;
+    DFG[i]->opDestNu = 1;
+    DFG[i]->opConstVal = DFG[NORM_POFST]->opConstVal + 5 + (i-TIP_POFST); 
+    // after Norm and 4 IIs
+  }
+
+
+    POFST = i;
+    myprintf("POFST = %d\n", POFST);
+
+    s = 0;
+    for (i = POFST; i < POFST + 32; i++) {
+      DFG[i]->op = mul;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      DFG[i]->opSrc[0] = TIP_POFST + (i - POFST);
+      DFG[i]->opSrc[1] = L_POFST + (i - POFST) % 8;
+      DFG[i]->opDest[0] = POFST+32+s/2;
+      DFG[i]->opDestNu = 1;
+      s++;
+    }
+
+    L1_OFST = i;
+    myprintf("L1_OFST = %d\n", L1_OFST);
+
+    s = 0;
+    for (i = L1_OFST; i < L1_OFST + 16; i++) {
+      DFG[i]->op = add;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      DFG[i]->opSrc[0] = POFST + s * 2;
+      DFG[i]->opSrc[1] = POFST + s * 2 + 1;
+      DFG[i]->opDest[0] = L1_OFST+16+s/2;
+      DFG[i]->opDestNu = 1;
+      s++;
+    }
+
+    L2_OFST = i;
+    myprintf("L2_OFST = %d\n", L2_OFST);
+
+    s = 0;
+    for (i = L2_OFST; i < L2_OFST + 8; i++) {
+      DFG[i]->op = add;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      DFG[i]->opSrc[0] = L1_OFST + s * 2;
+      DFG[i]->opSrc[1] = L1_OFST + s * 2 + 1;
+      DFG[i]->opDest[0] = L2_OFST+8+s/2;
+      DFG[i]->opDestNu = 1;
+      s++;
+    }
+
+    L3_OFST    = i;
+    myprintf("L3_OFST = %d\n", L3_OFST);
+
+    MAX_OFST   = L3_OFST    + 4;
+    myprintf("MAX_OFST = %d\n", MAX_OFST);
+
+    DIV_OFST   = MAX_OFST   + 3;
+    myprintf("DIV_OFST = %d\n", DIV_OFST);
+
+    NORM_OFST  = DIV_OFST   + 4;
+    myprintf("NORM_OFST = %d\n", NORM_OFST);
+
+    SD1_OFST   = NORM_OFST  + 4;
+    myprintf("SD1_OFST = %d\n", SD1_OFST);
+
+    MULD1_OFST = SD1_OFST   + 0; //5;
+    myprintf("MULD1_OFST = %d\n", MULD1_OFST);
+
+    ADDD1_OFST = MULD1_OFST + 4;
+    myprintf("ADDD1_OFST = %d\n", ADDD1_OFST);
+
+    ADDD2_OFST = ADDD1_OFST + 2;
+    myprintf("ADDD2_OFST = %d\n", ADDD2_OFST);
+
+    DLOG_COF_OFST = ADDD2_OFST;  // no increment
+    myprintf("DLOG_COF_OFST = %d\n", DLOG_COF_OFST);
+
+    DLOG_POW_OFST = DLOG_COF_OFST + 20;
+    myprintf("DLOG_POW_OFST = %d\n", DLOG_POW_OFST);
+
+    SLOG_COF_OFST = DLOG_POW_OFST + 11; 
+    myprintf("SLOG_COF_OFST = %d\n", SLOG_COF_OFST);
+
+    SLOG_POW_OFST = SLOG_COF_OFST + 20;
+    myprintf("SLOG_POW_OFST = %d\n", SLOG_POW_OFST);
+
+    INSCALER_OFST = SD2_OFST= SLOG_POW_OFST + 11 + 1; // add increment
+    myprintf("INSCALER_OFST = %d\n", INSCALER_OFST);
+
+    myprintf("SD2_OFST = %d\n", SD2_OFST);
+   
+    ADDD3_OFST    = SD2_OFST + 0;//1;
+    myprintf("ADDD3_OFST = %d\n", ADDD3_OFST);
+    myprintf("ADDD3_OFST = 187\n");
+
+    ADDD4_OFST    = ADDD3_OFST + 1;
+    myprintf("ADDD4_OFST = %d\n", ADDD4_OFST);
+    myprintf("ADDD4_OFST = 188\n");
+
+    SD3_OFST      = ADDD4_OFST  + 0;//1;
+    myprintf("SD3_OFST = %d\n", SD3_OFST);
+
+    NUMSITES_OFST = SD3_OFST;
+    myprintf("NUMSITES_OFST = %d\n", NUMSITES_OFST);
+
+    MULD2_OFST    = SD3_OFST + 1;
+    myprintf("MULD2_OFST = %d\n", MULD2_OFST);
+
+    s = 0;
+    while (i < L3_OFST+4) {
+      DFG[i]->op = mul;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 3);
+      DFG[i]->opSrc[0] = L2_OFST + s * 2;
+      DFG[i]->opSrc[1] = L2_OFST + s * 2 + 1;
+      DFG[i]->opDest[0] = MAX_OFST + s/2; // max
+      DFG[i]->opDest[1] = NORM_OFST + s;  // mux
+      DFG[i]->opDest[2] = DIV_OFST  + s;  // div
+      DFG[i]->opDestNu = 3;
+      s++;
+      i++;
+    }
+
+    assert(i == MAX_OFST);
+
+    s = 0;
+    for (i = MAX_OFST; i < MAX_OFST + 2; i++) {
+      DFG[i]->op = max;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      DFG[i]->opSrc[0] = L3_OFST + s * 2;
+      DFG[i]->opSrc[1] = L3_OFST + s * 2 + 1;
+      DFG[i]->opDest[0] = MAX_OFST + 2;
+      DFG[i]->opDestNu = 1;
+      s++;
+     }
+
+      // i = MAX_OFST + 2;
+      DFG[i]->op = max;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 11);
+      DFG[i]->opSrc[0] = MAX_OFST;
+      DFG[i]->opSrc[1] = MAX_OFST+1;
+      DFG[i]->opDest[0] = DIV_OFST + 0;
+      DFG[i]->opDest[1] = DIV_OFST + 1;
+      DFG[i]->opDest[2] = DIV_OFST + 2;
+      DFG[i]->opDest[3] = DIV_OFST + 3;
+      DFG[i]->opDest[4] = SLOG_COF_OFST + 1; // single log func
+      DFG[i]->opDest[5] = SLOG_COF_OFST + 3;
+      DFG[i]->opDest[6] = SLOG_COF_OFST + 7;
+      DFG[i]->opDest[7]= SLOG_COF_OFST + 15;
+      // - DFG[i]->opDest[8]= SD1_OFST + 4;
+      // + the followings for a single-prec datapath 
+      DFG[i]->opDest[8] = SLOG_POW_OFST + 1; // circuit dependent
+      DFG[i]->opDest[9] = SLOG_POW_OFST + 2;
+      DFG[i]->opDest[10] = SLOG_POW_OFST + 3;
+      DFG[i]->opDestNu = 11;
+
+    assert (i + 1 ==  DIV_OFST);
+
+    for (i = DIV_OFST; i < DIV_OFST + 4; i++) {
+      DFG[i]->op = div_;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      DFG[i]->opSrc[0] = L3_OFST+(i-DIV_OFST);
+      DFG[i]->opSrc[1] = MAX_OFST+2;
+      DFG[i]->opDest[0] = NORM_OFST + (i-DIV_OFST);
+      DFG[i]->opDestNu = 1;
+     }
+
+    assert (i ==  NORM_OFST);
+
+    for (i = NORM_OFST; i < NORM_OFST + 4; i++) {
+      DFG[i]->op = mx;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 3;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 3);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opSrc[0] = NORM_POFST;
+      DFG[i]->opSrc[1] = L3_OFST + (i-NORM_OFST); 
+      DFG[i]->opSrc[2] = DIV_OFST+ (i-NORM_OFST);
+      DFG[i]->opDest[0]= SINK;                      // add an output
+      // - DFG[i]->opDest[1]= SD1_OFST + (i-NORM_OFST);
+      // No SD connection
+      DFG[i]->opDest[1]= MULD1_OFST + (i-NORM_OFST);
+      DFG[i]->opDestNu = 2;
+     }
+
+    assert (i == MULD1_OFST);
+
+    for (i = MULD1_OFST; i < MULD1_OFST + 4; i++) {
+      DFG[i]->op = mul;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *) malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      // No SD connection
+      //DFG[i]->opSrc[0] = SD1_OFST  + (i-MULD1_OFST);
+      DFG[i]->opSrc[0] = NORM_OFST  + (i-MULD1_OFST);
+      DFG[i]->opSrc[1] = II_POFST  + (i-MULD1_OFST);
+      DFG[i]->opDest[0]= ADDD1_OFST + (i-MULD1_OFST)/2;
+      DFG[i]->opDestNu = 1;
+     }
+
+    assert (i ==  ADDD1_OFST);
+
+    for (i = ADDD1_OFST; i < ADDD1_OFST + 2; i++) {
+      DFG[i]->op = add;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *)  malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 1);
+      DFG[i]->opSrc[0] = MULD1_OFST + (i-ADDD1_OFST) * 2;
+      DFG[i]->opSrc[1] = MULD1_OFST + (i-ADDD1_OFST) * 2 + 1;
+      DFG[i]->opDest[0]= ADDD2_OFST;
+      DFG[i]->opDestNu = 1;
+     }
+
+      DFG[i]->op = add;
+      DFG[i]->opPrecision = sfp;
+      DFG[i]->opSrcNu = 2;
+      DFG[i]->opSrc = (int *)  malloc(sizeof(int) * 2);
+      DFG[i]->opDest = (int *) malloc(sizeof(int) * 7);
+      DFG[i]->opSrc[0] = ADDD1_OFST + 0;
+      DFG[i]->opSrc[1] = ADDD1_OFST + 1;
+      DFG[i]->opDest[0] = DLOG_POW_OFST + 1;
+      DFG[i]->opDest[1] = DLOG_POW_OFST + 2;
+      DFG[i]->opDest[2] = DLOG_POW_OFST + 3;
+      DFG[i]->opDest[3] = DLOG_COF_OFST + 1;
+      DFG[i]->opDest[4] = DLOG_COF_OFST + 3;
+      DFG[i]->opDest[5] = DLOG_COF_OFST + 7;
+      DFG[i]->opDest[6] = DLOG_COF_OFST + 15;
+      DFG[i]->opDestNu = 7;
+
+//============================================================
+// Double-precision cheby log(x)
+//============================================================
+  assert(i == DLOG_COF_OFST);
+
+  i = DLOG_COF_OFST;
+
+  DFG[i+1]->op = gt;
+  DFG[i+1]->opPrecision = sfp;
+  DFG[i+1]->opSrcNu = 2;
+  DFG[i+1]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+1]->opDest = (int *) malloc(sizeof(int) * 8);
+  DFG[i+1]->opSrc[0] = ADDD2_OFST;
+  DFG[i+1]->opSrc[1] = ADDD2_OFST;
+  DFG[i+1]->opDest[0] = i+2;
+  DFG[i+1]->opDest[1] = i+6;
+  DFG[i+1]->opDest[2] = i+14;
+  DFG[i+1]->opDest[3] = i+16;
+  DFG[i+1]->opDest[4] = i+17;
+  DFG[i+1]->opDest[5] = i+18;
+  DFG[i+1]->opDest[6] = i+19;
+  DFG[i+1]->opDest[7] = i+20;
+  DFG[i+1]->opDestNu = 8;
+  DFG[i+1]->opConstVal = 10e-16;
+  DFG[i+1]->opConst = 1;
+
+  DFG[i+2]->op = mx;
+  DFG[i+2]->opPrecision = sfp;
+  DFG[i+2]->opSrcNu = 3;
+  DFG[i+2]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+2]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+2]->opSrc[0] = i+1;
+  DFG[i+2]->opSrc[1] = -1;
+  DFG[i+2]->opSrc[2] = -1;
+  DFG[i+2]->opDest[0] = i+3;
+  DFG[i+2]->opDestNu = 1;
+  DFG[i+2]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+2]->opMuxVal[0] = 10e-24;
+  DFG[i+2]->opMuxVal[1] = 10e-8;
+
+  DFG[i+3]->op = gt;
+  DFG[i+3]->opPrecision = sfp;
+  DFG[i+3]->opSrcNu = 2;
+  DFG[i+3]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+3]->opDest = (int *) malloc(sizeof(int) * 9);
+  DFG[i+3]->opSrc[0]  = ADDD2_OFST;
+  DFG[i+3]->opSrc[1]  = i+2;
+  DFG[i+3]->opDest[0] = i+4;
+  DFG[i+3]->opDest[1] = i+5;
+  DFG[i+3]->opDest[2] = i+12;
+  DFG[i+3]->opDest[3] = i+13;
+  DFG[i+3]->opDest[4] = i+16;
+  DFG[i+3]->opDest[5] = i+17;
+  DFG[i+3]->opDest[6] = i+18;
+  DFG[i+3]->opDest[7] = i+19;
+  DFG[i+3]->opDest[8] = i+20;
+  DFG[i+3]->opDestNu = 9;
+
+  DFG[i+4]->op = mx;
+  DFG[i+4]->opPrecision = sfp;
+  DFG[i+4]->opSrcNu = 3;
+  DFG[i+4]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+4]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+4]->opSrc[0] = i+3;
+  DFG[i+4]->opSrc[1] = -1;
+  DFG[i+4]->opSrc[2] = -1;
+  DFG[i+4]->opDest[0] = i+6;
+  DFG[i+4]->opDestNu = 1;
+  DFG[i+4]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+4]->opMuxVal[0] = 10e-28;
+  DFG[i+4]->opMuxVal[1] = 10e-20;
+
+  DFG[i+5]->op = mx;
+  DFG[i+5]->opPrecision = sfp;
+  DFG[i+5]->opSrcNu = 3;
+  DFG[i+5]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+5]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+5]->opSrc[0] = i+3;
+  DFG[i+5]->opSrc[1] = -1;
+  DFG[i+5]->opSrc[2] = -1;
+  DFG[i+5]->opDest[0] = i+6;
+  DFG[i+5]->opDestNu = 1;
+  DFG[i+5]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+5]->opMuxVal[0] = 10e-12;
+  DFG[i+5]->opMuxVal[1] = 10e-4;
+
+  DFG[i+6]->op = mx;
+  DFG[i+6]->opPrecision = sfp;
+  DFG[i+6]->opSrcNu = 3;
+  DFG[i+6]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+6]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+6]->opSrc[0]  = i+1;
+  DFG[i+6]->opSrc[1]  = i+4;
+  DFG[i+6]->opSrc[2]  = i+5;
+  DFG[i+6]->opDest[0] = i+7;
+  DFG[i+6]->opDestNu = 1;
+
+  DFG[i+7]->op = gt;
+  DFG[i+7]->opPrecision = sfp;
+  DFG[i+7]->opSrcNu = 2;
+  DFG[i+7]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+7]->opDest = (int *) malloc(sizeof(int) * 9);
+  DFG[i+7]->opSrc[0] = ADDD2_OFST; 
+  DFG[i+7]->opSrc[1]  = i+6;
+  DFG[i+7]->opDest[0] = i+8;
+  DFG[i+7]->opDest[1] = i+9;
+  DFG[i+7]->opDest[2] = i+10;
+  DFG[i+7]->opDest[3] = i+11;
+  DFG[i+7]->opDest[4] = i+16;
+  DFG[i+7]->opDest[5] = i+17;
+  DFG[i+7]->opDest[6] = i+18;
+  DFG[i+7]->opDest[7] = i+19;
+  DFG[i+7]->opDest[8] = i+20;
+  DFG[i+7]->opDestNu = 9;
+
+  DFG[i+8]->op = mx;
+  DFG[i+8]->opPrecision = sfp;
+  DFG[i+8]->opSrcNu = 3;
+  DFG[i+8]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+8]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+8]->opSrc[0] = i+7;
+  DFG[i+8]->opSrc[1] = -1;
+  DFG[i+8]->opSrc[2] = -1;
+  DFG[i+8]->opDest[0] = i+12;
+  DFG[i+8]->opDestNu = 1;
+  DFG[i+8]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+8]->opMuxVal[0] = 10e-30;
+  DFG[i+8]->opMuxVal[1] = 10e-26;
+
+  DFG[i+9]->op = mx;
+  DFG[i+9]->opPrecision = sfp;
+  DFG[i+9]->opSrcNu = 3;
+  DFG[i+9]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+9]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+9]->opSrc[0] = i+7;
+  DFG[i+9]->opSrc[1] = -1;
+  DFG[i+9]->opSrc[2] = -1;
+  DFG[i+9]->opDest[0] = i+12;
+  DFG[i+9]->opDestNu = 1;
+  DFG[i+9]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+9]->opMuxVal[0] = 10e-22;
+  DFG[i+9]->opMuxVal[1] = 10e-18;
+
+  DFG[i+10]->op = mx;
+  DFG[i+10]->opPrecision = sfp;
+  DFG[i+10]->opSrcNu = 3;
+  DFG[i+10]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+10]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+10]->opSrc[0] = i+7;
+  DFG[i+10]->opSrc[1] = -1;
+  DFG[i+10]->opSrc[2] = -1;
+  DFG[i+10]->opDest[0] = i+13;
+  DFG[i+10]->opDestNu = 1;
+  DFG[i+10]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+10]->opMuxVal[0] = 10e-14;
+  DFG[i+10]->opMuxVal[1] = 10e-10;
+
+  DFG[i+11]->op = mx;
+  DFG[i+11]->opPrecision = sfp;
+  DFG[i+11]->opSrcNu = 3;
+  DFG[i+11]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+11]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+11]->opSrc[0] = i+7;
+  DFG[i+11]->opSrc[1] = -1;
+  DFG[i+11]->opSrc[2] = -1;
+  DFG[i+11]->opDest[0] = i+13;
+  DFG[i+11]->opDestNu = 1;
+  DFG[i+11]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+11]->opMuxVal[0] = 10e-6;
+  DFG[i+11]->opMuxVal[1] = 10e-2;
+
+  DFG[i+12]->op = mx;
+  DFG[i+12]->opPrecision = sfp;
+  DFG[i+12]->opSrcNu = 3;
+  DFG[i+12]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+12]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+12]->opSrc[0] = i+3;
+  DFG[i+12]->opSrc[1] = i+8;
+  DFG[i+12]->opSrc[2] = i+9;
+  DFG[i+12]->opDest[0] = i+14;
+  DFG[i+12]->opDestNu = 1;
+
+  DFG[i+13]->op = mx;
+  DFG[i+13]->opPrecision = sfp;
+  DFG[i+13]->opSrcNu = 3;
+  DFG[i+13]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+13]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+13]->opSrc[0] = i+3;
+  DFG[i+13]->opSrc[1] = i+10;
+  DFG[i+13]->opSrc[2] = i+11;
+  DFG[i+13]->opDest[0]= i+14;
+  DFG[i+13]->opDestNu = 1;
+
+  DFG[i+14]->op = mx;
+  DFG[i+14]->opPrecision = sfp;
+  DFG[i+14]->opSrcNu = 3;
+  DFG[i+14]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+14]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+14]->opSrc[0] = i+1;
+  DFG[i+14]->opSrc[1] = i+12;
+  DFG[i+14]->opSrc[2] = i+13;
+  DFG[i+14]->opDest[0]= i+15;
+  DFG[i+14]->opDestNu = 1;
+
+  DFG[i+15]->op = gt;
+  DFG[i+15]->opPrecision = sfp;
+  DFG[i+15]->opSrcNu = 2;
+  DFG[i+15]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+15]->opDest = (int *) malloc(sizeof(int) * 5);
+  DFG[i+15]->opSrc[0]  = ADDD2_OFST;
+  DFG[i+15]->opSrc[1]  = i+14;
+  DFG[i+15]->opDest[0] = i+16;
+  DFG[i+15]->opDest[1] = i+17;
+  DFG[i+15]->opDest[2] = i+18;
+  DFG[i+15]->opDest[3] = i+19;
+  DFG[i+15]->opDest[4] = i+20;
+  DFG[i+15]->opDestNu = 5;
+
+  DFG[i+16]->op = rom; // A ROM node
+  DFG[i+16]->opPrecision = sfp;
+  DFG[i+16]->opSrcNu = 4;
+  DFG[i+16]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+16]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+16]->opSrc[3] = i+1;   // A3
+  DFG[i+16]->opSrc[2] = i+3;   // A2
+  DFG[i+16]->opSrc[1] = i+7;   // A1
+  DFG[i+16]->opSrc[0] = i+15;  // A0
+  DFG[i+16]->opDest[0] =i+31; // c0
+  DFG[i+16]->opDestNu = 1;
+  DFG[i+16]->opConstVal = 1;
+
+  DFG[i+17]->op = rom; // A ROM node
+  DFG[i+17]->opPrecision = sfp;
+  DFG[i+17]->opSrcNu = 4;
+  DFG[i+17]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+17]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+17]->opSrc[3] = i+1;   // A3
+  DFG[i+17]->opSrc[2] = i+3;   // A2
+  DFG[i+17]->opSrc[1] = i+7;   // A1
+  DFG[i+17]->opSrc[0] = i+15;  // A0
+  DFG[i+17]->opDest[0] =i+22; // c1
+  DFG[i+17]->opDestNu = 1;
+  DFG[i+17]->opConstVal = 2;  // c1
+
+  DFG[i+18]->op = rom; // A ROM node
+  DFG[i+18]->opPrecision = sfp;
+  DFG[i+18]->opSrcNu = 4;
+  DFG[i+18]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+18]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+18]->opSrc[3] = i+1;   // A3
+  DFG[i+18]->opSrc[2] = i+3;   // A2
+  DFG[i+18]->opSrc[1] = i+7;   // A1
+  DFG[i+18]->opSrc[0] = i+15;  // A0
+  DFG[i+18]->opDest[0]= i+27; // c2
+  DFG[i+18]->opDestNu = 1;
+  DFG[i+18]->opConstVal = 3;  // c2
+
+  DFG[i+19]->op = rom; // A ROM node
+  DFG[i+19]->opPrecision = sfp;
+  DFG[i+19]->opSrcNu = 4;
+  DFG[i+19]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+19]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+19]->opSrc[3] = i+1;   // A3
+  DFG[i+19]->opSrc[2] = i+3;   // A2
+  DFG[i+19]->opSrc[1] = i+7;   // A1
+  DFG[i+19]->opSrc[0] = i+15;  // A0
+  DFG[i+19]->opDest[0] =i+ 25; // c3
+  DFG[i+19]->opDestNu = 1;
+  DFG[i+19]->opConstVal = 4.0; // c3
+
+  DFG[i+20]->op = rom; // A ROM node
+  DFG[i+20]->opPrecision = sfp;
+  DFG[i+20]->opSrcNu = 4;
+  DFG[i+20]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+20]->opSrc[3] = i+1;   // A3
+  DFG[i+20]->opSrc[2] = i+3;   // A2
+  DFG[i+20]->opSrc[1] = i+7;   // A1
+  DFG[i+20]->opSrc[0] = i+15;  // A0
+  DFG[i+20]->opDest[0] =i+ 26; // c4
+  DFG[i+20]->opDestNu = 1;
+  DFG[i+20]->opConstVal = 5.0; // c4
+
+// powers
+  DFG[i+1+20]->op = mulx; //mul;
+  DFG[i+1+20]->opPrecision = sfp;
+  DFG[i+1+20]->opSrcNu = 2;
+  DFG[i+1+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+1+20]->opDest = (int *) malloc(sizeof(int) * 3);
+  DFG[i+1+20]->opSrc[0] = ADDD2_OFST;
+  DFG[i+1+20]->opSrc[1] = ADDD2_OFST;
+  DFG[i+1+20]->opDest[0] = i+3+20;
+  DFG[i+1+20]->opDest[1] = i+4+20;
+  DFG[i+1+20]->opDest[2] = i+7+20;
+  DFG[i+1+20]->opDestNu = 3;
+
+  DFG[i+2+20]->op = mulx; //mul;
+  DFG[i+2+20]->opPrecision = sfp;
+  DFG[i+2+20]->opSrcNu = 2;
+  DFG[i+2+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+2+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+2+20]->opSrc[0] = ADDD2_OFST;
+  DFG[i+2+20]->opSrc[1] = i+17; // c1
+  DFG[i+2+20]->opDest[0] = i+9+20;
+  DFG[i+2+20]->opDestNu = 1;
+
+  DFG[i+3+20]->op = mulx; //mul;
+  DFG[i+3+20]->opPrecision = sfp;
+  DFG[i+3+20]->opSrcNu = 2;
+  DFG[i+3+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+3+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+3+20]->opSrc[0] = ADDD2_OFST;
+  DFG[i+3+20]->opSrc[1] = i+1+20;
+  DFG[i+3+20]->opDest[0]= i+5+20;
+  DFG[i+3+20]->opDestNu = 1;
+
+  DFG[i+4+20]->op = mulx; //mul;
+  DFG[i+4+20]->opPrecision = sfp;
+  DFG[i+4+20]->opSrcNu = 2;
+  DFG[i+4+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+4+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+4+20]->opSrc[0] = i+1+20;
+  DFG[i+4+20]->opSrc[1] = i+1+20;
+  DFG[i+4+20]->opDest[0] =i+ 6+20;
+  DFG[i+4+20]->opDestNu = 1;
+
+  DFG[i+5+20]->op = mulx; //mul;
+  DFG[i+5+20]->opPrecision = sfp;
+  DFG[i+5+20]->opSrcNu = 2;
+  DFG[i+5+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+5+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+5+20]->opSrc[0] = i+3+20;
+  DFG[i+5+20]->opSrc[1] = i+19; // c3
+  DFG[i+5+20]->opDest[0] =i+ 8+20;
+  DFG[i+5+20]->opDestNu = 1;
+
+  DFG[i+6+20]->op = mulx; //mul;
+  DFG[i+6+20]->opPrecision = sfp;
+  DFG[i+6+20]->opSrcNu = 2;
+  DFG[i+6+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+6+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+6+20]->opSrc[0] = i+4+20; 
+  DFG[i+6+20]->opSrc[1] = i+20; // c4
+  DFG[i+6+20]->opDest[0] =i+ 8+20;
+  DFG[i+6+20]->opDestNu = 1;
+
+  DFG[i+7+20]->op = mulx; //mul;
+  DFG[i+7+20]->opPrecision = sfp;
+  DFG[i+7+20]->opSrcNu = 2;
+  DFG[i+7+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+7+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+7+20]->opSrc[0] = i+1+20; 
+  DFG[i+7+20]->opSrc[1] = i+18; // c2
+  DFG[i+7+20]->opDest[0] =i+ 9+20;
+  DFG[i+7+20]->opDestNu = 1;
+
+  DFG[i+8+20]->op = addx; //add;
+  DFG[i+8+20]->opPrecision = sfp;
+  DFG[i+8+20]->opSrcNu = 2;
+  DFG[i+8+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+8+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+8+20]->opSrc[0] = i+5+20; // 
+  DFG[i+8+20]->opSrc[1] = i+6+20; // 
+  DFG[i+8+20]->opDest[0] =i+ 10+20;
+  DFG[i+8+20]->opDestNu = 1;
+
+  DFG[i+9+20]->op = addx; //add;
+  DFG[i+9+20]->opPrecision = sfp;
+  DFG[i+9+20]->opSrcNu = 2;
+  DFG[i+9+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+9+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+9+20]->opSrc[0] = i+2+20; 
+  DFG[i+9+20]->opSrc[1] = i+7+20; 
+  DFG[i+9+20]->opDest[0] =i+ 10+20;
+  DFG[i+9+20]->opDestNu = 1;
+
+  DFG[i+10+20]->op = addx; //add;
+  DFG[i+10+20]->opPrecision = sfp;
+  DFG[i+10+20]->opSrcNu = 2;
+  DFG[i+10+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+10+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+10+20]->opSrc[0] = i+8+20;
+  DFG[i+10+20]->opSrc[1] = i+9+20; 
+  DFG[i+10+20]->opDest[0] =i+ 11+20;
+  DFG[i+10+20]->opDestNu = 1;
+
+  DFG[i+11+20]->op = addx; //add;
+  DFG[i+11+20]->opPrecision = sfp;
+  DFG[i+11+20]->opSrcNu = 2;
+  DFG[i+11+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+11+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+11+20]->opSrc[0] = i+10+20; 
+  DFG[i+11+20]->opSrc[1] = i+16; // c0
+  DFG[i+11+20]->opDest[0] = ADDD4_OFST;
+  DFG[i+11+20]->opDestNu = 1;
+
+
+//============================================================
+// Single-precision cheby log(x)
+//============================================================
+  
+  assert(i + 31 == SLOG_COF_OFST);
+  i = SLOG_COF_OFST;
+
+  DFG[i+1]->op = gt;
+  DFG[i+1]->opPrecision = sfp;
+  DFG[i+1]->opSrcNu = 2;
+  DFG[i+1]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+1]->opDest = (int *) malloc(sizeof(int) * 8);
+  DFG[i+1]->opSrc[0] = MAX_OFST+2;
+  DFG[i+1]->opSrc[1] = MAX_OFST+2;
+  DFG[i+1]->opDest[0] = i+2;
+  DFG[i+1]->opDest[1] = i+6;
+  DFG[i+1]->opDest[2] = i+14;
+  DFG[i+1]->opDest[3] = i+16;
+  DFG[i+1]->opDest[4] = i+17;
+  DFG[i+1]->opDest[5] = i+18;
+  DFG[i+1]->opDest[6] = i+19;
+  DFG[i+1]->opDest[7] = i+20;
+  DFG[i+1]->opDestNu = 8;
+  DFG[i+1]->opConstVal = 10e-16;
+  DFG[i+1]->opConst = 1;
+
+  DFG[i+2]->op = mx;
+  DFG[i+2]->opPrecision = sfp;
+  DFG[i+2]->opSrcNu = 3;
+  DFG[i+2]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+2]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+2]->opSrc[0] = i+1;
+  DFG[i+2]->opSrc[1] = -1;
+  DFG[i+2]->opSrc[2] = -1;
+  DFG[i+2]->opDest[0] = i+3;
+  DFG[i+2]->opDestNu = 1;
+  DFG[i+2]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+2]->opMuxVal[0] = 10e-24;
+  DFG[i+2]->opMuxVal[1] = 10e-8;
+
+  DFG[i+3]->op = gt;
+  DFG[i+3]->opPrecision = sfp;
+  DFG[i+3]->opSrcNu = 2;
+  DFG[i+3]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+3]->opDest = (int *) malloc(sizeof(int) * 9);
+  DFG[i+3]->opSrc[0]  = MAX_OFST + 2;
+  DFG[i+3]->opSrc[1]  = i+2;
+  DFG[i+3]->opDest[0] = i+4;
+  DFG[i+3]->opDest[1] = i+5;
+  DFG[i+3]->opDest[2] = i+12;
+  DFG[i+3]->opDest[3] = i+13;
+  DFG[i+3]->opDest[4] = i+16;
+  DFG[i+3]->opDest[5] = i+17;
+  DFG[i+3]->opDest[6] = i+18;
+  DFG[i+3]->opDest[7] = i+19;
+  DFG[i+3]->opDest[8] = i+20;
+  DFG[i+3]->opDestNu = 9;
+
+  DFG[i+4]->op = mx;
+  DFG[i+4]->opPrecision = sfp;
+  DFG[i+4]->opSrcNu = 3;
+  DFG[i+4]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+4]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+4]->opSrc[0] = i+3;
+  DFG[i+4]->opSrc[1] = -1;
+  DFG[i+4]->opSrc[2] = -1;
+  DFG[i+4]->opDest[0] = i+6;
+  DFG[i+4]->opDestNu = 1;
+  DFG[i+4]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+4]->opMuxVal[0] = 10e-28;
+  DFG[i+4]->opMuxVal[1] = 10e-20;
+
+  DFG[i+5]->op = mx;
+  DFG[i+5]->opPrecision = sfp;
+  DFG[i+5]->opSrcNu = 3;
+  DFG[i+5]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+5]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+5]->opSrc[0] = i+3;
+  DFG[i+5]->opSrc[1] = -1;
+  DFG[i+5]->opSrc[2] = -1;
+  DFG[i+5]->opDest[0] = i+6;
+  DFG[i+5]->opDestNu = 1;
+  DFG[i+5]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+5]->opMuxVal[0] = 10e-12;
+  DFG[i+5]->opMuxVal[1] = 10e-4;
+
+  DFG[i+6]->op = mx;
+  DFG[i+6]->opPrecision = sfp;
+  DFG[i+6]->opSrcNu = 3;
+  DFG[i+6]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+6]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+6]->opSrc[0]  = i+1;
+  DFG[i+6]->opSrc[1]  = i+4;
+  DFG[i+6]->opSrc[2]  = i+5;
+  DFG[i+6]->opDest[0] = i+7;
+  DFG[i+6]->opDestNu = 1;
+
+  DFG[i+7]->op = gt;
+  DFG[i+7]->opPrecision = sfp;
+  DFG[i+7]->opSrcNu = 2;
+  DFG[i+7]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+7]->opDest = (int *) malloc(sizeof(int) * 9);
+  DFG[i+7]->opSrc[0] = MAX_OFST + 2; 
+  DFG[i+7]->opSrc[1]  = i+6;
+  DFG[i+7]->opDest[0] = i+8;
+  DFG[i+7]->opDest[1] = i+9;
+  DFG[i+7]->opDest[2] = i+10;
+  DFG[i+7]->opDest[3] = i+11;
+  DFG[i+7]->opDest[4] = i+16;
+  DFG[i+7]->opDest[5] = i+17;
+  DFG[i+7]->opDest[6] = i+18;
+  DFG[i+7]->opDest[7] = i+19;
+  DFG[i+7]->opDest[8] = i+20;
+  DFG[i+7]->opDestNu = 9;
+
+  DFG[i+8]->op = mx;
+  DFG[i+8]->opPrecision = sfp;
+  DFG[i+8]->opSrcNu = 3;
+  DFG[i+8]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+8]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+8]->opSrc[0] = i+7;
+  DFG[i+8]->opSrc[1] = -1;
+  DFG[i+8]->opSrc[2] = -1;
+  DFG[i+8]->opDest[0] = i+12;
+  DFG[i+8]->opDestNu = 1;
+  DFG[i+8]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+8]->opMuxVal[0] = 10e-30;
+  DFG[i+8]->opMuxVal[1] = 10e-26;
+
+  DFG[i+9]->op = mx;
+  DFG[i+9]->opPrecision = sfp;
+  DFG[i+9]->opSrcNu = 3;
+  DFG[i+9]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+9]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+9]->opSrc[0] = i+7;
+  DFG[i+9]->opSrc[1] = -1;
+  DFG[i+9]->opSrc[2] = -1;
+  DFG[i+9]->opDest[0] = i+12;
+  DFG[i+9]->opDestNu = 1;
+  DFG[i+9]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+9]->opMuxVal[0] = 10e-22;
+  DFG[i+9]->opMuxVal[1] = 10e-18;
+
+  DFG[i+10]->op = mx;
+  DFG[i+10]->opPrecision = sfp;
+  DFG[i+10]->opSrcNu = 3;
+  DFG[i+10]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+10]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+10]->opSrc[0] = i+7;
+  DFG[i+10]->opSrc[1] = -1;
+  DFG[i+10]->opSrc[2] = -1;
+  DFG[i+10]->opDest[0] = i+13;
+  DFG[i+10]->opDestNu = 1;
+  DFG[i+10]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+10]->opMuxVal[0] = 10e-14;
+  DFG[i+10]->opMuxVal[1] = 10e-10;
+
+  DFG[i+11]->op = mx;
+  DFG[i+11]->opPrecision = sfp;
+  DFG[i+11]->opSrcNu = 3;
+  DFG[i+11]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+11]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+11]->opSrc[0] = i+7;
+  DFG[i+11]->opSrc[1] = -1;
+  DFG[i+11]->opSrc[2] = -1;
+  DFG[i+11]->opDest[0] = i+13;
+  DFG[i+11]->opDestNu = 1;
+  DFG[i+11]->opMuxVal = (float *) malloc (sizeof(float) * 2);
+  DFG[i+11]->opMuxVal[0] = 10e-6;
+  DFG[i+11]->opMuxVal[1] = 10e-2;
+
+  DFG[i+12]->op = mx;
+  DFG[i+12]->opPrecision = sfp;
+  DFG[i+12]->opSrcNu = 3;
+  DFG[i+12]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+12]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+12]->opSrc[0] = i+3;
+  DFG[i+12]->opSrc[1] = i+8;
+  DFG[i+12]->opSrc[2] = i+9;
+  DFG[i+12]->opDest[0] = i+14;
+  DFG[i+12]->opDestNu = 1;
+
+  DFG[i+13]->op = mx;
+  DFG[i+13]->opPrecision = sfp;
+  DFG[i+13]->opSrcNu = 3;
+  DFG[i+13]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+13]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+13]->opSrc[0] = i+3;
+  DFG[i+13]->opSrc[1] = i+10;
+  DFG[i+13]->opSrc[2] = i+11;
+  DFG[i+13]->opDest[0]= i+14;
+  DFG[i+13]->opDestNu = 1;
+
+  DFG[i+14]->op = mx;
+  DFG[i+14]->opPrecision = sfp;
+  DFG[i+14]->opSrcNu = 3;
+  DFG[i+14]->opSrc = (int *) malloc(sizeof(int) * 3);
+  DFG[i+14]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+14]->opSrc[0] = i+1;
+  DFG[i+14]->opSrc[1] = i+12;
+  DFG[i+14]->opSrc[2] = i+13;
+  DFG[i+14]->opDest[0]= i+15;
+  DFG[i+14]->opDestNu = 1;
+
+  DFG[i+15]->op = gt;
+  DFG[i+15]->opPrecision = sfp;
+  DFG[i+15]->opSrcNu = 2;
+  DFG[i+15]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+15]->opDest = (int *) malloc(sizeof(int) * 5);
+  DFG[i+15]->opSrc[0]  = MAX_OFST + 2;
+  DFG[i+15]->opSrc[1]  = i+14;
+  DFG[i+15]->opDest[0] = i+16;
+  DFG[i+15]->opDest[1] = i+17;
+  DFG[i+15]->opDest[2] = i+18;
+  DFG[i+15]->opDest[3] = i+19;
+  DFG[i+15]->opDest[4] = i+20;
+  DFG[i+15]->opDestNu = 5;
+
+  DFG[i+16]->op = rom; // A ROM node
+  DFG[i+16]->opPrecision = sfp;
+  DFG[i+16]->opSrcNu = 4;
+  DFG[i+16]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+16]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+16]->opSrc[3] = i+1;   // A3
+  DFG[i+16]->opSrc[2] = i+3;   // A2
+  DFG[i+16]->opSrc[1] = i+7;   // A1
+  DFG[i+16]->opSrc[0] = i+15;  // A0
+  DFG[i+16]->opDest[0] =i+31; // c0
+  DFG[i+16]->opDestNu = 1;
+  DFG[i+16]->opConstVal = 1;  // c0
+
+  DFG[i+17]->op = rom; // A ROM node
+  DFG[i+17]->opPrecision = sfp;
+  DFG[i+17]->opSrcNu = 4;
+  DFG[i+17]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+17]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+17]->opSrc[3] = i+1;   // A3
+  DFG[i+17]->opSrc[2] = i+3;   // A2
+  DFG[i+17]->opSrc[1] = i+7;   // A1
+  DFG[i+17]->opSrc[0] = i+15;  // A0
+  DFG[i+17]->opDest[0] =i+22; // c1
+  DFG[i+17]->opDestNu = 1;
+  DFG[i+17]->opConstVal = 2;  // c1
+
+  DFG[i+18]->op = rom; // A ROM node
+  DFG[i+18]->opPrecision = sfp;
+  DFG[i+18]->opSrcNu = 4;
+  DFG[i+18]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+18]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+18]->opSrc[3] = i+1;   // A3
+  DFG[i+18]->opSrc[2] = i+3;   // A2
+  DFG[i+18]->opSrc[1] = i+7;   // A1
+  DFG[i+18]->opSrc[0] = i+15;  // A0
+  DFG[i+18]->opDest[0]= i+27; // c2
+  DFG[i+18]->opDestNu = 1;
+  DFG[i+18]->opConstVal = 3.0;  // c2
+
+  DFG[i+19]->op = rom; // A ROM node
+  DFG[i+19]->opPrecision = sfp;
+  DFG[i+19]->opSrcNu = 4;
+  DFG[i+19]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+19]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+19]->opSrc[3] = i+1;   // A3
+  DFG[i+19]->opSrc[2] = i+3;   // A2
+  DFG[i+19]->opSrc[1] = i+7;   // A1
+  DFG[i+19]->opSrc[0] = i+15;  // A0
+  DFG[i+19]->opDest[0] =i+ 25; // c3
+  DFG[i+19]->opDestNu = 1;
+  DFG[i+19]->opConstVal = 4.0; // c3
+
+  DFG[i+20]->op = rom; // A ROM node
+  DFG[i+20]->opPrecision = sfp;
+  DFG[i+20]->opSrcNu = 4;
+  DFG[i+20]->opSrc = (int *) malloc(sizeof(int) * 4);
+  DFG[i+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+20]->opSrc[3] = i+1;   // A3
+  DFG[i+20]->opSrc[2] = i+3;   // A2
+  DFG[i+20]->opSrc[1] = i+7;   // A1
+  DFG[i+20]->opSrc[0] = i+15;  // A0
+  DFG[i+20]->opDest[0] =i+ 26; // c4
+  DFG[i+20]->opDestNu = 1;
+  DFG[i+20]->opConstVal = 5.0; // c4
+
+// powers (double precision)
+  DFG[i+1+20]->op = mulx; //mul;
+  DFG[i+1+20]->opPrecision = sfp;
+  DFG[i+1+20]->opSrcNu = 2;
+  DFG[i+1+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+1+20]->opDest = (int *) malloc(sizeof(int) * 3);
+  DFG[i+1+20]->opSrc[0] = MAX_OFST + 2; //SD1_OFST + 4;
+  DFG[i+1+20]->opSrc[1] = MAX_OFST + 2; //SD1_OFST + 4;
+  DFG[i+1+20]->opDest[0] = i+3+20;
+  DFG[i+1+20]->opDest[1] = i+4+20;
+  DFG[i+1+20]->opDest[2] = i+7+20;
+  DFG[i+1+20]->opDestNu = 3;
+
+  DFG[i+2+20]->op = mulx; //mul;
+  DFG[i+2+20]->opPrecision = sfp;
+  DFG[i+2+20]->opSrcNu = 2;
+  DFG[i+2+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+2+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+2+20]->opSrc[0] = MAX_OFST + 2; //SD1_OFST + 4;
+  DFG[i+2+20]->opSrc[1] = i+17; // c1
+  DFG[i+2+20]->opDest[0] = i+9+20;
+  DFG[i+2+20]->opDestNu = 1;
+
+  DFG[i+3+20]->op = mulx; //mul;
+  DFG[i+3+20]->opPrecision = sfp;
+  DFG[i+3+20]->opSrcNu = 2;
+  DFG[i+3+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+3+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+3+20]->opSrc[0] = MAX_OFST + 2; //SD1_OFST + 4;
+  DFG[i+3+20]->opSrc[1] = i+1+20;
+  DFG[i+3+20]->opDest[0]= i+5+20;
+  DFG[i+3+20]->opDestNu = 1;
+
+  DFG[i+4+20]->op = mulx; //mul;
+  DFG[i+4+20]->opPrecision = sfp;
+  DFG[i+4+20]->opSrcNu = 2;
+  DFG[i+4+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+4+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+4+20]->opSrc[0] = i+1+20;
+  DFG[i+4+20]->opSrc[1] = i+1+20;
+  DFG[i+4+20]->opDest[0] =i+ 6+20;
+  DFG[i+4+20]->opDestNu = 1;
+
+  DFG[i+5+20]->op = mulx; //mul;
+  DFG[i+5+20]->opPrecision = sfp;
+  DFG[i+5+20]->opSrcNu = 2;
+  DFG[i+5+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+5+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+5+20]->opSrc[0] = i+3+20;
+  DFG[i+5+20]->opSrc[1] = i+19; // c3
+  DFG[i+5+20]->opDest[0] =i+ 8+20;
+  DFG[i+5+20]->opDestNu = 1;
+
+  DFG[i+6+20]->op = mulx; //mul;
+  DFG[i+6+20]->opPrecision = sfp;
+  DFG[i+6+20]->opSrcNu = 2;
+  DFG[i+6+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+6+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+6+20]->opSrc[0] = i+4+20; 
+  DFG[i+6+20]->opSrc[1] = i+20; // c4
+  DFG[i+6+20]->opDest[0] =i+ 8+20;
+  DFG[i+6+20]->opDestNu = 1;
+
+  DFG[i+7+20]->op = mulx; //mul;
+  DFG[i+7+20]->opPrecision = sfp;
+  DFG[i+7+20]->opSrcNu = 2;
+  DFG[i+7+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+7+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+7+20]->opSrc[0] = i+1+20; 
+  DFG[i+7+20]->opSrc[1] = i+18; // c2
+  DFG[i+7+20]->opDest[0] =i+ 9+20;
+  DFG[i+7+20]->opDestNu = 1;
+
+  DFG[i+8+20]->op = addx; //add;
+  DFG[i+8+20]->opPrecision = sfp;
+  DFG[i+8+20]->opSrcNu = 2;
+  DFG[i+8+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+8+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+8+20]->opSrc[0] = i+5+20; // 
+  DFG[i+8+20]->opSrc[1] = i+6+20; // 
+  DFG[i+8+20]->opDest[0] =i+ 10+20;
+  DFG[i+8+20]->opDestNu = 1;
+
+  DFG[i+9+20]->op = addx; //add;
+  DFG[i+9+20]->opPrecision = sfp;
+  DFG[i+9+20]->opSrcNu = 2;
+  DFG[i+9+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+9+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+9+20]->opSrc[0] = i+2+20; 
+  DFG[i+9+20]->opSrc[1] = i+7+20; 
+  DFG[i+9+20]->opDest[0] =i+ 10+20;
+  DFG[i+9+20]->opDestNu = 1;
+
+  DFG[i+10+20]->op = addx; //add;
+  DFG[i+10+20]->opPrecision = sfp;
+  DFG[i+10+20]->opSrcNu = 2;
+  DFG[i+10+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+10+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[i+10+20]->opSrc[0] = i+8+20;
+  DFG[i+10+20]->opSrc[1] = i+9+20; 
+  DFG[i+10+20]->opDest[0] =i+ 11+20;
+  DFG[i+10+20]->opDestNu = 1;
+
+  DFG[i+11+20]->op = addx; //add;
+  DFG[i+11+20]->opPrecision = sfp;
+  DFG[i+11+20]->opSrcNu = 2;
+  DFG[i+11+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[i+11+20]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i+11+20]->opSrc[0] = i+10+20; 
+  DFG[i+11+20]->opSrc[1] = i+16; // c0
+  DFG[i+11+20]->opDest[0]= SINK;  // add an output
+  DFG[i+11+20]->opDest[1] = 187; //ADDD3_OFST;
+  DFG[i+11+20]->opDestNu = 2;
+
+//=========================================================
+// abs index: NODE ID hardcoded !
+//=========================================================
+
+  DFG[187]->op = add;
+  DFG[187]->opPrecision = sfp;
+  DFG[187]->opSrcNu = 2;
+  DFG[187]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[187]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[187]->opSrc[0]  = INSCALER_POFST; //40; // ln
+  DFG[187]->opSrc[1]  = 186;
+  DFG[187]->opDest[0] = SINK;  // add an output
+  DFG[187]->opDest[1] = 188; 
+  DFG[187]->opDestNu = 2;
+
+  DFG[188]->op = add;
+  DFG[188]->opPrecision = sfp;
+  DFG[188]->opSrcNu = 2;
+  DFG[188]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[188]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[188]->opSrc[0]  = 187;
+  DFG[188]->opSrc[1]  = SLOG_COF_OFST;
+  DFG[188]->opDest[0] = 189;
+  DFG[188]->opDestNu = 1;
+
+  DFG[189]->op = mul;
+  DFG[189]->opPrecision = sfp;
+  DFG[189]->opSrcNu = 2;
+  DFG[189]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[189]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[189]->opSrc[0] = NUMSITES_POFST;// 41;
+  DFG[189]->opSrc[1] = 188;
+  DFG[189]->opDest[0]= SINK; 
+  DFG[189]->opDestNu = 1;
+
+  if (!run) {
+    for (i = 0; i < NODE_NU; i++) {
+      free(DFG[i]->opSrc);
+      free(DFG[i]->opDest);
+      if (DFG[i]->opMuxVal != NULL)
+        free(DFG[i]->opMuxVal);
+      if (DFG[i]->opMuxVal_d != NULL)
+        free(DFG[i]->opMuxVal_d);
+    }
+  }
+}

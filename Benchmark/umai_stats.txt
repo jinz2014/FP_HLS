@@ -1,0 +1,96 @@
+Port number: 1
+ASAP: minII = 6 resource number = 4: 1 1 2 delay = 71
+Number of Registers : 9
+Number of Mux inputs: 29
+
+
+ALAP: minII = 6 resource number = 4: 1 1 2 delay = 71
+Number of Registers : 8
+Number of Mux inputs: 28
+
+
+List: minII = 6 resource number = 4: 1 1 2 delay = 71
+Number of Registers : 9
+Number of Mux inputs: 29
+
+
+Port number: 2
+ASAP: minII = 3 resource number = 5: 1 2 2 delay = 70
+Number of Registers : 11
+Number of Mux inputs: 24
+
+
+ALAP: minII = 3 resource number = 5: 1 1 3 delay = 70
+Number of Registers : 11
+Number of Mux inputs: 24
+
+
+List: minII = 3 resource number = 5: 1 2 2 delay = 70
+Number of Registers : 11
+Number of Mux inputs: 24
+
+
+Port number: 3
+ASAP: minII = 2 resource number = 6: 2 1 3 delay = 70
+Number of Registers : 11
+Number of Mux inputs: 22
+
+
+ALAP: minII = 2 resource number = 7: 2 2 3 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 14
+
+
+List: minII = 2 resource number = 6: 2 1 3 delay = 70
+Number of Registers : 11
+Number of Mux inputs: 26
+
+
+Port number: 4
+ASAP: minII = 2 resource number = 7: 2 1 4 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 18
+
+
+ALAP: minII = 2 resource number = 7: 2 2 3 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 14
+
+
+List: minII = 2 resource number = 7: 2 1 4 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 18
+
+
+Port number: 5
+ASAP: minII = 2 resource number = 9: 3 1 5 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 10
+
+
+ALAP: minII = 2 resource number = 7: 2 2 3 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 14
+
+
+List: minII = 2 resource number = 9: 3 1 5 delay = 70
+Number of Registers : 12
+Number of Mux inputs: 10
+
+
+Port number: 6
+ASAP: minII = 1 resource number = 10: 3 2 5 delay = 70
+Number of Registers : 16
+Number of Mux inputs: 0
+
+
+ALAP: minII = 1 resource number = 10: 3 2 5 delay = 70
+Number of Registers : 16
+Number of Mux inputs: 0
+
+
+List: minII = 1 resource number = 10: 3 2 5 delay = 70
+Number of Registers : 16
+Number of Mux inputs: 0
+
+

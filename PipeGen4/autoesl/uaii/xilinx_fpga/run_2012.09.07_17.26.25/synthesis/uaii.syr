@@ -1,0 +1,704 @@
+Release 13.2 - xst O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+--> 
+Parameter TMPDIR set to ./projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to .
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+
+Reading constraint file ../../constraints.xcf.
+XCF parsing done.
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "../../xst.prj"
+Input Format                       : mixed
+Synthesis Constraint File          : ../../constraints.xcf
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "uaii"
+Output Format                      : NGC
+Target Device                      : xc5vlx330-ff1760-2
+
+---- Source Options
+Top Module Name                    : uaii
+Use DSP Block                      : auto
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : NO
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : No
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : false
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : OPTIMIZE
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+DSP48 Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../../../../Modelsim/uaii/ASAP1_uaii/ASAP1_uaii_HDL.v" in library work
+Compiling verilog file "../../../../../vlib/Register.v" in library work
+Module <uaii> compiled
+Module <Register> compiled
+Module <RegisterV> compiled
+Compiling verilog file "../../../../../vlib/RegWriteCtl.v" in library work
+Module <RegisterC> compiled
+Compiling verilog file "../../../../../vlib/MUX.v" in library work
+Module <RegWriteCtl> compiled
+Module <MUX2> compiled
+Module <MUX3> compiled
+Module <MUX4> compiled
+Module <MUX4_hot> compiled
+Module <MUX5> compiled
+Module <MUX6> compiled
+Module <MUX7> compiled
+Module <MUX8> compiled
+Module <MUX9> compiled
+Module <MUX10> compiled
+Compiling verilog file "../../../../../vlib/ShiftRegister.v" in library work
+Module <MUX11> compiled
+Module <ShiftRegister> compiled
+Module <shift> compiled
+Module <ShiftRegCtl> compiled
+Compiling verilog file "../../../../../vlib/ShiftCtlRegister.v" in library work
+Module <ShiftRegCtl0> compiled
+Module <ShiftCtlRegister> compiled
+Compiling verilog file "../../../../../vlib/float.v" in library work
+Module <shiftCtl> compiled
+Module <fadd> compiled
+Module <fsub> compiled
+Module <fmul> compiled
+Module <fdiv> compiled
+No errors in compilation
+Analysis of file <"../../xst.prj"> succeeded.
+ 
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl/xilinx_fdiv.vhd" in Library work.
+Entity <xilinx_fdiv> compiled.
+Entity <xilinx_fdiv> (Architecture <xilinx_fdiv_a>) compiled.
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl/xilinx_fmul.vhd" in Library work.
+Entity <xilinx_fmul> compiled.
+Entity <xilinx_fmul> (Architecture <xilinx_fmul_a>) compiled.
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl/xilinx_fadd.vhd" in Library work.
+Entity <xilinx_fadd> compiled.
+Entity <xilinx_fadd> (Architecture <xilinx_fadd_a>) compiled.
+
+Reading constraint file ../../constraints.xcf.
+XCF parsing done.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <uaii> in library <work> with parameters.
+	Delay = "00000000000000000000000001011100"
+	TEST_NU = "00000000000000000000000000010000"
+
+Analyzing hierarchy for module <fadd> in library <work>.
+
+Analyzing hierarchy for module <fmul> in library <work>.
+
+Analyzing hierarchy for module <fdiv> in library <work>.
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <MUX2> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <RegWriteCtl> in library <work> with parameters.
+	DII = "00000000000000000000000000000101"
+	DataWidth = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <ShiftCtlRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000000001"
+	Depth = "00000000000000000000000001011100"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000011"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000100"
+
+Analyzing hierarchy for module <shiftCtl> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000001011100"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <uaii>.
+	Delay = 32'sb00000000000000000000000001011100
+	TEST_NU = 32'sb00000000000000000000000000010000
+Module <uaii> is correct for synthesis.
+ 
+Analyzing module <fadd> in library <work>.
+Module <fadd> is correct for synthesis.
+ 
+Analyzing module <fmul> in library <work>.
+Module <fmul> is correct for synthesis.
+ 
+Analyzing module <fdiv> in library <work>.
+Module <fdiv> is correct for synthesis.
+ 
+Analyzing module <Register> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <Register> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.1> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000011
+Module <ShiftRegister.1> is correct for synthesis.
+ 
+Analyzing module <shift.1> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000011
+Module <shift.1> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister.2> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000100
+Module <ShiftRegister.2> is correct for synthesis.
+ 
+Analyzing module <shift.2> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000100
+Module <shift.2> is correct for synthesis.
+ 
+Analyzing module <MUX2> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <MUX2> is correct for synthesis.
+ 
+Analyzing module <RegWriteCtl> in library <work>.
+	DII = 32'sb00000000000000000000000000000101
+	DataWidth = 32'sb00000000000000000000000000000011
+Module <RegWriteCtl> is correct for synthesis.
+ 
+Analyzing module <ShiftCtlRegister> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000000001
+	Depth = 32'sb00000000000000000000000001011100
+Module <ShiftCtlRegister> is correct for synthesis.
+ 
+Analyzing module <shiftCtl> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000001011100
+Module <shiftCtl> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Register>.
+    Related source file is "../../../../../vlib/Register.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <register>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <Register> synthesized.
+
+
+Synthesizing Unit <MUX2>.
+    Related source file is "../../../../../vlib/MUX.v".
+Unit <MUX2> synthesized.
+
+
+Synthesizing Unit <RegWriteCtl>.
+    Related source file is "../../../../../vlib/RegWriteCtl.v".
+    Found 1-bit register for signal <wen>.
+    Found 3-bit up counter for signal <cnt>.
+    Found 1-bit register for signal <cnt_en>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <RegWriteCtl> synthesized.
+
+
+Synthesizing Unit <shift_1>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 3-bit register for signal <state>.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+Unit <shift_1> synthesized.
+
+
+Synthesizing Unit <shift_2>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 4-bit register for signal <state>.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+Unit <shift_2> synthesized.
+
+
+Synthesizing Unit <shiftCtl>.
+    Related source file is "../../../../../vlib/ShiftCtlRegister.v".
+    Found 92-bit register for signal <state>.
+    Summary:
+	inferred  92 D-type flip-flop(s).
+Unit <shiftCtl> synthesized.
+
+
+Synthesizing Unit <fadd>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fadd> synthesized.
+
+
+Synthesizing Unit <fmul>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fmul> synthesized.
+
+
+Synthesizing Unit <fdiv>.
+    Related source file is "../../../../../vlib/float.v".
+    Found 32-bit register for signal <result>.
+    Found 1-bit register for signal <done>.
+    Summary:
+	inferred  33 D-type flip-flop(s).
+Unit <fdiv> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_1>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister_1> synthesized.
+
+
+Synthesizing Unit <ShiftRegister_2>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister_2> synthesized.
+
+
+Synthesizing Unit <ShiftCtlRegister>.
+    Related source file is "../../../../../vlib/ShiftCtlRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftCtlRegister> synthesized.
+
+
+Synthesizing Unit <uaii>.
+    Related source file is "../../../../../Modelsim/uaii/ASAP1_uaii/ASAP1_uaii_HDL.v".
+WARNING:Xst:646 - Signal <state_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <state_in> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<90:62>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<59:49>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<46:44>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<42:35>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<33>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<31:14>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<11:5>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr2_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r8_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r7_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r6_wout> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r5_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r4_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r3_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r2_wout<63:32>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fmul1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fdiv1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fdiv1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dio> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <fdiv1_out_r>.
+    Found 32-bit register for signal <p1_in_r>.
+    Found 1-bit register for signal <run>.
+    Found 3-bit up counter for signal <state_cnt>.
+    Found 1-bit register for signal <state_ctl_din>.
+    Found 1-bit register for signal <uaii_out0_rdy_r>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  67 D-type flip-flop(s).
+Unit <uaii> synthesized.
+
+WARNING:Xst:524 - All outputs of the instance <r8> of the block <Register> are unconnected in block <uaii>.
+   This instance will be removed from the design along with all underlying logic
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 3-bit up counter                                      : 3
+# Registers                                            : 87
+ 1-bit register                                        : 8
+ 3-bit register                                        : 32
+ 32-bit register                                       : 14
+ 4-bit register                                        : 32
+ 92-bit register                                       : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 3
+ 3-bit up counter                                      : 3
+# Registers                                            : 772
+ Flip-Flops                                            : 772
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <uaii> ...
+
+Optimizing unit <Register> ...
+
+Optimizing unit <RegWriteCtl> ...
+
+Optimizing unit <shiftCtl> ...
+
+Optimizing unit <fdiv> ...
+
+Optimizing unit <ShiftRegister_1> ...
+
+Optimizing unit <ShiftRegister_2> ...
+WARNING:Xst:2677 - Node <fdiv1/done> of sequential type is unconnected in block <uaii>.
+
+Mapping all equations...
+Annotating constraints using XCF file '../../constraints.xcf'
+XCF parsing done.
+WARNING:Xst:2173 - Found black boxes on which forward tracing can not be performed on edge 'clk':
+ fadd1/xilinx_fadd_i fmul1/xilinx_fmul_i fdiv1/xilinx_fdiv_i
+WARNING:Xst:2174 - These might be cores which have not been read
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block uaii, actual ratio is 0.
+
+Final Macro Processing ...
+
+Processing Unit <uaii> :
+	Found 30-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_91>.
+	Found 12-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_60>.
+	Found 4-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_47>.
+	Found 9-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_43>.
+	Found 19-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_32>.
+	Found 8-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_12>.
+	Found 2-bit shift register for signal <r2/SR[0].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[1].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[2].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[3].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[4].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[5].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[6].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[7].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[8].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[9].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[10].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[11].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[12].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[13].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[14].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[15].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[16].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[17].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[18].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[19].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[20].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[21].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[22].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[23].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[24].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[25].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[26].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[27].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[28].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[29].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[30].shift_i/state_2>.
+	Found 2-bit shift register for signal <r2/SR[31].shift_i/state_2>.
+	Found 4-bit shift register for signal <r6/SR[0].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[1].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[2].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[3].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[4].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[5].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[6].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[7].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[8].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[9].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[10].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[11].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[12].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[13].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[14].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[15].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[16].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[17].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[18].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[19].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[20].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[21].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[22].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[23].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[24].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[25].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[26].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[27].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[28].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[29].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[30].shift_i/state_3>.
+	Found 4-bit shift register for signal <r6/SR[31].shift_i/state_3>.
+Unit <uaii> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 506
+ Flip-Flops                                            : 506
+# Shift Registers                                      : 70
+ 12-bit shift register                                 : 1
+ 19-bit shift register                                 : 1
+ 2-bit shift register                                  : 32
+ 30-bit shift register                                 : 1
+ 4-bit shift register                                  : 33
+ 8-bit shift register                                  : 1
+ 9-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : uaii.ngr
+Top Level Output File Name         : uaii
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 69
+
+Cell Usage :
+# BELS                             : 300
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 48
+#      LUT3                        : 76
+#      LUT4                        : 101
+#      LUT5                        : 64
+#      LUT6                        : 7
+#      VCC                         : 1
+# FlipFlops/Latches                : 611
+#      FD                          : 38
+#      FDCE                        : 1
+#      FDE                         : 518
+#      FDR                         : 1
+#      FDRE                        : 52
+#      FDSE                        : 1
+# Shift Registers                  : 70
+#      SRLC16E                     : 68
+#      SRLC32E                     : 2
+# Others                           : 4
+#      TIMESPEC                    : 1
+#      xilinx_fadd                 : 1
+#      xilinx_fdiv                 : 1
+#      xilinx_fmul                 : 1
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx330ff1760-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             611  out of  207360     0%  
+ Number of Slice LUTs:                  368  out of  207360     0%  
+    Number used as Logic:               298  out of  207360     0%  
+    Number used as Memory:               70  out of  54720     0%  
+       Number used as SRL:               70
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    653
+   Number with an unused Flip Flop:      42  out of    653     6%  
+   Number with an unused LUT:           285  out of    653    43%  
+   Number of fully used LUT-FF pairs:   326  out of    653    49%  
+   Number of unique control sets:        20
+
+IO Utilization: 
+ Number of IOs:                          69
+ Number of bonded IOBs:                   0  out of   1200     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | NONE(p1_in_r_0)        | 681   |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | NONE                   | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.203ns (Maximum Frequency: 453.846MHz)
+   Minimum input arrival time before clock: 1.163ns
+   Maximum output required time after clock: 0.396ns
+   Maximum combinational path delay: 0.636ns
+
+=========================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 2.857 nS HIGH 1.429 nS
+  Clock period: 2.203ns (frequency: 453.846MHz)
+  Total number of paths / destination ports: 2242 / 997
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  0.676ns
+  Source:               FSM/SR[0].shiftCtl_i/state_4 (FF)
+  Destination:          fdiv1_in1_r/register_9 (FF)
+  Data Path Delay:      2.203ns (Levels of Logic = 2)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+
+  Data Path: FSM/SR[0].shiftCtl_i/state_4 (FF) to fdiv1_in1_r/register_9 (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            37   0.396   0.709  FSM/SR[0].shiftCtl_i/state_4 (FSM/SR[0].shiftCtl_i/state_4)
+     LUT3:I0->O           32   0.086   0.927  mux5/Z<0>11 (N4)
+     LUT5:I0->O            1   0.086   0.000  mux5/Z<9> (fdiv1_in1_rin<9>)
+     FDE:D                    -0.022          fdiv1_in1_r/register_9
+    ----------------------------------------
+    Total                      2.203ns (0.568ns logic, 1.635ns route)
+                                       (25.8% logic, 74.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 9.99 secs
+ 
+--> 
+
+
+Total memory usage is 449428 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   35 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

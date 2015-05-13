@@ -1,0 +1,483 @@
+Release 13.2 par O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+graviton.cse.sc.edu::  Fri Aug 31 13:35:04 2012
+
+par -ol high -nopad dct_map.ncd dct.ncd dct.pcf 
+
+
+Constraints file: dct.pcf.
+Loading device for application Rf_Device from file '5vlx330.nph' in environment /share/reconfig/xilinx/13.2/ISE_DS/ISE/.
+   "dct" is an NCD, version 3.2, device xc5vlx330, package ff1760, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.73 2011-06-20".
+
+
+
+Device Utilization Summary:
+
+   Number of DSP48Es                        22 out of 192    11%
+   Number of Slices                       7767 out of 51840  14%
+   Number of Slice Registers             10946 out of 207360  5%
+      Number used as Flip Flops          10944
+      Number used as Latches                 0
+      Number used as LatchThrus              2
+
+   Number of Slice LUTS                  22457 out of 207360 10%
+   Number of Slice LUT-Flip Flop pairs   24713 out of 207360 11%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 2 mins 10 secs 
+Finished initial Timing Analysis.  REAL time: 2 mins 13 secs 
+
+WARNING:Par:289 - The signal clk has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal rst has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal go_in has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal stall_in has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample04_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample25_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample51_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample46_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample67_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample72_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample26_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample31_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample30_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample47_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample52_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample73_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample06_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample11_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample27_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample32_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample53_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample74_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample07_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample12_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample33_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample54_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample75_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample13_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample34_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample55_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample60_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample76_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample14_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample10_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample35_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample40_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample56_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample61_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample77_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample05_o_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample15_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample20_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample36_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample41_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample57_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample62_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample00_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample16_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample21_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample42_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample37_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample63_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample01_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample17_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample22_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample43_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample64_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample02_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample23_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample44_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample70_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample65_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample03_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample24_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample45_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample50_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample66_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal dct_sample71_o_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<31> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<30> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<29> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<28> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<27> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<26> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<25> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<24> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<23> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<22> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<21> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<20> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<19> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<18> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<17> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<16> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<15> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<14> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<13> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<12> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<11> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<10> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<9> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<8> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<7> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<6> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<5> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<4> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<3> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<2> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<1> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<0> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fsub1/xilinx_fsub_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fsub2/xilinx_fsub_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fsub3/xilinx_fsub_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fmul1/xilinx_fmul_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fmul2/xilinx_fmul_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd3/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd4/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd5/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd1/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd2/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 115640 unrouted;      REAL time: 2 mins 40 secs 
+
+Phase  2  : 110587 unrouted;      REAL time: 2 mins 59 secs 
+
+Phase  3  : 71523 unrouted;      REAL time: 5 mins 29 secs 
+
+Phase  4  : 71597 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 6 mins 41 secs 
+
+Updating file: dct.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:1036, Hold:0, Component Switching Limit:0)     REAL time: 16 mins 16 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 mins 9 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 mins 9 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 mins 9 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 mins 9 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 19 mins 24 secs 
+Total REAL time to Router completion: 19 mins 24 secs 
+Total CPU time to Router completion: 15 mins 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 6.66666667  | SETUP       |     0.001ns|     6.665ns|       0|           0
+  ns HIGH 50%                               | HOLD        |     0.277ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 330 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+WARNING:Par:284 - There are 36 sourceless signals in this design. This design will not pass the DRC check run by Bitgen.
+
+Total REAL time to PAR completion: 19 mins 35 secs 
+Total CPU time to PAR completion: 15 mins 11 secs 
+
+Peak Memory Usage:  1323 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 370
+Number of info messages: 0
+
+Writing design to file dct.ncd
+
+
+
+PAR done!

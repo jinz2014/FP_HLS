@@ -1,0 +1,144 @@
+Release 13.2 Map O.61xd (lin64)
+Xilinx Map Application Log File for Design 'ordbbr'
+
+Design Information
+------------------
+Command Line   : map -u -p xc5vlx330-ff1760-2 -cm speed -ol high -pr b -detail
+-o ordbbr_map.ncd ordbbr.ngd ordbbr.pcf 
+Target Device  : xc5vlx330
+Target Package : ff1760
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Thu Aug 23 20:02:51 2012
+
+Mapping design into LUTs...
+Writing file ordbbr_map.ngm...
+Running directed packing...
+Running delay-based LUT packing...
+Updating timing models...
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+Running timing-driven placement...
+Total REAL time at the beginning of Placer: 40 secs 
+Total CPU  time at the beginning of Placer: 39 secs 
+
+Phase 1.1  Initial Placement Analysis
+Phase 1.1  Initial Placement Analysis (Checksum:1ac68f4) REAL time: 46 secs 
+
+Phase 2.7  Design Feasibility Check
+Phase 2.7  Design Feasibility Check (Checksum:1ac68f4) REAL time: 47 secs 
+
+Phase 3.31  Local Placement Optimization
+Phase 3.31  Local Placement Optimization (Checksum:1ac68f4) REAL time: 47 secs 
+
+Phase 4.37  Local Placement Optimization
+Phase 4.37  Local Placement Optimization (Checksum:1ac68f4) REAL time: 47 secs 
+
+Phase 5.33  Local Placement Optimization
+Phase 5.33  Local Placement Optimization (Checksum:1ac68f4) REAL time: 1 mins 20 secs 
+
+Phase 6.32  Local Placement Optimization
+Phase 6.32  Local Placement Optimization (Checksum:1ac68f4) REAL time: 1 mins 22 secs 
+
+Phase 7.2  Initial Clock and IO Placement
+Phase 7.2  Initial Clock and IO Placement (Checksum:1ac68f4) REAL time: 1 mins 24 secs 
+
+Phase 8.36  Local Placement Optimization
+Phase 8.36  Local Placement Optimization (Checksum:1ac68f4) REAL time: 1 mins 24 secs 
+
+Phase 9.30  Global Clock Region Assignment
+Phase 9.30  Global Clock Region Assignment (Checksum:1ac68f4) REAL time: 1 mins 24 secs 
+
+Phase 10.3  Local Placement Optimization
+Phase 10.3  Local Placement Optimization (Checksum:1ac68f4) REAL time: 1 mins 24 secs 
+
+Phase 11.5  Local Placement Optimization
+Phase 11.5  Local Placement Optimization (Checksum:1ac68f4) REAL time: 1 mins 24 secs 
+
+Phase 12.8  Global Placement
+...................................................................................
+.............................................
+...................................................
+................................
+........................
+........................................................................................................................................................................................
+Phase 12.8  Global Placement (Checksum:abe5fd17) REAL time: 1 mins 58 secs 
+
+Phase 13.29  Local Placement Optimization
+Phase 13.29  Local Placement Optimization (Checksum:abe5fd17) REAL time: 1 mins 58 secs 
+
+Phase 14.5  Local Placement Optimization
+Phase 14.5  Local Placement Optimization (Checksum:abe5fd17) REAL time: 1 mins 58 secs 
+
+Phase 15.18  Placement Optimization
+Phase 15.18  Placement Optimization (Checksum:a681a46) REAL time: 3 mins 6 secs 
+
+Phase 16.5  Local Placement Optimization
+Phase 16.5  Local Placement Optimization (Checksum:a681a46) REAL time: 3 mins 7 secs 
+
+Phase 17.34  Placement Validation
+Phase 17.34  Placement Validation (Checksum:a681a46) REAL time: 3 mins 7 secs 
+
+Total REAL time to Placer completion: 3 mins 7 secs 
+Total CPU  time to Placer completion: 3 mins 7 secs 
+Running post-placement packing...
+Writing output files...
+WARNING:PhysDesignRules:367 - The signal <fmul1/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd1/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+
+Design Summary
+--------------
+
+Design Summary:
+Number of errors:      0
+Number of warnings:    2
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,967 out of 207,360    1%
+    Number used as Flip Flops:               2,967
+  Number of Slice LUTs:                      2,475 out of 207,360    1%
+    Number used as logic:                    2,037 out of 207,360    1%
+      Number using O6 output only:           1,928
+      Number using O5 output only:              15
+      Number using O5 and O6:                   94
+    Number used as Memory:                     432 out of  54,720    1%
+      Number used as Shift Register:           432
+        Number using O6 output only:           432
+    Number used as exclusive route-thru:         6
+  Number of route-thrus:                        39
+    Number using O6 output only:                21
+    Number using O5 output only:                18
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,067 out of  51,840    2%
+  Number of LUT Flip Flop pairs used:        3,454
+    Number with an unused Flip Flop:           487 out of   3,454   14%
+    Number with an unused LUT:                 979 out of   3,454   28%
+    Number of fully used LUT-FF pairs:       1,988 out of   3,454   57%
+    Number of unique control sets:              38
+    Number of slice register sites lost
+      to control set restrictions:              25 out of 207,360    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+
+Specific Feature Utilization:
+  Number of DSP48Es:                             5 out of     192    2%
+
+  Number of RPM macros:            1
+Average Fanout of Non-Clock Nets:                3.40
+
+Peak Memory Usage:  1109 MB
+Total REAL time to MAP completion:  3 mins 12 secs 
+Total CPU time to MAP completion:   3 mins 12 secs 
+
+Mapping completed.
+See MAP report file "ordbbr_map.mrp" for details.

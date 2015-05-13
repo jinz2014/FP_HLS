@@ -1,0 +1,1175 @@
+Release 13.2 Map O.61xd (lin64)
+Xilinx Mapping Report File for Design 'dct'
+
+Design Information
+------------------
+Command Line   : map -u -p xc5vlx330-ff1760-2 -cm speed -ol high -pr b -detail
+-o dct_map.ncd dct.ngd dct.pcf 
+Target Device  : xc5vlx330
+Target Package : ff1760
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Tue Aug 28 19:56:39 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:   11
+Slice Logic Utilization:
+  Number of Slice Registers:                10,999 out of 207,360    5%
+    Number used as Flip Flops:              10,999
+  Number of Slice LUTs:                     19,872 out of 207,360    9%
+    Number used as logic:                   19,594 out of 207,360    9%
+      Number using O6 output only:          19,095
+      Number using O5 output only:             126
+      Number using O5 and O6:                  373
+    Number used as Memory:                     169 out of  54,720    1%
+      Number used as Shift Register:           169
+        Number using O6 output only:           169
+    Number used as exclusive route-thru:       109
+  Number of route-thrus:                       260
+    Number using O6 output only:               222
+    Number using O5 output only:                25
+    Number using O5 and O6:                     13
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 6,553 out of  51,840   12%
+  Number of LUT Flip Flop pairs used:       21,714
+    Number with an unused Flip Flop:        10,715 out of  21,714   49%
+    Number with an unused LUT:               1,842 out of  21,714    8%
+    Number of fully used LUT-FF pairs:       9,157 out of  21,714   42%
+    Number of unique control sets:             134
+    Number of slice register sites lost
+      to control set restrictions:              64 out of 207,360    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+
+Specific Feature Utilization:
+  Number of DSP48Es:                            24 out of     192   12%
+
+  Number of RPM macros:            9
+Average Fanout of Non-Clock Nets:                4.61
+
+Peak Memory Usage:  1427 MB
+Total REAL time to MAP completion:  13 mins 2 secs 
+Total CPU time to MAP completion:   13 mins 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:PhysDesignRules:367 - The signal <fsub1/xilinx_fsub_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fsub2/xilinx_fsub_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fsub3/xilinx_fsub_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fsub4/xilinx_fsub_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd1/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd2/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd3/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd4/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fmul1/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fmul2/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd5/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network dct_fadd1_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fadd1_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fadd2_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fadd3_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fadd4_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fadd5_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fsub1_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fsub2_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fsub3_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<0> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<1> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<10> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<11> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<12> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<13> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<14> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<15> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<16> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<17> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<18> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<19> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<2> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<20> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<21> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<22> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<23> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<24> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<25> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<26> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<27> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<28> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<29> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<3> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<30> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<31> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<4> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<5> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<6> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<7> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<8> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out<9> has no load.
+INFO:LIT:243 - Logical network dct_fsub4_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network fadd5/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fadd4/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fadd3/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fadd2/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fadd1/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fsub4/xilinx_fsub_i/rdy has no load.
+INFO:LIT:243 - Logical network fsub3/xilinx_fsub_i/rdy has no load.
+INFO:LIT:243 - Logical network fsub2/xilinx_fsub_i/rdy has no load.
+INFO:LIT:243 - Logical network fsub1/xilinx_fsub_i/rdy has no load.
+INFO:LIT:243 - Logical network fmul2/xilinx_fmul_i/rdy has no load.
+INFO:LIT:243 - Logical network fmul1/xilinx_fmul_i/rdy has no load.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  49 block(s) removed
+  24 block(s) optimized away
+   9 signal(s) removed
+ 144 Block(s) redundant
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fadd1/xilinx_fadd_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fadd2/xilinx_fadd_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fadd2/xilinx_fadd_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fadd2/xilinx_fadd_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fadd2/xilinx_fadd_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fadd3/xilinx_fadd_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fadd3/xilinx_fadd_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fadd3/xilinx_fadd_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fadd3/xilinx_fadd_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fadd4/xilinx_fadd_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fadd4/xilinx_fadd_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fadd4/xilinx_fadd_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fadd4/xilinx_fadd_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fadd5/xilinx_fadd_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fadd5/xilinx_fadd_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fadd5/xilinx_fadd_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fadd5/xilinx_fadd_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fsub1/xilinx_fsub_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fsub1/xilinx_fsub_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fsub1/xilinx_fsub_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fsub1/xilinx_fsub_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fsub2/xilinx_fsub_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fsub2/xilinx_fsub_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fsub2/xilinx_fsub_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fsub2/xilinx_fsub_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fsub3/xilinx_fsub_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fsub3/xilinx_fsub_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fsub3/xilinx_fsub_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fsub3/xilinx_fsub_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fsub4/xilinx_fsub_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fsub4/xilinx_fsub_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fsub4/xilinx_fsub_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fsub4/xilinx_fsub_i/blk00000003/blk0000013a" (MUX) removed.
+Unused block "fadd1/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd1/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fadd2/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd2/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fadd3/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd3/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fadd4/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd4/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fadd5/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd5/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000001" (ONE) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000002" (ZERO) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000001" (ONE) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000002" (ZERO) removed.
+Unused block "fsub1/xilinx_fsub_i/blk00000001" (ONE) removed.
+Unused block "fsub1/xilinx_fsub_i/blk00000002" (ZERO) removed.
+Unused block "fsub2/xilinx_fsub_i/blk00000001" (ONE) removed.
+Unused block "fsub2/xilinx_fsub_i/blk00000002" (ZERO) removed.
+Unused block "fsub3/xilinx_fsub_i/blk00000001" (ONE) removed.
+Unused block "fsub3/xilinx_fsub_i/blk00000002" (ZERO) removed.
+Unused block "fsub4/xilinx_fsub_i/blk00000001" (ONE) removed.
+Unused block "fsub4/xilinx_fsub_i/blk00000002" (ZERO) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		fadd1/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd1/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fadd2/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd2/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fadd3/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd3/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fadd4/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd4/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fadd5/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd5/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fmul1/xilinx_fmul_i/blk00000003/blk00000004
+VCC 		fmul1/xilinx_fmul_i/blk00000003/blk00000005
+GND 		fmul2/xilinx_fmul_i/blk00000003/blk00000004
+VCC 		fmul2/xilinx_fmul_i/blk00000003/blk00000005
+GND 		fsub1/xilinx_fsub_i/blk00000003/blk00000004
+VCC 		fsub1/xilinx_fsub_i/blk00000003/blk00000005
+GND 		fsub2/xilinx_fsub_i/blk00000003/blk00000004
+VCC 		fsub2/xilinx_fsub_i/blk00000003/blk00000005
+GND 		fsub3/xilinx_fsub_i/blk00000003/blk00000004
+VCC 		fsub3/xilinx_fsub_i/blk00000003/blk00000005
+GND 		fsub4/xilinx_fsub_i/blk00000003/blk00000004
+VCC 		fsub4/xilinx_fsub_i/blk00000003/blk00000005
+
+Redundant Block(s):
+TYPE 		BLOCK
+LUT1 		fadd5/xilinx_fadd_i/blk00000003/blk00000268
+LUT1 		fadd4/xilinx_fadd_i/blk00000003/blk00000268
+LUT1 		fadd3/xilinx_fadd_i/blk00000003/blk00000268
+LUT1 		fadd2/xilinx_fadd_i/blk00000003/blk00000268
+LUT1 		fadd1/xilinx_fadd_i/blk00000003/blk00000268
+LUT1 		fsub4/xilinx_fsub_i/blk00000003/blk00000268
+LUT1 		fsub3/xilinx_fsub_i/blk00000003/blk00000268
+LUT1 		fsub2/xilinx_fsub_i/blk00000003/blk00000268
+LUT1 		fsub1/xilinx_fsub_i/blk00000003/blk00000268
+LUT1 		Mcount_clP0_cnt_cy<1>_rt
+LUT1 		Mcount_clP0_cnt_cy<2>_rt
+LUT1 		Mcount_clP0_cnt_cy<3>_rt
+LUT1 		Mcount_clP0_cnt_cy<4>_rt
+LUT1 		Mcount_clP0_cnt_cy<5>_rt
+LUT1 		Mcount_clP0_cnt_cy<6>_rt
+LUT1 		Mcount_clP0_cnt_cy<7>_rt
+LUT1 		Mcount_clP0_cnt_cy<8>_rt
+LUT1 		Mcount_clP0_cnt_cy<9>_rt
+LUT1 		Mcount_clP0_cnt_cy<10>_rt
+LUT1 		Mcount_clP0_cnt_cy<11>_rt
+LUT1 		Mcount_clP0_cnt_cy<12>_rt
+LUT1 		Mcount_clP0_cnt_cy<13>_rt
+LUT1 		Mcount_clP0_cnt_cy<14>_rt
+LUT1 		Mcount_clP2_cnt_cy<1>_rt
+LUT1 		Mcount_clP2_cnt_cy<2>_rt
+LUT1 		Mcount_clP2_cnt_cy<3>_rt
+LUT1 		Mcount_clP2_cnt_cy<4>_rt
+LUT1 		Mcount_clP2_cnt_cy<5>_rt
+LUT1 		Mcount_clP2_cnt_cy<6>_rt
+LUT1 		Mcount_clP2_cnt_cy<7>_rt
+LUT1 		Mcount_clP2_cnt_cy<8>_rt
+LUT1 		Mcount_clP2_cnt_cy<9>_rt
+LUT1 		Mcount_clP2_cnt_cy<10>_rt
+LUT1 		Mcount_clP2_cnt_cy<11>_rt
+LUT1 		Mcount_clP2_cnt_cy<12>_rt
+LUT1 		Mcount_clP2_cnt_cy<13>_rt
+LUT1 		Mcount_clP2_cnt_cy<14>_rt
+LUT1 		Mcount_clP3_cnt_cy<1>_rt
+LUT1 		Mcount_clP3_cnt_cy<2>_rt
+LUT1 		Mcount_clP3_cnt_cy<3>_rt
+LUT1 		Mcount_clP3_cnt_cy<4>_rt
+LUT1 		Mcount_clP3_cnt_cy<5>_rt
+LUT1 		Mcount_clP3_cnt_cy<6>_rt
+LUT1 		Mcount_clP3_cnt_cy<7>_rt
+LUT1 		Mcount_clP3_cnt_cy<8>_rt
+LUT1 		Mcount_clP3_cnt_cy<9>_rt
+LUT1 		Mcount_clP3_cnt_cy<10>_rt
+LUT1 		Mcount_clP3_cnt_cy<11>_rt
+LUT1 		Mcount_clP3_cnt_cy<12>_rt
+LUT1 		Mcount_clP3_cnt_cy<13>_rt
+LUT1 		Mcount_clP3_cnt_cy<14>_rt
+LUT1 		Mcount_clP1_cnt_cy<1>_rt
+LUT1 		Mcount_clP1_cnt_cy<2>_rt
+LUT1 		Mcount_clP1_cnt_cy<3>_rt
+LUT1 		Mcount_clP1_cnt_cy<4>_rt
+LUT1 		Mcount_clP1_cnt_cy<5>_rt
+LUT1 		Mcount_clP1_cnt_cy<6>_rt
+LUT1 		Mcount_clP1_cnt_cy<7>_rt
+LUT1 		Mcount_clP1_cnt_cy<8>_rt
+LUT1 		Mcount_clP1_cnt_cy<9>_rt
+LUT1 		Mcount_clP1_cnt_cy<10>_rt
+LUT1 		Mcount_clP1_cnt_cy<11>_rt
+LUT1 		Mcount_clP1_cnt_cy<12>_rt
+LUT1 		Mcount_clP1_cnt_cy<13>_rt
+LUT1 		Mcount_clP1_cnt_cy<14>_rt
+LUT1 		Mcount_clP5_cnt_cy<1>_rt
+LUT1 		Mcount_clP5_cnt_cy<2>_rt
+LUT1 		Mcount_clP5_cnt_cy<3>_rt
+LUT1 		Mcount_clP5_cnt_cy<4>_rt
+LUT1 		Mcount_clP5_cnt_cy<5>_rt
+LUT1 		Mcount_clP5_cnt_cy<6>_rt
+LUT1 		Mcount_clP5_cnt_cy<7>_rt
+LUT1 		Mcount_clP5_cnt_cy<8>_rt
+LUT1 		Mcount_clP5_cnt_cy<9>_rt
+LUT1 		Mcount_clP5_cnt_cy<10>_rt
+LUT1 		Mcount_clP5_cnt_cy<11>_rt
+LUT1 		Mcount_clP5_cnt_cy<12>_rt
+LUT1 		Mcount_clP5_cnt_cy<13>_rt
+LUT1 		Mcount_clP5_cnt_cy<14>_rt
+LUT1 		Mcount_clP6_cnt_cy<1>_rt
+LUT1 		Mcount_clP6_cnt_cy<2>_rt
+LUT1 		Mcount_clP6_cnt_cy<3>_rt
+LUT1 		Mcount_clP6_cnt_cy<4>_rt
+LUT1 		Mcount_clP6_cnt_cy<5>_rt
+LUT1 		Mcount_clP6_cnt_cy<6>_rt
+LUT1 		Mcount_clP6_cnt_cy<7>_rt
+LUT1 		Mcount_clP6_cnt_cy<8>_rt
+LUT1 		Mcount_clP6_cnt_cy<9>_rt
+LUT1 		Mcount_clP6_cnt_cy<10>_rt
+LUT1 		Mcount_clP6_cnt_cy<11>_rt
+LUT1 		Mcount_clP6_cnt_cy<12>_rt
+LUT1 		Mcount_clP6_cnt_cy<13>_rt
+LUT1 		Mcount_clP6_cnt_cy<14>_rt
+LUT1 		Mcount_clP4_cnt_cy<1>_rt
+LUT1 		Mcount_clP4_cnt_cy<2>_rt
+LUT1 		Mcount_clP4_cnt_cy<3>_rt
+LUT1 		Mcount_clP4_cnt_cy<4>_rt
+LUT1 		Mcount_clP4_cnt_cy<5>_rt
+LUT1 		Mcount_clP4_cnt_cy<6>_rt
+LUT1 		Mcount_clP4_cnt_cy<7>_rt
+LUT1 		Mcount_clP4_cnt_cy<8>_rt
+LUT1 		Mcount_clP4_cnt_cy<9>_rt
+LUT1 		Mcount_clP4_cnt_cy<10>_rt
+LUT1 		Mcount_clP4_cnt_cy<11>_rt
+LUT1 		Mcount_clP4_cnt_cy<12>_rt
+LUT1 		Mcount_clP4_cnt_cy<13>_rt
+LUT1 		Mcount_clP4_cnt_cy<14>_rt
+LUT1 		Mcount_clP7_cnt_cy<1>_rt
+LUT1 		Mcount_clP7_cnt_cy<2>_rt
+LUT1 		Mcount_clP7_cnt_cy<3>_rt
+LUT1 		Mcount_clP7_cnt_cy<4>_rt
+LUT1 		Mcount_clP7_cnt_cy<5>_rt
+LUT1 		Mcount_clP7_cnt_cy<6>_rt
+LUT1 		Mcount_clP7_cnt_cy<7>_rt
+LUT1 		Mcount_clP7_cnt_cy<8>_rt
+LUT1 		Mcount_clP7_cnt_cy<9>_rt
+LUT1 		Mcount_clP7_cnt_cy<10>_rt
+LUT1 		Mcount_clP7_cnt_cy<11>_rt
+LUT1 		Mcount_clP7_cnt_cy<12>_rt
+LUT1 		Mcount_clP7_cnt_cy<13>_rt
+LUT1 		Mcount_clP7_cnt_cy<14>_rt
+LUT1 		Mcount_clP8_cnt_cy<1>_rt
+LUT1 		Mcount_clP8_cnt_cy<2>_rt
+LUT1 		Mcount_clP8_cnt_cy<3>_rt
+LUT1 		Mcount_clP8_cnt_cy<4>_rt
+LUT1 		Mcount_clP8_cnt_cy<5>_rt
+LUT1 		Mcount_clP8_cnt_cy<6>_rt
+LUT1 		Mcount_clP8_cnt_cy<7>_rt
+LUT1 		Mcount_clP8_cnt_cy<8>_rt
+LUT1 		Mcount_clP8_cnt_cy<9>_rt
+LUT1 		Mcount_clP8_cnt_cy<10>_rt
+LUT1 		Mcount_clP8_cnt_cy<11>_rt
+LUT1 		Mcount_clP8_cnt_cy<12>_rt
+LUT1 		Mcount_clP8_cnt_cy<13>_rt
+LUT1 		Mcount_clP8_cnt_cy<14>_rt
+LUT1 		Mcount_clP0_cnt_xor<15>_rt
+LUT1 		Mcount_clP2_cnt_xor<15>_rt
+LUT1 		Mcount_clP3_cnt_xor<15>_rt
+LUT1 		Mcount_clP1_cnt_xor<15>_rt
+LUT1 		Mcount_clP5_cnt_xor<15>_rt
+LUT1 		Mcount_clP6_cnt_xor<15>_rt
+LUT1 		Mcount_clP4_cnt_xor<15>_rt
+LUT1 		Mcount_clP7_cnt_xor<15>_rt
+LUT1 		Mcount_clP8_cnt_xor<15>_rt
+
+Section 6 - IOB Properties
+--------------------------
+
+Section 7 - RPMs
+----------------
+fadd1/xilinx_fadd_i/blk00000003/hset    
+fadd2/xilinx_fadd_i/blk00000003/hset    
+fadd3/xilinx_fadd_i/blk00000003/hset    
+fadd4/xilinx_fadd_i/blk00000003/hset    
+fadd5/xilinx_fadd_i/blk00000003/hset    
+fsub1/xilinx_fsub_i/blk00000003/hset    
+fsub2/xilinx_fsub_i/blk00000003/hset    
+fsub3/xilinx_fsub_i/blk00000003/hset    
+fsub4/xilinx_fsub_i/blk00000003/hset    
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+
+Section 12 - Control Set Information
+------------------------------------
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal                                | Set Signal                                  | Enable Signal    | Slice Load Count | Bel Load Count |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk          |                                             |                                             |                  | 72               | 288            |
+| clk          |                                             |                                             | r100_wen         | 8                | 32             |
+| clk          |                                             |                                             | r105_wen         | 8                | 32             |
+| clk          |                                             |                                             | r10_wen          | 30               | 32             |
+| clk          |                                             |                                             | r11_wen          | 16               | 32             |
+| clk          |                                             |                                             | r12_wen          | 30               | 32             |
+| clk          |                                             |                                             | r13_wen          | 29               | 32             |
+| clk          |                                             |                                             | r14_wen          | 31               | 32             |
+| clk          |                                             |                                             | r15_wen          | 30               | 32             |
+| clk          |                                             |                                             | r16_wen          | 31               | 32             |
+| clk          |                                             |                                             | r17_wen          | 8                | 32             |
+| clk          |                                             |                                             | r18_wen          | 31               | 32             |
+| clk          |                                             |                                             | r19_wen          | 16               | 32             |
+| clk          |                                             |                                             | r1_wen           | 8                | 32             |
+| clk          |                                             |                                             | r20_wen          | 16               | 32             |
+| clk          |                                             |                                             | r21_wen          | 28               | 32             |
+| clk          |                                             |                                             | r22_wen          | 32               | 32             |
+| clk          |                                             |                                             | r23_wen          | 31               | 32             |
+| clk          |                                             |                                             | r24_wen          | 9                | 32             |
+| clk          |                                             |                                             | r25_wen          | 32               | 32             |
+| clk          |                                             |                                             | r26_wen          | 16               | 32             |
+| clk          |                                             |                                             | r27_wen          | 16               | 32             |
+| clk          |                                             |                                             | r28_wen          | 32               | 32             |
+| clk          |                                             |                                             | r29_wen          | 29               | 32             |
+| clk          |                                             |                                             | r2_wen           | 8                | 32             |
+| clk          |                                             |                                             | r30_wen          | 30               | 32             |
+| clk          |                                             |                                             | r31_wen          | 16               | 32             |
+| clk          |                                             |                                             | r32_wen          | 32               | 32             |
+| clk          |                                             |                                             | r33_wen          | 31               | 32             |
+| clk          |                                             |                                             | r34_wen          | 9                | 32             |
+| clk          |                                             |                                             | r35_wen          | 32               | 32             |
+| clk          |                                             |                                             | r36_wen          | 27               | 32             |
+| clk          |                                             |                                             | r37_wen          | 16               | 32             |
+| clk          |                                             |                                             | r38_wen          | 30               | 32             |
+| clk          |                                             |                                             | r39_wen          | 32               | 32             |
+| clk          |                                             |                                             | r3_wen           | 8                | 32             |
+| clk          |                                             |                                             | r40_wen          | 28               | 32             |
+| clk          |                                             |                                             | r41_wen          | 16               | 32             |
+| clk          |                                             |                                             | r42_wen          | 8                | 32             |
+| clk          |                                             |                                             | r43_wen          | 8                | 32             |
+| clk          |                                             |                                             | r44_wen          | 28               | 32             |
+| clk          |                                             |                                             | r45_wen          | 27               | 32             |
+| clk          |                                             |                                             | r46_wen          | 29               | 32             |
+| clk          |                                             |                                             | r47_wen          | 9                | 32             |
+| clk          |                                             |                                             | r48_wen          | 8                | 32             |
+| clk          |                                             |                                             | r49_wen          | 8                | 32             |
+| clk          |                                             |                                             | r4_wen           | 16               | 32             |
+| clk          |                                             |                                             | r50_wen          | 8                | 32             |
+| clk          |                                             |                                             | r51_wen          | 8                | 32             |
+| clk          |                                             |                                             | r52_wen          | 8                | 32             |
+| clk          |                                             |                                             | r53_wen          | 8                | 32             |
+| clk          |                                             |                                             | r54_wen          | 9                | 32             |
+| clk          |                                             |                                             | r55_wen          | 9                | 32             |
+| clk          |                                             |                                             | r56_wen          | 8                | 32             |
+| clk          |                                             |                                             | r57_wen          | 29               | 32             |
+| clk          |                                             |                                             | r58_wen          | 8                | 32             |
+| clk          |                                             |                                             | r59_wen          | 32               | 32             |
+| clk          |                                             |                                             | r5_wen           | 30               | 32             |
+| clk          |                                             |                                             | r60_wen          | 9                | 32             |
+| clk          |                                             |                                             | r61_wen          | 8                | 32             |
+| clk          |                                             |                                             | r62_wen          | 9                | 32             |
+| clk          |                                             |                                             | r63_wen          | 8                | 32             |
+| clk          |                                             |                                             | r64_wen          | 9                | 32             |
+| clk          |                                             |                                             | r65_wen          | 8                | 32             |
+| clk          |                                             |                                             | r66_wen          | 8                | 32             |
+| clk          |                                             |                                             | r67_wen          | 9                | 32             |
+| clk          |                                             |                                             | r68_wen          | 8                | 32             |
+| clk          |                                             |                                             | r69_wen          | 8                | 32             |
+| clk          |                                             |                                             | r6_wen           | 16               | 32             |
+| clk          |                                             |                                             | r70_wen          | 8                | 32             |
+| clk          |                                             |                                             | r73_wen          | 8                | 32             |
+| clk          |                                             |                                             | r74_wen          | 8                | 32             |
+| clk          |                                             |                                             | r75_wen          | 8                | 32             |
+| clk          |                                             |                                             | r78_wen          | 8                | 32             |
+| clk          |                                             |                                             | r79_wen          | 16               | 64             |
+| clk          |                                             |                                             | r7_wen           | 9                | 32             |
+| clk          |                                             |                                             | r81_wen          | 8                | 32             |
+| clk          |                                             |                                             | r82_wen          | 8                | 32             |
+| clk          |                                             |                                             | r83_wen          | 8                | 32             |
+| clk          |                                             |                                             | r84_wen          | 8                | 32             |
+| clk          |                                             |                                             | r85_wen          | 8                | 32             |
+| clk          |                                             |                                             | r86_wen          | 24               | 96             |
+| clk          |                                             |                                             | r89_wen          | 24               | 96             |
+| clk          |                                             |                                             | r8_wen           | 30               | 32             |
+| clk          |                                             |                                             | r92_wen          | 16               | 64             |
+| clk          |                                             |                                             | r98_wen          | 16               | 64             |
+| clk          |                                             |                                             | r9_wen           | 9                | 32             |
+| clk          |                                             |                                             | stall_in_inv     | 2522             | 7184           |
+| clk          |                                             |                                             | state_wen        | 4                | 4              |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig000000a7 | fadd1/xilinx_fadd_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig000000b2 | fadd1/xilinx_fadd_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fadd2/xilinx_fadd_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fadd2/xilinx_fadd_i/blk00000003/sig000000a7 | fadd2/xilinx_fadd_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fadd2/xilinx_fadd_i/blk00000003/sig000000b2 | fadd2/xilinx_fadd_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fadd3/xilinx_fadd_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fadd3/xilinx_fadd_i/blk00000003/sig000000a7 | fadd3/xilinx_fadd_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fadd3/xilinx_fadd_i/blk00000003/sig000000b2 | fadd3/xilinx_fadd_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fadd4/xilinx_fadd_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fadd4/xilinx_fadd_i/blk00000003/sig000000a7 | fadd4/xilinx_fadd_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fadd4/xilinx_fadd_i/blk00000003/sig000000b2 | fadd4/xilinx_fadd_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fadd5/xilinx_fadd_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fadd5/xilinx_fadd_i/blk00000003/sig000000a7 | fadd5/xilinx_fadd_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fadd5/xilinx_fadd_i/blk00000003/sig000000b2 | fadd5/xilinx_fadd_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig00000158 | fmul1/xilinx_fmul_i/blk00000003/sig00000157 | stall_in_inv     | 2                | 8              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000015a |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000016c | fmul1/xilinx_fmul_i/blk00000003/sig0000016b | stall_in_inv     | 1                | 1              |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig00000158 | fmul2/xilinx_fmul_i/blk00000003/sig00000157 | stall_in_inv     | 2                | 8              |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig0000015a |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig0000016c | fmul2/xilinx_fmul_i/blk00000003/sig0000016b | stall_in_inv     | 1                | 1              |
+| clk          | fsub1/xilinx_fsub_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fsub1/xilinx_fsub_i/blk00000003/sig000000a7 | fsub1/xilinx_fsub_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fsub1/xilinx_fsub_i/blk00000003/sig000000b2 | fsub1/xilinx_fsub_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fsub2/xilinx_fsub_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fsub2/xilinx_fsub_i/blk00000003/sig000000a7 | fsub2/xilinx_fsub_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fsub2/xilinx_fsub_i/blk00000003/sig000000b2 | fsub2/xilinx_fsub_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fsub3/xilinx_fsub_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fsub3/xilinx_fsub_i/blk00000003/sig000000a7 | fsub3/xilinx_fsub_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fsub3/xilinx_fsub_i/blk00000003/sig000000b2 | fsub3/xilinx_fsub_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | fsub4/xilinx_fsub_i/blk00000003/sig00000096 |                                             | stall_in_inv     | 6                | 22             |
+| clk          | fsub4/xilinx_fsub_i/blk00000003/sig000000a7 | fsub4/xilinx_fsub_i/blk00000003/sig000000a6 | stall_in_inv     | 1                | 1              |
+| clk          | fsub4/xilinx_fsub_i/blk00000003/sig000000b2 | fsub4/xilinx_fsub_i/blk00000003/sig000000b1 | stall_in_inv     | 2                | 8              |
+| clk          | rst                                         |                                             |                  | 9                | 9              |
+| clk          | rst                                         |                                             | clP0_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP1_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP2_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP3_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP4_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP5_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP6_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP7_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | clP8_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | go               | 1                | 1              |
+| clk          | rst                                         |                                             | state_wen        | 56               | 221            |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48E  | BUFG  | BUFIO | BUFR  | DCM_ADV   | PLL_ADV   | Full Hierarchical Name               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dct/               |           | 1422/13105    | 3936/10999    | 676/19786     | 0/169         | 0/0       | 0/24    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct                                  |
+| +FSM               |           | 0/40          | 0/153         | 0/4           | 0/2           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/FSM                              |
+| ++SR[0].shiftCtl_i |           | 40/40         | 153/153       | 4/4           | 2/2           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/FSM/SR[0].shiftCtl_i             |
+| +fadd1             |           | 0/136         | 0/328         | 0/242         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd1                            |
+| ++xilinx_fadd_i    |           | 0/136         | 0/328         | 0/242         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd1/xilinx_fadd_i              |
+| +++blk00000003     |           | 136/136       | 328/328       | 242/242       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd1/xilinx_fadd_i/blk00000003  |
+| +fadd1_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd1_in0_r                      |
+| +fadd1_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd1_in1_r                      |
+| +fadd2             |           | 0/123         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd2                            |
+| ++xilinx_fadd_i    |           | 0/123         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd2/xilinx_fadd_i              |
+| +++blk00000003     |           | 123/123       | 328/328       | 243/243       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd2/xilinx_fadd_i/blk00000003  |
+| +fadd2_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd2_in0_r                      |
+| +fadd2_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd2_in1_r                      |
+| +fadd3             |           | 0/136         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd3                            |
+| ++xilinx_fadd_i    |           | 0/136         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd3/xilinx_fadd_i              |
+| +++blk00000003     |           | 136/136       | 328/328       | 243/243       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd3/xilinx_fadd_i/blk00000003  |
+| +fadd3_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd3_in0_r                      |
+| +fadd3_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd3_in1_r                      |
+| +fadd4             |           | 0/125         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd4                            |
+| ++xilinx_fadd_i    |           | 0/125         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd4/xilinx_fadd_i              |
+| +++blk00000003     |           | 125/125       | 328/328       | 243/243       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd4/xilinx_fadd_i/blk00000003  |
+| +fadd4_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd4_in0_r                      |
+| +fadd4_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd4_in1_r                      |
+| +fadd5             |           | 0/141         | 0/328         | 0/242         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd5                            |
+| ++xilinx_fadd_i    |           | 0/141         | 0/328         | 0/242         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd5/xilinx_fadd_i              |
+| +++blk00000003     |           | 141/141       | 328/328       | 242/242       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd5/xilinx_fadd_i/blk00000003  |
+| +fadd5_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd5_in0_r                      |
+| +fadd5_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fadd5_in1_r                      |
+| +fmul1             |           | 0/48          | 0/107         | 0/93          | 0/16          | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul1                            |
+| ++xilinx_fmul_i    |           | 0/48          | 0/107         | 0/93          | 0/16          | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul1/xilinx_fmul_i              |
+| +++blk00000003     |           | 48/48         | 107/107       | 93/93         | 16/16         | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul1/xilinx_fmul_i/blk00000003  |
+| +fmul1_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul1_in0_r                      |
+| +fmul1_in1_r       |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul1_in1_r                      |
+| +fmul2             |           | 0/47          | 0/107         | 0/94          | 0/16          | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul2                            |
+| ++xilinx_fmul_i    |           | 0/47          | 0/107         | 0/94          | 0/16          | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul2/xilinx_fmul_i              |
+| +++blk00000003     |           | 47/47         | 107/107       | 94/94         | 16/16         | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul2/xilinx_fmul_i/blk00000003  |
+| +fmul2_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul2_in0_r                      |
+| +fmul2_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fmul2_in1_r                      |
+| +fsub1             |           | 0/136         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub1                            |
+| ++xilinx_fsub_i    |           | 0/136         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub1/xilinx_fsub_i              |
+| +++blk00000003     |           | 136/136       | 328/328       | 243/243       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub1/xilinx_fsub_i/blk00000003  |
+| +fsub1_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub1_in0_r                      |
+| +fsub1_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub1_in1_r                      |
+| +fsub2             |           | 0/144         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub2                            |
+| ++xilinx_fsub_i    |           | 0/144         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub2/xilinx_fsub_i              |
+| +++blk00000003     |           | 144/144       | 328/328       | 243/243       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub2/xilinx_fsub_i/blk00000003  |
+| +fsub2_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub2_in0_r                      |
+| +fsub2_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub2_in1_r                      |
+| +fsub3             |           | 0/135         | 0/328         | 0/244         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub3                            |
+| ++xilinx_fsub_i    |           | 0/135         | 0/328         | 0/244         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub3/xilinx_fsub_i              |
+| +++blk00000003     |           | 135/135       | 328/328       | 244/244       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub3/xilinx_fsub_i/blk00000003  |
+| +fsub3_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub3_in0_r                      |
+| +fsub3_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub3_in1_r                      |
+| +fsub4             |           | 0/139         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub4                            |
+| ++xilinx_fsub_i    |           | 0/139         | 0/328         | 0/243         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub4/xilinx_fsub_i              |
+| +++blk00000003     |           | 139/139       | 328/328       | 243/243       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub4/xilinx_fsub_i/blk00000003  |
+| +fsub4_in0_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub4_in0_r                      |
+| +fsub4_in1_r       |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/fsub4_in1_r                      |
+| +mux1              |           | 31/31         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux1                             |
+| +mux104            |           | 134/134       | 0/0           | 258/258       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux104                           |
+| +mux133            |           | 197/197       | 0/0           | 352/352       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux133                           |
+| +mux135            |           | 189/189       | 0/0           | 320/320       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux135                           |
+| +mux168            |           | 213/213       | 0/0           | 418/418       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux168                           |
+| +mux172            |           | 192/192       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux172                           |
+| +mux202            |           | 211/211       | 0/0           | 352/352       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux202                           |
+| +mux205            |           | 261/261       | 0/0           | 449/449       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux205                           |
+| +mux234            |           | 130/130       | 0/0           | 256/256       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux234                           |
+| +mux236            |           | 248/248       | 0/0           | 384/384       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux236                           |
+| +mux267            |           | 240/240       | 0/0           | 387/387       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux267                           |
+| +mux268            |           | 161/161       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux268                           |
+| +mux296            |           | 185/185       | 0/0           | 322/322       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux296                           |
+| +mux301            |           | 184/184       | 0/0           | 320/320       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux301                           |
+| +mux32             |           | 227/227       | 0/0           | 360/360       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux32                            |
+| +mux327            |           | 153/153       | 0/0           | 291/291       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux327                           |
+| +mux330            |           | 190/190       | 0/0           | 321/321       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux330                           |
+| +mux360            |           | 186/186       | 0/0           | 320/320       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux360                           |
+| +mux370            |           | 179/179       | 0/0           | 320/320       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux370                           |
+| +mux391            |           | 206/206       | 0/0           | 352/352       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux391                           |
+| +mux394            |           | 155/155       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux394                           |
+| +mux40             |           | 164/164       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux40                            |
+| +mux421            |           | 131/131       | 0/0           | 257/257       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux421                           |
+| +mux425            |           | 165/165       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux425                           |
+| +mux451            |           | 132/132       | 0/0           | 256/256       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux451                           |
+| +mux452            |           | 158/158       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux452                           |
+| +mux453            |           | 28/28         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux453                           |
+| +mux477            |           | 106/106       | 0/0           | 225/225       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux477                           |
+| +mux481            |           | 128/128       | 0/0           | 256/256       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux481                           |
+| +mux509            |           | 147/147       | 0/0           | 289/289       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux509                           |
+| +mux511            |           | 136/136       | 0/0           | 256/256       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux511                           |
+| +mux529            |           | 234/234       | 0/0           | 385/385       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux529                           |
+| +mux548            |           | 194/194       | 0/0           | 352/352       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux548                           |
+| +mux561            |           | 138/138       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux561                           |
+| +mux575            |           | 105/105       | 0/0           | 257/257       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux575                           |
+| +mux582            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux582                           |
+| +mux594            |           | 109/109       | 0/0           | 256/256       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux594                           |
+| +mux595            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux595                           |
+| +mux610            |           | 164/164       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux610                           |
+| +mux619            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux619                           |
+| +mux633            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux633                           |
+| +mux634            |           | 157/157       | 0/0           | 288/288       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux634                           |
+| +mux651            |           | 181/181       | 0/0           | 321/321       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux651                           |
+| +mux652            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux652                           |
+| +mux653            |           | 30/30         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux653                           |
+| +mux654            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux654                           |
+| +mux655            |           | 29/29         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux655                           |
+| +mux656            |           | 30/30         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux656                           |
+| +mux657            |           | 28/28         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux657                           |
+| +mux658            |           | 30/30         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux658                           |
+| +mux659            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux659                           |
+| +mux660            |           | 30/30         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux660                           |
+| +mux661            |           | 29/29         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux661                           |
+| +mux662            |           | 31/31         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux662                           |
+| +mux663            |           | 30/30         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux663                           |
+| +mux664            |           | 31/31         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux664                           |
+| +mux665            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux665                           |
+| +mux666            |           | 31/31         | 0/0           | 66/66         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux666                           |
+| +mux667            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux667                           |
+| +mux668            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux668                           |
+| +mux669            |           | 28/28         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux669                           |
+| +mux670            |           | 32/32         | 0/0           | 65/65         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux670                           |
+| +mux671            |           | 31/31         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux671                           |
+| +mux672            |           | 35/35         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux672                           |
+| +mux673            |           | 32/32         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux673                           |
+| +mux674            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux674                           |
+| +mux675            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux675                           |
+| +mux676            |           | 32/32         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux676                           |
+| +mux677            |           | 29/29         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux677                           |
+| +mux678            |           | 30/30         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux678                           |
+| +mux679            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux679                           |
+| +mux68             |           | 182/182       | 0/0           | 352/352       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux68                            |
+| +mux680            |           | 32/32         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux680                           |
+| +mux681            |           | 31/31         | 0/0           | 66/66         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux681                           |
+| +mux682            |           | 35/35         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux682                           |
+| +mux683            |           | 32/32         | 0/0           | 65/65         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux683                           |
+| +mux684            |           | 27/27         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux684                           |
+| +mux685            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux685                           |
+| +mux686            |           | 30/30         | 0/0           | 66/66         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux686                           |
+| +mux687            |           | 32/32         | 0/0           | 65/65         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux687                           |
+| +mux688            |           | 28/28         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux688                           |
+| +mux689            |           | 16/16         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux689                           |
+| +mux69             |           | 132/132       | 0/0           | 256/256       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux69                            |
+| +mux690            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux690                           |
+| +mux691            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux691                           |
+| +mux692            |           | 28/28         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux692                           |
+| +mux693            |           | 27/27         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux693                           |
+| +mux694            |           | 29/29         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux694                           |
+| +mux695            |           | 37/37         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux695                           |
+| +mux696            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux696                           |
+| +mux697            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux697                           |
+| +mux698            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux698                           |
+| +mux699            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux699                           |
+| +mux700            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux700                           |
+| +mux701            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux701                           |
+| +mux702            |           | 35/35         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux702                           |
+| +mux703            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux703                           |
+| +mux704            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux704                           |
+| +mux705            |           | 29/29         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux705                           |
+| +mux706            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux706                           |
+| +mux707            |           | 59/59         | 0/0           | 128/128       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux707                           |
+| +mux708            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux708                           |
+| +mux709            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux709                           |
+| +mux710            |           | 35/35         | 0/0           | 65/65         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux710                           |
+| +mux711            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux711                           |
+| +mux712            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux712                           |
+| +mux713            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux713                           |
+| +mux714            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux714                           |
+| +mux715            |           | 9/9           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux715                           |
+| +mux716            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux716                           |
+| +mux717            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux717                           |
+| +mux718            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux718                           |
+| +mux719            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux719                           |
+| +mux720            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux720                           |
+| +mux721            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux721                           |
+| +mux722            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux722                           |
+| +mux723            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux723                           |
+| +mux724            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux724                           |
+| +mux725            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux725                           |
+| +mux726            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux726                           |
+| +mux727            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux727                           |
+| +mux728            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux728                           |
+| +mux729            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux729                           |
+| +mux730            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux730                           |
+| +mux731            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux731                           |
+| +mux732            |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux732                           |
+| +mux98             |           | 156/156       | 0/0           | 320/320       | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/mux98                            |
+| +r1                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r1                               |
+| +r10               |           | 30/30         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r10                              |
+| +r100              |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r100                             |
+| +r105              |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r105                             |
+| +r11               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r11                              |
+| +r12               |           | 30/30         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r12                              |
+| +r13               |           | 29/29         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r13                              |
+| +r14               |           | 31/31         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r14                              |
+| +r15               |           | 30/30         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r15                              |
+| +r16               |           | 31/31         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r16                              |
+| +r17               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r17                              |
+| +r18               |           | 31/31         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r18                              |
+| +r19               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r19                              |
+| +r2                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r2                               |
+| +r20               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r20                              |
+| +r21               |           | 28/28         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r21                              |
+| +r22               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r22                              |
+| +r23               |           | 31/31         | 32/32         | 24/24         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r23                              |
+| +r24               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r24                              |
+| +r25               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r25                              |
+| +r26               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r26                              |
+| +r27               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r27                              |
+| +r28               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r28                              |
+| +r29               |           | 29/29         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r29                              |
+| +r3                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r3                               |
+| +r30               |           | 30/30         | 32/32         | 29/29         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r30                              |
+| +r31               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r31                              |
+| +r32               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r32                              |
+| +r33               |           | 31/31         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r33                              |
+| +r34               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r34                              |
+| +r35               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r35                              |
+| +r36               |           | 27/27         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r36                              |
+| +r37               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r37                              |
+| +r38               |           | 30/30         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r38                              |
+| +r39               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r39                              |
+| +r4                |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r4                               |
+| +r40               |           | 28/28         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r40                              |
+| +r41               |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r41                              |
+| +r42               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r42                              |
+| +r43               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r43                              |
+| +r44               |           | 28/28         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r44                              |
+| +r45               |           | 27/27         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r45                              |
+| +r46               |           | 29/29         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r46                              |
+| +r47               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r47                              |
+| +r48               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r48                              |
+| +r49               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r49                              |
+| +r5                |           | 30/30         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r5                               |
+| +r50               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r50                              |
+| +r51               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r51                              |
+| +r52               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r52                              |
+| +r53               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r53                              |
+| +r54               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r54                              |
+| +r55               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r55                              |
+| +r56               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r56                              |
+| +r57               |           | 29/29         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r57                              |
+| +r58               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r58                              |
+| +r59               |           | 32/32         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r59                              |
+| +r6                |           | 16/16         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r6                               |
+| +r60               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r60                              |
+| +r61               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r61                              |
+| +r62               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r62                              |
+| +r63               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r63                              |
+| +r64               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r64                              |
+| +r65               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r65                              |
+| +r66               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r66                              |
+| +r67               |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r67                              |
+| +r68               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r68                              |
+| +r69               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r69                              |
+| +r7                |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r7                               |
+| +r70               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r70                              |
+| +r73               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r73                              |
+| +r74               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r74                              |
+| +r75               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r75                              |
+| +r78               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r78                              |
+| +r79               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r79                              |
+| +r8                |           | 30/30         | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r8                               |
+| +r80               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r80                              |
+| +r81               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r81                              |
+| +r82               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r82                              |
+| +r83               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r83                              |
+| +r84               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r84                              |
+| +r85               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r85                              |
+| +r86               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r86                              |
+| +r87               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r87                              |
+| +r88               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r88                              |
+| +r89               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r89                              |
+| +r9                |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r9                               |
+| +r90               |           | 8/8           | 32/32         | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r90                              |
+| +r91               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r91                              |
+| +r92               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r92                              |
+| +r93               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r93                              |
+| +r98               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r98                              |
+| +r99               |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/r99                              |
+| +shift_i           |           | 16/16         | 64/64         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | dct/shift_i                          |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

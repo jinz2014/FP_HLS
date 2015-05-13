@@ -1,0 +1,188 @@
+Release 13.2 par O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+
+tachyon.cse.sc.edu::  Sat Jul 21 10:41:48 2012
+
+par -ol high -nopad ordbur_map.ncd ordbur.ncd ordbur.pcf 
+
+
+Constraints file: ordbur.pcf.
+Loading device for application Rf_Device from file '5vlx330.nph' in environment /share/reconfig/xilinx/13.2/ISE_DS/ISE/.
+   "ordbur" is an NCD, version 3.2, device xc5vlx330, package ff1760, speed -2
+
+Initializing temperature to 85.000 Celsius. (default - Range: 0.000 to 85.000 Celsius)
+Initializing voltage to 0.950 Volts. (default - Range: 0.950 to 1.050 Volts)
+
+
+Device speed data version:  "PRODUCTION 1.73 2011-06-20".
+
+
+
+Device Utilization Summary:
+
+   Number of DSP48Es                         5 out of 192     2%
+   Number of Slices                        754 out of 51840   1%
+   Number of Slice Registers              1469 out of 207360  1%
+      Number used as Flip Flops           1468
+      Number used as Latches                 0
+      Number used as LatchThrus              1
+
+   Number of Slice LUTS                   1817 out of 207360  1%
+   Number of Slice LUT-Flip Flop pairs    2223 out of 207360  1%
+
+
+Overall effort level (-ol):   High 
+Router effort level (-rl):    High 
+
+Starting initial Timing Analysis.  REAL time: 21 secs 
+Finished initial Timing Analysis.  REAL time: 21 secs 
+
+WARNING:Par:289 - The signal clk has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal rst has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal go_in has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal stall_in has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<31> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<30> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<29> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<28> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<27> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<26> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<25> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<24> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<23> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<22> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<21> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<20> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<19> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<18> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<17> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<16> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<15> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<14> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<13> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<12> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<11> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<10> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<9> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<8> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<7> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<6> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<5> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<4> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<3> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<2> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<1> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal ordbur_fdiv1_out_rdy<0> has no load.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<31> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<30> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<29> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<28> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<27> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<26> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<25> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<24> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<23> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<22> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<21> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<20> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<19> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<18> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<17> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<16> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<15> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<14> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<13> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<12> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<11> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<10> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<9> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<8> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<7> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<6> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<5> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<4> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<3> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<2> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<1> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:289 - The signal p1_in<0> has no driver.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fmul1/xilinx_fmul_i/rdy has no load.  PAR will not attempt to route this signal.
+WARNING:Par:288 - The signal fadd1/xilinx_fadd_i/rdy has no load.  PAR will not attempt to route this signal.
+Starting Router
+
+
+Phase  1  : 10470 unrouted;      REAL time: 27 secs 
+
+Phase  2  : 8252 unrouted;      REAL time: 28 secs 
+
+Phase  3  : 2897 unrouted;      REAL time: 32 secs 
+
+Phase  4  : 2897 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 46 secs 
+
+Updating file: ordbur.ncd with current fully routed design.
+
+Phase  5  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+
+Phase  6  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+
+Phase  7  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+
+Phase  8  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+
+Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 51 secs 
+Total REAL time to Router completion: 51 secs 
+Total CPU time to Router completion: 52 secs 
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Generating "PAR" statistics.
+
+Timing Score: 0 (Setup: 0, Hold: 0, Component Switching Limit: 0)
+
+Asterisk (*) preceding a constraint indicates it was not met.
+   This may be due to a setup or hold violation.
+
+----------------------------------------------------------------------------------------------------------
+  Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
+                                            |             |    Slack   | Achievable | Errors |    Score   
+----------------------------------------------------------------------------------------------------------
+  TS_clk = PERIOD TIMEGRP "clk" 6.66666667  | SETUP       |     0.009ns|     6.657ns|       0|           0
+  ns HIGH 50%                               | HOLD        |     0.404ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+
+All signals are completely routed.
+
+WARNING:Par:283 - There are 35 loadless signals in this design. This design will cause Bitgen to issue DRC warnings.
+
+WARNING:Par:284 - There are 36 sourceless signals in this design. This design will not pass the DRC check run by Bitgen.
+
+Total REAL time to PAR completion: 52 secs 
+Total CPU time to PAR completion: 53 secs 
+
+Peak Memory Usage:  858 MB
+
+Placer: Placement generated during map.
+Routing: Completed - No errors found.
+Timing: Completed - No errors found.
+
+Number of error messages: 0
+Number of warning messages: 75
+Number of info messages: 0
+
+Writing design to file ordbur.ncd
+
+
+
+PAR done!

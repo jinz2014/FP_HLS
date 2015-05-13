@@ -1,0 +1,10 @@
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX4.ngc MUX4.ngd  
+map -intstyle ise -p xc5vlx330-ff1760-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX4_map.ncd MUX4.ngd MUX4.pcf 
+par -w -intstyle ise -ol high -mt off MUX4_map.ncd MUX4.ncd MUX4.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX4.twx MUX4.ncd -o MUX4.twr MUX4.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX4.ngc MUX4.ngd  
+map -intstyle ise -p xc5vlx330-ff1760-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX4_map.ncd MUX4.ngd MUX4.pcf 
+par -w -intstyle ise -ol high -mt off MUX4_map.ncd MUX4.ncd MUX4.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX4.twx MUX4.ncd -o MUX4.twr MUX4.pcf 

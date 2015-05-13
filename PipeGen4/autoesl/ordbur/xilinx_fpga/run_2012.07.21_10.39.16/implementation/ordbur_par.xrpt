@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<document OS="lin64" product="ISE" version="13.2">
+
+  <!--The data in this file is primarily intended for consumption by Xilinx tools.
+    The structure and the elements are likely to change over the next few releases.
+    This means code written to parse this file will need to be revisited each subsequent release.-->
+
+  <application stringID="par" timeStamp="Sat Jul 21 10:42:07 2012">
+    <section stringID="User_Env">
+      <table stringID="User_EnvVar">
+        <column stringID="variable"/>
+        <column stringID="value"/>
+        <row stringID="row" value="0">
+          <item stringID="variable" value="XILINX_DSP"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/ISE"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="variable" value="LD_LIBRARY_PATH"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/ISE//lib/lin64:/share/reconfig/xilinx/13.2/ISE_DS/common/lib/lin64:/share/reconfig/xilinx/13.2/ISE_DS/ISE/sysgen/lib:/share/reconfig/xilinx/13.2/ISE_DS/ISE/lib/lin64:/share/reconfig/xilinx/13.2/ISE_DS/ISE/smartmodel/lin64/installed_lin64/lib:/share/reconfig/xilinx/13.2/ISE_DS/EDK/lib/lin64:/usr/Impulse/CoDeveloper3/StageMaster/lib"/>
+        </row>
+        <row stringID="row" value="2">
+          <item stringID="variable" value="XILINX_EDK"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/EDK"/>
+        </row>
+        <row stringID="row" value="3">
+          <item stringID="variable" value="PATH"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/ISE//bin/lin64:/share/reconfig/cad_setup_files:/usr/local/3rdparty/altera/quartus101/nios2eds/bin/nios2-gnutools/H-i686-pc-linux-gnu/bin:/usr/local/3rdparty/altera/quartus101/nios2eds/sdk2/bin:/usr/local/3rdparty/altera/quartus101/nios2eds/bin:/share/reconfig/xilinx/13.2/ISE_DS/common/bin/lin64:/share/reconfig/xilinx/13.2/ISE_DS/ISE/sysgen/bin:/share/reconfig/xilinx/13.2/ISE_DS/PlanAhead/bin:/share/reconfig/xilinx/13.2/ISE_DS/ISE/bin/lin64:/share/reconfig/xilinx/13.2/ISE_DS/ISE/sysgen/util:/share/reconfig/xilinx/13.2/ISE_DS/EDK/bin/lin64:/share/reconfig/xilinx/13.2/ISE_DS/EDK/gnu/microblaze/lin64/bin:/share/reconfig/xilinx/13.2/ISE_DS/EDK/gnu/powerpc-eabi/lin64/bin:/usr/local/3rdparty/mentor/modelsim661/modeltech/bin:/usr/local/3rdparty/mentor/HDS2009.1/bin:/usr/local/3rdparty/altera/quartus101/quartus/bin:/usr/lib64/qt-3.3/bin:/usr/kerberos/bin:/opt/convey/bin:/usr/Impulse/CoDeveloper3/bin:/usr/local/hadoop-0.20.203.0/bin:/usr/local/bin:/bin:/usr/bin:/usr/NX/bin:/usr/local/3rdparty/csce611/spim/bin"/>
+        </row>
+        <row stringID="row" value="4">
+          <item stringID="variable" value="LMC_HOME"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/ISE/smartmodel/lin64/installed_lin64"/>
+        </row>
+        <row stringID="row" value="5">
+          <item stringID="variable" value="XILINX_PLANAHEAD"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/PlanAhead"/>
+        </row>
+        <row stringID="row" value="6">
+          <item stringID="variable" value="XILINX"/>
+          <item stringID="value" value="/share/reconfig/xilinx/13.2/ISE_DS/ISE/"/>
+        </row>
+      </table>
+      <item stringID="User_EnvOs" value="OS Information">
+        <item stringID="User_EnvOsname" value="CentOS"/>
+        <item stringID="User_EnvOsrelease" value="CentOS release 5.7 (Final)"/>
+      </item>
+      <item stringID="User_EnvHost" value="tachyon.cse.sc.edu"/>
+      <table stringID="User_EnvCpu">
+        <column stringID="arch"/>
+        <column stringID="speed"/>
+        <row stringID="row" value="0">
+          <item stringID="arch" value="Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz"/>
+          <item stringID="speed" value="2261.059 MHz"/>
+        </row>
+        <row stringID="row" value="1">
+          <item stringID="arch" value="Intel(R) Xeon(R) CPU           E5520  @ 2.27GHz"/>
+          <item stringID="speed" value="2261.059 MHz"/>
+        </row>
+      </table>
+    </section>
+    <task stringID="PAR_OPTION_SUMMARY">
+      <section stringID="PAR_OPTION_SUMMARY">
+        <item DEFAULT="std" label="-ol" stringID="PAR_OVERALL_EFFORTLEVEL" value="high"/>
+        <item DEFAULT="true" label="-nopad" stringID="PAR_PAD_REPORT" value="false"/>
+      </section>
+    </task>
+    <task stringID="PAR_DEVICE_UTILIZATION">
+      <section label="Device Utilization Summary" stringID="PAR_DEVICE_UTLIZATION">
+        <item AVAILABLE="51840" dataType="int" stringID="PAR_SLICES" value="754"/>
+        <item AVAILABLE="207360" dataType="int" label="Number of Slice Registers" stringID="PAR_SLICE_REGISTERS" value="1469">
+          <item dataType="int" label="Number used as Flip Flops" stringID="PAR_FLIP_FLOPS" value="1468"/>
+          <item dataType="int" label="Number used as Latches" stringID="PAR_LATCHES" value="0"/>
+          <item dataType="int" label="Number used as LatchThrus" stringID="PAR_LATCH_THRUS" value="1"/>
+        </item>
+        <item AVAILABLE="207360" dataType="int" label="Number of Slice LUTS" stringID="PAR_SLICE_LUTS" value="1817"/>
+        <item AVAILABLE="207360" dataType="int" label="Number of Slice LUT-Flip Flop pairs" stringID="PAR_SLICE_LUT_FLIPFLOP_PAIRS" value="2223"/>
+      </section>
+    </task>
+    <task stringID="PAR_PAR">
+      <section stringID="PAR_DESIGN_SUMMARY">
+        <item stringID="PAR_REAL_TIME_COMPLETION_ROUTER" value="51 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_ROUTER" value="52 secs "/>
+        <item dataType="int" stringID="PAR_UNROUTES" value="0"/>
+        <item dataType="float" stringID="PAR_TIMING_SCORE" value="0.000000"/>
+        <item stringID="PAR_REAL_TIME_COMPLETION_PAR" value="52 secs "/>
+        <item stringID="PAR_CPU_TIME_COMPLETION_PAR" value="53 secs "/>
+      </section>
+    </task>
+    <task stringID="PAR_par">
+      <section stringID="PAR_DLY_CLK_REPORT"/>
+      <section stringID="PAR_UNROUTES_REPORT">
+        <item dataType="int" stringID="PAR_UNROUTED_NETS" value="0"/>
+        <item dataType="int" stringID="PAR_TOTAL_SOURCELESS_NETS" value="36"/>
+        <item dataType="int" stringID="PAR_TOTAL_LOADLESS_NETS" value="35"/>
+      </section>
+    </task>
+  </application>
+
+</document>

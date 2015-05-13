@@ -1,0 +1,301 @@
+Library ieee;
+use ieee.std_logic_1164.all;
+library XilinxCoreLib;
+use XilinxCoreLib.floating_point_v4_0_comp.all;
+
+entity faddsub is
+  port (
+    clk: in std_ulogic;
+    a: in std_ulogic_vector(31 downto 0);
+    b: in std_ulogic_vector(31 downto 0);
+    op: in std_ulogic_vector(5 downto 0);
+    go: in std_ulogic;
+    result: out std_ulogic_vector(31 downto 0);
+    pipeEn: in std_ulogic;
+    rdy: out std_ulogic);
+end faddsub;
+
+architecture faddsub_a of faddsub is
+    signal a_slv: std_logic_vector(31 downto 0);
+    signal b_slv: std_logic_vector(31 downto 0);
+    signal operation: std_logic_vector(5 downto 0);
+    signal result_slv: std_logic_vector(31 downto 0);
+    signal operation_nd : std_logic;
+begin
+  operation_nd <= go;
+  
+  xilinx_faddsub : floating_point_v4_0
+    generic map(
+      c_has_add => 1,                 -- 000000
+      c_has_subtract => 1,            -- 000001
+      c_a_width => 32,
+      c_a_fraction_width => 24,
+      c_b_width => 32,
+      c_b_fraction_width => 24,
+      c_result_fraction_width => 24,
+      c_result_width => 32,
+      c_has_ce=> 1,
+      c_has_operation_nd => 1,
+      c_rate => 1,
+      c_latency => 11,
+      --c_latency => 5,
+      --c_latency => 4,
+      c_has_rdy => 1)
+    port map (
+      a => a_slv,
+      b => b_slv,
+      operation => operation,
+      operation_nd => operation_nd,
+      clk => clk,
+      result => result_slv,
+      ce => pipeEn,
+      rdy => rdy);
+
+  a_slv <= std_logic_vector(a);
+  b_slv <= std_logic_vector(b);
+  operation <= std_logic_vector(op);
+  result <= std_ulogic_vector(result_slv);
+  
+end faddsub_a;
+
+Library ieee;
+use ieee.std_logic_1164.all;
+library XilinxCoreLib;
+use XilinxCoreLib.floating_point_v4_0_comp.all;
+
+entity fadd is
+  port (
+    clk: in std_ulogic;
+    a: in std_ulogic_vector(31 downto 0);
+    b: in std_ulogic_vector(31 downto 0);
+    go: in std_ulogic;
+    result: out std_ulogic_vector(31 downto 0);
+    pipeEn: in std_ulogic;
+    rdy: out std_ulogic);
+end fadd;
+
+architecture fadd_a of fadd is
+    signal a_slv: std_logic_vector(31 downto 0);
+    signal b_slv: std_logic_vector(31 downto 0);
+    signal result_slv: std_logic_vector(31 downto 0);
+    signal operation_nd : std_logic;
+    signal rdy_int : std_logic;
+begin
+  operation_nd <= go;
+  
+  xilinx_fadd : floating_point_v4_0
+    generic map(
+      c_has_add => 1,
+      c_a_width => 32,
+      c_a_fraction_width => 24,
+      c_b_width => 32,
+      c_b_fraction_width => 24,
+      c_result_fraction_width => 24,
+      c_result_width => 32,
+      c_has_ce=> 1,
+      c_has_operation_nd => 1,
+      c_rate => 1,
+      c_latency => 11,
+      --c_latency => 5,
+      --c_latency => 4,
+      c_has_rdy => 1)
+    port map (
+      a => a_slv,
+      b => b_slv,
+      operation_nd => operation_nd,
+      clk => clk,
+      result => result_slv,
+      ce => pipeEn,
+      --rdy => rdy
+      rdy => rdy_int
+    );
+
+  a_slv <= std_logic_vector(a);
+  b_slv <= std_logic_vector(b);
+  --result <= std_ulogic_vector(result_slv);
+
+  process (clk)
+  begin  -- process
+    if clk'event and clk = '1' then  -- rising clock edge
+      if (rdy_int = '1') then
+        result <= std_ulogic_vector(result_slv); 
+        rdy    <= rdy_int;
+      end if;
+    end if;
+  end process;
+  
+end fadd_a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+library XilinxCoreLib;
+use XilinxCoreLib.floating_point_v4_0_comp.all;
+
+entity fsub is
+  port (
+    clk: in std_ulogic;
+    a: in std_ulogic_vector(31 downto 0);
+    b: in std_ulogic_vector(31 downto 0);
+    go: in std_ulogic;
+    result: out std_ulogic_vector(31 downto 0);
+    pipeEn: in std_ulogic;
+    rdy: out std_ulogic);
+end fsub;
+
+architecture fsub_a of fsub is
+    signal a_slv: std_logic_vector(31 downto 0);
+    signal b_slv: std_logic_vector(31 downto 0);
+    signal result_slv: std_logic_vector(31 downto 0);
+    signal operation_nd : std_logic;
+begin
+  operation_nd <= go;
+  
+  xilinx_fsub : floating_point_v4_0
+    generic map(
+      c_has_subtract => 1,
+      c_a_width => 32,
+      c_a_fraction_width => 24,
+      c_b_width => 32,
+      c_b_fraction_width => 24,
+      c_result_fraction_width => 24,
+      c_result_width => 32,
+      c_has_ce=> 1,
+      c_has_operation_nd => 1,
+      c_rate => 1,
+      c_latency => 11
+      --c_latency => 5,
+      --c_latency => 4
+    )
+    port map (
+      a => a_slv,
+      b => b_slv,
+      operation_nd => operation_nd,
+      clk => clk,
+      result => result_slv,
+      ce => pipeEn);
+
+  a_slv <= std_logic_vector(a);
+  b_slv <= std_logic_vector(b);
+  result <= std_ulogic_vector(result_slv);
+  
+end fsub_a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+library XilinxCoreLib;
+use XilinxCoreLib.floating_point_v4_0_comp.all;
+
+entity fmul is
+  port (
+    clk: in std_ulogic;
+    a: in std_ulogic_vector(31 downto 0);
+    b: in std_ulogic_vector(31 downto 0);
+    go: in std_ulogic;
+    result: out std_ulogic_vector(31 downto 0);
+    pipeEn: in std_ulogic;
+    rdy: out std_ulogic);
+end fmul;
+
+architecture fmul_a of fmul is
+    signal a_slv: std_logic_vector(31 downto 0);
+    signal b_slv: std_logic_vector(31 downto 0);
+    signal result_slv: std_logic_vector(31 downto 0);
+    signal operation_nd: std_logic;
+begin
+  operation_nd <= go;
+
+  xilinx_fmul : floating_point_v4_0
+    generic map(
+      c_has_multiply => 1,
+      c_a_width => 32,
+      c_a_fraction_width => 24,
+      c_b_width => 32,
+      c_b_fraction_width => 24,
+      c_result_fraction_width => 24,
+      c_result_width => 32,
+      c_has_ce=> 1,
+      c_has_operation_nd => 1,
+      c_rate => 1,    
+      c_latency => 6,
+      --c_latency => 5,
+      --c_latency => 4,
+      c_has_rdy => 1)
+    port map (
+      a => a_slv,
+      b => b_slv,
+      operation_nd => operation_nd,
+      clk => clk,
+      result => result_slv,
+      ce => pipeEn,
+      rdy => rdy);
+
+  a_slv <= std_logic_vector(a);
+  b_slv <= std_logic_vector(b);
+  result <= std_ulogic_vector(result_slv);
+  
+end fmul_a;
+
+library ieee;
+use ieee.std_logic_1164.all;
+library XilinxCoreLib;
+use XilinxCoreLib.floating_point_v4_0_comp.all;
+
+entity fdiv is
+  port (
+    clk: in std_ulogic;
+    a: in std_ulogic_vector(31 downto 0);
+    b: in std_ulogic_vector(31 downto 0);
+    go: in std_ulogic;
+    result: out std_ulogic_vector(31 downto 0);
+    done: out std_ulogic);
+end fdiv;
+
+architecture fdiv_a of fdiv is
+    signal a_slv: std_logic_vector(31 downto 0);
+    signal b_slv: std_logic_vector(31 downto 0);
+    signal result_slv: std_logic_vector(31 downto 0);
+    signal operation_nd, rdy, rfd : std_logic;
+begin
+  operation_nd <= go;
+  
+  xilinx_fdiv : floating_point_v4_0
+    generic map(
+      c_b_fraction_width => 24,
+      c_has_operation_nd => 1,
+      c_a_fraction_width => 24,
+      -- div result is registered (see below)
+      c_latency => 26,
+      --c_latency => 25,
+      c_has_rdy => 1,
+      c_result_fraction_width => 24,
+      c_has_divide => 1,
+      --c_rate => 26,
+      c_rate => 1,
+      c_has_operation_rfd => 1,
+      c_result_width => 32,
+      c_b_width => 32,
+      c_a_width => 32)
+    port map (
+      a => a_slv,
+      b => b_slv,
+      operation_nd => operation_nd,
+      operation_rfd => rfd,
+      clk => clk,
+      result => result_slv,
+      rdy => rdy);
+
+  a_slv <= std_logic_vector(a);
+  b_slv <= std_logic_vector(b);
+  process (clk)
+  begin  -- process
+    if clk'event and clk = '1' then  -- rising clock edge
+      if (rdy = '1') then
+        result <= std_ulogic_vector(result_slv); 
+      end if;
+    end if;
+  end process;
+  
+  --ack0: entity work.impulse_acknowledge port map (clk, go, rdy, done);
+  
+end fdiv_a;
+

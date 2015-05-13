@@ -1,0 +1,472 @@
+Release 13.2 Map O.61xd (lin64)
+Xilinx Mapping Report File for Design 'ucti'
+
+Design Information
+------------------
+Command Line   : map -u -p xc5vlx330-ff1760-2 -cm speed -ol high -pr b -detail
+-o ucti_map.ncd ucti.ngd ucti.pcf 
+Target Device  : xc5vlx330
+Target Package : ff1760
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Fri Sep  7 17:26:56 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    2
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,501 out of 207,360    1%
+    Number used as Flip Flops:               2,501
+  Number of Slice LUTs:                      1,483 out of 207,360    1%
+    Number used as logic:                    1,340 out of 207,360    1%
+      Number using O6 output only:           1,246
+      Number using O5 output only:               1
+      Number using O5 and O6:                   93
+    Number used as Memory:                     140 out of  54,720    1%
+      Number used as Shift Register:           140
+        Number using O6 output only:           140
+    Number used as exclusive route-thru:         3
+  Number of route-thrus:                        14
+    Number using O6 output only:                 4
+    Number using O5 output only:                10
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   844 out of  51,840    1%
+  Number of LUT Flip Flop pairs used:        2,651
+    Number with an unused Flip Flop:           150 out of   2,651    5%
+    Number with an unused LUT:               1,168 out of   2,651   44%
+    Number of fully used LUT-FF pairs:       1,333 out of   2,651   50%
+    Number of unique control sets:              34
+    Number of slice register sites lost
+      to control set restrictions:              47 out of 207,360    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+
+Specific Feature Utilization:
+  Number of DSP48Es:                             5 out of     192    2%
+
+  Number of RPM macros:            1
+Average Fanout of Non-Clock Nets:                3.06
+
+Peak Memory Usage:  1090 MB
+Total REAL time to MAP completion:  1 mins 56 secs 
+Total CPU time to MAP completion:   1 mins 56 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:PhysDesignRules:367 - The signal <fmul1/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd1/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network fdiv1_out_r<0> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<1> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<10> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<11> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<12> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<13> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<14> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<15> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<16> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<17> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<18> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<19> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<2> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<20> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<21> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<22> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<23> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<24> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<25> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<26> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<27> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<28> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<29> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<3> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<30> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<31> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<4> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<5> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<6> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<7> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<8> has no load.
+INFO:LIT:243 - Logical network fdiv1_out_r<9> has no load.
+INFO:LIT:243 - Logical network ucti_out0_rdy_r has no load.
+INFO:LIT:243 - Logical network fadd1/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fmul1/xilinx_fmul_i/rdy has no load.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  34 block(s) removed
+   8 block(s) optimized away
+   1 signal(s) removed
+   2 Block(s) redundant
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk00000107" (XOR) removed.
+Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk0000013c" (XOR) removed.
+ The signal "fadd1/xilinx_fadd_i/blk00000003/sig00000286" is loadless and has
+been removed.
+  Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk0000013a" (MUX) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000247" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000249" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000024b" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000024d" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000024f" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000251" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000253" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000255" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000257" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000259" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000025b" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000025d" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000025f" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000261" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000263" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000265" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000267" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000269" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000026b" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000026d" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk0000026f" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000271" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000273" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk00000275" (XOR) removed.
+Loadless block "fdiv1/xilinx_fdiv_i/blk00000003/blk000009ea" (XOR) removed.
+Unused block "fadd1/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd1/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fdiv1/xilinx_fdiv_i/blk00000001" (ONE) removed.
+Unused block "fdiv1/xilinx_fdiv_i/blk00000002" (ZERO) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000001" (ONE) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000002" (ZERO) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		fadd1/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd1/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fdiv1/xilinx_fdiv_i/blk00000003/blk00000004
+VCC 		fdiv1/xilinx_fdiv_i/blk00000003/blk00000005
+GND 		fmul1/xilinx_fmul_i/blk00000003/blk00000004
+VCC 		fmul1/xilinx_fmul_i/blk00000003/blk00000005
+
+Redundant Block(s):
+TYPE 		BLOCK
+LUT1 		fadd1/xilinx_fadd_i/blk00000003/blk00000268
+LUT1 		fdiv1/xilinx_fdiv_i/blk00000003/blk00000d3f
+
+Section 6 - IOB Properties
+--------------------------
+
+Section 7 - RPMs
+----------------
+fadd1/xilinx_fadd_i/blk00000003/hset    
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+
+Section 12 - Control Set Information
+------------------------------------
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal                                | Set Signal                                  | Enable Signal         | Slice Load Count | Bel Load Count |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk          |                                             |                                             |                       | 12               | 44             |
+| clk          |                                             |                                             | fdiv1/result_and0000  | 8                | 32             |
+| clk          |                                             |                                             | r1_wen                | 8                | 32             |
+| clk          |                                             |                                             | r2_wen                | 8                | 32             |
+| clk          |                                             |                                             | r3_wen                | 24               | 64             |
+| clk          |                                             |                                             | r4_wen                | 8                | 32             |
+| clk          |                                             |                                             | r5_wen                | 8                | 32             |
+| clk          |                                             |                                             | r6_wen                | 30               | 64             |
+| clk          |                                             |                                             | r7_wen                | 26               | 64             |
+| clk          |                                             |                                             | r8_wen                | 25               | 64             |
+| clk          |                                             |                                             | r9_wen                | 8                | 32             |
+| clk          |                                             |                                             | stall_in_inv          | 633              | 1980           |
+| clk          |                                             |                                             | state_wen             | 14               | 14             |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig00000096 |                                             | stall_in_inv          | 6                | 22             |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig000000a7 | fadd1/xilinx_fadd_i/blk00000003/sig000000a6 | stall_in_inv          | 1                | 1              |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig000000b2 | fadd1/xilinx_fadd_i/blk00000003/sig000000b1 | stall_in_inv          | 2                | 8              |
+| clk          | fdiv1/xilinx_fdiv_i/blk00000003/sig00000d62 |                                             | stall_in_inv          | 6                | 22             |
+| clk          | fdiv1/xilinx_fdiv_i/blk00000003/sig00000d64 | fdiv1/xilinx_fdiv_i/blk00000003/sig00000d63 | stall_in_inv          | 2                | 8              |
+| clk          | fdiv1/xilinx_fdiv_i/blk00000003/sig00000d66 | fdiv1/xilinx_fdiv_i/blk00000003/sig00000d65 | stall_in_inv          | 1                | 1              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig00000158 | fmul1/xilinx_fmul_i/blk00000003/sig00000157 | stall_in_inv          | 2                | 8              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000015a |                                             | stall_in_inv          | 6                | 22             |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000016c | fmul1/xilinx_fmul_i/blk00000003/sig0000016b | stall_in_inv          | 1                | 1              |
+| clk          | rst                                         |                                             |                       | 1                | 1              |
+| clk          | rst                                         |                                             | go                    | 2                | 2              |
+| clk          | rst                                         |                                             | r3_ctl/cnt_en_not0001 | 1                | 1              |
+| clk          | rst                                         |                                             | r3_ctl/cnt_not0001    | 1                | 1              |
+| clk          | rst                                         |                                             | r6_ctl/cnt_en_not0001 | 1                | 1              |
+| clk          | rst                                         |                                             | r6_ctl/cnt_not0001    | 1                | 1              |
+| clk          | rst                                         |                                             | r7_ctl/cnt_en_not0001 | 1                | 1              |
+| clk          | rst                                         |                                             | r7_ctl/cnt_not0001    | 1                | 1              |
+| clk          | rst                                         |                                             | r8_ctl/cnt_en_not0001 | 1                | 1              |
+| clk          | rst                                         |                                             | r8_ctl/cnt_not0001    | 1                | 1              |
+| clk          | rst                                         |                                             | state_wen             | 13               | 48             |
+| clk          | state_cnt_or0000                            |                                             | go                    | 1                | 3              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48E  | BUFG  | BUFIO | BUFR  | DCM_ADV   | PLL_ADV   | Full Hierarchical Name                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ucti/              |           | 41/957        | 99/2501       | 18/1465       | 0/140         | 0/0       | 0/5     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti                                  |
+| +FSM               |           | 0/12          | 0/26          | 0/14          | 0/7           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/FSM                              |
+| ++SR[0].shiftCtl_i |           | 12/12         | 26/26         | 14/14         | 7/7           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/FSM/SR[0].shiftCtl_i             |
+| +fadd1             |           | 0/136         | 0/328         | 0/244         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fadd1                            |
+| ++xilinx_fadd_i    |           | 0/136         | 0/328         | 0/244         | 0/15          | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fadd1/xilinx_fadd_i              |
+| +++blk00000003     |           | 136/136       | 328/328       | 244/244       | 15/15         | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fadd1/xilinx_fadd_i/blk00000003  |
+| +fadd1_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fadd1_in0_r                      |
+| +fadd1_in1_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fadd1_in1_r                      |
+| +fdiv1             |           | 8/419         | 32/1377       | 1/774         | 0/38          | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fdiv1                            |
+| ++xilinx_fdiv_i    |           | 0/411         | 0/1345        | 0/773         | 0/38          | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fdiv1/xilinx_fdiv_i              |
+| +++blk00000003     |           | 411/411       | 1345/1345     | 773/773       | 38/38         | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fdiv1/xilinx_fdiv_i/blk00000003  |
+| +fdiv1_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fdiv1_in0_r                      |
+| +fdiv1_in1_r       |           | 9/9           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fdiv1_in1_r                      |
+| +fmul1             |           | 0/45          | 0/107         | 0/93          | 0/16          | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fmul1                            |
+| ++xilinx_fmul_i    |           | 0/45          | 0/107         | 0/93          | 0/16          | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fmul1/xilinx_fmul_i              |
+| +++blk00000003     |           | 45/45         | 107/107       | 93/93         | 16/16         | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fmul1/xilinx_fmul_i/blk00000003  |
+| +fmul1_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fmul1_in0_r                      |
+| +fmul1_in1_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/fmul1_in1_r                      |
+| +mux1              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/mux1                             |
+| +mux3              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/mux3                             |
+| +mux4              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/mux4                             |
+| +mux6              |           | 26/26         | 0/0           | 66/66         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/mux6                             |
+| +mux7              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/mux7                             |
+| +mux8              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/mux8                             |
+| +r1                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r1                               |
+| +r2                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r2                               |
+| +r3                |           | 0/32          | 0/64          | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3                               |
+| ++SR[0].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[0].shift_i                 |
+| ++SR[10].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[10].shift_i                |
+| ++SR[11].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[11].shift_i                |
+| ++SR[12].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[12].shift_i                |
+| ++SR[13].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[13].shift_i                |
+| ++SR[14].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[14].shift_i                |
+| ++SR[15].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[15].shift_i                |
+| ++SR[16].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[16].shift_i                |
+| ++SR[17].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[17].shift_i                |
+| ++SR[18].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[18].shift_i                |
+| ++SR[19].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[19].shift_i                |
+| ++SR[1].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[1].shift_i                 |
+| ++SR[20].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[20].shift_i                |
+| ++SR[21].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[21].shift_i                |
+| ++SR[22].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[22].shift_i                |
+| ++SR[23].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[23].shift_i                |
+| ++SR[24].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[24].shift_i                |
+| ++SR[25].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[25].shift_i                |
+| ++SR[26].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[26].shift_i                |
+| ++SR[27].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[27].shift_i                |
+| ++SR[28].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[28].shift_i                |
+| ++SR[29].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[29].shift_i                |
+| ++SR[2].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[2].shift_i                 |
+| ++SR[30].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[30].shift_i                |
+| ++SR[31].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[31].shift_i                |
+| ++SR[3].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[3].shift_i                 |
+| ++SR[4].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[4].shift_i                 |
+| ++SR[5].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[5].shift_i                 |
+| ++SR[6].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[6].shift_i                 |
+| ++SR[7].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[7].shift_i                 |
+| ++SR[8].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[8].shift_i                 |
+| ++SR[9].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3/SR[9].shift_i                 |
+| +r3_ctl            |           | 6/6           | 5/5           | 8/8           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r3_ctl                           |
+| +r4                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r4                               |
+| +r5                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r5                               |
+| +r6                |           | 0/32          | 0/32          | 0/32          | 0/32          | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6                               |
+| ++SR[0].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[0].shift_i                 |
+| ++SR[10].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[10].shift_i                |
+| ++SR[11].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[11].shift_i                |
+| ++SR[12].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[12].shift_i                |
+| ++SR[13].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[13].shift_i                |
+| ++SR[14].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[14].shift_i                |
+| ++SR[15].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[15].shift_i                |
+| ++SR[16].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[16].shift_i                |
+| ++SR[17].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[17].shift_i                |
+| ++SR[18].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[18].shift_i                |
+| ++SR[19].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[19].shift_i                |
+| ++SR[1].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[1].shift_i                 |
+| ++SR[20].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[20].shift_i                |
+| ++SR[21].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[21].shift_i                |
+| ++SR[22].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[22].shift_i                |
+| ++SR[23].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[23].shift_i                |
+| ++SR[24].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[24].shift_i                |
+| ++SR[25].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[25].shift_i                |
+| ++SR[26].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[26].shift_i                |
+| ++SR[27].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[27].shift_i                |
+| ++SR[28].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[28].shift_i                |
+| ++SR[29].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[29].shift_i                |
+| ++SR[2].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[2].shift_i                 |
+| ++SR[30].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[30].shift_i                |
+| ++SR[31].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[31].shift_i                |
+| ++SR[3].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[3].shift_i                 |
+| ++SR[4].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[4].shift_i                 |
+| ++SR[5].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[5].shift_i                 |
+| ++SR[6].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[6].shift_i                 |
+| ++SR[7].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[7].shift_i                 |
+| ++SR[8].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[8].shift_i                 |
+| ++SR[9].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6/SR[9].shift_i                 |
+| +r6_ctl            |           | 5/5           | 5/5           | 8/8           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r6_ctl                           |
+| +r7                |           | 0/32          | 0/32          | 0/32          | 0/32          | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7                               |
+| ++SR[0].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[0].shift_i                 |
+| ++SR[10].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[10].shift_i                |
+| ++SR[11].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[11].shift_i                |
+| ++SR[12].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[12].shift_i                |
+| ++SR[13].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[13].shift_i                |
+| ++SR[14].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[14].shift_i                |
+| ++SR[15].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[15].shift_i                |
+| ++SR[16].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[16].shift_i                |
+| ++SR[17].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[17].shift_i                |
+| ++SR[18].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[18].shift_i                |
+| ++SR[19].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[19].shift_i                |
+| ++SR[1].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[1].shift_i                 |
+| ++SR[20].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[20].shift_i                |
+| ++SR[21].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[21].shift_i                |
+| ++SR[22].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[22].shift_i                |
+| ++SR[23].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[23].shift_i                |
+| ++SR[24].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[24].shift_i                |
+| ++SR[25].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[25].shift_i                |
+| ++SR[26].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[26].shift_i                |
+| ++SR[27].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[27].shift_i                |
+| ++SR[28].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[28].shift_i                |
+| ++SR[29].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[29].shift_i                |
+| ++SR[2].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[2].shift_i                 |
+| ++SR[30].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[30].shift_i                |
+| ++SR[31].shift_i   |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[31].shift_i                |
+| ++SR[3].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[3].shift_i                 |
+| ++SR[4].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[4].shift_i                 |
+| ++SR[5].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[5].shift_i                 |
+| ++SR[6].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[6].shift_i                 |
+| ++SR[7].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[7].shift_i                 |
+| ++SR[8].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[8].shift_i                 |
+| ++SR[9].shift_i    |           | 1/1           | 1/1           | 1/1           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7/SR[9].shift_i                 |
+| +r7_ctl            |           | 6/6           | 5/5           | 8/8           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r7_ctl                           |
+| +r8                |           | 0/32          | 0/64          | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8                               |
+| ++SR[0].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[0].shift_i                 |
+| ++SR[10].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[10].shift_i                |
+| ++SR[11].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[11].shift_i                |
+| ++SR[12].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[12].shift_i                |
+| ++SR[13].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[13].shift_i                |
+| ++SR[14].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[14].shift_i                |
+| ++SR[15].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[15].shift_i                |
+| ++SR[16].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[16].shift_i                |
+| ++SR[17].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[17].shift_i                |
+| ++SR[18].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[18].shift_i                |
+| ++SR[19].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[19].shift_i                |
+| ++SR[1].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[1].shift_i                 |
+| ++SR[20].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[20].shift_i                |
+| ++SR[21].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[21].shift_i                |
+| ++SR[22].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[22].shift_i                |
+| ++SR[23].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[23].shift_i                |
+| ++SR[24].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[24].shift_i                |
+| ++SR[25].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[25].shift_i                |
+| ++SR[26].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[26].shift_i                |
+| ++SR[27].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[27].shift_i                |
+| ++SR[28].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[28].shift_i                |
+| ++SR[29].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[29].shift_i                |
+| ++SR[2].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[2].shift_i                 |
+| ++SR[30].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[30].shift_i                |
+| ++SR[31].shift_i   |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[31].shift_i                |
+| ++SR[3].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[3].shift_i                 |
+| ++SR[4].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[4].shift_i                 |
+| ++SR[5].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[5].shift_i                 |
+| ++SR[6].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[6].shift_i                 |
+| ++SR[7].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[7].shift_i                 |
+| ++SR[8].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[8].shift_i                 |
+| ++SR[9].shift_i    |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8/SR[9].shift_i                 |
+| +r8_ctl            |           | 4/4           | 5/5           | 8/8           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r8_ctl                           |
+| +r9                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | ucti/r9                               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

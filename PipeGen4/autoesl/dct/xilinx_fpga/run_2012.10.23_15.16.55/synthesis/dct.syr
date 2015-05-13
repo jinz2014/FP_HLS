@@ -1,0 +1,1080 @@
+Release 13.2 - xst O.61xd (lin64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> 
+--> 
+Parameter TMPDIR set to ./projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to .
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+
+Reading constraint file ../../constraints.xcf.
+XCF parsing done.
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "../../xst.prj"
+Input Format                       : mixed
+Synthesis Constraint File          : ../../constraints.xcf
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "dct"
+Output Format                      : NGC
+Target Device                      : xc5vlx330-ff1760-2
+
+---- Source Options
+Top Module Name                    : dct
+Use DSP Block                      : auto
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : NO
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : No
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : false
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : OPTIMIZE
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+DSP48 Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "../../../../../Modelsim/dct/ASAP1_dct/ASAP1_dct_HDL.v" in library work
+Compiling verilog file "../../../../../vlib/Register.v" in library work
+Module <dct> compiled
+Module <Register> compiled
+Module <RegisterV> compiled
+Compiling verilog file "../../../../../vlib/MUX.v" in library work
+Module <RegisterC> compiled
+Module <MUX2> compiled
+Module <MUX3> compiled
+Module <MUX4> compiled
+Module <MUX4_hot> compiled
+Module <MUX5> compiled
+Module <MUX6> compiled
+Module <MUX7> compiled
+Module <MUX8> compiled
+Module <MUX8_onehot> compiled
+Module <MUX9> compiled
+Module <MUX10> compiled
+Compiling verilog file "../../../../../vlib/ShiftRegister.v" in library work
+Module <MUX11> compiled
+Module <ShiftRegister> compiled
+Module <shift> compiled
+Module <ShiftRegCtl> compiled
+Compiling verilog file "../../../../../vlib/ShiftCtlRegister.v" in library work
+Module <ShiftRegCtl0> compiled
+Module <ShiftCtlRegister> compiled
+Compiling verilog file "../../../../../vlib/RegWriteCtl.v" in library work
+Module <shiftCtl> compiled
+Compiling verilog file "../../../../../vlib/float.v" in library work
+Module <RegWriteCtl> compiled
+Module <fadd> compiled
+Module <fsub> compiled
+Module <fmul> compiled
+Module <fdiv> compiled
+No errors in compilation
+Analysis of file <"../../xst.prj"> succeeded.
+ 
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl_hi_latency/xilinx_fmul.vhd" in Library work.
+Entity <xilinx_fmul> compiled.
+Entity <xilinx_fmul> (Architecture <xilinx_fmul_a>) compiled.
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl_hi_latency/xilinx_fsub.vhd" in Library work.
+Entity <xilinx_fsub> compiled.
+Entity <xilinx_fsub> (Architecture <xilinx_fsub_a>) compiled.
+Compiling vhdl file "/share/jinz/AutoESL/coregen/vhdl_hi_latency/xilinx_fadd.vhd" in Library work.
+Entity <xilinx_fadd> compiled.
+Entity <xilinx_fadd> (Architecture <xilinx_fadd_a>) compiled.
+
+Reading constraint file ../../constraints.xcf.
+XCF parsing done.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <dct> in library <work> with parameters.
+	Delay = "00000000000000000000000011110111"
+	TEST_NU = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <fadd> in library <work>.
+
+Analyzing hierarchy for module <fsub> in library <work>.
+
+Analyzing hierarchy for module <fmul> in library <work>.
+
+Analyzing hierarchy for module <Register> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <ShiftRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+	Depth = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <MUX2> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <MUX3> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <MUX4> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <RegWriteCtl> in library <work> with parameters.
+	DII = "00000000000000000000000001000000"
+	DataWidth = "00000000000000000000000000000110"
+
+Analyzing hierarchy for module <ShiftCtlRegister> in library <work> with parameters.
+	DataWidth = "00000000000000000000000000000001"
+	Depth = "00000000000000000000000011110111"
+
+Analyzing hierarchy for module <shift> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000000000010"
+
+Analyzing hierarchy for module <shiftCtl> in library <work> with parameters.
+	Pattern = "00000000000000000000000000000000"
+	n = "00000000000000000000000011110111"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <dct>.
+	Delay = 32'sb00000000000000000000000011110111
+	TEST_NU = 32'sb00000000000000000000000000000001
+Module <dct> is correct for synthesis.
+ 
+Analyzing module <fadd> in library <work>.
+Module <fadd> is correct for synthesis.
+ 
+Analyzing module <fsub> in library <work>.
+Module <fsub> is correct for synthesis.
+ 
+Analyzing module <fmul> in library <work>.
+Module <fmul> is correct for synthesis.
+ 
+Analyzing module <Register> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <Register> is correct for synthesis.
+ 
+Analyzing module <ShiftRegister> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+	Depth = 32'sb00000000000000000000000000000010
+Module <ShiftRegister> is correct for synthesis.
+ 
+Analyzing module <shift> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000000000010
+Module <shift> is correct for synthesis.
+ 
+Analyzing module <MUX2> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <MUX2> is correct for synthesis.
+ 
+Analyzing module <MUX3> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+"../../../../../vlib/MUX.v" line 68: Found Parallel Case directive in module <MUX3>.
+Module <MUX3> is correct for synthesis.
+ 
+Analyzing module <MUX4> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000100000
+Module <MUX4> is correct for synthesis.
+ 
+Analyzing module <RegWriteCtl> in library <work>.
+	DII = 32'sb00000000000000000000000001000000
+	DataWidth = 32'sb00000000000000000000000000000110
+Module <RegWriteCtl> is correct for synthesis.
+ 
+Analyzing module <ShiftCtlRegister> in library <work>.
+	DataWidth = 32'sb00000000000000000000000000000001
+	Depth = 32'sb00000000000000000000000011110111
+Module <ShiftCtlRegister> is correct for synthesis.
+ 
+Analyzing module <shiftCtl> in library <work>.
+	Pattern = 32'sb00000000000000000000000000000000
+	n = 32'sb00000000000000000000000011110111
+Module <shiftCtl> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Register>.
+    Related source file is "../../../../../vlib/Register.v".
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit register for signal <register>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <Register> synthesized.
+
+
+Synthesizing Unit <MUX2>.
+    Related source file is "../../../../../vlib/MUX.v".
+Unit <MUX2> synthesized.
+
+
+Synthesizing Unit <MUX3>.
+    Related source file is "../../../../../vlib/MUX.v".
+Unit <MUX3> synthesized.
+
+
+Synthesizing Unit <MUX4>.
+    Related source file is "../../../../../vlib/MUX.v".
+Unit <MUX4> synthesized.
+
+
+Synthesizing Unit <RegWriteCtl>.
+    Related source file is "../../../../../vlib/RegWriteCtl.v".
+    Found 1-bit register for signal <wen>.
+    Found 6-bit up counter for signal <cnt>.
+    Found 1-bit register for signal <cnt_en>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <RegWriteCtl> synthesized.
+
+
+Synthesizing Unit <shift>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+    Found 2-bit register for signal <state>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <shift> synthesized.
+
+
+Synthesizing Unit <shiftCtl>.
+    Related source file is "../../../../../vlib/ShiftCtlRegister.v".
+    Found 247-bit register for signal <state>.
+    Summary:
+	inferred 247 D-type flip-flop(s).
+Unit <shiftCtl> synthesized.
+
+
+Synthesizing Unit <fadd>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fadd> synthesized.
+
+
+Synthesizing Unit <fsub>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fsub> synthesized.
+
+
+Synthesizing Unit <fmul>.
+    Related source file is "../../../../../vlib/float.v".
+Unit <fmul> synthesized.
+
+
+Synthesizing Unit <ShiftRegister>.
+    Related source file is "../../../../../vlib/ShiftRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftRegister> synthesized.
+
+
+Synthesizing Unit <ShiftCtlRegister>.
+    Related source file is "../../../../../vlib/ShiftCtlRegister.v".
+WARNING:Xst:646 - Signal <DBG> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <ShiftCtlRegister> synthesized.
+
+
+Synthesizing Unit <dct>.
+    Related source file is "../../../../../Modelsim/dct/ASAP1_dct/ASAP1_dct_HDL.v".
+WARNING:Xst:646 - Signal <state_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <state_in> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<241:235>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<223:220>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<192:191>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <state<169:168>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr94_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr93_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr76_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr70_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr60_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <sr59_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r92_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r87_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r85_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r83_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r81_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r7_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r79_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r75_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r74_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r73_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r71_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r6_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r66_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r63_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r61_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r53_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r50_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r4_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r48_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r40_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r38_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r33_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r30_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r25_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r22_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r18_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r166_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r165_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r164_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r163_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r162_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r161_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r160_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r15_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r159_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r158_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r157_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r156_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r155_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r154_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r153_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r152_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r151_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r150_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r14_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r149_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r148_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r147_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r146_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r145_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r144_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r143_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r142_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r141_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r140_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r139_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r138_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r137_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r136_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r135_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r134_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r133_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r132_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r131_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r130_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r129_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r128_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r127_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r126_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r125_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r124_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r123_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r122_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r121_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r120_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r119_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r118_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r117_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r116_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r115_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r114_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r113_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r112_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r111_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r110_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r109_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r108_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r107_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r101_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fsub3_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fsub3_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fsub2_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fsub2_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fsub1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fsub1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul2_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul2_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fmul2_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fmul1_out_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fmul1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd5_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd5_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd4_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd4_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd3_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd3_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd2_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd2_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <fadd1_rdy> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <fadd1_go> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <dio> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF94_rdata2_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF93_rdata2_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF93_rdata1_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF76_rdata2_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF76_rdata1_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF70_rdata2_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF70_rdata1_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF60_rdata2_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF60_rdata1_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF59_rdata2_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <RF59_rdata1_r> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 1-bit register for signal <dct_out0_rdy_r>.
+    Found 1-bit register for signal <dct_out10_rdy_r>.
+    Found 1-bit register for signal <dct_out11_rdy_r>.
+    Found 1-bit register for signal <dct_out12_rdy_r>.
+    Found 1-bit register for signal <dct_out13_rdy_r>.
+    Found 1-bit register for signal <dct_out14_rdy_r>.
+    Found 1-bit register for signal <dct_out15_rdy_r>.
+    Found 1-bit register for signal <dct_out16_rdy_r>.
+    Found 1-bit register for signal <dct_out17_rdy_r>.
+    Found 1-bit register for signal <dct_out18_rdy_r>.
+    Found 1-bit register for signal <dct_out19_rdy_r>.
+    Found 1-bit register for signal <dct_out1_rdy_r>.
+    Found 1-bit register for signal <dct_out20_rdy_r>.
+    Found 1-bit register for signal <dct_out21_rdy_r>.
+    Found 1-bit register for signal <dct_out22_rdy_r>.
+    Found 1-bit register for signal <dct_out23_rdy_r>.
+    Found 1-bit register for signal <dct_out24_rdy_r>.
+    Found 1-bit register for signal <dct_out25_rdy_r>.
+    Found 1-bit register for signal <dct_out26_rdy_r>.
+    Found 1-bit register for signal <dct_out27_rdy_r>.
+    Found 1-bit register for signal <dct_out28_rdy_r>.
+    Found 1-bit register for signal <dct_out29_rdy_r>.
+    Found 1-bit register for signal <dct_out2_rdy_r>.
+    Found 1-bit register for signal <dct_out3_rdy_r>.
+    Found 1-bit register for signal <dct_out4_rdy_r>.
+    Found 1-bit register for signal <dct_out5_rdy_r>.
+    Found 1-bit register for signal <dct_out6_rdy_r>.
+    Found 1-bit register for signal <dct_out7_rdy_r>.
+    Found 1-bit register for signal <dct_out8_rdy_r>.
+    Found 1-bit register for signal <dct_out9_rdy_r>.
+    Found 32-bit register for signal <fadd1_in0_rout_g1>.
+    Found 32-bit register for signal <fadd1_in1_rout_g1>.
+    Found 32-bit register for signal <fadd1_out_r>.
+    Found 32-bit register for signal <fadd2_in0_rout_g1>.
+    Found 32-bit register for signal <fadd2_in1_rout_g1>.
+    Found 32-bit register for signal <fadd2_out_r>.
+    Found 32-bit register for signal <fadd3_in0_rout_g1>.
+    Found 32-bit register for signal <fadd3_in1_rout_g1>.
+    Found 32-bit register for signal <fadd3_out_r>.
+    Found 32-bit register for signal <fadd4_in0_rout_g1>.
+    Found 32-bit register for signal <fadd4_in1_rout_g1>.
+    Found 32-bit register for signal <fadd4_out_r>.
+    Found 32-bit register for signal <fadd5_in0_rout_g1>.
+    Found 32-bit register for signal <fadd5_in1_rout_g1>.
+    Found 32-bit register for signal <fadd5_out_r>.
+    Found 32-bit register for signal <fmul1_in0_rout_g1>.
+    Found 32-bit register for signal <fmul1_in1_rout_g1>.
+    Found 32-bit register for signal <fmul2_in0_rout_g1>.
+    Found 32-bit register for signal <fmul2_in1_rout_g1>.
+    Found 32-bit register for signal <fsub1_in0_rout_g1>.
+    Found 32-bit register for signal <fsub1_in1_rout_g1>.
+    Found 32-bit register for signal <fsub1_out_r>.
+    Found 32-bit register for signal <fsub2_in0_rout_g1>.
+    Found 32-bit register for signal <fsub2_in1_rout_g1>.
+    Found 32-bit register for signal <fsub2_out_r>.
+    Found 32-bit register for signal <fsub3_in0_rout_g1>.
+    Found 32-bit register for signal <fsub3_in1_rout_g1>.
+    Found 32-bit register for signal <fsub3_out_r>.
+    Found 32-bit register for signal <p1_in_r>.
+    Found 32-bit register for signal <r100_out_r>.
+    Found 32-bit register for signal <r102_out_r>.
+    Found 32-bit register for signal <r103_out_r>.
+    Found 32-bit register for signal <r104_out_r>.
+    Found 32-bit register for signal <r105_out_r>.
+    Found 32-bit register for signal <r106_out_r>.
+    Found 32-bit register for signal <r10_out_r>.
+    Found 32-bit register for signal <r11_out_r>.
+    Found 32-bit register for signal <r12_out_r>.
+    Found 32-bit register for signal <r13_out_r>.
+    Found 32-bit register for signal <r16_out_r>.
+    Found 32-bit register for signal <r17_out_r>.
+    Found 32-bit register for signal <r19_out_r>.
+    Found 32-bit register for signal <r1_out_r>.
+    Found 32-bit register for signal <r20_out_r>.
+    Found 32-bit register for signal <r21_out_r>.
+    Found 32-bit register for signal <r23_out_r>.
+    Found 32-bit register for signal <r24_out_r>.
+    Found 32-bit register for signal <r26_out_r>.
+    Found 32-bit register for signal <r27_out_r>.
+    Found 32-bit register for signal <r28_out_r>.
+    Found 32-bit register for signal <r29_out_r>.
+    Found 32-bit register for signal <r2_out_r>.
+    Found 32-bit register for signal <r31_out_r>.
+    Found 32-bit register for signal <r32_out_r>.
+    Found 32-bit register for signal <r34_out_r>.
+    Found 32-bit register for signal <r35_out_r>.
+    Found 32-bit register for signal <r36_out_r>.
+    Found 32-bit register for signal <r37_out_r>.
+    Found 32-bit register for signal <r39_out_r>.
+    Found 32-bit register for signal <r3_out_r>.
+    Found 32-bit register for signal <r41_out_r>.
+    Found 32-bit register for signal <r42_out_r>.
+    Found 32-bit register for signal <r43_out_r>.
+    Found 32-bit register for signal <r44_out_r>.
+    Found 32-bit register for signal <r45_out_r>.
+    Found 32-bit register for signal <r46_out_r>.
+    Found 32-bit register for signal <r47_out_r>.
+    Found 32-bit register for signal <r49_out_r>.
+    Found 32-bit register for signal <r51_out_r>.
+    Found 32-bit register for signal <r52_out_r>.
+    Found 32-bit register for signal <r54_out_r>.
+    Found 32-bit register for signal <r55_out_r>.
+    Found 32-bit register for signal <r56_out_r>.
+    Found 32-bit register for signal <r57_out_r>.
+    Found 32-bit register for signal <r58_out_r>.
+    Found 32-bit register for signal <r5_out_r>.
+    Found 32-bit register for signal <r62_out_r>.
+    Found 32-bit register for signal <r64_out_r>.
+    Found 32-bit register for signal <r65_out_r>.
+    Found 32-bit register for signal <r67_out_r>.
+    Found 32-bit register for signal <r68_out_r>.
+    Found 32-bit register for signal <r69_out_r>.
+    Found 32-bit register for signal <r72_out_r>.
+    Found 32-bit register for signal <r77_out_r>.
+    Found 32-bit register for signal <r78_out_r>.
+    Found 32-bit register for signal <r80_out_r>.
+    Found 32-bit register for signal <r82_out_r>.
+    Found 32-bit register for signal <r84_out_r>.
+    Found 32-bit register for signal <r86_out_r>.
+    Found 32-bit register for signal <r88_out_r>.
+    Found 32-bit register for signal <r89_out_r>.
+    Found 32-bit register for signal <r8_out_r>.
+    Found 32-bit register for signal <r90_out_r>.
+    Found 32-bit register for signal <r91_out_r>.
+    Found 32-bit register for signal <r95_out_r>.
+    Found 32-bit register for signal <r96_out_r>.
+    Found 32-bit register for signal <r97_out_r>.
+    Found 32-bit register for signal <r98_out_r>.
+    Found 32-bit register for signal <r99_out_r>.
+    Found 32-bit register for signal <r9_out_r>.
+    Found 32-bit register for signal <RF94_rdata1_r>.
+    Found 1-bit register for signal <run>.
+    Found 6-bit up counter for signal <state_cnt>.
+    Found 1-bit register for signal <state_ctl_din>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 3264 D-type flip-flop(s).
+Unit <dct> synthesized.
+
+WARNING:Xst:524 - All outputs of the instance <r73> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r74> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r75> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r79> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r107> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r108> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r109> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r110> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r111> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r112> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r113> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r114> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r115> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r116> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r117> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r118> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r119> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r120> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r121> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r122> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r123> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r124> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r125> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r126> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r127> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r128> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r129> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r130> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r131> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r132> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r133> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r134> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r135> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r136> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r137> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r138> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r139> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r140> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r141> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r142> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r143> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r144> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r145> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r146> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r147> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r148> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r149> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r150> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r151> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r152> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r153> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r154> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r155> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r156> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r157> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r158> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r159> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r160> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r161> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r162> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r163> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r164> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r165> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+WARNING:Xst:524 - All outputs of the instance <r166> of the block <Register> are unconnected in block <dct>.
+   This instance will be removed from the design along with all underlying logic
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 7
+ 6-bit up counter                                      : 7
+# Registers                                            : 454
+ 1-bit register                                        : 44
+ 2-bit register                                        : 192
+ 247-bit register                                      : 1
+ 32-bit register                                       : 217
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <register_3> (without init value) has a constant value of 0 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_30> (without init value) has a constant value of 0 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_31> (without init value) has a constant value of 0 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_3> (without init value) has a constant value of 0 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_30> (without init value) has a constant value of 0 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_31> (without init value) has a constant value of 0 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_31> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_0> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_3> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_4> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_10> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_12> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_16> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_19> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_25> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_26> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_27> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_28> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_29> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_30> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_31> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_30> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_29> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_28> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_27> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_26> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_25> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_24> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_23> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_22> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_14> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_13> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_12> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_7> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_6> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_4> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_rout_g1_3> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_4> (without init value) has a constant value of 1 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_25> (without init value) has a constant value of 1 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_26> (without init value) has a constant value of 1 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_27> (without init value) has a constant value of 1 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_28> (without init value) has a constant value of 1 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_29> (without init value) has a constant value of 1 in block <fmul1_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_4> (without init value) has a constant value of 1 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_25> (without init value) has a constant value of 1 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_26> (without init value) has a constant value of 1 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_27> (without init value) has a constant value of 1 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_28> (without init value) has a constant value of 1 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <register_29> (without init value) has a constant value of 1 in block <fmul2_in1_r>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 7
+ 6-bit up counter                                      : 7
+# Registers                                            : 7619
+ Flip-Flops                                            : 7619
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1989 - Unit <dct>: instances <r93_ctl>, <r94_ctl> of unit <RegWriteCtl> are equivalent, second instance is removed
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_rout_g1_4> in Unit <dct> is equivalent to the following 8 FFs/Latches, which will be removed : <fmul1_in1_rout_g1_6> <fmul1_in1_rout_g1_7> <fmul1_in1_rout_g1_24> <fmul1_in1_rout_g1_25> <fmul1_in1_rout_g1_26> <fmul1_in1_rout_g1_27> <fmul1_in1_rout_g1_28> <fmul1_in1_rout_g1_29> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_rout_g1_0> in Unit <dct> is equivalent to the following 8 FFs/Latches, which will be removed : <fmul2_in1_rout_g1_4> <fmul2_in1_rout_g1_10> <fmul2_in1_rout_g1_16> <fmul2_in1_rout_g1_25> <fmul2_in1_rout_g1_26> <fmul2_in1_rout_g1_27> <fmul2_in1_rout_g1_28> <fmul2_in1_rout_g1_29> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_rout_g1_2> in Unit <dct> is equivalent to the following 9 FFs/Latches, which will be removed : <fmul2_in1_rout_g1_8> <fmul2_in1_rout_g1_9> <fmul2_in1_rout_g1_11> <fmul2_in1_rout_g1_13> <fmul2_in1_rout_g1_14> <fmul2_in1_rout_g1_15> <fmul2_in1_rout_g1_17> <fmul2_in1_rout_g1_22> <fmul2_in1_rout_g1_23> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_rout_g1_3> in Unit <dct> is equivalent to the following 4 FFs/Latches, which will be removed : <fmul2_in1_rout_g1_12> <fmul2_in1_rout_g1_19> <fmul2_in1_rout_g1_30> <fmul2_in1_rout_g1_31> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_rout_g1_1> in Unit <dct> is equivalent to the following 7 FFs/Latches, which will be removed : <fmul2_in1_rout_g1_5> <fmul2_in1_rout_g1_6> <fmul2_in1_rout_g1_7> <fmul2_in1_rout_g1_18> <fmul2_in1_rout_g1_20> <fmul2_in1_rout_g1_21> <fmul2_in1_rout_g1_24> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_rout_g1_0> in Unit <dct> is equivalent to the following 7 FFs/Latches, which will be removed : <fmul1_in1_rout_g1_1> <fmul1_in1_rout_g1_5> <fmul1_in1_rout_g1_10> <fmul1_in1_rout_g1_16> <fmul1_in1_rout_g1_18> <fmul1_in1_rout_g1_20> <fmul1_in1_rout_g1_21> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_rout_g1_2> in Unit <dct> is equivalent to the following 6 FFs/Latches, which will be removed : <fmul1_in1_rout_g1_8> <fmul1_in1_rout_g1_9> <fmul1_in1_rout_g1_11> <fmul1_in1_rout_g1_15> <fmul1_in1_rout_g1_17> <fmul1_in1_rout_g1_19> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_rout_g1_3> in Unit <dct> is equivalent to the following 7 FFs/Latches, which will be removed : <fmul1_in1_rout_g1_12> <fmul1_in1_rout_g1_13> <fmul1_in1_rout_g1_14> <fmul1_in1_rout_g1_22> <fmul1_in1_rout_g1_23> <fmul1_in1_rout_g1_30> <fmul1_in1_rout_g1_31> 
+WARNING:Xst:1710 - FF/Latch <fmul1_in1_rout_g1_3> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_3> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <fmul1_in1_rout_g1_4> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_rout_g1_0> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <dct> ...
+
+Optimizing unit <Register> ...
+
+Optimizing unit <RegWriteCtl> ...
+
+Optimizing unit <shiftCtl> ...
+
+Optimizing unit <ShiftRegister> ...
+WARNING:Xst:1710 - FF/Latch <fmul1_in1_r/register_3> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_4> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_25> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_26> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_27> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_28> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_29> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_30> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul1_in1_r/register_31> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_3> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_4> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_25> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_26> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_27> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_28> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_29> (without init value) has a constant value of 1 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_30> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <fmul2_in1_r/register_31> (without init value) has a constant value of 0 in block <dct>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Annotating constraints using XCF file '../../constraints.xcf'
+XCF parsing done.
+WARNING:Xst:2173 - Found black boxes on which forward tracing can not be performed on edge 'clk':
+ fadd5/xilinx_fadd_i fadd4/xilinx_fadd_i fadd3/xilinx_fadd_i fadd2/xilinx_fadd_i fadd1/xilinx_fadd_i fsub3/xilinx_fsub_i fsub2/xilinx_fsub_i fsub1/xilinx_fsub_i fmul2/xilinx_fmul_i fmul1/xilinx_fmul_i
+WARNING:Xst:2174 - These might be cores which have not been read
+Building and optimizing final netlist ...
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_17> in Unit <dct> is equivalent to the following 3 FFs/Latches, which will be removed : <fmul2_in1_r/register_11> <fmul2_in1_r/register_8> <fmul2_in1_r/register_2> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_23> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul2_in1_r/register_13> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_22> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul2_in1_r/register_14> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_15> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul2_in1_r/register_9> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_21> in Unit <dct> is equivalent to the following 2 FFs/Latches, which will be removed : <fmul2_in1_r/register_18> <fmul2_in1_r/register_5> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_24> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul2_in1_r/register_6> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_17> in Unit <dct> is equivalent to the following 3 FFs/Latches, which will be removed : <fmul1_in1_r/register_11> <fmul1_in1_r/register_8> <fmul1_in1_r/register_2> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_23> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul1_in1_r/register_13> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_22> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul1_in1_r/register_14> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_15> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul1_in1_r/register_9> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_21> in Unit <dct> is equivalent to the following 2 FFs/Latches, which will be removed : <fmul1_in1_r/register_18> <fmul1_in1_r/register_5> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_24> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul1_in1_r/register_6> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_16> in Unit <dct> is equivalent to the following 2 FFs/Latches, which will be removed : <fmul2_in1_r/register_10> <fmul2_in1_r/register_0> 
+INFO:Xst:2261 - The FF/Latch <fmul2_in1_r/register_20> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul2_in1_r/register_1> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_16> in Unit <dct> is equivalent to the following 2 FFs/Latches, which will be removed : <fmul1_in1_r/register_10> <fmul1_in1_r/register_0> 
+INFO:Xst:2261 - The FF/Latch <fmul1_in1_r/register_20> in Unit <dct> is equivalent to the following FF/Latch, which will be removed : <fmul1_in1_r/register_1> 
+Found area constraint ratio of 100 (+ 5) on block dct, actual ratio is 18.
+
+Final Macro Processing ...
+
+Processing Unit <dct> :
+	Found 8-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_242>.
+	Found 5-bit shift register for signal <FSM/SR[0].shiftCtl_i/state_224>.
+Unit <dct> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 7538
+ Flip-Flops                                            : 7538
+# Shift Registers                                      : 2
+ 5-bit shift register                                  : 1
+ 8-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : dct.ngr
+Top Level Output File Name         : dct
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 2148
+
+Cell Usage :
+# BELS                             : 16856
+#      GND                         : 1
+#      INV                         : 39
+#      LUT2                        : 2550
+#      LUT3                        : 1880
+#      LUT4                        : 1289
+#      LUT5                        : 1292
+#      LUT6                        : 9565
+#      MUXF7                       : 239
+#      VCC                         : 1
+# FlipFlops/Latches                : 7549
+#      FD                          : 256
+#      FDCE                        : 1
+#      FDE                         : 6972
+#      FDR                         : 30
+#      FDRE                        : 289
+#      FDSE                        : 1
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Others                           : 11
+#      TIMESPEC                    : 1
+#      xilinx_fadd                 : 5
+#      xilinx_fmul                 : 2
+#      xilinx_fsub                 : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 5vlx330ff1760-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            7549  out of  207360     3%  
+ Number of Slice LUTs:                16617  out of  207360     8%  
+    Number used as Logic:             16615  out of  207360     8%  
+    Number used as Memory:                2  out of  54720     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:  17869
+   Number with an unused Flip Flop:   10320  out of  17869    57%  
+   Number with an unused LUT:          1252  out of  17869     7%  
+   Number of fully used LUT-FF pairs:  6297  out of  17869    35%  
+   Number of unique control sets:       124
+
+IO Utilization: 
+ Number of IOs:                        2148
+ Number of bonded IOBs:                   0  out of   1200     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | NONE(p1_in_r_0)        | 7551  |
+-----------------------------------+------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+rst                                | NONE                   | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 5.584ns (Maximum Frequency: 179.093MHz)
+   Minimum input arrival time before clock: 1.280ns
+   Maximum output required time after clock: 0.396ns
+   Maximum combinational path delay: 0.680ns
+
+=========================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 6.667 nS HIGH 3.333 nS
+  Clock period: 5.584ns (frequency: 179.093MHz)
+  Total number of paths / destination ports: 94907 / 9947
+  Number of failed paths / ports: 0 (0.00%) / 0 (0.00%)
+-------------------------------------------------------------------------
+Slack:                  1.105ns
+  Source:               r69/register_0 (FF)
+  Destination:          fsub1_in0_rout_g1_0 (FF)
+  Data Path Delay:      5.584ns (Levels of Logic = 9)
+  Source Clock:         clk rising at 0.000ns
+  Destination Clock:    clk rising at 6.667ns
+
+  Data Path: r69/register_0 (FF) to fsub1_in0_rout_g1_0 (FF)
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              8   0.396   0.632  r69/register_0 (r69/register_0)
+     LUT3:I0->O            1   0.086   0.901  mux124/Z<0>43_SW1 (N22340)
+     LUT6:I0->O            1   0.086   0.412  mux124/Z<0>106 (mux124/Z<0>106)
+     LUT6:I5->O            1   0.086   0.412  mux124/Z<0>182 (mux124/Z<0>182)
+     LUT6:I5->O            1   0.086   0.412  mux124/Z<0>268 (mux124/Z<0>268)
+     LUT6:I5->O            1   0.086   0.412  mux124/Z<0>352 (mux124/Z<0>352)
+     LUT6:I5->O            1   0.086   0.412  mux124/Z<0>438 (mux124/Z<0>438)
+     LUT6:I5->O            1   0.086   0.412  mux124/Z<0>522 (mux124/Z<0>522)
+     LUT6:I5->O            1   0.086   0.412  mux124/Z<0>608 (mux124/Z<0>608)
+     LUT6:I5->O            1   0.086   0.000  mux124/Z<0>692 (mux126_out<0>)
+     FDE:D                    -0.022          fsub1_in0_rout_g1_0
+    ----------------------------------------
+    Total                      5.584ns (1.170ns logic, 4.414ns route)
+                                       (21.0% logic, 79.0% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 1063.00 secs
+Total CPU time to Xst completion: 1059.35 secs
+ 
+--> 
+
+
+Total memory usage is 1901140 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  276 (   0 filtered)
+Number of infos    :   25 (   0 filtered)
+

@@ -1,0 +1,4 @@
+NET "clk" TNM_NET = "clk";
+TIMESPEC "TS_clk" = PERIOD "clk"  2.857143 ns HIGH 50 %;
+# input/output delays
+

@@ -1,0 +1,429 @@
+Release 13.2 Map O.61xd (lin64)
+Xilinx Mapping Report File for Design 'plf'
+
+Design Information
+------------------
+Command Line   : map -u -p xc5vlx330-ff1760-2 -cm speed -ol high -pr b -detail
+-o plf_map.ncd plf.ngd plf.pcf 
+Target Device  : xc5vlx330
+Target Package : ff1760
+Target Speed   : -2
+Mapper Version : virtex5 -- $Revision: 1.55 $
+Mapped Date    : Mon Jul 30 11:03:57 2012
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    5
+Slice Logic Utilization:
+  Number of Slice Registers:                   957 out of 207,360    1%
+    Number used as Flip Flops:                 954
+    Number used as Latch-thrus:                  3
+  Number of Slice LUTs:                      1,057 out of 207,360    1%
+    Number used as logic:                    1,034 out of 207,360    1%
+      Number using O6 output only:             923
+      Number using O5 output only:              17
+      Number using O5 and O6:                   94
+    Number used as Memory:                      22 out of  54,720    1%
+      Number used as Shift Register:            22
+        Number using O6 output only:            22
+    Number used as exclusive route-thru:         1
+  Number of route-thrus:                        18
+    Number using O6 output only:                18
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   455 out of  51,840    1%
+  Number of LUT Flip Flop pairs used:        1,414
+    Number with an unused Flip Flop:           457 out of   1,414   32%
+    Number with an unused LUT:                 357 out of   1,414   25%
+    Number of fully used LUT-FF pairs:         600 out of   1,414   42%
+    Number of unique control sets:              29
+    Number of slice register sites lost
+      to control set restrictions:              44 out of 207,360    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+  OVERMAPPING of BRAM resources should be ignored if the design is
+  over-mapped for a non-BRAM resource or if placement fails.
+
+IO Utilization:
+
+Specific Feature Utilization:
+  Number of DSP48Es:                            13 out of     192    6%
+
+  Number of RPM macros:            2
+Average Fanout of Non-Clock Nets:                2.97
+
+Peak Memory Usage:  1082 MB
+Total REAL time to MAP completion:  1 mins 54 secs 
+Total CPU time to MAP completion:   1 mins 54 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:PhysDesignRules:367 - The signal <fmul1/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fmul2/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fmul3/xilinx_fmul_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd1/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+WARNING:PhysDesignRules:367 - The signal <fadd2/xilinx_fadd_i/rdy> is
+   incomplete. The signal does not drive any load pins in the design.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network plf_fmul3_out<0> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<1> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<10> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<11> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<12> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<13> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<14> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<15> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<16> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<17> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<18> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<19> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<2> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<20> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<21> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<22> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<23> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<24> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<25> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<26> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<27> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<28> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<29> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<3> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<30> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<31> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<4> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<5> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<6> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<7> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<8> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out<9> has no load.
+INFO:LIT:243 - Logical network plf_fmul3_out_rdy<0> has no load.
+INFO:LIT:243 - Logical network fadd2/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fadd1/xilinx_fadd_i/rdy has no load.
+INFO:LIT:243 - Logical network fmul3/xilinx_fmul_i/rdy has no load.
+INFO:LIT:243 - Logical network fmul2/xilinx_fmul_i/rdy has no load.
+INFO:LIT:243 - Logical network fmul1/xilinx_fmul_i/rdy has no load.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 0.950 Volts. (default - Range: 0.950 to
+   1.050 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  34 block(s) removed
+  20 block(s) optimized away
+  20 signal(s) removed
+  22 Block(s) redundant
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk0000003b" (XOR) removed.
+Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk00000065" (XOR) removed.
+ The signal "fadd1/xilinx_fadd_i/blk00000003/sig000001c6" is loadless and has
+been removed.
+  Loadless block "fadd1/xilinx_fadd_i/blk00000003/blk00000063" (MUX) removed.
+Loadless block "fadd2/xilinx_fadd_i/blk00000003/blk0000003b" (XOR) removed.
+Loadless block "fadd2/xilinx_fadd_i/blk00000003/blk00000065" (XOR) removed.
+ The signal "fadd2/xilinx_fadd_i/blk00000003/sig000001c6" is loadless and has
+been removed.
+  Loadless block "fadd2/xilinx_fadd_i/blk00000003/blk00000063" (MUX) removed.
+The signal "fmul2/xilinx_fmul_i/blk00000003/sig0000009d" is sourceless and has
+been removed.
+ Sourceless block "fmul2/xilinx_fmul_i/blk00000003/blk00000029" (MUX) removed.
+  The signal "fmul2/xilinx_fmul_i/blk00000003/sig0000009e" is sourceless and has
+been removed.
+   Sourceless block "fmul2/xilinx_fmul_i/blk00000003/blk0000002a" (MUX) removed.
+    The signal "fmul2/xilinx_fmul_i/blk00000003/sig000000a0" is sourceless and has
+been removed.
+     Sourceless block "fmul2/xilinx_fmul_i/blk00000003/blk0000002b" (MUX) removed.
+      The signal "fmul2/xilinx_fmul_i/blk00000003/sig000000a2" is sourceless and has
+been removed.
+       Sourceless block "fmul2/xilinx_fmul_i/blk00000003/blk0000002c" (MUX) removed.
+        The signal "fmul2/xilinx_fmul_i/blk00000003/sig000000a4" is sourceless and has
+been removed.
+The signal "fmul2/xilinx_fmul_i/blk00000003/sig0000009f" is sourceless and has
+been removed.
+The signal "fmul2/xilinx_fmul_i/blk00000003/sig000000a1" is sourceless and has
+been removed.
+The signal "fmul2/xilinx_fmul_i/blk00000003/sig000000a3" is sourceless and has
+been removed.
+The signal "fmul1/xilinx_fmul_i/blk00000003/sig0000009d" is sourceless and has
+been removed.
+ Sourceless block "fmul1/xilinx_fmul_i/blk00000003/blk00000029" (MUX) removed.
+  The signal "fmul1/xilinx_fmul_i/blk00000003/sig0000009e" is sourceless and has
+been removed.
+   Sourceless block "fmul1/xilinx_fmul_i/blk00000003/blk0000002a" (MUX) removed.
+    The signal "fmul1/xilinx_fmul_i/blk00000003/sig000000a0" is sourceless and has
+been removed.
+     Sourceless block "fmul1/xilinx_fmul_i/blk00000003/blk0000002b" (MUX) removed.
+      The signal "fmul1/xilinx_fmul_i/blk00000003/sig000000a2" is sourceless and has
+been removed.
+       Sourceless block "fmul1/xilinx_fmul_i/blk00000003/blk0000002c" (MUX) removed.
+        The signal "fmul1/xilinx_fmul_i/blk00000003/sig000000a4" is sourceless and has
+been removed.
+The signal "fmul1/xilinx_fmul_i/blk00000003/sig0000009f" is sourceless and has
+been removed.
+The signal "fmul1/xilinx_fmul_i/blk00000003/sig000000a1" is sourceless and has
+been removed.
+The signal "fmul1/xilinx_fmul_i/blk00000003/sig000000a3" is sourceless and has
+been removed.
+The signal "fmul1/xilinx_fmul_i/blk00000003/sig00000188" is sourceless and has
+been removed.
+The signal "fmul1/xilinx_fmul_i/blk00000003/sig0000018c" is sourceless and has
+been removed.
+Unused block "fadd1/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd1/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fadd2/xilinx_fadd_i/blk00000001" (ONE) removed.
+Unused block "fadd2/xilinx_fadd_i/blk00000002" (ZERO) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000001" (ONE) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000002" (ZERO) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000003/blk0000004b" (ROM) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000003/blk0000004d" (ROM) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000003/blk0000004e" (ROM) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000003/blk0000004f" (ROM) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000003/blk00000050" (ROM) removed.
+Unused block "fmul1/xilinx_fmul_i/blk00000003/blk0000005c" (ROM) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000001" (ONE) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000002" (ZERO) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000003/blk0000004d" (ROM) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000003/blk0000004e" (ROM) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000003/blk0000004f" (ROM) removed.
+Unused block "fmul2/xilinx_fmul_i/blk00000003/blk00000050" (ROM) removed.
+Unused block "fmul3/xilinx_fmul_i/blk00000001" (ONE) removed.
+Unused block "fmul3/xilinx_fmul_i/blk00000002" (ZERO) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND 		fadd1/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd1/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fadd2/xilinx_fadd_i/blk00000003/blk00000004
+VCC 		fadd2/xilinx_fadd_i/blk00000003/blk00000005
+GND 		fmul1/xilinx_fmul_i/blk00000003/blk00000004
+VCC 		fmul1/xilinx_fmul_i/blk00000003/blk00000005
+LUT6 		fmul1/xilinx_fmul_i/blk00000003/blk0000004c
+LUT3 		fmul1/xilinx_fmul_i/blk00000003/blk00000055
+LUT6 		fmul1/xilinx_fmul_i/blk00000003/blk0000005d
+GND 		fmul2/xilinx_fmul_i/blk00000003/blk00000004
+VCC 		fmul2/xilinx_fmul_i/blk00000003/blk00000005
+LUT3 		fmul2/xilinx_fmul_i/blk00000003/blk0000004b
+LUT6 		fmul2/xilinx_fmul_i/blk00000003/blk0000004c
+LUT3 		fmul2/xilinx_fmul_i/blk00000003/blk00000055
+LUT3 		fmul2/xilinx_fmul_i/blk00000003/blk0000005c
+LUT6 		fmul2/xilinx_fmul_i/blk00000003/blk0000005d
+GND 		fmul3/xilinx_fmul_i/blk00000003/blk00000004
+VCC 		fmul3/xilinx_fmul_i/blk00000003/blk00000005
+
+Redundant Block(s):
+TYPE 		BLOCK
+LUT1 		fadd2/xilinx_fadd_i/blk00000003/blk00000128
+LUT1 		fadd1/xilinx_fadd_i/blk00000003/blk00000128
+LUT1 		Mcount_clP0_cnt_cy<1>_rt
+LUT1 		Mcount_clP0_cnt_cy<2>_rt
+LUT1 		Mcount_clP0_cnt_cy<3>_rt
+LUT1 		Mcount_clP0_cnt_cy<4>_rt
+LUT1 		Mcount_clP0_cnt_cy<5>_rt
+LUT1 		Mcount_clP0_cnt_cy<6>_rt
+LUT1 		Mcount_clP0_cnt_cy<7>_rt
+LUT1 		Mcount_clP0_cnt_cy<8>_rt
+LUT1 		Mcount_clP0_cnt_cy<9>_rt
+LUT1 		Mcount_clP0_cnt_cy<10>_rt
+LUT1 		Mcount_clP0_cnt_cy<11>_rt
+LUT1 		Mcount_clP0_cnt_cy<12>_rt
+LUT1 		Mcount_clP0_cnt_cy<13>_rt
+LUT1 		Mcount_clP0_cnt_cy<14>_rt
+LUT1 		Mcount_clP0_cnt_xor<15>_rt
+LUT2 		fmul2/xilinx_fmul_i/blk00000003/blk00000062
+LUT2 		fmul2/xilinx_fmul_i/blk00000003/blk0000006b
+LUT2 		fmul1/xilinx_fmul_i/blk00000003/blk00000062
+LUT2 		fmul2/xilinx_fmul_i/blk00000003/blk00000049
+LUT2 		fmul1/xilinx_fmul_i/blk00000003/blk00000049
+
+Section 6 - IOB Properties
+--------------------------
+
+Section 7 - RPMs
+----------------
+fadd1/xilinx_fadd_i/blk00000003/hset    
+fadd2/xilinx_fadd_i/blk00000003/hset    
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+
+Section 12 - Control Set Information
+------------------------------------
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Clock Signal | Reset Signal                                | Set Signal                                  | Enable Signal    | Slice Load Count | Bel Load Count |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk          |                                             |                                             |                  | 10               | 34             |
+| clk          |                                             |                                             | r1_wen           | 16               | 64             |
+| clk          |                                             |                                             | r3_wen           | 16               | 64             |
+| clk          |                                             |                                             | r5_wen           | 8                | 32             |
+| clk          |                                             |                                             | r6_wen           | 8                | 32             |
+| clk          |                                             |                                             | r7_wen           | 8                | 32             |
+| clk          |                                             |                                             | r8_wen           | 8                | 32             |
+| clk          |                                             |                                             | stall_in_inv     | 153              | 486            |
+| clk          |                                             |                                             | state_wen        | 2                | 2              |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig0000021a |                                             |                  | 6                | 22             |
+| clk          | fadd1/xilinx_fadd_i/blk00000003/sig0000021b |                                             |                  | 3                | 8              |
+| clk          | fadd2/xilinx_fadd_i/blk00000003/sig0000021a |                                             |                  | 6                | 22             |
+| clk          | fadd2/xilinx_fadd_i/blk00000003/sig0000021b |                                             |                  | 3                | 8              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig000000fe |                                             | stall_in_inv     | 7                | 22             |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000010a | fmul1/xilinx_fmul_i/blk00000003/sig00000109 | stall_in_inv     | 1                | 1              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000010c |                                             |                  | 4                | 7              |
+| clk          | fmul1/xilinx_fmul_i/blk00000003/sig0000010d | fmul1/xilinx_fmul_i/blk00000003/sig0000010c | stall_in_inv     | 1                | 1              |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig000000fe |                                             | stall_in_inv     | 7                | 22             |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig0000010a | fmul2/xilinx_fmul_i/blk00000003/sig00000109 | stall_in_inv     | 1                | 1              |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig0000010c |                                             |                  | 4                | 7              |
+| clk          | fmul2/xilinx_fmul_i/blk00000003/sig0000010d | fmul2/xilinx_fmul_i/blk00000003/sig0000010c | stall_in_inv     | 1                | 1              |
+| clk          | fmul3/xilinx_fmul_i/blk00000003/sig000000fe |                                             | stall_in_inv     | 7                | 22             |
+| clk          | fmul3/xilinx_fmul_i/blk00000003/sig0000010a | fmul3/xilinx_fmul_i/blk00000003/sig00000109 | stall_in_inv     | 1                | 1              |
+| clk          | fmul3/xilinx_fmul_i/blk00000003/sig0000010c |                                             |                  | 4                | 7              |
+| clk          | fmul3/xilinx_fmul_i/blk00000003/sig0000010d | fmul3/xilinx_fmul_i/blk00000003/sig0000010c | stall_in_inv     | 1                | 1              |
+| clk          | rst                                         |                                             |                  | 1                | 1              |
+| clk          | rst                                         |                                             | clP0_cnt_and0000 | 4                | 16             |
+| clk          | rst                                         |                                             | go               | 1                | 1              |
+| clk          | rst                                         |                                             | state_wen        | 7                | 27             |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices*       | Slice Reg     | LUTs          | LUTRAM        | BRAM/FIFO | DSP48E  | BUFG  | BUFIO | BUFR  | DCM_ADV   | PLL_ADV   | Full Hierarchical Name               |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| plf/               |           | 43/545        | 117/957       | 31/1033       | 0/22          | 0/0       | 0/13    | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf                                  |
+| +FSM               |           | 0/6           | 0/21          | 0/2           | 0/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/FSM                              |
+| ++SR[0].shiftCtl_i |           | 6/6           | 21/21         | 2/2           | 1/1           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/FSM/SR[0].shiftCtl_i             |
+| +fadd1             |           | 0/104         | 0/75          | 0/261         | 0/9           | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd1                            |
+| ++xilinx_fadd_i    |           | 0/104         | 0/75          | 0/261         | 0/9           | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd1/xilinx_fadd_i              |
+| +++blk00000003     |           | 104/104       | 75/75         | 261/261       | 9/9           | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd1/xilinx_fadd_i/blk00000003  |
+| +fadd1_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd1_in0_r                      |
+| +fadd1_in1_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd1_in1_r                      |
+| +fadd2             |           | 0/109         | 0/75          | 0/261         | 0/9           | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd2                            |
+| ++xilinx_fadd_i    |           | 0/109         | 0/75          | 0/261         | 0/9           | 0/0       | 0/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd2/xilinx_fadd_i              |
+| +++blk00000003     |           | 109/109       | 75/75         | 261/261       | 9/9           | 0/0       | 2/2     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd2/xilinx_fadd_i/blk00000003  |
+| +fadd2_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd2_in0_r                      |
+| +fadd2_in1_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fadd2_in1_r                      |
+| +fmul1             |           | 0/26          | 0/49          | 0/70          | 0/1           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul1                            |
+| ++xilinx_fmul_i    |           | 0/26          | 0/49          | 0/70          | 0/1           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul1/xilinx_fmul_i              |
+| +++blk00000003     |           | 26/26         | 49/49         | 70/70         | 1/1           | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul1/xilinx_fmul_i/blk00000003  |
+| +fmul1_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul1_in0_r                      |
+| +fmul1_in1_r       |           | 1/1           | 4/4           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul1_in1_r                      |
+| +fmul2             |           | 0/28          | 0/49          | 0/70          | 0/1           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul2                            |
+| ++xilinx_fmul_i    |           | 0/28          | 0/49          | 0/70          | 0/1           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul2/xilinx_fmul_i              |
+| +++blk00000003     |           | 28/28         | 49/49         | 70/70         | 1/1           | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul2/xilinx_fmul_i/blk00000003  |
+| +fmul2_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul2_in0_r                      |
+| +fmul2_in1_r       |           | 1/1           | 2/2           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul2_in1_r                      |
+| +fmul3             |           | 0/32          | 0/49          | 0/79          | 0/1           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul3                            |
+| ++xilinx_fmul_i    |           | 0/32          | 0/49          | 0/79          | 0/1           | 0/0       | 0/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul3/xilinx_fmul_i              |
+| +++blk00000003     |           | 32/32         | 49/49         | 79/79         | 1/1           | 0/0       | 3/3     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul3/xilinx_fmul_i/blk00000003  |
+| +fmul3_in0_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul3_in0_r                      |
+| +fmul3_in1_r       |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/fmul3_in1_r                      |
+| +mux1              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux1                             |
+| +mux10             |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux10                            |
+| +mux11             |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux11                            |
+| +mux12             |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux12                            |
+| +mux13             |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux13                            |
+| +mux14             |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux14                            |
+| +mux3              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux3                             |
+| +mux7              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux7                             |
+| +mux8              |           | 8/8           | 0/0           | 32/32         | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux8                             |
+| +mux9              |           | 1/1           | 0/0           | 2/2           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/mux9                             |
+| +r1                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r1                               |
+| +r2                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r2                               |
+| +r3                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r3                               |
+| +r4                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r4                               |
+| +r5                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r5                               |
+| +r6                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r6                               |
+| +r7                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r7                               |
+| +r8                |           | 8/8           | 32/32         | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/r8                               |
+| +shift_i           |           | 1/1           | 4/4           | 0/0           | 0/0           | 0/0       | 0/0     | 0/0   | 0/0   | 0/0   | 0/0       | 0/0       | plf/shift_i                          |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.

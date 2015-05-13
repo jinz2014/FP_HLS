@@ -1,0 +1,10 @@
+verilog work ../../../../../Modelsim/ppbr/ASAP1_ppbr/ASAP1_ppbr_HDL.v
+verilog work ../../../../../vlib/Register.v
+verilog work ../../../../../vlib/RegWriteCtl.v
+verilog work ../../../../../vlib/MUX.v
+verilog work ../../../../../vlib/ShiftRegister.v
+verilog work ../../../../../vlib/ShiftCtlRegister.v
+verilog work ../../../../../vlib/float.v
+vhdl work /share/jinz/AutoESL/coregen/vhdl/xilinx_fadd.vhd
+vhdl work /share/jinz/AutoESL/coregen/vhdl/xilinx_fmul.vhd
+vhdl work /share/jinz/AutoESL/coregen/vhdl/xilinx_fdiv.vhd

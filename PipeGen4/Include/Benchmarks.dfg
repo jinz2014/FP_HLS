@@ -1,0 +1,121 @@
+  //----------------------------------------------------
+  // Include data dependency and etc. of all the nodes 
+  //----------------------------------------------------
+  //#include "pos.txt"
+  //#include "sop.txt"
+  //#include "fir16.txt"
+  //#include "sample1.txt"
+  //#include "ratelaw.txt"
+  //#include "ratelaw1.txt"
+  //#include "HAL.txt"
+  //#include "benchmark4.txt"
+  //#include "sample.txt"
+  //#include "random1.txt"
+
+#ifdef DCT
+#include "dct.txt"
+#endif
+#ifdef PLF
+#include "plf.txt"
+#endif
+#ifdef MRBAY
+#include "mrbay.txt"
+#endif
+#ifdef F2D
+#include "f2d.txt"
+#endif
+#ifdef LOG
+#include "log.txt"
+#endif
+#ifdef MX4
+#include "mux4.txt"
+#endif
+#ifdef MX2
+#include "mux2.txt"
+#endif
+#ifdef TMAX
+#include "tmax.txt"
+#endif
+#ifdef POWER
+#include "power.txt"
+#endif
+#ifdef SAMPLE9
+#include "sample9.txt"
+#endif
+#ifdef SAMPLE8
+#include "sample8.txt"
+#endif
+#ifdef CONSTANT
+#include "constant.txt"
+#endif
+#ifdef PPBR
+#include "ppbr.txt"
+#endif
+#ifdef ORDBBR
+#include "ordbbr.txt"
+#endif
+#ifdef ORDUBR
+#include "ordubr.txt"
+#endif
+#ifdef ORDBUR 
+#include "ordbur.txt" 
+#endif
+#ifdef UCTR   
+#include "uctr.txt"   
+#endif
+#ifdef UMAR   
+#include "umar.txt"   
+#endif
+#ifdef UMR    
+#include "umr.txt"    
+#endif
+#ifdef UCTI   
+#include "ucti.txt"   
+#endif
+#ifdef UMAI   
+#include "umai.txt"   
+#endif
+#ifdef UMI    
+#include "umi.txt"    
+#endif
+#ifdef UNII   
+#include "unii.txt"   
+#endif
+#ifdef UUCI   
+#include "uuci.txt"   
+#endif
+#ifdef UUCR   
+#include "uucr.txt"   
+#endif
+#ifdef UAII   
+#include "uaii.txt"   
+#endif
+#ifdef UAR    
+#include "uar.txt"    
+#endif
+#ifdef UCII   
+#include "ucii.txt"   
+#endif
+#ifdef UCIR   
+#include "ucir.txt"   
+#endif
+#ifdef UAI    
+#include "uai.txt"    
+#endif
+#ifdef UHMR   
+#include "uhmr.txt"   
+#endif
+#ifdef UUR    
+#include "uur.txt"    
+#endif
+#ifdef RANDOM2
+#include "random2.txt"
+#endif
+#ifdef FIR16
+#include "fir16.txt"
+#endif
+#ifdef POS
+#include "pos.txt"
+#endif
+
+

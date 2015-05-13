@@ -1,0 +1,15 @@
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX4_hot.ngc MUX4_hot.ngd  
+map -intstyle ise -p xc5vlx330-ff1760-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX4_hot_map.ncd MUX4_hot.ngd MUX4_hot.pcf 
+par -w -intstyle ise -ol high -mt off MUX4_hot_map.ncd MUX4_hot.ncd MUX4_hot.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX4_hot.twx MUX4_hot.ncd -o MUX4_hot.twr MUX4_hot.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX4_hot.ngc MUX4_hot.ngd  
+map -intstyle ise -p xc5vlx330-ff1760-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX4_hot_map.ncd MUX4_hot.ngd MUX4_hot.pcf 
+par -w -intstyle ise -ol high -mt off MUX4_hot_map.ncd MUX4_hot.ncd MUX4_hot.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX4_hot.twx MUX4_hot.ncd -o MUX4_hot.twr MUX4_hot.pcf 
+xst -intstyle ise -ifn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.xst" -ofn "/share/jinz/Xilinx_synthesis/MyResearch/PipeGen3a/vlib/MUX_syn/MUX4_hot.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc5vlx330-ff1760-2 MUX4_hot.ngc MUX4_hot.ngd  
+map -intstyle ise -p xc5vlx330-ff1760-2 -w -logic_opt off -ol high -t 1 -register_duplication off -global_opt off -mt off -cm area -ir off -pr off -lc off -power off -o MUX4_hot_map.ncd MUX4_hot.ngd MUX4_hot.pcf 
+par -w -intstyle ise -ol high -mt off MUX4_hot_map.ncd MUX4_hot.ncd MUX4_hot.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml MUX4_hot.twx MUX4_hot.ncd -o MUX4_hot.twr MUX4_hot.pcf 

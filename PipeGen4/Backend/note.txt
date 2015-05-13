@@ -1,0 +1,40 @@
+        //--------------------------------------------------------------
+        // 6/26/11
+        //
+        // If the physical register Map[r], to which port A(ri) or B(rj) 
+        // of FU at Node "nodeNu" is connected, is equal to the current
+        // mux inputA's or inputB's physical register 
+        // AND 
+        // this mux's output directly or indirectly connects to FU's input
+        // at "nodeNu" 
+        //
+        // e.g. suppose each of the nodes(3, 4 and 13) has one input 
+        // connected to a register and another to a constant. 
+        // Specifically,
+        //
+        // for node3 and node13, ri = rj = 0; 
+        // for node4 ri = rj = 1; 
+        // for mux2 Ri = 0, Rj = 1;
+        // for mux3 Ri = 0, Rj = 1.
+        // 
+        // When generating the select(s) of mux3 and mux2 at node3,
+        // mux3's input0 should not be considered as it is used for 
+        // node13. So we try to remove generation of any false mux 
+        // select signal value.
+        // This is realized by adding mux destination numbers for 
+        // each mux. The destination number are the node IDs.
+        //
+        //
+        //            const const
+        //             |    | 
+        //           ---------
+        //       s --\ 3  4 /  mux2 (3: node 3; 4: node4)
+        //            ------
+        //               |
+        //           +---+
+        //      |    |
+        //     ---------
+        // s --\ 13  4 /  mux3 (13: node 13; 4: node4)
+        //      ------
+        //--------------------------------------------------------------
+

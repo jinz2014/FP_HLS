@@ -1,0 +1,130 @@
+//--------------------------------------------------
+// Notes 
+// tod operation has opPrecision = dfp(not e.g. und)
+// 1. for CheckMuxList function(MuxAlloc.c) to detect it
+// 2. for generation of a 64-bit register
+//--------------------------------------------------
+
+DFG[0]->op = nop;
+DFG[0]->opPrecision = sfp;
+DFG[0]->opSrc  = (int *) malloc(sizeof(int) * 1);
+DFG[0]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[0]->opSrc[0] = P1;
+DFG[0]->opDest[0] = 4;
+DFG[0]->opDestNu = 1;
+DFG[0]->RegFileTable = NULL;
+DFG[0]->opConst = 0;
+DFG[0]->opConstVal = 0.000000;
+DFG[0]->opVal = NULL;
+
+DFG[1]->op = nop;
+DFG[1]->opPrecision = sfp;
+DFG[1]->opSrc  = (int *) malloc(sizeof(int) * 1);
+DFG[1]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[1]->opSrc[0] = P2;
+DFG[1]->opDest[0] = 4;
+DFG[1]->opDestNu = 1;
+DFG[1]->RegFileTable = NULL;
+DFG[1]->opConst = 0;
+DFG[1]->opConstVal = 0.000000;
+DFG[1]->opVal = NULL;
+
+DFG[2]->op = nop;
+DFG[2]->opPrecision = sfp;
+DFG[2]->opSrc  = (int *) malloc(sizeof(int) * 1);
+DFG[2]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[2]->opSrc[0] = P3;
+DFG[2]->opDest[0] = 6;
+DFG[2]->opDestNu = 1;
+DFG[2]->RegFileTable = NULL;
+DFG[2]->opConst = 0;
+DFG[2]->opConstVal = 0.000000;
+DFG[2]->opVal = NULL;
+
+DFG[3]->op = nop;
+DFG[3]->opPrecision = sfp;
+DFG[3]->opSrc  = (int *) malloc(sizeof(int) * 1);
+DFG[3]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[3]->opSrc[0] = P4;
+DFG[3]->opDest[0] = 8;
+DFG[3]->opDestNu = 1;
+DFG[3]->RegFileTable = NULL;
+DFG[3]->opConst = 0;
+DFG[3]->opConstVal = 0.000000;
+DFG[3]->opVal = NULL;
+
+DFG[4]->op = add;
+DFG[4]->opPrecision = sfp;
+DFG[4]->opSrc = (int *) malloc(sizeof(int) * 2);
+DFG[4]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[4]->opSrc[0] = 0;
+DFG[4]->opSrc[1] = 1;
+DFG[4]->opDest[0] = 5;
+DFG[4]->opDestNu = 1;
+DFG[4]->RegFileTable = NULL;
+DFG[4]->opConst = 0;
+DFG[4]->opConstVal = 0.000000;
+DFG[4]->opVal = NULL;
+
+DFG[5]->op = tod;
+DFG[5]->opPrecision = dfp; //und;
+DFG[5]->opSrc = (int *) malloc(sizeof(int) * 1);
+DFG[5]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[5]->opSrc[0] = 4;
+DFG[5]->opDest[0] = 7;
+DFG[5]->opDestNu = 1;
+DFG[5]->RegFileTable = NULL;
+DFG[5]->opConst = 0;
+DFG[5]->opConstVal = 0.000000;
+DFG[5]->opVal = NULL;
+
+DFG[6]->op = tod;
+DFG[6]->opPrecision = dfp; //und;
+DFG[6]->opSrc = (int *) malloc(sizeof(int) * 1);
+DFG[6]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[6]->opSrc[0] = 2;
+DFG[6]->opDest[0] = 7;
+DFG[6]->opDestNu = 1;
+DFG[6]->RegFileTable = NULL;
+DFG[6]->opConst = 0;
+DFG[6]->opConstVal = 0.000000;
+DFG[6]->opVal = NULL;
+
+DFG[7]->op = addd;
+DFG[7]->opPrecision = dfp;
+DFG[7]->opSrc = (int *) malloc(sizeof(int) * 2);
+DFG[7]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[7]->opSrc[0] = 5;
+DFG[7]->opSrc[1] = 6;
+DFG[7]->opDest[0] = 9;
+DFG[7]->opDestNu = 1;
+DFG[7]->RegFileTable = NULL;
+DFG[7]->opConst = 0;
+DFG[7]->opConstVal = 0.000000;
+DFG[7]->opVal = NULL;
+
+DFG[8]->op = tod;
+DFG[8]->opPrecision = dfp; //und;
+DFG[8]->opSrc = (int *) malloc(sizeof(int) * 1);
+DFG[8]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[8]->opSrc[0] = 3;
+DFG[8]->opDest[0] = 9;
+DFG[8]->opDestNu = 1;
+DFG[8]->RegFileTable = NULL;
+DFG[8]->opConst = 0;
+DFG[8]->opConstVal = 0.000000;
+DFG[8]->opVal = NULL;
+
+DFG[9]->op = muld;
+DFG[9]->opPrecision = dfp;
+DFG[9]->opSrc = (int *) malloc(sizeof(int) * 2);
+DFG[9]->opDest = (int *) malloc(sizeof(int) * 1);
+DFG[9]->opSrc[0] = 7;
+DFG[9]->opSrc[1] = 8;
+DFG[9]->opDest[0] = SINK;
+DFG[9]->opDestNu = 1;
+DFG[9]->RegFileTable = NULL;
+DFG[9]->opConst = 0;
+DFG[9]->opConstVal = 0.000000;
+DFG[9]->opVal = NULL;
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<DeviceUsageSummary rev="1">
+<DesignStatistics TimeStamp="Wed Oct 24 10:51:41 2012"><group name="MiscellaneousStatistics">
+<item name="AGG_SLICE" rev="1">
+<attrib name="value" value="7021"/></item>
+<item name="NUM_BSFULL" rev="1">
+<attrib name="value" value="6259"/></item>
+<item name="NUM_BSLUTONLY" rev="1">
+<attrib name="value" value="13996"/></item>
+<item name="NUM_BSREGONLY" rev="1">
+<attrib name="value" value="1228"/></item>
+<item name="NUM_BSUSED" rev="1">
+<attrib name="value" value="21483"/></item>
+<item name="NUM_DSP48E" rev="1">
+<attrib name="value" value="22"/></item>
+<item name="NUM_LOGIC_O5ANDO6" rev="1">
+<attrib name="value" value="332"/></item>
+<item name="NUM_LOGIC_O5ONLY" rev="1">
+<attrib name="value" value="2"/></item>
+<item name="NUM_LOGIC_O6ONLY" rev="1">
+<attrib name="value" value="19641"/></item>
+<item name="NUM_LUT_RT_EXO6" rev="1">
+<attrib name="value" value="61"/></item>
+<item name="NUM_LUT_RT_O5" rev="1">
+<attrib name="value" value="28"/></item>
+<item name="NUM_LUT_RT_O6" rev="1">
+<attrib name="value" value="2"/></item>
+<item name="NUM_RPM" rev="1">
+<attrib name="value" value="8"/></item>
+<item name="NUM_SLICEL" rev="1">
+<attrib name="value" value="6861"/></item>
+<item name="NUM_SLICEM" rev="1">
+<attrib name="value" value="160"/></item>
+<item name="NUM_SLICE_CARRY4" rev="1">
+<attrib name="value" value="152"/></item>
+<item name="NUM_SLICE_CONTROLSET" rev="1">
+<attrib name="value" value="153"/></item>
+<item name="NUM_SLICE_CYINIT" rev="1">
+<attrib name="value" value="20685"/></item>
+<item name="NUM_SLICE_F7MUX" rev="1">
+<attrib name="value" value="926"/></item>
+<item name="NUM_SLICE_FF" rev="1">
+<attrib name="value" value="7487"/></item>
+<item name="NUM_SLICE_UNUSEDCTRL" rev="1">
+<attrib name="value" value="4429"/></item>
+<item name="NUM_SRL_O6ONLY" rev="1">
+<attrib name="value" value="219"/></item>
+<item name="NUM_UNUSABLE_FF_BELS" rev="1">
+<attrib name="value" value="98"/></item>
+<item name="Xilinx Core floating_point_v5_0, Xilinx CORE Generator 13.2" rev="1">
+<attrib name="value" value="10"/></item>
+</group>
+</DesignStatistics>
+<CmdHistory>
+</CmdHistory>
+</DeviceUsageSummary>

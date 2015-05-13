@@ -1,0 +1,1014 @@
+//---------------------------------------------------------------------
+// Version 2
+// Each SINK node has a name (e.g. sample00, sample70) which helps
+// hw output name generation.
+//---------------------------------------------------------------------
+
+int N;
+
+// column access source node ids (from col access)
+int S[8][8];  
+
+// column access destination node ids (from row access)
+// the 3rd dimesion is added as each intermediate sampleIJ has two destinations.
+int D[8][8][2];
+
+// 64 ports
+int P[64];    
+
+// manual count of number of nodes in row dct
+const int ROW_DCT_OP_NUM = 26;  
+
+// manual count of number of nodes in col dct
+const int COL_DCT_OP_NUM = 34;  
+
+int COL_DCT_BS;
+
+for (i = 1; i <= 64; i++)
+  P[i-1] = -i;
+
+for (i = 0; i < 8; i++) {
+  N = 64  + i * 8;
+  // P00
+  DFG[i*8+0]->op = nop;
+  DFG[i*8+0]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+0]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+0]->opSrc[0] = P[i*8];
+  DFG[i*8+0]->opDest[0] = N;
+  DFG[i*8+0]->opDest[1] = N+1;
+  DFG[i*8+0]->opDestNu = 2;
+  DFG[i*8+0]->RegFileTable = NULL;
+  DFG[i*8+0]->opConst = 0;
+  DFG[i*8+0]->opConstVal = 0;
+
+  // P01 
+  DFG[i*8+1]->op = nop;
+  DFG[i*8+1]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+1]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+1]->opSrc[0] = P[i*8+1];
+  DFG[i*8+1]->opDest[0] = 2+N;
+  DFG[i*8+1]->opDest[1] = 3+N;
+  DFG[i*8+1]->opDestNu = 2;
+  DFG[i*8+1]->RegFileTable = NULL;
+  DFG[i*8+1]->opConst = 0;
+  DFG[i*8+1]->opConstVal = 0;
+
+  // P02
+  DFG[i*8+2]->op = nop;
+  DFG[i*8+2]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+2]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+2]->opSrc[0] = P[i*8+2];
+  DFG[i*8+2]->opDest[0] = 4+N;
+  DFG[i*8+2]->opDest[1] = 5+N;
+  DFG[i*8+2]->opDestNu = 2;
+  DFG[i*8+2]->RegFileTable = NULL;
+  DFG[i*8+2]->opConst = 0;
+  DFG[i*8+2]->opConstVal = 0;
+
+  // P03
+  DFG[i*8+3]->op = nop;
+  DFG[i*8+3]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+3]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+3]->opSrc[0] = P[i*8+3];
+  DFG[i*8+3]->opDest[0] = 6+N;
+  DFG[i*8+3]->opDest[1] = 7+N;
+  DFG[i*8+3]->opDestNu = 2;
+  DFG[i*8+3]->RegFileTable = NULL;
+  DFG[i*8+3]->opConst = 0;
+  DFG[i*8+3]->opConstVal = 0;
+
+  // P04
+  DFG[i*8+4]->op = nop;
+  DFG[i*8+4]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+4]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+4]->opSrc[0] = P[i*8+4];
+  DFG[i*8+4]->opDest[0] = 6+N;
+  DFG[i*8+4]->opDest[1] = 7+N;
+  DFG[i*8+4]->opDestNu = 2;
+  DFG[i*8+4]->RegFileTable = NULL;
+  DFG[i*8+4]->opConst = 0;
+  DFG[i*8+4]->opConstVal = 0;
+
+  // P05
+  DFG[i*8+5]->op = nop;
+  DFG[i*8+5]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+5]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+5]->opSrc[0] = P[i*8+5];
+  DFG[i*8+5]->opDest[0] = 4+N;
+  DFG[i*8+5]->opDest[1] = 5+N;
+  DFG[i*8+5]->opDestNu = 2;
+  DFG[i*8+5]->RegFileTable = NULL;
+  DFG[i*8+5]->opConst = 0;
+  DFG[i*8+5]->opConstVal = 0;
+
+  // P06
+  DFG[i*8+6]->op = nop;
+  DFG[i*8+6]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+6]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+6]->opSrc[0] = P[i*8+6];
+  DFG[i*8+6]->opDest[0] = 2+N;
+  DFG[i*8+6]->opDest[1] = 3+N;
+  DFG[i*8+6]->opDestNu = 2;
+  DFG[i*8+6]->RegFileTable = NULL;
+  DFG[i*8+6]->opConst = 0;
+  DFG[i*8+6]->opConstVal = 0;
+
+  // P07
+  DFG[i*8+7]->op = nop;
+  DFG[i*8+7]->opSrc = (int *) malloc(sizeof(int) * 1);
+  DFG[i*8+7]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[i*8+7]->opSrc[0] = P[i*8+7];
+  DFG[i*8+7]->opDest[0] = 0+N;
+  DFG[i*8+7]->opDest[1] = 1+N;
+  DFG[i*8+7]->opDestNu = 2;
+  DFG[i*8+7]->RegFileTable = NULL;
+  DFG[i*8+7]->opConst = 0;
+  DFG[i*8+7]->opConstVal = 0;
+}
+
+
+for (N = 0; N < 8; N++) {
+// tmp0
+  DFG[64+N*8]->op = add;
+  DFG[64+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[64+N*8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[64+N*8]->opSrc[0] = 0+N*8;
+  DFG[64+N*8]->opSrc[1] = 7+N*8;
+  DFG[64+N*8]->opDest[0] = 129 + N*ROW_DCT_OP_NUM;
+  DFG[64+N*8]->opDest[1] = 134 + N*ROW_DCT_OP_NUM;
+  DFG[64+N*8]->opDestNu = 2;
+  DFG[64+N*8]->RegFileTable = NULL;
+  DFG[64+N*8]->opConst = 0;
+  DFG[64+N*8]->opConstVal = 0;
+
+// tmp7
+  DFG[65+N*8]->op = div_;
+  DFG[65+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[65+N*8]->opDest = (int *) malloc(sizeof(int) * 3);
+  DFG[65+N*8]->opSrc[0] = 0+N*8;
+  DFG[65+N*8]->opSrc[1] = 7+N*8;
+  DFG[65+N*8]->opDest[0] = 140 + N*ROW_DCT_OP_NUM;
+  DFG[65+N*8]->opDest[1] = 146 + N*ROW_DCT_OP_NUM;
+  DFG[65+N*8]->opDest[2] = 148 + N*ROW_DCT_OP_NUM;
+  DFG[65+N*8]->opDestNu = 3;
+  DFG[65+N*8]->RegFileTable = NULL;
+  DFG[65+N*8]->opConst = 0;
+  DFG[65+N*8]->opConstVal = 0;
+
+// tmp1
+  DFG[66+N*8]->op = add;
+  DFG[66+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[66+N*8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[66+N*8]->opSrc[0] = 1+N*8;
+  DFG[66+N*8]->opSrc[1] = 6+N*8;
+  DFG[66+N*8]->opDest[0] = 128 + N*ROW_DCT_OP_NUM;
+  DFG[66+N*8]->opDest[1] = 135 + N*ROW_DCT_OP_NUM;
+  DFG[66+N*8]->opDestNu = 2;
+  DFG[66+N*8]->RegFileTable = NULL;
+  DFG[66+N*8]->opConst = 0;
+  DFG[66+N*8]->opConstVal = 0;
+
+// tmp6
+  DFG[67+N*8]->op = div_;
+  DFG[67+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[67+N*8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[67+N*8]->opSrc[0] = 1+N*8;
+  DFG[67+N*8]->opSrc[1] = 6+N*8;
+  DFG[67+N*8]->opDest[0] = 138 + N*ROW_DCT_OP_NUM;
+  DFG[67+N*8]->opDest[1] = 140 + N*ROW_DCT_OP_NUM;
+  DFG[67+N*8]->opDestNu = 2;
+  DFG[67+N*8]->RegFileTable = NULL;
+  DFG[67+N*8]->opConst = 0;
+  DFG[67+N*8]->opConstVal = 0;
+
+// tmp2
+  DFG[68+N*8]->op = add;
+  DFG[68+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[68+N*8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[68+N*8]->opSrc[0] = 2+N*8;
+  DFG[68+N*8]->opSrc[1] = 5+N*8;
+  DFG[68+N*8]->opDest[0] = 128 + N*ROW_DCT_OP_NUM;
+  DFG[68+N*8]->opDest[1] = 135 + N*ROW_DCT_OP_NUM;
+  DFG[68+N*8]->opDestNu = 2;
+  DFG[68+N*8]->RegFileTable = NULL;
+  DFG[68+N*8]->opConst = 0;
+  DFG[68+N*8]->opConstVal = 0;
+
+// tmp5
+  DFG[69+N*8]->op = div_;
+  DFG[69+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[69+N*8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[69+N*8]->opSrc[0] = 2+N*8;
+  DFG[69+N*8]->opSrc[1] = 5+N*8;
+  DFG[69+N*8]->opDest[0] = 138 + N*ROW_DCT_OP_NUM;
+  DFG[69+N*8]->opDest[1] = 139 + N*ROW_DCT_OP_NUM;
+  DFG[69+N*8]->opDestNu = 2;
+  DFG[69+N*8]->RegFileTable = NULL;
+  DFG[69+N*8]->opConst = 0;
+  DFG[69+N*8]->opConstVal = 0;
+
+// tmp3
+  DFG[70+N*8]->op = add;
+  DFG[70+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[70+N*8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[70+N*8]->opSrc[0] = 3+N*8;
+  DFG[70+N*8]->opSrc[1] = 4+N*8;
+  DFG[70+N*8]->opDest[0] = 129 + N*ROW_DCT_OP_NUM;
+  DFG[70+N*8]->opDest[1] = 134 + N*ROW_DCT_OP_NUM;
+  DFG[70+N*8]->opDestNu = 2;
+  DFG[70+N*8]->RegFileTable = NULL;
+  DFG[70+N*8]->opConst = 0;
+  DFG[70+N*8]->opConstVal = 0;
+
+// tmp4
+  DFG[71+N*8]->op = div_;
+  DFG[71+N*8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[71+N*8]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[71+N*8]->opSrc[0] = 3+N*8;
+  DFG[71+N*8]->opSrc[1] = 4+N*8;
+  DFG[71+N*8]->opDest[0] = 139 + N*ROW_DCT_OP_NUM;
+  DFG[71+N*8]->opDestNu = 1;
+  DFG[71+N*8]->RegFileTable = NULL;
+  DFG[71+N*8]->opConst = 0;
+  DFG[71+N*8]->opConstVal = 0;
+}
+
+
+for (N = 0; N < 8; N++) {
+  D[0][N][0] = 336 + N * COL_DCT_OP_NUM;
+  D[0][N][1] = 337 + N * COL_DCT_OP_NUM;
+  D[7][N][0] = 336 + N * COL_DCT_OP_NUM;
+  D[7][N][1] = 337 + N * COL_DCT_OP_NUM;
+
+  D[1][N][0] = 338 + N * COL_DCT_OP_NUM;
+  D[1][N][1] = 339 + N * COL_DCT_OP_NUM;
+  D[6][N][0] = 338 + N * COL_DCT_OP_NUM;
+  D[6][N][1] = 339 + N * COL_DCT_OP_NUM;
+
+  D[2][N][0] = 340 + N * COL_DCT_OP_NUM;
+  D[2][N][1] = 341 + N * COL_DCT_OP_NUM;
+  D[5][N][0] = 340 + N * COL_DCT_OP_NUM;
+  D[5][N][1] = 341 + N * COL_DCT_OP_NUM;
+
+  D[3][N][0] = 342 + N * COL_DCT_OP_NUM;
+  D[3][N][1] = 343 + N * COL_DCT_OP_NUM;
+  D[4][N][0] = 342 + N * COL_DCT_OP_NUM;
+  D[4][N][1] = 343 + N * COL_DCT_OP_NUM;
+}
+
+
+for (N = 0; N < 8; N++) {
+
+  DFG[128+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[128+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[128+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[128+N*ROW_DCT_OP_NUM]->opSrc[0] = 66+N*8;
+  DFG[128+N*ROW_DCT_OP_NUM]->opSrc[1] = 68+N*8;
+  DFG[128+N*ROW_DCT_OP_NUM]->opDest[0] = 130 + N*ROW_DCT_OP_NUM;
+  DFG[128+N*ROW_DCT_OP_NUM]->opDestNu = 1;
+  DFG[128+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[128+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[128+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[129+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[129+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[129+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 3);
+  DFG[129+N*ROW_DCT_OP_NUM]->opSrc[0] = 64+N*8;
+  DFG[129+N*ROW_DCT_OP_NUM]->opSrc[1] = 70+N*8;
+  DFG[129+N*ROW_DCT_OP_NUM]->opDest[0] = 130 + N*ROW_DCT_OP_NUM;
+  DFG[129+N*ROW_DCT_OP_NUM]->opDest[1] = 132 + N*ROW_DCT_OP_NUM;
+  DFG[129+N*ROW_DCT_OP_NUM]->opDest[2] = 133 + N*ROW_DCT_OP_NUM;
+  DFG[129+N*ROW_DCT_OP_NUM]->opDestNu = 3;
+  DFG[129+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[129+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[129+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[130+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[130+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[130+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[130+N*ROW_DCT_OP_NUM]->opSrc[0] = 128+N*ROW_DCT_OP_NUM;
+  DFG[130+N*ROW_DCT_OP_NUM]->opSrc[1] = 129+N*ROW_DCT_OP_NUM;
+  DFG[130+N*ROW_DCT_OP_NUM]->opDest[0] = 131 + N*ROW_DCT_OP_NUM;
+  DFG[130+N*ROW_DCT_OP_NUM]->opDestNu = 1;
+  DFG[130+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[130+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[130+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[131+N*ROW_DCT_OP_NUM]->op = mul;
+  DFG[131+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[131+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[131+N*ROW_DCT_OP_NUM]->opSrc[0] = 130+N*ROW_DCT_OP_NUM;
+  DFG[131+N*ROW_DCT_OP_NUM]->opSrc[1] = 130+N*ROW_DCT_OP_NUM;
+  DFG[131+N*ROW_DCT_OP_NUM]->opDest[0] = 132 + N*ROW_DCT_OP_NUM;
+  DFG[131+N*ROW_DCT_OP_NUM]->opDest[1] = 133 + N*ROW_DCT_OP_NUM;
+  DFG[131+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[131+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[131+N*ROW_DCT_OP_NUM]->opConst = 1;
+  DFG[131+N*ROW_DCT_OP_NUM]->opConstVal = 0.707106781;
+
+// o02
+  DFG[132+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[132+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[132+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[132+N*ROW_DCT_OP_NUM]->opSrc[0] = 129+N*ROW_DCT_OP_NUM;
+  DFG[132+N*ROW_DCT_OP_NUM]->opSrc[1] = 131+N*ROW_DCT_OP_NUM;
+  DFG[132+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][2][0];
+  DFG[132+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][2][1];
+  DFG[132+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[132+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[132+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[132+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o06
+  DFG[133+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[133+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[133+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[133+N*ROW_DCT_OP_NUM]->opSrc[0] = 129+N*ROW_DCT_OP_NUM;
+  DFG[133+N*ROW_DCT_OP_NUM]->opSrc[1] = 131+N*ROW_DCT_OP_NUM;
+  DFG[133+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][6][0];
+  DFG[133+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][6][1];
+  DFG[133+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[133+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[133+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[133+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[134+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[134+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[134+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[134+N*ROW_DCT_OP_NUM]->opSrc[0] = 64+N*8;
+  DFG[134+N*ROW_DCT_OP_NUM]->opSrc[1] = 70+N*8;
+  DFG[134+N*ROW_DCT_OP_NUM]->opDest[0] = 136+N*ROW_DCT_OP_NUM;
+  DFG[134+N*ROW_DCT_OP_NUM]->opDest[1] = 137+N*ROW_DCT_OP_NUM;
+  DFG[134+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[134+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[134+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[134+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[135+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[135+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[135+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[135+N*ROW_DCT_OP_NUM]->opSrc[0] = 66+N*8;
+  DFG[135+N*ROW_DCT_OP_NUM]->opSrc[1] = 68+N*8;
+  DFG[135+N*ROW_DCT_OP_NUM]->opDest[0] = 136+N*ROW_DCT_OP_NUM;
+  DFG[135+N*ROW_DCT_OP_NUM]->opDest[1] = 137+N*ROW_DCT_OP_NUM;
+  DFG[135+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[135+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[135+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[135+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o00
+  DFG[136+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[136+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[136+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[136+N*ROW_DCT_OP_NUM]->opSrc[0] = 134+N*ROW_DCT_OP_NUM;
+  DFG[136+N*ROW_DCT_OP_NUM]->opSrc[1] = 135+N*ROW_DCT_OP_NUM;
+  DFG[136+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][0][0];
+  DFG[136+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][0][1];
+  DFG[136+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[136+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[136+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[136+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o04
+  DFG[137+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[137+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[137+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[137+N*ROW_DCT_OP_NUM]->opSrc[0] = 134+N*ROW_DCT_OP_NUM;
+  DFG[137+N*ROW_DCT_OP_NUM]->opSrc[1] = 135+N*ROW_DCT_OP_NUM;
+  DFG[137+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][4][0];
+  DFG[137+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][4][1];
+  DFG[137+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[137+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[137+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[137+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[138+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[138+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[138+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[138+N*ROW_DCT_OP_NUM]->opSrc[0] = 69+N*8;
+  DFG[138+N*ROW_DCT_OP_NUM]->opSrc[1] = 67+N*8;
+  DFG[138+N*ROW_DCT_OP_NUM]->opDest[0] = 142+N*ROW_DCT_OP_NUM;
+  DFG[138+N*ROW_DCT_OP_NUM]->opDestNu = 1;
+  DFG[138+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[138+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[138+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[139+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[139+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[139+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[139+N*ROW_DCT_OP_NUM]->opSrc[0] = 71+N*8;
+  DFG[139+N*ROW_DCT_OP_NUM]->opSrc[1] = 69+N*8;
+  DFG[139+N*ROW_DCT_OP_NUM]->opDest[0] = 141+N*ROW_DCT_OP_NUM;
+  DFG[139+N*ROW_DCT_OP_NUM]->opDest[1] = 144+N*ROW_DCT_OP_NUM;
+  DFG[139+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[139+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[139+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[139+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[140+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[140+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[140+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[140+N*ROW_DCT_OP_NUM]->opSrc[0] = 67+N*8;
+  DFG[140+N*ROW_DCT_OP_NUM]->opSrc[1] = 65+N*8;
+  DFG[140+N*ROW_DCT_OP_NUM]->opDest[0] = 141+N*ROW_DCT_OP_NUM;
+  DFG[140+N*ROW_DCT_OP_NUM]->opDest[1] = 145+N*ROW_DCT_OP_NUM;
+  DFG[140+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[140+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[140+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[140+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[141+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[141+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[141+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[141+N*ROW_DCT_OP_NUM]->opSrc[0] = 139+N*ROW_DCT_OP_NUM;
+  DFG[141+N*ROW_DCT_OP_NUM]->opSrc[1] = 140+N*ROW_DCT_OP_NUM;
+  DFG[141+N*ROW_DCT_OP_NUM]->opDest[0] = 143+N*ROW_DCT_OP_NUM;
+  DFG[141+N*ROW_DCT_OP_NUM]->opDestNu = 1;
+  DFG[141+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[141+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[141+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[142+N*ROW_DCT_OP_NUM]->op = mul;
+  DFG[142+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[142+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[142+N*ROW_DCT_OP_NUM]->opSrc[0] = 138+N*ROW_DCT_OP_NUM;
+  DFG[142+N*ROW_DCT_OP_NUM]->opSrc[1] = 138+N*ROW_DCT_OP_NUM;
+  DFG[142+N*ROW_DCT_OP_NUM]->opDest[0] = 146+N*ROW_DCT_OP_NUM;
+  DFG[142+N*ROW_DCT_OP_NUM]->opDest[1] = 148+N*ROW_DCT_OP_NUM;
+  DFG[142+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[142+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[142+N*ROW_DCT_OP_NUM]->opConst = 1;
+  DFG[142+N*ROW_DCT_OP_NUM]->opConstVal = 0.707106781;
+
+  DFG[143+N*ROW_DCT_OP_NUM]->op = mul;
+  DFG[143+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[143+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[143+N*ROW_DCT_OP_NUM]->opSrc[0] = 141+N*ROW_DCT_OP_NUM;
+  DFG[143+N*ROW_DCT_OP_NUM]->opSrc[1] = 141+N*ROW_DCT_OP_NUM;
+  DFG[143+N*ROW_DCT_OP_NUM]->opDest[0] = 147+N*ROW_DCT_OP_NUM;
+  DFG[143+N*ROW_DCT_OP_NUM]->opDest[1] = 149+N*ROW_DCT_OP_NUM;
+  DFG[143+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[143+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[143+N*ROW_DCT_OP_NUM]->opConst = 1;
+  DFG[143+N*ROW_DCT_OP_NUM]->opConstVal = 0.382683433;
+
+  DFG[144+N*ROW_DCT_OP_NUM]->op = mul;
+  DFG[144+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[144+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[144+N*ROW_DCT_OP_NUM]->opSrc[0] = 139+N*ROW_DCT_OP_NUM;
+  DFG[144+N*ROW_DCT_OP_NUM]->opSrc[1] = 139+N*ROW_DCT_OP_NUM;
+  DFG[144+N*ROW_DCT_OP_NUM]->opDest[0] = 147+N*ROW_DCT_OP_NUM;
+  DFG[144+N*ROW_DCT_OP_NUM]->opDestNu = 1;
+  DFG[144+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[144+N*ROW_DCT_OP_NUM]->opConst = 1;
+  DFG[144+N*ROW_DCT_OP_NUM]->opConstVal = 0.541196100;
+
+  DFG[145+N*ROW_DCT_OP_NUM]->op = mul;
+  DFG[145+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[145+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[145+N*ROW_DCT_OP_NUM]->opSrc[0] = 140+N*ROW_DCT_OP_NUM;
+  DFG[145+N*ROW_DCT_OP_NUM]->opSrc[1] = 140+N*ROW_DCT_OP_NUM;
+  DFG[145+N*ROW_DCT_OP_NUM]->opDest[0] = 149+N*ROW_DCT_OP_NUM;
+  DFG[145+N*ROW_DCT_OP_NUM]->opDestNu = 1;
+  DFG[145+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[145+N*ROW_DCT_OP_NUM]->opConst = 1;
+  DFG[145+N*ROW_DCT_OP_NUM]->opConstVal = 1.306562965;
+
+  DFG[146+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[146+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[146+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[146+N*ROW_DCT_OP_NUM]->opSrc[0] = 65+N*8;
+  DFG[146+N*ROW_DCT_OP_NUM]->opSrc[1] = 142+N*ROW_DCT_OP_NUM;
+  DFG[146+N*ROW_DCT_OP_NUM]->opDest[0] = 150+N*ROW_DCT_OP_NUM;
+  DFG[146+N*ROW_DCT_OP_NUM]->opDest[1] = 151+N*ROW_DCT_OP_NUM;
+  DFG[146+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[146+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[146+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[146+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[147+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[147+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[147+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[147+N*ROW_DCT_OP_NUM]->opSrc[0] = 144+N*ROW_DCT_OP_NUM;
+  DFG[147+N*ROW_DCT_OP_NUM]->opSrc[1] = 143+N*ROW_DCT_OP_NUM;
+  DFG[147+N*ROW_DCT_OP_NUM]->opDest[0] = 150+N*ROW_DCT_OP_NUM;
+  DFG[147+N*ROW_DCT_OP_NUM]->opDest[1] = 151+N*ROW_DCT_OP_NUM;
+  DFG[147+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[147+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[147+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[147+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[148+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[148+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[148+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[148+N*ROW_DCT_OP_NUM]->opSrc[0] = 65+N*8;
+  DFG[148+N*ROW_DCT_OP_NUM]->opSrc[1] = 142+N*ROW_DCT_OP_NUM;
+  DFG[148+N*ROW_DCT_OP_NUM]->opDest[0] = 152+N*ROW_DCT_OP_NUM;
+  DFG[148+N*ROW_DCT_OP_NUM]->opDest[1] = 153+N*ROW_DCT_OP_NUM;
+  DFG[148+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[148+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[148+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[148+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+  DFG[149+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[149+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[149+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[149+N*ROW_DCT_OP_NUM]->opSrc[0] = 145+N*ROW_DCT_OP_NUM;
+  DFG[149+N*ROW_DCT_OP_NUM]->opSrc[1] = 143+N*ROW_DCT_OP_NUM;
+  DFG[149+N*ROW_DCT_OP_NUM]->opDest[0] = 152+N*ROW_DCT_OP_NUM;
+  DFG[149+N*ROW_DCT_OP_NUM]->opDest[1] = 153+N*ROW_DCT_OP_NUM;
+  DFG[149+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[149+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[149+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[149+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o05
+  DFG[150+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[150+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[150+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[150+N*ROW_DCT_OP_NUM]->opSrc[0] = 146+N*ROW_DCT_OP_NUM;
+  DFG[150+N*ROW_DCT_OP_NUM]->opSrc[1] = 147+N*ROW_DCT_OP_NUM;
+  DFG[150+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][5][0];
+  DFG[150+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][5][1];
+  DFG[150+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[150+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[150+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[150+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o03
+  DFG[151+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[151+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[151+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[151+N*ROW_DCT_OP_NUM]->opSrc[0] = 146+N*ROW_DCT_OP_NUM;
+  DFG[151+N*ROW_DCT_OP_NUM]->opSrc[1] = 147+N*ROW_DCT_OP_NUM;
+  DFG[151+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][3][0];
+  DFG[151+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][3][1];
+  DFG[151+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[151+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[151+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[151+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o01
+  DFG[152+N*ROW_DCT_OP_NUM]->op = add;
+  DFG[152+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[152+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[152+N*ROW_DCT_OP_NUM]->opSrc[0] = 148+N*ROW_DCT_OP_NUM;
+  DFG[152+N*ROW_DCT_OP_NUM]->opSrc[1] = 149+N*ROW_DCT_OP_NUM;
+  DFG[152+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][1][0];
+  DFG[152+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][1][1];
+  DFG[152+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[152+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[152+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[152+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+// o07
+  DFG[153+N*ROW_DCT_OP_NUM]->op = div_;
+  DFG[153+N*ROW_DCT_OP_NUM]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[153+N*ROW_DCT_OP_NUM]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[153+N*ROW_DCT_OP_NUM]->opSrc[0] = 148+N*ROW_DCT_OP_NUM;
+  DFG[153+N*ROW_DCT_OP_NUM]->opSrc[1] = 149+N*ROW_DCT_OP_NUM;
+  DFG[153+N*ROW_DCT_OP_NUM]->opDest[0] = D[N][7][0];
+  DFG[153+N*ROW_DCT_OP_NUM]->opDest[1] = D[N][7][1];
+  DFG[153+N*ROW_DCT_OP_NUM]->opDestNu = 2;
+  DFG[153+N*ROW_DCT_OP_NUM]->RegFileTable = NULL;
+  DFG[153+N*ROW_DCT_OP_NUM]->opConst = 0;
+  DFG[153+N*ROW_DCT_OP_NUM]->opConstVal = 0;
+
+}
+
+for (N = 0; N < 8; N++) {
+  S[N][2] = 132 + N * ROW_DCT_OP_NUM;
+  S[N][6] = 133 + N * ROW_DCT_OP_NUM;
+  S[N][0] = 136 + N * ROW_DCT_OP_NUM;
+  S[N][4] = 137 + N * ROW_DCT_OP_NUM;
+  S[N][5] = 150 + N * ROW_DCT_OP_NUM;
+  S[N][3] = 151 + N * ROW_DCT_OP_NUM;
+  S[N][1] = 152 + N * ROW_DCT_OP_NUM;
+  S[N][7] = 153 + N * ROW_DCT_OP_NUM;
+}
+
+
+for (i = 0; i < 8; i++) {
+
+  COL_DCT_BS = 336 + i*COL_DCT_OP_NUM;
+
+  DFG[COL_DCT_BS]->op = add;
+  DFG[COL_DCT_BS]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS]->opSrc[0] = S[0][i];
+  DFG[COL_DCT_BS]->opSrc[1] = S[7][i];
+  DFG[COL_DCT_BS]->opDest[0] = COL_DCT_BS+8;
+  DFG[COL_DCT_BS]->opDest[1] = COL_DCT_BS+9;
+  DFG[COL_DCT_BS]->opDestNu = 2;
+  DFG[COL_DCT_BS]->RegFileTable = NULL;
+  DFG[COL_DCT_BS]->opConst = 0;
+  DFG[COL_DCT_BS]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+1]->op = div_;
+  DFG[COL_DCT_BS+1]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+1]->opDest = (int *) malloc(sizeof(int) * 3);
+  DFG[COL_DCT_BS+1]->opSrc[0] = S[0][i];
+  DFG[COL_DCT_BS+1]->opSrc[1] = S[7][i];
+  DFG[COL_DCT_BS+1]->opDest[0] = COL_DCT_BS+12;
+  DFG[COL_DCT_BS+1]->opDest[1] = COL_DCT_BS+28;
+  DFG[COL_DCT_BS+1]->opDest[2] = COL_DCT_BS+29;
+  DFG[COL_DCT_BS+1]->opDestNu = 3;
+  DFG[COL_DCT_BS+1]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+1]->opConst = 0;
+  DFG[COL_DCT_BS+1]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+2]->op = add;
+  DFG[COL_DCT_BS+2]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+2]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+2]->opSrc[0] = S[1][i];
+  DFG[COL_DCT_BS+2]->opSrc[1] = S[6][i];
+  DFG[COL_DCT_BS+2]->opDest[0] = COL_DCT_BS+10;
+  DFG[COL_DCT_BS+2]->opDest[1] = COL_DCT_BS+11;
+  DFG[COL_DCT_BS+2]->opDestNu = 2;
+  DFG[COL_DCT_BS+2]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+2]->opConst = 0;
+  DFG[COL_DCT_BS+2]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+3]->op = div_;
+  DFG[COL_DCT_BS+3]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+3]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+3]->opSrc[0] = S[1][i];
+  DFG[COL_DCT_BS+3]->opSrc[1] = S[6][i];
+  DFG[COL_DCT_BS+3]->opDest[0] = COL_DCT_BS+12;
+  DFG[COL_DCT_BS+3]->opDest[1] = COL_DCT_BS+13;
+  DFG[COL_DCT_BS+3]->opDestNu = 2;
+  DFG[COL_DCT_BS+3]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+3]->opConst = 0;
+  DFG[COL_DCT_BS+3]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+4]->op = add;
+  DFG[COL_DCT_BS+4]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+4]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+4]->opSrc[0] = S[2][i];
+  DFG[COL_DCT_BS+4]->opSrc[1] = S[5][i];
+  DFG[COL_DCT_BS+4]->opDest[0] = COL_DCT_BS+10;
+  DFG[COL_DCT_BS+4]->opDest[1] = COL_DCT_BS+11;
+  DFG[COL_DCT_BS+4]->opDestNu = 2;
+  DFG[COL_DCT_BS+4]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+4]->opConst = 0;
+  DFG[COL_DCT_BS+4]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+5]->op = div_;
+  DFG[COL_DCT_BS+5]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+5]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+5]->opSrc[0] = S[2][i];
+  DFG[COL_DCT_BS+5]->opSrc[1] = S[5][i];
+  DFG[COL_DCT_BS+5]->opDest[0] = COL_DCT_BS+13;
+  DFG[COL_DCT_BS+5]->opDest[1] = COL_DCT_BS+14;
+  DFG[COL_DCT_BS+5]->opDestNu = 2;
+  DFG[COL_DCT_BS+5]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+5]->opConst = 0;
+  DFG[COL_DCT_BS+5]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+6]->op = add;
+  DFG[COL_DCT_BS+6]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+6]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+6]->opSrc[0] = S[3][i];
+  DFG[COL_DCT_BS+6]->opSrc[1] = S[4][i];
+  DFG[COL_DCT_BS+6]->opDest[0] = COL_DCT_BS+8;
+  DFG[COL_DCT_BS+6]->opDest[1] = COL_DCT_BS+9;
+  DFG[COL_DCT_BS+6]->opDestNu = 2;
+  DFG[COL_DCT_BS+6]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+6]->opConst = 0;
+  DFG[COL_DCT_BS+6]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+7]->op = div_;
+  DFG[COL_DCT_BS+7]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+7]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+7]->opSrc[0] = S[3][i];
+  DFG[COL_DCT_BS+7]->opSrc[1] = S[4][i];
+  DFG[COL_DCT_BS+7]->opDest[0] = COL_DCT_BS+14;
+  DFG[COL_DCT_BS+7]->opDestNu = 1;
+  DFG[COL_DCT_BS+7]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+7]->opConst = 0;
+  DFG[COL_DCT_BS+7]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+8]->op = add;
+  DFG[COL_DCT_BS+8]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+8]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+8]->opSrc[0] = COL_DCT_BS;
+  DFG[COL_DCT_BS+8]->opSrc[1] = COL_DCT_BS + 6;
+  DFG[COL_DCT_BS+8]->opDest[0] = COL_DCT_BS+15;
+  DFG[COL_DCT_BS+8]->opDest[1] = COL_DCT_BS+16;
+  DFG[COL_DCT_BS+8]->opDestNu = 2;
+  DFG[COL_DCT_BS+8]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+8]->opConst = 0;
+  DFG[COL_DCT_BS+8]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+9]->op = div_;
+  DFG[COL_DCT_BS+9]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+9]->opDest = (int *) malloc(sizeof(int) * 3);
+  DFG[COL_DCT_BS+9]->opSrc[0] = COL_DCT_BS;
+  DFG[COL_DCT_BS+9]->opSrc[1] = COL_DCT_BS+6;
+  DFG[COL_DCT_BS+9]->opDest[0] = COL_DCT_BS + 17; 
+  DFG[COL_DCT_BS+9]->opDest[1] =COL_DCT_BS + 23; 
+  DFG[COL_DCT_BS+9]->opDest[2] =COL_DCT_BS + 24; 
+  DFG[COL_DCT_BS+9]->opDestNu = 3;
+  DFG[COL_DCT_BS+9]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+9]->opConst = 0;
+  DFG[COL_DCT_BS+9]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+10]->op = add;
+  DFG[COL_DCT_BS+10]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+10]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+10]->opSrc[0] = COL_DCT_BS + 2;
+  DFG[COL_DCT_BS+10]->opSrc[1] = COL_DCT_BS + 4;
+  DFG[COL_DCT_BS+10]->opDest[0] = COL_DCT_BS+15;
+  DFG[COL_DCT_BS+10]->opDest[1] = COL_DCT_BS+16;
+  DFG[COL_DCT_BS+10]->opDestNu = 2;
+  DFG[COL_DCT_BS+10]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+10]->opConst = 0;
+  DFG[COL_DCT_BS+10]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+11]->op = div_;
+  DFG[COL_DCT_BS+11]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+11]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+11]->opSrc[0] = COL_DCT_BS + 2;
+  DFG[COL_DCT_BS+11]->opSrc[1] = COL_DCT_BS + 4;
+  DFG[COL_DCT_BS+11]->opDest[0] = COL_DCT_BS + 17; 
+  DFG[COL_DCT_BS+11]->opDestNu = 1;
+  DFG[COL_DCT_BS+11]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+11]->opConst = 0;
+  DFG[COL_DCT_BS+11]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+12]->op = add;
+  DFG[COL_DCT_BS+12]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+12]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+12]->opSrc[0] = COL_DCT_BS + 1;
+  DFG[COL_DCT_BS+12]->opSrc[1] = COL_DCT_BS + 3;
+  DFG[COL_DCT_BS+12]->opDest[0] = COL_DCT_BS+20;
+  DFG[COL_DCT_BS+12]->opDest[1] = COL_DCT_BS+18;
+  DFG[COL_DCT_BS+12]->opDestNu = 2;
+  DFG[COL_DCT_BS+12]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+12]->opConst = 0;
+  DFG[COL_DCT_BS+12]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+13]->op = add;
+  DFG[COL_DCT_BS+13]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+13]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+13]->opSrc[0] = COL_DCT_BS + 3;
+  DFG[COL_DCT_BS+13]->opSrc[1] = COL_DCT_BS + 5;
+  DFG[COL_DCT_BS+13]->opDest[0] = COL_DCT_BS+21;
+  DFG[COL_DCT_BS+13]->opDestNu = 1;
+  DFG[COL_DCT_BS+13]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+13]->opConst = 0;
+  DFG[COL_DCT_BS+13]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+14]->op = add;
+  DFG[COL_DCT_BS+14]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+14]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+14]->opSrc[0] = COL_DCT_BS + 5;
+  DFG[COL_DCT_BS+14]->opSrc[1] = COL_DCT_BS + 7;
+  DFG[COL_DCT_BS+14]->opDest[0] = COL_DCT_BS+26;
+  DFG[COL_DCT_BS+14]->opDest[1] = COL_DCT_BS+18;
+  DFG[COL_DCT_BS+14]->opDestNu = 2;
+  DFG[COL_DCT_BS+14]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+14]->opConst = 0;
+  DFG[COL_DCT_BS+14]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+15]->op = add;
+  DFG[COL_DCT_BS+15]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+15]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+15]->opSrc[0] = COL_DCT_BS + 8;
+  DFG[COL_DCT_BS+15]->opSrc[1] = COL_DCT_BS + 10;
+  DFG[COL_DCT_BS+15]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+15]->opDestNu = 1;
+  DFG[COL_DCT_BS+15]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+15]->opConst = 0;
+  DFG[COL_DCT_BS+15]->opConstVal = 0;
+  //DFG[COL_DCT_BS+15]->opName = "sample00";
+  DFG[COL_DCT_BS+15]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+15]->opName, "sample0%0d_o", i);
+
+  DFG[COL_DCT_BS+16]->op = div_;
+  DFG[COL_DCT_BS+16]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+16]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+16]->opSrc[0] = COL_DCT_BS + 8;
+  DFG[COL_DCT_BS+16]->opSrc[1] = COL_DCT_BS + 10;
+  DFG[COL_DCT_BS+16]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+16]->opDestNu = 1;
+  DFG[COL_DCT_BS+16]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+16]->opConst = 0;
+  DFG[COL_DCT_BS+16]->opConstVal = 0;
+  //DFG[COL_DCT_BS+16]->opName = "sample40";
+  DFG[COL_DCT_BS+16]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+16]->opName, "sample4%0d_o", i);
+
+  DFG[COL_DCT_BS+17]->op = add;
+  DFG[COL_DCT_BS+17]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+17]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+17]->opSrc[0] = COL_DCT_BS + 9;
+  DFG[COL_DCT_BS+17]->opSrc[1] = COL_DCT_BS + 11;
+  DFG[COL_DCT_BS+17]->opDest[0] = COL_DCT_BS + 19;
+  DFG[COL_DCT_BS+17]->opDestNu = 1;
+  DFG[COL_DCT_BS+17]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+17]->opConst = 0;
+  DFG[COL_DCT_BS+17]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+18]->op = div_;
+  DFG[COL_DCT_BS+18]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+18]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+18]->opSrc[0] = COL_DCT_BS + 14;
+  DFG[COL_DCT_BS+18]->opSrc[1] = COL_DCT_BS + 12;
+  DFG[COL_DCT_BS+18]->opDest[0] = COL_DCT_BS + 22;
+  DFG[COL_DCT_BS+18]->opDestNu = 1;
+  DFG[COL_DCT_BS+18]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+18]->opConst = 0;
+  DFG[COL_DCT_BS+18]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+19]->op = mul;
+  DFG[COL_DCT_BS+19]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+19]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+19]->opSrc[0] = COL_DCT_BS + 17;
+  DFG[COL_DCT_BS+19]->opSrc[1] = COL_DCT_BS + 17;
+  DFG[COL_DCT_BS+19]->opDest[0] = COL_DCT_BS + 23;
+  DFG[COL_DCT_BS+19]->opDest[1] = COL_DCT_BS + 24;
+  DFG[COL_DCT_BS+19]->opDestNu = 2;
+  DFG[COL_DCT_BS+19]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+19]->opConst = 1;
+  DFG[COL_DCT_BS+19]->opConstVal = 0.707106781;
+  
+  DFG[COL_DCT_BS+20]->op = mul;
+  DFG[COL_DCT_BS+20]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+20]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+20]->opSrc[0] = COL_DCT_BS + 12;
+  DFG[COL_DCT_BS+20]->opSrc[1] = COL_DCT_BS + 12;
+  DFG[COL_DCT_BS+20]->opDest[0] = COL_DCT_BS + 25;
+  DFG[COL_DCT_BS+20]->opDestNu = 1;
+  DFG[COL_DCT_BS+20]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+20]->opConst = 1;
+  DFG[COL_DCT_BS+20]->opConstVal = 1.306562965;
+
+  DFG[COL_DCT_BS+21]->op = mul;
+  DFG[COL_DCT_BS+21]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+21]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+21]->opSrc[0] = COL_DCT_BS + 13;
+  DFG[COL_DCT_BS+21]->opSrc[1] = COL_DCT_BS + 13;
+  DFG[COL_DCT_BS+21]->opDest[0] = COL_DCT_BS + 28;
+  DFG[COL_DCT_BS+21]->opDest[1] = COL_DCT_BS + 29;
+  DFG[COL_DCT_BS+21]->opDestNu = 2;
+  DFG[COL_DCT_BS+21]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+21]->opConst = 1;
+  DFG[COL_DCT_BS+21]->opConstVal = 0.707106781;
+
+  DFG[COL_DCT_BS+22]->op = mul;
+  DFG[COL_DCT_BS+22]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+22]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+22]->opSrc[0] = COL_DCT_BS + 18;
+  DFG[COL_DCT_BS+22]->opSrc[1] = COL_DCT_BS + 18;
+  DFG[COL_DCT_BS+22]->opDest[0] = COL_DCT_BS + 25;
+  DFG[COL_DCT_BS+22]->opDest[1] = COL_DCT_BS + 27;
+  DFG[COL_DCT_BS+22]->opDestNu = 2;
+  DFG[COL_DCT_BS+22]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+22]->opConst = 1;
+  DFG[COL_DCT_BS+22]->opConstVal = 0.382683433;
+
+  DFG[COL_DCT_BS+23]->op = add;
+  DFG[COL_DCT_BS+23]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+23]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+23]->opSrc[0] = COL_DCT_BS + 9;
+  DFG[COL_DCT_BS+23]->opSrc[1] = COL_DCT_BS + 19;
+  DFG[COL_DCT_BS+23]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+23]->opDestNu = 1;
+  DFG[COL_DCT_BS+23]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+23]->opConst = 0;
+  DFG[COL_DCT_BS+23]->opConstVal = 0;
+  //DFG[COL_DCT_BS+23]->opName = "sample20";
+  DFG[COL_DCT_BS+23]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+23]->opName, "sample2%0d_o", i);
+
+  DFG[COL_DCT_BS+24]->op = div_;
+  DFG[COL_DCT_BS+24]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+24]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+24]->opSrc[0] = COL_DCT_BS + 9;
+  DFG[COL_DCT_BS+24]->opSrc[1] = COL_DCT_BS + 19;
+  DFG[COL_DCT_BS+24]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+24]->opDestNu = 1;
+  DFG[COL_DCT_BS+24]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+24]->opConst = 0;
+  DFG[COL_DCT_BS+24]->opConstVal = 0;
+  //DFG[COL_DCT_BS+24]->opName = "sample60";
+  DFG[COL_DCT_BS+24]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+24]->opName, "sample6%0d_o", i);
+
+  DFG[COL_DCT_BS+25]->op = add;
+  DFG[COL_DCT_BS+25]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+25]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+25]->opSrc[0] = COL_DCT_BS + 20;
+  DFG[COL_DCT_BS+25]->opSrc[1] = COL_DCT_BS + 22;
+  DFG[COL_DCT_BS+25]->opDest[0] = COL_DCT_BS + 30;
+  DFG[COL_DCT_BS+25]->opDest[1] = COL_DCT_BS + 31;
+  DFG[COL_DCT_BS+25]->opDestNu = 2;
+  DFG[COL_DCT_BS+25]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+25]->opConst = 0;
+  DFG[COL_DCT_BS+25]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+26]->op = mul;
+  DFG[COL_DCT_BS+26]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+26]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+26]->opSrc[0] = COL_DCT_BS + 14;
+  DFG[COL_DCT_BS+26]->opSrc[1] = COL_DCT_BS + 14;
+  DFG[COL_DCT_BS+26]->opDest[0] = COL_DCT_BS + 27;
+  DFG[COL_DCT_BS+26]->opDestNu = 1;
+  DFG[COL_DCT_BS+26]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+26]->opConst = 1;
+  DFG[COL_DCT_BS+26]->opConstVal = 0.541196100;
+
+  DFG[COL_DCT_BS+27]->op = add;
+  DFG[COL_DCT_BS+27]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+27]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+27]->opSrc[0] = COL_DCT_BS + 26;
+  DFG[COL_DCT_BS+27]->opSrc[1] = COL_DCT_BS + 22;
+  DFG[COL_DCT_BS+27]->opDest[0] = COL_DCT_BS + 32;
+  DFG[COL_DCT_BS+27]->opDest[1] = COL_DCT_BS + 33;
+  DFG[COL_DCT_BS+27]->opDestNu = 2;
+  DFG[COL_DCT_BS+27]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+27]->opConst = 0;
+  DFG[COL_DCT_BS+27]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+28]->op = add;
+  DFG[COL_DCT_BS+28]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+28]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+28]->opSrc[0] = COL_DCT_BS + 1;
+  DFG[COL_DCT_BS+28]->opSrc[1] = COL_DCT_BS + 21;
+  DFG[COL_DCT_BS+28]->opDest[0] = COL_DCT_BS+30;
+  DFG[COL_DCT_BS+28]->opDest[1] = COL_DCT_BS+31;
+  DFG[COL_DCT_BS+28]->opDestNu = 2;
+  DFG[COL_DCT_BS+28]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+28]->opConst = 0;
+  DFG[COL_DCT_BS+28]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+29]->op = div_;
+  DFG[COL_DCT_BS+29]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+29]->opDest = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+29]->opSrc[0] = COL_DCT_BS + 1;
+  DFG[COL_DCT_BS+29]->opSrc[1] = COL_DCT_BS + 21;
+  DFG[COL_DCT_BS+29]->opDest[0] = COL_DCT_BS + 32;
+  DFG[COL_DCT_BS+29]->opDest[1] = COL_DCT_BS + 33;
+  DFG[COL_DCT_BS+29]->opDestNu = 2;
+  DFG[COL_DCT_BS+29]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+29]->opConst = 0;
+  DFG[COL_DCT_BS+29]->opConstVal = 0;
+
+  DFG[COL_DCT_BS+30]->op = add;
+  DFG[COL_DCT_BS+30]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+30]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+30]->opSrc[0] = COL_DCT_BS + 28;
+  DFG[COL_DCT_BS+30]->opSrc[1] = COL_DCT_BS + 25;
+  DFG[COL_DCT_BS+30]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+30]->opDestNu = 1;
+  DFG[COL_DCT_BS+30]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+30]->opConst = 0;
+  DFG[COL_DCT_BS+30]->opConstVal = 0;
+  //DFG[COL_DCT_BS+30]->opName = "sample10";
+  DFG[COL_DCT_BS+30]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+30]->opName, "sample1%0d_o", i);
+
+  DFG[COL_DCT_BS+31]->op = div_;
+  DFG[COL_DCT_BS+31]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+31]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+31]->opSrc[0] = COL_DCT_BS + 28;
+  DFG[COL_DCT_BS+31]->opSrc[1] = COL_DCT_BS + 25;
+  DFG[COL_DCT_BS+31]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+31]->opDestNu = 1;
+  DFG[COL_DCT_BS+31]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+31]->opConst = 0;
+  DFG[COL_DCT_BS+31]->opConstVal = 0;
+  //DFG[COL_DCT_BS+31]->opName = "sample70";
+  DFG[COL_DCT_BS+31]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+31]->opName, "sample7%0d_o", i);
+
+  DFG[COL_DCT_BS+32]->op = add;
+  DFG[COL_DCT_BS+32]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+32]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+32]->opSrc[0] = COL_DCT_BS + 29;
+  DFG[COL_DCT_BS+32]->opSrc[1] = COL_DCT_BS + 27;
+  DFG[COL_DCT_BS+32]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+32]->opDestNu = 1;
+  DFG[COL_DCT_BS+32]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+32]->opConst = 0;
+  DFG[COL_DCT_BS+32]->opConstVal = 0;
+  //DFG[COL_DCT_BS+32]->opName = "sample50";
+  DFG[COL_DCT_BS+32]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+32]->opName, "sample5%0d_o", i);
+
+  DFG[COL_DCT_BS+33]->op = div_;
+  DFG[COL_DCT_BS+33]->opSrc = (int *) malloc(sizeof(int) * 2);
+  DFG[COL_DCT_BS+33]->opDest = (int *) malloc(sizeof(int) * 1);
+  DFG[COL_DCT_BS+33]->opSrc[0] = COL_DCT_BS + 29;
+  DFG[COL_DCT_BS+33]->opSrc[1] = COL_DCT_BS + 27;
+  DFG[COL_DCT_BS+33]->opDest[0] = SINK;
+  DFG[COL_DCT_BS+33]->opDestNu = 1;
+  DFG[COL_DCT_BS+33]->RegFileTable = NULL;
+  DFG[COL_DCT_BS+33]->opConst = 0;
+  DFG[COL_DCT_BS+33]->opConstVal = 0;
+  //DFG[COL_DCT_BS+33]->opName = "sample30";
+  DFG[COL_DCT_BS+33]->opName = (char *) malloc (sizeof(char) * 20); 
+  sprintf (DFG[COL_DCT_BS+33]->opName, "sample3%0d_o", i);
+}
+

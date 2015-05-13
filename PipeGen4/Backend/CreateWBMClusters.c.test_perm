@@ -1,0 +1,423 @@
+#include "Schedule.h"
+#include "PortSchedule.h"
+#include <assert.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include "WBM.h"
+
+//*************************************************************************
+// 1. Sort variables in V by the time they were born 
+//
+// 2. Find the control step CSmax where the number of variables alive is a maximum
+//    Vmax   = { v | v is alive during CSmax}
+//    Vright = { v | V - Vmax and v lives after CSmax}
+//    Vleft  = { v | V - Vmax and v dies before CSmax}
+//
+// 3. put the variables of Vmax   in VarTable[0]
+//    put the variables of Vright in VarTable[1]
+//    put the variables of Vleft  in VarTable[2]
+//
+// 4. While (Vright is not empty) {
+//      find the next mutually overlapped set in Vright
+//      put the set in VarTable[i], i >= 3
+//      i++;
+//    }
+//    
+// 5. Sort Vleft according to the control steps in which they die
+//
+//    While (Vleft is not empty) {
+//      find the next mutually overlapped set in Vleft
+//      put the set in the VarTable[i] 
+//      i++;
+//    }
+//*************************************************************************
+
+//===============================================================
+// Divide variables into clusters
+//===============================================================
+
+varList *CreateWBMClusters(varList *setV, int delay, int *minRegNu, int *clusterNu) {
+
+  const int V_MAX = 1, V_RIGHT = 2, V_LEFT = 3; 
+  int i;
+  int varID;
+  int maxRegNu, maxCutTime;
+  int maxTime, time;
+
+  varList V_head = NULL;
+  varList VL_head = NULL;
+  varList VR_head = NULL;
+  varList p, q;
+
+  printf("pipeline delay %d minII %d\n", delay, minII);
+
+  //---------------------------------------------------------------
+  // Use varlist to collect all variables without repetition
+  //---------------------------------------------------------------
+  V_head = CreateVarList(V_head);
+  myprintf("*********************** Print initial V set *********************\n");
+  //VarListPrint(V_head);
+
+  //---------------------------------------------------------------
+  // Find the time step with max number of living variables
+  // and put them in set V_MAX
+  //---------------------------------------------------------------
+  maxRegNu = maxTime = 0;
+  FindMaxVarSet(V_head, V_MAX, delay, &maxRegNu, &maxTime);
+  *minRegNu  = maxRegNu;
+  maxCutTime = maxTime;
+
+  myprintf("*********************** Print Vmax set **************************\n");
+  //VarListPrint(VarTable[V_MAX - 1]);
+
+  //---------------------------------------------------------------
+  // Create a cluster for Vmax 
+  //---------------------------------------------------------------
+  setV = CreateCluster(setV, V_MAX, V_MAX, *minRegNu);
+  (*clusterNu)++;
+
+  //---------------------------------------------------------------
+  // Remove Vmax from V 
+  //---------------------------------------------------------------
+  p = VarTable[V_MAX - 1];
+  while (p != NULL) {
+    V_head = VarListDelete(V_head, p->varID);
+    p = p->next;
+  }
+
+  myprintf("***************** Print V set after removing Vmax **************\n");
+  //VarListPrint(V_head);
+
+  //---------------------------------------------------------------
+  // Add Vright = { v | V - Vmax and v lives after maxTime }
+  //---------------------------------------------------------------
+  CreateVarTable(V_RIGHT); // Recreate one entry for Vmax
+
+  p = V_head; // Get from V
+  while (p != NULL) {
+    if (p->startTime >= maxCutTime) {
+
+      VarTableInsert(V_RIGHT, p);
+
+    }
+    p = p->next;
+  }
+
+  //---------------------------------------------------------------
+  // Remove Vright from V 
+  //---------------------------------------------------------------
+  p = VarTable[V_RIGHT - 1];
+  while (p != NULL) {
+    V_head = VarListDelete(V_head, p->varID);
+    p = p->next;
+  }
+
+  myprintf("************************* Print Vright set ************************\n");
+  //VarListPrint(VarTable[V_RIGHT - 1]);
+
+  //---------------------------------------------------------------
+  // find the next mutually overlapped set Vunshare in Vright
+  //---------------------------------------------------------------
+  i = 0; // V_MAX, V_RIGHT, V_LEFT, V_LEFT + i
+  while (VarTable[V_RIGHT - 1] != NULL) {
+
+    maxRegNu = 0;
+    maxTime  = 0;
+    VR_head = VarTable[V_RIGHT - 1];
+
+    FindMaxVarSet(VR_head, V_LEFT + i + 1, delay, &maxRegNu, &maxTime);
+
+    // debug
+    printf("********** Print mutually overlapped set in Vright **********\n");
+    VarListPrint(VarTable[V_LEFT + i]);
+
+    //---------------------------------------------------------------
+    // Create a cluster for Vunshare in Vright
+    //---------------------------------------------------------------
+    setV = CreateCluster(setV, V_RIGHT + i, V_LEFT + i + 1, *minRegNu);
+    (*clusterNu)++;
+
+    // Use vars in VarTable[V_LEFT + i] to remove Vunsharable from VarTable[V_RIGHT]
+    p = VarTable[V_LEFT + i];
+    while (p != NULL) {
+      VR_head = VarListDelete(VR_head, p->varID);
+      p = p->next;
+    }
+
+    VarTable[V_RIGHT - 1] = VR_head;
+
+    // go to next varTable entry
+    i++;
+  }
+
+  myprintf("***************** Print V set after removing Vright **************\n");
+  //VarListPrint(V_head);
+
+  //---------------------------------------------------------------
+  // Add Vleft  = { v | V - Vmax and v dies before maxTime }
+  //
+  // If Vright is empty, then create Vleft entry;
+  // Otherwise reset it to NULL as realloc() didn't do it after 
+  // allocation of Vright set and the Vunshared set in Vright.
+  // Recall that allocation of Vleft was already done after allocation
+  // of Vunshared set in Vright.
+  //---------------------------------------------------------------
+  if (i == 0) 
+    CreateVarTable(V_LEFT);  
+  else
+    VarTable[V_LEFT - 1] = NULL;
+
+  int maxEndTime;
+
+  // Sort Vleft according the steps which they die
+  while (V_head != NULL) { // Get from Varlist
+    maxEndTime = 0;
+    q = NULL;
+
+    p = V_head;  // V
+    while (p != NULL) {
+      if (p->endTime <= maxCutTime && p->endTime > maxEndTime) {
+        maxEndTime = p->endTime;
+        q = p;
+      }
+      p = p->next;
+    }
+
+    if (q != NULL) {
+      // Insert Vleft from V
+      VarTableInsert(V_LEFT, q);
+
+      // Remove Vleft from V
+      V_head = VarListDelete(V_head, q->varID);
+    }
+  }
+
+  myprintf("************************* Print Vleft set ************************\n");
+  //VarListPrint(VarTable[V_LEFT - 1]);
+
+  //---------------------------------------------------------------
+  // find the next mutually overlapped set Vunshare in Vleft
+  //---------------------------------------------------------------
+  while (VarTable[V_LEFT - 1] != NULL) {
+
+    VL_head = VarTable[V_LEFT - 1];
+
+    maxRegNu = 0; maxTime = 0;
+    FindMaxVarSet(VL_head, V_LEFT + i + 1, delay, &maxRegNu, &maxTime);
+
+    p = VarTable[V_LEFT + i];
+
+    // debug
+    printf("********** Print mutually overlapped set in Vleft **********\n");
+    VarListPrint(p);
+
+    //---------------------------------------------------------------
+    // Create a cluster for Vunshare in Vleft
+    //---------------------------------------------------------------
+    setV = CreateCluster(setV, V_RIGHT + i , V_LEFT + i + 1, *minRegNu);
+    (*clusterNu)++;
+
+    // Use vars in VarTable[V_LEFT + i] to remove Vunsharable from VarTable[V_LEFT]
+    while (p != NULL) {
+      VL_head = VarListDelete(VL_head, p->varID);
+      p = p->next;
+    }
+
+    myprintf("********** Print Vleft after removing Vunshare **********\n");
+    //VarListPrint(VL_head);
+
+    VarTable[V_LEFT - 1] = VL_head;
+
+    // go to next varTable entry
+    i++;
+  }
+
+  // Free the VarTable 
+  FreeVarTable(V_LEFT + i);
+
+  return setV;
+}
+
+varList *CreateCluster(varList *setV, int clus_nu, int varTableIdx, int minRegNu) {
+
+  int i, j; 
+  varList p;
+
+  myprintf("Creating cluster %d from VarTable[%d]\n", 
+      clus_nu, varTableIdx-1);
+  setV = (varList *) realloc (setV, clus_nu * sizeof(varList));
+  //assert(setV[clus_nu-1] == NULL);
+  setV[clus_nu - 1] = malloc(sizeof(struct varLifeTime) * minRegNu);
+
+  p = VarTable[varTableIdx - 1];
+  i = 0;
+
+  while (p != NULL) {
+    setV[clus_nu - 1][i].varID     = p->varID;
+    setV[clus_nu - 1][i].startTime = p->startTime;
+    setV[clus_nu - 1][i].endTime   = p->endTime;
+    i++;
+    p = p->next;
+  }
+
+  for (j = i; j < minRegNu; j++)
+    setV[clus_nu - 1][j].varID = -1;
+
+  return setV;
+}
+
+void FreeVarTableEntry(const int entry) {
+  int i;
+  varList head, p, p1, p2;
+
+  p = head = VarTable[entry];
+  // For each loop, go to the last node and delete it
+  while (p != NULL) {
+    p2 = p;
+    p1 = p->next;
+    if (p1 != NULL) {
+      while (p1->next != NULL) {
+        p2 = p1;
+        p1 = p1->next;
+      }
+      p2->next = p1->next;
+      free(p1);
+      p = head;
+    } else {
+      free(p);
+      break; 
+    }
+  }
+  VarTable[entry] = NULL;
+}
+
+
+/*******************************************************************************
+ Algorithm 
+ 
+ Find the time step where the number of living variables
+ is maximum. The number is the minimum number of registers
+ needed in a pipelined datapath. 
+
+  for (t = 0; t <= delay; t++) {
+    for each var node in the DFG {
+      if a var's lifetime >= minII
+        record the var in Vmax
+        regNu++;
+      else 
+        min_end = min_start = - ceil(start / minII);  
+        max_end = max_start = (delay - start) / minII 
+
+        for (i = min_start; i <= max_start ; i++)
+            pstart = start + minII * i 
+            pend   = end   + minII * i
+            if (t >= pstart && t < pend) 
+              record the var in Vmax
+              regNu++;
+              break;
+    }
+    if (RegNu > maxRegNu)
+      maxRegNu = RegNu;
+   }
+
+   Functions args
+   head :         head of the variable list
+   entry:         entry in the Var Table
+   delay:         total time steps
+   maxRegNu:      max number of vars
+   maxTime:       the time step where there are max number of vars
+*******************************************************************************/
+void FindMaxVarSet(varList head, int entry, int delay, int *maxRegNu, int *maxTime) {
+
+  int regNu;
+  int t, m, n, i, j;
+  int varID, start, end;
+  int pstart, pend;
+  int min_start; 
+  int min_end;
+  int max_start;
+  int max_end; 
+  varList p;
+
+  // setup two lists for ping-pong operation
+  CreateVarTable(entry); 
+  CreateVarTable(entry + 1); 
+
+  for (t = 0; t <= delay; t++) {
+
+    regNu = 0;
+
+    //---------------------------------------------------------------------------
+    // For each time step, calculate the number of variables from Varlist 
+    // which covers it.
+    //---------------------------------------------------------------------------
+    p = head;
+    while (p != NULL) {
+      varID = p->varID;
+      start = p->startTime;
+      end   = p->endTime;
+      //printf("varID %d <%d %d>: ", varID, start, end);
+
+      if (end - start >= minII) {
+        //printf("time=%d %d > minII\n", t, end-start);
+        VarTableInsert(entry + 1, p);
+        regNu++;
+      }
+      else {
+        min_start = - (start / minII + (start % minII) ? 1 : 0); 
+        min_end   = min_start;
+
+        max_start = (delay - start) / minII;
+        max_end   = max_start; 
+
+        // find lifetime which overlaps with time step t 
+        for (i = min_start; i <= max_start; i++) {
+          pstart = start + minII * i;
+          pend   = end   + minII * i;
+          //==============================================================
+          // Find all the overlapping variables for each time step. 
+          //
+          // Note the pipelined nature of each variables must be taken
+          // into account.
+          //
+          // To match the maxRegNu result with that from LEA, regNu(i.e.
+          // a new register) is not added when the time step is equal 
+          // to pend. The findings is discovered by the conflict check in LEA. 
+          //
+          //==============================================================
+          if (t >= pstart && t < pend) {
+            //printf("time=%d <%d %d> factor=%d\n", t, pstart, pend, i);
+            regNu++;
+            VarTableInsert(entry + 1, p);
+            break;
+          }
+        }
+        // the var's lifetime has no overlap with the time step t.
+        //if (i == max_start + 1) printf("\n");
+      }
+      p = p->next;
+    }
+
+    //printf("time=%d regNu = %d\n\n", t, regNu);
+
+    if (regNu > *maxRegNu) {
+      *maxRegNu = regNu;
+      *maxTime  = t;
+
+      FreeVarTableEntry(entry - 1); // free at entry - 1
+
+      p = VarTable[entry];
+      while (p != NULL) { 
+        VarTableInsert(entry, p); // insert at entry - 1
+        p = p->next;
+      }
+    }
+
+    FreeVarTableEntry(entry); // free at VarTable[entry]
+  }
+
+  // Debug
+  myprintf("At time step %d Max pipeline reg %d\n", *maxTime, *maxRegNu);
+}
+
+

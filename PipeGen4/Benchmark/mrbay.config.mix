@@ -1,0 +1,73 @@
+const char *CircuitName = "mrbay";
+const char *filename = "mrbay_stats.txt";
+
+// Total operation nodes
+int NODE_NU = 32+8+7+
+              32+16+8+4+
+              /*1+   scP */
+              2+1+
+              12+ 
+              1 + /* max -> s-d */
+              7 +
+              62+
+              1 + /* d2s */
+              5;
+
+// Initial number of port pairs
+int PORT_NU = 1;
+
+// adder and multiplier rate
+int RATE[] = {1,1,1,1,
+              1,1,1,1,
+              1,1,1,1,
+              1};
+
+// add, mul, div, gt, max, mux, rom, addd, muld, gtd, muxd, romd 
+int LATENCY[] = {
+                  12,/* add */ 
+                  12,/* addd */
+                  8, /* mul */ 
+                  15,/* muld */
+                  29,/* div (28+1) */ 
+                  0, /* tod */
+                  0, /* tof */
+                  2, /* gt */ 
+                  2, /* gtd */
+                  3, /* max */ 
+                  0, /* mx */
+                  0, /* mxd */
+                  /*1,  rom */
+                  1  /* romd */ };
+
+
+// Initial functional unit usage 
+int FU[] = {
+             25, /* add */
+             13, /* addd */
+             36, /* mul */
+             19, /* muld */
+             4,  /* div */
+             7,  /* tod */
+             1,  /* tof */
+             4,  /* gt */
+             4,  /* gtd */
+             3,  /* max */
+             15, /* mx */
+             11, /* mxd */
+             /*5,   rom */
+             10  /* romd */
+             };
+
+// Max number of input ports
+// These ports don't include inputs 
+// Norm, IIA, IIC, IIG, IIT, lnScaler and numSites
+
+int MAX_PORT_NU = 8+2;
+
+// Port restriction
+// 10 ports
+int PORTS_CONSTRAINT[] = 
+{
+  0, 1, 0, 1, 0, 1, 0, 1, 
+  1, 1
+};
